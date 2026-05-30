@@ -1,0 +1,3 @@
+# Netlify clean URLs (root is served by index.html -> EN)
+/en   /paid-traffic-landing-en.html   200
+/ru   /paid-traffic-landing-ru.html   200
