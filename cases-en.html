@@ -187,6 +187,11 @@ a{color:inherit;text-decoration:none}
 
 /* Visual side */
 .case-visual{display:flex;justify-content:center;align-items:center}
+.case-reel-wrap{display:flex;flex-direction:column;align-items:center;gap:11px}
+.case-reel{width:min(210px,60%);border-radius:28px;overflow:hidden;border:7px solid var(--ink);box-shadow:0 26px 56px -24px rgba(11,17,25,0.5);background:#000;line-height:0}
+.case-reel video{width:100%;display:block;border-radius:21px}
+.case-reel-lbl{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--warm-gray);font-weight:500}
+#case-education .case-visual,#case-wellness .case-visual,#case-hospitality .case-visual{flex-direction:column;gap:clamp(24px,3.2vw,36px)}
 .case-visual-frame{
   width:100%;max-width:300px;aspect-ratio:9/19;
   background:#0B1119;
@@ -533,6 +538,12 @@ a{color:inherit;text-decoration:none}
         </div>
       </div>
       <div class="case-visual reveal reveal-d2">
+        <div class="case-reel-wrap">
+          <div class="case-reel">
+            <video autoplay muted loop playsinline preload="metadata" poster="photos/case-education-vid-poster.jpg"><source src="photos/case-education-vid.mp4" type="video/mp4"/></video>
+          </div>
+          <div class="case-reel-lbl">Content we produce</div>
+        </div>
         <div class="case-visual-banner">
           <img src="photos/malena-instagram.png" alt="Client Instagram profile · online education"/>
           <div class="case-visual-banner-cap">Client Instagram profile</div>
@@ -581,6 +592,12 @@ a{color:inherit;text-decoration:none}
         </div>
       </div>
       <div class="case-visual reveal reveal-d2">
+        <div class="case-reel-wrap">
+          <div class="case-reel">
+            <video autoplay muted loop playsinline preload="metadata" poster="photos/case-wellness-vid-poster.jpg"><source src="photos/case-wellness-vid.mp4" type="video/mp4"/></video>
+          </div>
+          <div class="case-reel-lbl">Content we produce</div>
+        </div>
         <div class="case-visual-stack">
           <div class="case-browser">
             <div class="case-browser-win">
@@ -643,6 +660,12 @@ a{color:inherit;text-decoration:none}
         </div>
       </div>
       <div class="case-visual reveal reveal-d2">
+        <div class="case-reel-wrap">
+          <div class="case-reel">
+            <video autoplay muted loop playsinline preload="metadata" poster="photos/case-food-vid-poster.jpg"><source src="photos/case-food-vid.mp4" type="video/mp4"/></video>
+          </div>
+          <div class="case-reel-lbl">Content we produce</div>
+        </div>
         <div class="case-visual-beforeafter">
           <div class="case-ba-item">
             <div class="case-visual-frame">

@@ -788,6 +788,7 @@ section{padding:clamp(64px,9vh,120px) 0}
   transition:border-color .35s ease, transform .35s ease;
 }
 .how-video-frame:hover{border-color:var(--ember);transform:translateY(-3px)}
+.how-video-frame.has-video{border-style:solid;border-color:rgba(201,168,76,0.28);background:#000}
 .how-video-frame video,.how-video-frame img{
   position:absolute;inset:0;
   width:100%;height:100%;
@@ -2889,6 +2890,117 @@ section{padding:clamp(64px,9vh,120px) 0}
 <!-- ============================================================ -->
 <!-- REAL CASES (2 short, VERIFIED facts only) -->
 <!-- ============================================================ -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="how-intro">
+      <div class="section-eyebrow reveal">How it works</div>
+      <h2 class="section-h reveal reveal-d1">Three phases <em>scroll to see each one</em></h2>
+    </div>
+  </div>
+  <div class="how-canvas">
+    <div class="how-canvas-inner">
+      <aside class="how-timeline" aria-hidden="true">
+        <div class="how-rail"></div>
+        <div class="how-rail-fill" id="howRailFill"></div>
+        <div class="how-marker" data-step="01">
+          <span class="how-marker-dot"></span>
+          <span class="how-marker-lbl">01</span>
+        </div>
+        <div class="how-marker" data-step="02">
+          <span class="how-marker-dot"></span>
+          <span class="how-marker-lbl">02</span>
+        </div>
+        <div class="how-marker" data-step="03">
+          <span class="how-marker-dot"></span>
+          <span class="how-marker-lbl">03</span>
+        </div>
+      </aside>
+      <div class="how-stages" id="howStages">
+        <article class="how-stage is-active" data-step="01">
+          <div class="how-stage-content">
+            <div class="how-stage-num">Phase 01 / 03</div>
+            <div class="how-stage-week">Week one</div>
+            <h3 class="how-stage-h">Strategy</h3>
+            <p class="how-stage-tease">We find the angle nobody else in your category is using.</p>
+          </div>
+          <aside class="how-stage-reveal">
+            <div class="how-stage-reveal-lbl">A real case</div>
+            <div class="how-story">
+              <div class="how-story-tag">Wellness Embassy · San Diego</div>
+              <div class="how-story-row">
+                <div class="how-story-lbl">Goal</div>
+                <div class="how-story-val">Fully book 4 masters at a brand-new studio location.</div>
+              </div>
+              <div class="how-story-row">
+                <div class="how-story-lbl">Our angle</div>
+                <div class="how-story-val">Mapped surrounding spas in the area, found the positioning none of them were claiming, rebuilt the service narrative around it.</div>
+              </div>
+              <div class="how-story-row">
+                <div class="how-story-lbl">Result</div>
+                <div class="how-story-val"><strong>30 days to a fully booked schedule.</strong> All four masters running at capacity, paid bookings flowing weekly.</div>
+              </div>
+            </div>
+          </aside>
+        </article>
+        <article class="how-stage" data-step="02">
+          <div class="how-stage-content">
+            <div class="how-stage-num">Phase 02 / 03</div>
+            <div class="how-stage-week">Production</div>
+            <h3 class="how-stage-h">Content</h3>
+            <p class="how-stage-tease">We shoot, edit and ship the assets your campaigns will run on.</p>
+          </div>
+          <aside class="how-stage-reveal">
+            <div class="how-stage-reveal-lbl">Content samples</div>
+            <div class="how-videos">
+              <!-- TODO: replace each .how-video-frame inner with <video src="..." muted loop playsinline autoplay/> when files are uploaded -->
+              <figure class="how-video">
+                <div class="how-video-frame has-video" data-niche="wellness"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-wellness-vid-poster.jpg"><source src="photos/case-wellness-vid.mp4" type="video/mp4"/></video></div>
+                <figcaption class="how-video-cap">Wellness · Spa</figcaption>
+              </figure>
+              <figure class="how-video">
+                <div class="how-video-frame has-video" data-niche="tattoo"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-tattoo-vid-poster.jpg"><source src="photos/case-tattoo-vid.mp4" type="video/mp4"/></video></div>
+                <figcaption class="how-video-cap">Tattoo · Service</figcaption>
+              </figure>
+              <figure class="how-video">
+                <div class="how-video-frame has-video" data-niche="food"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-food-vid-poster.jpg"><source src="photos/case-food-vid.mp4" type="video/mp4"/></video></div>
+                <figcaption class="how-video-cap">Food · Hospitality</figcaption>
+              </figure>
+              <figure class="how-video">
+                <div class="how-video-frame has-video" data-niche="education"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-education-vid-poster.jpg"><source src="photos/case-education-vid.mp4" type="video/mp4"/></video></div>
+                <figcaption class="how-video-cap">Education · Course</figcaption>
+              </figure>
+            </div>
+          </aside>
+        </article>
+        <article class="how-stage" data-step="03">
+          <div class="how-stage-content">
+            <div class="how-stage-num">Phase 03 / 03</div>
+            <div class="how-stage-week">Launch &amp; optimize</div>
+            <h3 class="how-stage-h">Performance</h3>
+            <p class="how-stage-tease">Campaigns go live. We kill what fails fast, scale what works.</p>
+          </div>
+          <aside class="how-stage-reveal">
+            <div class="how-stage-reveal-lbl">Real numbers</div>
+            <div class="how-numbers">
+              <div class="how-number">
+                <div class="how-number-val"><span data-count="10" data-count-format="x">×10</span><span class="how-number-unit">ROAS</span></div>
+                <div class="how-number-cap">Online education</div>
+                <div class="how-number-note">Premium info-product · paid traffic only</div>
+              </div>
+              <div class="how-number">
+                <div class="how-number-val"><span data-count="8" data-count-format="x">×8</span><span class="how-number-unit">ROAS</span></div>
+                <div class="how-number-cap">Wellness studio</div>
+                <div class="how-number-note">First-touch · before lifetime value · climbs higher with repeat visits</div>
+              </div>
+            </div>
+            <p class="how-numbers-foot">First-touch numbers from real client accounts. With lifetime value factored in, both climb meaningfully higher.</p>
+          </aside>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cases" id="cases">
   <div class="container">
     <div class="section-eyebrow reveal">Real results</div>

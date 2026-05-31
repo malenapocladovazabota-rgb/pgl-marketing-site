@@ -788,6 +788,7 @@ section{padding:clamp(64px,9vh,120px) 0}
   transition:border-color .35s ease, transform .35s ease;
 }
 .how-video-frame:hover{border-color:var(--ember);transform:translateY(-3px)}
+.how-video-frame.has-video{border-style:solid;border-color:rgba(201,168,76,0.28);background:#000}
 .how-video-frame video,.how-video-frame img{
   position:absolute;inset:0;
   width:100%;height:100%;
@@ -2889,6 +2890,117 @@ section{padding:clamp(64px,9vh,120px) 0}
 <!-- ============================================================ -->
 <!-- REAL CASES (2 short, VERIFIED facts only) -->
 <!-- ============================================================ -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="how-intro">
+      <div class="section-eyebrow reveal">Как это работает</div>
+      <h2 class="section-h reveal reveal-d1">Три фазы <em>листайте, чтобы увидеть каждую</em></h2>
+    </div>
+  </div>
+  <div class="how-canvas">
+    <div class="how-canvas-inner">
+      <aside class="how-timeline" aria-hidden="true">
+        <div class="how-rail"></div>
+        <div class="how-rail-fill" id="howRailFill"></div>
+        <div class="how-marker" data-step="01">
+          <span class="how-marker-dot"></span>
+          <span class="how-marker-lbl">01</span>
+        </div>
+        <div class="how-marker" data-step="02">
+          <span class="how-marker-dot"></span>
+          <span class="how-marker-lbl">02</span>
+        </div>
+        <div class="how-marker" data-step="03">
+          <span class="how-marker-dot"></span>
+          <span class="how-marker-lbl">03</span>
+        </div>
+      </aside>
+      <div class="how-stages" id="howStages">
+        <article class="how-stage is-active" data-step="01">
+          <div class="how-stage-content">
+            <div class="how-stage-num">Фаза 01 / 03</div>
+            <div class="how-stage-week">Первая неделя</div>
+            <h3 class="how-stage-h">Стратегия</h3>
+            <p class="how-stage-tease">Находим угол, который не использует никто в вашей категории.</p>
+          </div>
+          <aside class="how-stage-reveal">
+            <div class="how-stage-reveal-lbl">Реальный кейс</div>
+            <div class="how-story">
+              <div class="how-story-tag">Wellness Embassy · Сан-Диего</div>
+              <div class="how-story-row">
+                <div class="how-story-lbl">Цель</div>
+                <div class="how-story-val">Полностью загрузить 4 мастеров на новой локации студии.</div>
+              </div>
+              <div class="how-story-row">
+                <div class="how-story-lbl">Наш угол</div>
+                <div class="how-story-val">Изучили соседние спа в районе, нашли позиционирование, которое никто из них не занял, и перестроили подачу услуг вокруг него.</div>
+              </div>
+              <div class="how-story-row">
+                <div class="how-story-lbl">Результат</div>
+                <div class="how-story-val"><strong>30 дней до полностью забитого расписания.</strong> Все четыре мастера загружены, платные записи идут каждую неделю.</div>
+              </div>
+            </div>
+          </aside>
+        </article>
+        <article class="how-stage" data-step="02">
+          <div class="how-stage-content">
+            <div class="how-stage-num">Фаза 02 / 03</div>
+            <div class="how-stage-week">Продакшн</div>
+            <h3 class="how-stage-h">Контент</h3>
+            <p class="how-stage-tease">Снимаем, монтируем и выдаём материалы, на которых пойдут ваши кампании.</p>
+          </div>
+          <aside class="how-stage-reveal">
+            <div class="how-stage-reveal-lbl">Примеры контента</div>
+            <div class="how-videos">
+              <!-- TODO: replace each .how-video-frame inner with <video src="..." muted loop playsinline autoplay/> when files are uploaded -->
+              <figure class="how-video">
+                <div class="how-video-frame has-video" data-niche="wellness"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-wellness-vid-poster.jpg"><source src="photos/case-wellness-vid.mp4" type="video/mp4"/></video></div>
+                <figcaption class="how-video-cap">Wellness · Спа</figcaption>
+              </figure>
+              <figure class="how-video">
+                <div class="how-video-frame has-video" data-niche="tattoo"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-tattoo-vid-poster.jpg"><source src="photos/case-tattoo-vid.mp4" type="video/mp4"/></video></div>
+                <figcaption class="how-video-cap">Тату · Услуга</figcaption>
+              </figure>
+              <figure class="how-video">
+                <div class="how-video-frame has-video" data-niche="food"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-food-vid-poster.jpg"><source src="photos/case-food-vid.mp4" type="video/mp4"/></video></div>
+                <figcaption class="how-video-cap">Еда · HoReCa</figcaption>
+              </figure>
+              <figure class="how-video">
+                <div class="how-video-frame has-video" data-niche="education"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-education-vid-poster.jpg"><source src="photos/case-education-vid.mp4" type="video/mp4"/></video></div>
+                <figcaption class="how-video-cap">Образование · Курс</figcaption>
+              </figure>
+            </div>
+          </aside>
+        </article>
+        <article class="how-stage" data-step="03">
+          <div class="how-stage-content">
+            <div class="how-stage-num">Фаза 03 / 03</div>
+            <div class="how-stage-week">Запуск и оптимизация</div>
+            <h3 class="how-stage-h">Performance</h3>
+            <p class="how-stage-tease">Кампании выходят в эфир. Быстро отключаем то, что не работает, масштабируем то, что работает.</p>
+          </div>
+          <aside class="how-stage-reveal">
+            <div class="how-stage-reveal-lbl">Реальные цифры</div>
+            <div class="how-numbers">
+              <div class="how-number">
+                <div class="how-number-val"><span data-count="10" data-count-format="x">×10</span><span class="how-number-unit">ROAS</span></div>
+                <div class="how-number-cap">Онлайн-образование</div>
+                <div class="how-number-note">Премиум инфопродукт · только платный трафик</div>
+              </div>
+              <div class="how-number">
+                <div class="how-number-val"><span data-count="8" data-count-format="x">×8</span><span class="how-number-unit">ROAS</span></div>
+                <div class="how-number-cap">Wellness-студия</div>
+                <div class="how-number-note">Первое касание · до пожизненной ценности · выше с повторными визитами</div>
+              </div>
+            </div>
+            <p class="how-numbers-foot">Цифры первого касания из реальных клиентских аккаунтов. С учётом пожизненной ценности оба показателя заметно выше.</p>
+          </aside>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cases" id="cases">
   <div class="container">
     <div class="section-eyebrow reveal">Реальные результаты</div>
