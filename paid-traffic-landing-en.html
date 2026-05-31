@@ -2415,6 +2415,28 @@ section{padding:clamp(64px,9vh,120px) 0}
 .reveal-d3{transition-delay:.3s}
 .reveal-d4{transition-delay:.4s}
 
+/* ===== Reveal variety: distinct entrance per section (less uniform) ===== */
+/* Proof strip: appears instantly, numbers just count up (no fade) */
+.proof .reveal{opacity:1 !important;transform:none !important;transition:none}
+/* Cases: the two cards glide in from opposite sides, together */
+.cases .reveal-d1,.cases .reveal-d2{transition-delay:0s}
+.cases-grid .case-card:nth-of-type(1).reveal:not(.visible){transform:translateX(-34px)}
+.cases-grid .case-card:nth-of-type(2).reveal:not(.visible){transform:translateX(34px)}
+/* System: three cards pop together with a soft scale, no one-by-one */
+.system .reveal-d1,.system .reveal-d2,.system .reveal-d3{transition-delay:0s}
+.system .system-card.reveal:not(.visible){transform:translateY(16px) scale(.975)}
+/* Founders: photo enters from the left, copy from the right */
+.founders .founders-photo.reveal:not(.visible){transform:translateX(-30px)}
+.founders .founders-content.reveal:not(.visible){transform:translateX(30px)}
+/* CTA form: gentle scale-in rather than a slide */
+.cta .cta-form.reveal:not(.visible){transform:scale(.97)}
+/* Team strip: members appear together */
+.team-strip [class*="reveal-d"]{transition-delay:0s}
+/* Offer: left list appears together */
+.offer .reveal-d1,.offer .reveal-d2{transition-delay:0s}
+/* FAQ: simple fade, no movement */
+.faq .reveal{transform:none}
+
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:0.01ms !important;transition-duration:0.01ms !important}
   .reveal{opacity:1;transform:none}
