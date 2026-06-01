@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<meta name="robots" content="noindex,nofollow"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>PGL Marketing · Turn views into customers · San Diego</title>
 <meta name="description" content="Performance marketing agency in San Diego. We build content engines that turn attention into customers. Book your free strategy call."/>
@@ -154,6 +155,11 @@ button{font-family:inherit;cursor:pointer}
   grid-template-columns:1.1fr 1fr;
   overflow:hidden;
 }
+.hero--solo{grid-template-columns:1fr}
+.hero--solo .hero-content{align-items:center;text-align:center;max-width:920px;margin:0 auto;padding:clamp(96px,15vh,172px) clamp(24px,5vw,56px)}
+.hero--solo .hero-formula{max-width:660px;margin-left:auto;margin-right:auto}
+.hero--solo .hero-cta-row,.hero--solo .hero-credline,.hero--solo .hero-trust{justify-content:center}
+.hero--solo .hero-h1{font-size:clamp(52px,7.2vw,98px)}
 .hero-photo{
   position:relative;
   overflow:hidden;
@@ -2765,11 +2771,7 @@ section{padding:clamp(64px,9vh,120px) 0}
 <!-- ============================================================ -->
 <!-- HERO -->
 <!-- ============================================================ -->
-<section class="hero has-cursor-glow" id="top">
-  <div class="hero-photo">
-    <img src="photos/founders-new-8.jpg" alt="PGL Marketing · performance marketing agency · San Diego" loading="eager" fetchpriority="high"/>
-    <div class="hero-photo-tag"><strong>PGL</strong>San Diego, California</div>
-  </div>
+<section class="hero hero--solo has-cursor-glow" id="top">
   <div class="hero-content">
     <div class="hero-eyebrow reveal">For founders and local businesses ready to turn attention into paying customers</div>
     <h1 class="hero-h1 reveal reveal-d1">Turn views<br><em>into customers</em></h1>
@@ -3199,7 +3201,7 @@ section{padding:clamp(64px,9vh,120px) 0}
   <div class="container">
     <div class="founders-grid">
       <div class="founders-photo reveal">
-        <img src="photos/founders-new-7.jpg" alt="PGL Marketing founders · San Diego" loading="lazy" decoding="async"/>
+        <img src="photos/founders-new-8.jpg" alt="PGL Marketing founders · San Diego" loading="lazy" decoding="async"/>
         <div class="photo-chip photo-chip--tl">Content · Paid · Funnel</div>
         <div class="founders-photo-tag"><strong>PGL</strong>Lev &amp; Malena · Founders</div>
       </div>
