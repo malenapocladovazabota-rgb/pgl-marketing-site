@@ -92,7 +92,7 @@
   --easing:cubic-bezier(0.22,1,0.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-size-adjust:100%;overflow-x:hidden}
 body{
   font-family:var(--sans);
   font-weight:400;
@@ -946,28 +946,31 @@ section{padding:clamp(64px,9vh,120px) 0}
 
 /* Mobile: keep the animated sticky rail, just slimmer */
 @media (max-width:900px){
-  .how-canvas-inner{grid-template-columns:44px 1fr;gap:14px;padding:0 18px}
+  .how-canvas-inner{grid-template-columns:40px minmax(0,1fr);gap:14px;padding:0 18px}
   .how-timeline{padding:clamp(64px,14vh,120px) 0}
   .how-rail,.how-rail-fill{left:23px;top:clamp(64px,14vh,120px);bottom:clamp(64px,14vh,120px)}
   .how-marker{gap:0}
   .how-marker-lbl{display:none}
   .how-marker-dot{margin-left:16px}
+  .how-stages{min-width:0}
   .how-stage{
     min-height:74vh;
     min-height:74dvh;
-    grid-template-columns:1fr;
+    grid-template-columns:minmax(0,1fr);
     gap:22px;
     padding:6vh 0;
     align-items:start;
+    min-width:0;
   }
   .how-stage-h{font-size:clamp(36px,8.5vw,52px)}
   .how-stage-tease{font-size:15.5px}
-  .how-stage-content{max-width:none}
+  .how-stage-content{max-width:none;min-width:0}
+  .how-stage-reveal{min-width:0}
   /* On mobile, the reveal panel slides up rather than from the side */
   .how-stage-reveal{transform:translateY(22px)}
   .how-stage.is-revealed .how-stage-reveal{transform:translateY(0)}
   /* Reflow phase 02/03 content for narrower mobile width */
-  .how-videos{grid-template-columns:repeat(2,1fr);max-width:none;gap:12px}
+  .how-videos{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none;gap:12px}
   .how-numbers{grid-template-columns:1fr;max-width:none}
 }
 
@@ -1265,6 +1268,8 @@ section{padding:clamp(64px,9vh,120px) 0}
   .cases-grid{grid-template-columns:1fr;gap:14px}
   .case-card{grid-template-columns:1fr;gap:24px}
   .case-card-proof-frame{max-width:200px}
+  .cases-more-link{font-size:11px;letter-spacing:0.12em;padding:13px 22px;gap:10px}
+  .cases-more-hint{font-size:9.5px;letter-spacing:0.12em;line-height:1.6}
 }
 
 /* ============= FOUNDERS BLOCK ============= */
