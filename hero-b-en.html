@@ -353,16 +353,17 @@ button{font-family:inherit;cursor:pointer}
 
 /* ============= PROOF STRIP ============= */
 .proof{
-  background:var(--bone-warm);
-  padding:clamp(40px,6vh,72px) 0;
-  border-bottom:1px solid rgba(11,17,25,0.06);
+  background:var(--ink);
+  color:var(--bone);
+  padding:clamp(52px,7.5vh,88px) 0;
+  border-bottom:none;
 }
 .proof-lbl{
   font-family:var(--mono);
   font-size:10.5px;
   letter-spacing:0.22em;
   text-transform:uppercase;
-  color:var(--ember-deep);
+  color:var(--ember);
   font-weight:500;
   margin-bottom:24px;
   text-align:center;
@@ -375,14 +376,14 @@ button{font-family:inherit;cursor:pointer}
 .proof-card{
   text-align:center;
   padding:clamp(20px,3vh,28px) 16px;
-  border-left:1px solid rgba(11,17,25,0.1);
+  border-left:1px solid rgba(250,248,243,0.14);
 }
 .proof-card:first-child{border-left:none}
 .proof-num{
   font-family:var(--display);
   font-weight:300;
   font-size:clamp(40px,5vw,68px);
-  color:var(--ink);
+  color:var(--bone);
   letter-spacing:-0.03em;
   line-height:1;
   margin-bottom:10px;
@@ -395,14 +396,14 @@ button{font-family:inherit;cursor:pointer}
   font-size:clamp(12px,1.1vw,15px);
   letter-spacing:0.1em;
   text-transform:uppercase;
-  color:var(--ember-deep);
+  color:var(--ember);
   font-weight:500;
 }
 .proof-cap{
   font-family:var(--sans);
   font-weight:400;
   font-size:14px;
-  color:var(--ink);
+  color:rgba(250,248,243,0.9);
   margin-bottom:8px;
 }
 .proof-who{
@@ -410,7 +411,7 @@ button{font-family:inherit;cursor:pointer}
   font-size:10.5px;
   letter-spacing:0.14em;
   text-transform:uppercase;
-  color:var(--warm-gray);
+  color:rgba(250,248,243,0.55);
   font-weight:500;
 }
 @media (max-width:760px){
@@ -2839,18 +2840,13 @@ section{padding:clamp(64px,9vh,120px) 0}
 <!-- ============================================================ -->
 
 
-<div class="section-break reveal" role="presentation">
-  <span class="section-break-line"></span>
-  <span class="section-break-kicker">How we work with you</span>
-  <span class="section-break-line"></span>
-</div>
-
 <!-- ============================================================ -->
 <!-- HOW IT WORKS — scroll-driven progressive reveal -->
 <!-- ============================================================ -->
 <section class="how" id="how">
   <div class="container">
-    <div class="how-intro how-intro--center">
+    <div class="how-intro">
+      <div class="section-eyebrow reveal">How we work with you</div>
       <h2 class="section-h reveal reveal-d1">Your first month, <em>step by step</em></h2>
       <p class="section-lead reveal reveal-d2">Here's how working with us actually goes: we lock in your positioning, produce the content, then launch and optimize the ads.</p>
     </div>
