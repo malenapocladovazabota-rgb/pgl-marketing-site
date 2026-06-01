@@ -919,37 +919,31 @@ section{padding:clamp(64px,9vh,120px) 0}
   .how-story-row{grid-template-columns:1fr;gap:6px}
 }
 
-/* Mobile collapse: stacked + animated entry */
+/* Mobile: keep the animated sticky rail, just slimmer */
 @media (max-width:900px){
-  .how-canvas-inner{grid-template-columns:1fr;gap:0;padding:0 24px}
-  .how-timeline{display:none}
+  .how-canvas-inner{grid-template-columns:44px 1fr;gap:14px;padding:0 18px}
+  .how-timeline{padding:clamp(64px,14vh,120px) 0}
+  .how-rail,.how-rail-fill{left:23px;top:clamp(64px,14vh,120px);bottom:clamp(64px,14vh,120px)}
+  .how-marker{gap:0}
+  .how-marker-lbl{display:none}
+  .how-marker-dot{margin-left:16px}
   .how-stage{
-    min-height:auto;
-    padding:56px 0 64px;
+    min-height:74vh;
+    min-height:74dvh;
     grid-template-columns:1fr;
-    gap:32px;
-    opacity:0;
-    transform:translateY(20px);
-    transition:opacity .8s ease, transform .8s ease;
-    border-top:1px solid rgba(11,17,25,0.1);
+    gap:22px;
+    padding:6vh 0;
     align-items:start;
   }
-  .how-stage.is-revealed{opacity:1;transform:translateY(0)}
-  .how-stage:first-child{border-top:none}
-  .how-stage-h{font-size:clamp(40px,9vw,56px)}
+  .how-stage-h{font-size:clamp(36px,8.5vw,52px)}
   .how-stage-tease{font-size:15.5px}
+  .how-stage-content{max-width:none}
   /* On mobile, the reveal panel slides up rather than from the side */
-  .how-stage-reveal{
-    transform:translateY(20px);
-    transition-delay:.25s;
-  }
-  .how-stage.is-revealed .how-stage-reveal{
-    transform:translateY(0);
-  }
+  .how-stage-reveal{transform:translateY(22px)}
+  .how-stage.is-revealed .how-stage-reveal{transform:translateY(0)}
   /* Reflow phase 02/03 content for narrower mobile width */
   .how-videos{grid-template-columns:repeat(2,1fr);max-width:none;gap:12px}
   .how-numbers{grid-template-columns:1fr;max-width:none}
-  .how-stage-content{max-width:none}
 }
 
 /* ============= CASES ============= */
@@ -2619,19 +2613,9 @@ section{padding:clamp(64px,9vh,120px) 0}
   .jrn-track,.jrn.is-drawn .jrn-orb,.jrn-orb{left:30px}
 }
 
-/* ============= V3 · LANGUAGE TOGGLE ============= */
 .nav-right{display:flex;align-items:center;gap:16px}
-.lang-toggle{display:inline-flex;border:1px solid rgba(201,168,76,0.38);border-radius:100px;overflow:hidden}
-.lang-opt{
-  font-family:var(--mono);font-size:11px;letter-spacing:0.1em;font-weight:600;
-  color:rgba(250,248,243,0.68);padding:7px 13px;line-height:1;
-  transition:background .25s ease,color .25s ease;
-}
-.lang-opt.is-active{background:var(--ember);color:var(--ink)}
-.lang-opt:not(.is-active):hover{color:var(--bone)}
 @media (max-width:560px){
   .nav-right{gap:10px}
-  .lang-opt{padding:6px 10px;font-size:10px}
 }
 
 /* ============= V3 · PHOTO OVERLAY CHIPS ============= */
@@ -2750,10 +2734,6 @@ section{padding:clamp(64px,9vh,120px) 0}
 <nav class="nav">
   <a href="#top" class="nav-brand"><strong>PGL</strong>Marketing</a>
   <div class="nav-right">
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <a href="paid-traffic-landing-en.html" class="lang-opt is-active">EN</a>
-      <a href="paid-traffic-landing-ru.html" class="lang-opt">RU</a>
-    </div>
     <a href="#cta" class="nav-cta">Book strategy call</a>
   </div>
 </nav>

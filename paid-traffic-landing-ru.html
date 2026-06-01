@@ -2621,17 +2621,16 @@ section{padding:clamp(64px,9vh,120px) 0}
 
 /* ============= V3 · LANGUAGE TOGGLE ============= */
 .nav-right{display:flex;align-items:center;gap:16px}
-.lang-toggle{display:inline-flex;border:1px solid rgba(201,168,76,0.38);border-radius:100px;overflow:hidden}
-.lang-opt{
+.lang-link{
   font-family:var(--mono);font-size:11px;letter-spacing:0.1em;font-weight:600;
-  color:rgba(250,248,243,0.68);padding:7px 13px;line-height:1;
-  transition:background .25s ease,color .25s ease;
+  text-transform:uppercase;color:rgba(250,248,243,0.7);line-height:1;
+  padding:7px 13px;border:1px solid rgba(201,168,76,0.38);border-radius:100px;
+  transition:background .25s ease,color .25s ease,border-color .25s ease;
 }
-.lang-opt.is-active{background:var(--ember);color:var(--ink)}
-.lang-opt:not(.is-active):hover{color:var(--bone)}
+.lang-link:hover{color:var(--ink);background:var(--ember);border-color:var(--ember)}
 @media (max-width:560px){
   .nav-right{gap:10px}
-  .lang-opt{padding:6px 10px;font-size:10px}
+  .lang-link{padding:6px 10px;font-size:10px}
 }
 
 /* ============= V3 · PHOTO OVERLAY CHIPS ============= */
@@ -2744,10 +2743,7 @@ section{padding:clamp(64px,9vh,120px) 0}
 <nav class="nav">
   <a href="#top" class="nav-brand"><strong>PGL</strong>Marketing</a>
   <div class="nav-right">
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <a href="paid-traffic-landing-en.html" class="lang-opt">EN</a>
-      <a href="paid-traffic-landing-ru.html" class="lang-opt is-active">RU</a>
-    </div>
+    <a href="paid-traffic-landing-en.html" class="lang-link">English</a>
     <a href="#cta" class="nav-cta">Записаться на звонок</a>
   </div>
 </nav>
