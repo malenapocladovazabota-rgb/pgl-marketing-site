@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>PGL Marketing · Превращаем просмотры в клиентов · Сан-Диего</title>
-<meta name="description" content="Performance-агентство в Сан-Диего. Строим контент-системы, которые превращают внимание в клиентов. Запишитесь на бесплатный стратегический звонок."/>
+<meta name="description" content="Агентство перформанс-маркетинга в Сан-Диего. Выстраиваем систему, которая превращает внимание в клиентов: контент и платный трафик под ключ. Запишитесь на бесплатный разбор."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -20,12 +20,12 @@
 <meta property="og:site_name" content="PGL Marketing"/>
 <meta property="og:locale" content="ru_RU"/>
 <meta property="og:title" content="PGL Marketing · Превращаем просмотры в клиентов"/>
-<meta property="og:description" content="Performance-агентство в Сан-Диего. Превращаем контент и платный трафик в записанных клиентов. Запишитесь на бесплатный звонок."/>
+<meta property="og:description" content="Агентство перформанс-маркетинга в Сан-Диего. Контент и платный трафик под ключ, которые приводят клиентов. Запишитесь на бесплатный звонок."/>
 <meta property="og:url" content="https://pglmarketing.com/ru"/>
 <meta property="og:image" content="https://pglmarketing.com/photos/founders-new-8.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="PGL Marketing · Превращаем просмотры в клиентов"/>
-<meta name="twitter:description" content="Performance-агентство в Сан-Диего. Превращаем контент и платный трафик в записанных клиентов. Запишитесь на бесплатный звонок."/>
+<meta name="twitter:description" content="Агентство перформанс-маркетинга в Сан-Диего. Контент и платный трафик под ключ, которые приводят клиентов. Запишитесь на бесплатный звонок."/>
 <meta name="twitter:image" content="https://pglmarketing.com/photos/founders-new-8.jpg"/>
 
 <!-- ===== Favicon (inline gold PGL mark, no file needed) ===== -->
@@ -92,7 +92,7 @@
   --easing:cubic-bezier(0.22,1,0.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-size-adjust:100%;overflow-x:hidden}
 body{
   font-family:var(--sans);
   font-weight:400;
@@ -347,16 +347,17 @@ button{font-family:inherit;cursor:pointer}
 
 /* ============= PROOF STRIP ============= */
 .proof{
-  background:var(--bone-warm);
-  padding:clamp(40px,6vh,72px) 0;
-  border-bottom:1px solid rgba(11,17,25,0.06);
+  background:var(--ink);
+  color:var(--bone);
+  padding:clamp(52px,7.5vh,88px) 0;
+  border-bottom:none;
 }
 .proof-lbl{
   font-family:var(--mono);
   font-size:10.5px;
   letter-spacing:0.22em;
   text-transform:uppercase;
-  color:var(--ember-deep);
+  color:var(--ember);
   font-weight:500;
   margin-bottom:24px;
   text-align:center;
@@ -369,14 +370,14 @@ button{font-family:inherit;cursor:pointer}
 .proof-card{
   text-align:center;
   padding:clamp(20px,3vh,28px) 16px;
-  border-left:1px solid rgba(11,17,25,0.1);
+  border-left:1px solid rgba(250,248,243,0.14);
 }
 .proof-card:first-child{border-left:none}
 .proof-num{
   font-family:var(--display);
   font-weight:300;
   font-size:clamp(40px,5vw,68px);
-  color:var(--ink);
+  color:var(--bone);
   letter-spacing:-0.03em;
   line-height:1;
   margin-bottom:10px;
@@ -389,14 +390,14 @@ button{font-family:inherit;cursor:pointer}
   font-size:clamp(12px,1.1vw,15px);
   letter-spacing:0.1em;
   text-transform:uppercase;
-  color:var(--ember-deep);
+  color:var(--ember);
   font-weight:500;
 }
 .proof-cap{
   font-family:var(--sans);
   font-weight:400;
   font-size:14px;
-  color:var(--ink);
+  color:rgba(250,248,243,0.9);
   margin-bottom:8px;
 }
 .proof-who{
@@ -404,7 +405,7 @@ button{font-family:inherit;cursor:pointer}
   font-size:10.5px;
   letter-spacing:0.14em;
   text-transform:uppercase;
-  color:var(--warm-gray);
+  color:rgba(250,248,243,0.55);
   font-weight:500;
 }
 @media (max-width:760px){
@@ -537,7 +538,31 @@ section{padding:clamp(64px,9vh,120px) 0}
   position:relative;
   padding:clamp(64px,9vh,120px) 0 0;
 }
+.section-break{
+  max-width:1280px;
+  margin:0 auto;
+  padding:clamp(56px,8vh,96px) clamp(20px,4vw,56px) 0;
+  display:flex;align-items:center;justify-content:center;
+  gap:clamp(14px,2vw,22px);
+}
+.section-break-line{
+  height:1px;
+  width:clamp(36px,8vw,72px);
+  background:rgba(11,17,25,0.16);
+}
+.section-break-kicker{
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--ember-deep);
+  font-weight:500;
+  white-space:nowrap;
+}
 .how-intro{margin-bottom:clamp(40px,6vh,72px)}
+.how-intro--center{text-align:center}
+.how-intro--center .section-h{margin-left:auto;margin-right:auto}
+.how-intro--center .section-lead{margin-left:auto;margin-right:auto}
 .how-canvas{
   position:relative;
   padding-bottom:clamp(40px,6vh,72px);
@@ -919,37 +944,34 @@ section{padding:clamp(64px,9vh,120px) 0}
   .how-story-row{grid-template-columns:1fr;gap:6px}
 }
 
-/* Mobile collapse: stacked + animated entry */
+/* Mobile: keep the animated sticky rail, just slimmer */
 @media (max-width:900px){
-  .how-canvas-inner{grid-template-columns:1fr;gap:0;padding:0 24px}
-  .how-timeline{display:none}
+  .how-canvas-inner{grid-template-columns:40px minmax(0,1fr);gap:14px;padding:0 18px}
+  .how-timeline{padding:clamp(64px,14vh,120px) 0}
+  .how-rail,.how-rail-fill{left:23px;top:clamp(64px,14vh,120px);bottom:clamp(64px,14vh,120px)}
+  .how-marker{gap:0}
+  .how-marker-lbl{display:none}
+  .how-marker-dot{margin-left:16px}
+  .how-stages{min-width:0}
   .how-stage{
-    min-height:auto;
-    padding:56px 0 64px;
-    grid-template-columns:1fr;
-    gap:32px;
-    opacity:0;
-    transform:translateY(20px);
-    transition:opacity .8s ease, transform .8s ease;
-    border-top:1px solid rgba(11,17,25,0.1);
+    min-height:74vh;
+    min-height:74dvh;
+    grid-template-columns:minmax(0,1fr);
+    gap:22px;
+    padding:6vh 0;
     align-items:start;
+    min-width:0;
   }
-  .how-stage.is-revealed{opacity:1;transform:translateY(0)}
-  .how-stage:first-child{border-top:none}
-  .how-stage-h{font-size:clamp(40px,9vw,56px)}
+  .how-stage-h{font-size:clamp(36px,8.5vw,52px)}
   .how-stage-tease{font-size:15.5px}
+  .how-stage-content{max-width:none;min-width:0}
+  .how-stage-reveal{min-width:0}
   /* On mobile, the reveal panel slides up rather than from the side */
-  .how-stage-reveal{
-    transform:translateY(20px);
-    transition-delay:.25s;
-  }
-  .how-stage.is-revealed .how-stage-reveal{
-    transform:translateY(0);
-  }
+  .how-stage-reveal{transform:translateY(22px)}
+  .how-stage.is-revealed .how-stage-reveal{transform:translateY(0)}
   /* Reflow phase 02/03 content for narrower mobile width */
-  .how-videos{grid-template-columns:repeat(2,1fr);max-width:none;gap:12px}
+  .how-videos{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none;gap:12px}
   .how-numbers{grid-template-columns:1fr;max-width:none}
-  .how-stage-content{max-width:none}
 }
 
 /* ============= CASES ============= */
@@ -1246,6 +1268,8 @@ section{padding:clamp(64px,9vh,120px) 0}
   .cases-grid{grid-template-columns:1fr;gap:14px}
   .case-card{grid-template-columns:1fr;gap:24px}
   .case-card-proof-frame{max-width:200px}
+  .cases-more-link{font-size:11px;letter-spacing:0.12em;padding:13px 22px;gap:10px}
+  .cases-more-hint{font-size:9.5px;letter-spacing:0.12em;line-height:1.6}
 }
 
 /* ============= FOUNDERS BLOCK ============= */
@@ -2619,14 +2643,8 @@ section{padding:clamp(64px,9vh,120px) 0}
   .jrn-track,.jrn.is-drawn .jrn-orb,.jrn-orb{left:30px}
 }
 
-/* ============= V3 · LANGUAGE TOGGLE ============= */
 .nav-right{display:flex;align-items:center;gap:16px}
-.lang-link{
-  font-family:var(--mono);font-size:11px;letter-spacing:0.1em;font-weight:600;
-  text-transform:uppercase;color:rgba(250,248,243,0.7);line-height:1;
-  padding:7px 13px;border:1px solid rgba(201,168,76,0.38);border-radius:100px;
-  transition:background .25s ease,color .25s ease,border-color .25s ease;
-}
+.lang-link{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;font-weight:500;text-transform:uppercase;color:rgba(250,248,243,0.7);line-height:1;padding:7px 13px;border:1px solid rgba(201,168,76,0.38);border-radius:100px;transition:background .25s ease,color .25s ease,border-color .25s ease}
 .lang-link:hover{color:var(--ink);background:var(--ember);border-color:var(--ember)}
 @media (max-width:560px){
   .nav-right{gap:10px}
@@ -2733,6 +2751,12 @@ section{padding:clamp(64px,9vh,120px) 0}
 .pkg.featured .pkg-shine{z-index:0}
 .pkg-shine::before{content:"";position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(110deg,transparent 0%,transparent 35%,rgba(201,168,76,0.12) 50%,transparent 65%,transparent 100%);animation:pkgShimmer 7s ease-in-out infinite}
 @media (prefers-reduced-motion: reduce){.pkg-shine::before{animation:none}}
+.gband{background:var(--ink);color:var(--bone);padding:clamp(34px,5vh,56px) 0}
+.gband-inner{display:flex;gap:18px;align-items:center;max-width:760px;margin:0 auto;background:rgba(250,248,243,0.04);border:1px solid rgba(201,168,76,0.28);border-radius:16px;padding:24px 28px}
+.gband-inner svg{flex-shrink:0;color:var(--ember)}
+.gband-h{font-family:var(--display);font-weight:400;font-size:22px;color:var(--bone);margin-bottom:6px}
+.gband-p{font-family:var(--sans);font-size:14.5px;line-height:1.55;color:rgba(250,248,243,0.82);margin:0}
+@media(max-width:600px){.gband-inner{flex-direction:column;text-align:center;align-items:center}}
 </style>
 </head>
 <body>
@@ -2757,9 +2781,9 @@ section{padding:clamp(64px,9vh,120px) 0}
     <div class="hero-photo-tag"><strong>PGL</strong>Сан-Диего, Калифорния</div>
   </div>
   <div class="hero-content">
-    <div class="hero-eyebrow reveal">Для основателей и локального бизнеса, готовых превращать внимание в реальных клиентов</div>
+    <div class="hero-eyebrow reveal">Для предпринимателей и локального бизнеса, кто готов превратить внимание в платящих клиентов</div>
     <h1 class="hero-h1 reveal reveal-d1">Превращаем просмотры<br><em>в клиентов</em></h1>
-    <p class="hero-formula reveal reveal-d2">Берём ваш контент и платный трафик под ключ и превращаем внимание в записанных клиентов, а вы занимаетесь своим бизнесом.</p>
+    <p class="hero-formula reveal reveal-d2">Берём на себя контент и платный трафик под ключ, чтобы всё это внимание превращалось в записи и заявки, а вы спокойно занимались своим делом.</p>
     <div class="hero-cta-row reveal reveal-d3">
       <a href="#cta" class="btn">
         <span>Записаться на звонок</span>
@@ -2778,7 +2802,7 @@ section{padding:clamp(64px,9vh,120px) 0}
     </div>
     <div class="hero-trust reveal reveal-d4">
       <span class="hero-trust-dot"></span>
-      Бесплатный аудит 30 минут · без обязательств · оффер для новых клиентов
+      Бесплатный разбор 30 минут · без обязательств · спецусловия для новых клиентов
     </div>
   </div>
 </section>
@@ -2793,85 +2817,27 @@ section{padding:clamp(64px,9vh,120px) 0}
     <div class="proof-grid">
       <div class="proof-card reveal reveal-d1">
         <div class="proof-num" data-count="1700000" data-count-format="m">1.7M</div>
-        <div class="proof-cap">Органических просмотров за один месяц</div>
+        <div class="proof-cap">органических просмотров за месяц</div>
         <div class="proof-who">Иммиграционный адвокат · США</div>
       </div>
       <div class="proof-card reveal reveal-d2">
         <div class="proof-num" data-count="200" data-count-format="plus">200+</div>
-        <div class="proof-cap">Новых премиальных клиентов на одну программу</div>
+        <div class="proof-cap">новых клиентов на премиальный продукт</div>
         <div class="proof-who">Онлайн-образование · США</div>
       </div>
       <div class="proof-card reveal reveal-d3">
         <div class="proof-num"><span data-count="30" data-count-format="int">30</span><span class="proof-num-unit">дней</span></div>
-        <div class="proof-cap">От новой локации до полной записи</div>
-        <div class="proof-who">Wellness-студия · Сан-Диего</div>
+        <div class="proof-cap">от новой студии до полной записи</div>
+        <div class="proof-who">Велнес-студия · Сан-Диего</div>
       </div>
     </div>
   </div>
 </section>
-
-<div class="line-divider" aria-hidden="true"></div>
 
 <!-- ============================================================ -->
 <!-- OUTCOMES (what you get) -->
-<!-- Generic descriptions; no specific quantitative claims. -->
 <!-- ============================================================ -->
-<section class="outcomes">
-  <div class="container">
-    <div class="section-eyebrow reveal">Путь клиента, который мы выстраиваем</div>
-    <h2 class="section-h reveal reveal-d1">Каждый шаг от <em>скролла до покупки</em></h2>
-    <p class="section-lead reveal reveal-d2">Мы продумываем и выстраиваем каждый этап, через который проходит клиент: от первого знакомства до дня покупки.</p>
-    <div class="jrn" id="journey">
-      <div class="jrn-track" aria-hidden="true"><div class="jrn-track-fill"></div></div>
-      <div class="jrn-orb" aria-hidden="true"></div>
-      <div class="jrn-nodes">
-        <div class="jrn-node reveal reveal-d1">
-          <div class="jrn-dot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <div class="jrn-text">
-            <div class="jrn-step">Шаг 01</div>
-            <h3 class="jrn-h">Замечают</h3>
-            <p class="jrn-p">Контент, который замечают и запоминают, чтобы нужные люди находили вас первыми.</p>
-          </div>
-        </div>
-        <div class="jrn-node reveal reveal-d2">
-          <div class="jrn-dot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
-          </div>
-          <div class="jrn-text">
-            <div class="jrn-step">Шаг 02</div>
-            <h3 class="jrn-h">Доверяют</h3>
-            <p class="jrn-p">Доказательства и позиционирование, которые делают вас очевидным выбором ещё до первого сообщения.</p>
-          </div>
-        </div>
-        <div class="jrn-node reveal reveal-d3">
-          <div class="jrn-dot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg>
-          </div>
-          <div class="jrn-text">
-            <div class="jrn-step">Шаг 03</div>
-            <h3 class="jrn-h">Покупают</h3>
-            <p class="jrn-p">Воронка, которая превращает внимание в качественные заявки, с прогнозируемой ценой за лид.</p>
-          </div>
-        </div>
-        <div class="jrn-node reveal reveal-d4">
-          <div class="jrn-dot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v4h-4"/></svg>
-          </div>
-          <div class="jrn-text">
-            <div class="jrn-step">Шаг 04</div>
-            <h3 class="jrn-h">Возвращаются</h3>
-            <p class="jrn-p">Прогрев, который возвращает клиентов, чтобы каждая кампания стоила больше.</p>
-          </div>
-        </div>
-      </div>
-      <div class="jrn-end reveal">
-        <span class="jrn-end-pill">От первого скролла до <strong>платящего клиента</strong></span>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ============================================================ -->
 <!-- HOW IT WORKS — scroll-driven progressive reveal -->
@@ -2881,17 +2847,15 @@ section{padding:clamp(64px,9vh,120px) 0}
 <!-- ============================================================ -->
 
 
-<div class="line-divider" aria-hidden="true"></div>
-
 <!-- ============================================================ -->
-<!-- REAL CASES (2 short, VERIFIED facts only) -->
+<!-- HOW IT WORKS — scroll-driven progressive reveal -->
 <!-- ============================================================ -->
 <section class="how" id="how">
   <div class="container">
     <div class="how-intro">
       <div class="section-eyebrow reveal">Как мы работаем с вами</div>
-      <h2 class="section-h reveal reveal-d1">Первый месяц, <em>шаг за шагом</em></h2>
-      <p class="section-lead reveal reveal-d2">Так мы работаем с вами: фиксируем позиционирование, производим контент, затем запускаем и оптимизируем рекламу.</p>
+      <h2 class="section-h reveal reveal-d1">Ваш первый месяц <em>шаг за шагом</em></h2>
+      <p class="section-lead reveal reveal-d2">Вот как на самом деле проходит работа с нами: фиксируем позиционирование, снимаем контент, затем запускаем и оптимизируем рекламу.</p>
     </div>
   </div>
   <div class="how-canvas">
@@ -2915,36 +2879,36 @@ section{padding:clamp(64px,9vh,120px) 0}
       <div class="how-stages" id="howStages">
         <article class="how-stage is-active" data-step="01">
           <div class="how-stage-content">
-            <div class="how-stage-num">Фаза 01 / 03</div>
+            <div class="how-stage-num">Этап 01 / 03</div>
             <div class="how-stage-week">Первая неделя</div>
             <h3 class="how-stage-h">Стратегия</h3>
-            <p class="how-stage-tease">Находим, что делает именно вас уникальным, и строим всю стратегию вокруг этого преимущества.</p>
+            <p class="how-stage-tease">Разбираемся, чем вы на самом деле отличаетесь, и строим всю стратегию вокруг этого.</p>
           </div>
           <aside class="how-stage-reveal">
             <div class="how-stage-reveal-lbl">Реальный кейс</div>
             <div class="how-story">
               <div class="how-story-tag">Wellness Embassy · Сан-Диего</div>
               <div class="how-story-row">
-                <div class="how-story-lbl">Цель</div>
-                <div class="how-story-val">Полностью загрузить 4 мастеров на новой локации студии.</div>
+                <div class="how-story-lbl">Задача</div>
+                <div class="how-story-val">Полностью загрузить 4 мастеров в новой студии.</div>
               </div>
               <div class="how-story-row">
-                <div class="how-story-lbl">Наш угол</div>
-                <div class="how-story-val">Взяли то, что она уже вложила в студию: её авторский метод, философию, атмосферу, и сделали это центром сообщения и рекламы.</div>
+                <div class="how-story-lbl">Наш подход</div>
+                <div class="how-story-val">Взяли то, что она уже вложила в студию, её авторский метод, философию, всю атмосферу, и сделали это основой сообщения и рекламы.</div>
               </div>
               <div class="how-story-row">
                 <div class="how-story-lbl">Результат</div>
-                <div class="how-story-val"><strong>30 дней до полностью забитого расписания.</strong> Все четыре мастера загружены, платные записи идут каждую неделю.</div>
+                <div class="how-story-val"><strong>30 дней до полной записи.</strong> Все четыре мастера загружены, платные записи идут каждую неделю.</div>
               </div>
             </div>
           </aside>
         </article>
         <article class="how-stage" data-step="02">
           <div class="how-stage-content">
-            <div class="how-stage-num">Фаза 02 / 03</div>
+            <div class="how-stage-num">Этап 02 / 03</div>
             <div class="how-stage-week">Продакшн</div>
             <h3 class="how-stage-h">Контент</h3>
-            <p class="how-stage-tease">Снимаем, монтируем и выдаём материалы, на которых пойдут ваши кампании.</p>
+            <p class="how-stage-tease">Снимаем, монтируем и отдаём материалы, на которых поедут ваши кампании.</p>
           </div>
           <aside class="how-stage-reveal">
             <div class="how-stage-reveal-lbl">Примеры контента</div>
@@ -2952,7 +2916,7 @@ section{padding:clamp(64px,9vh,120px) 0}
               <!-- TODO: replace each .how-video-frame inner with <video src="..." muted loop playsinline autoplay/> when files are uploaded -->
               <figure class="how-video">
                 <div class="how-video-frame has-video" data-niche="wellness"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-wellness-vid-poster.jpg"><source src="photos/case-wellness-vid.mp4" type="video/mp4"/></video></div>
-                <figcaption class="how-video-cap">Wellness · Спа</figcaption>
+                <figcaption class="how-video-cap">Велнес · Спа</figcaption>
               </figure>
               <figure class="how-video">
                 <div class="how-video-frame has-video" data-niche="tattoo"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-tattoo-vid-poster.jpg"><source src="photos/case-tattoo-vid.mp4" type="video/mp4"/></video></div>
@@ -2960,7 +2924,7 @@ section{padding:clamp(64px,9vh,120px) 0}
               </figure>
               <figure class="how-video">
                 <div class="how-video-frame has-video" data-niche="food"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-food-vid-poster.jpg"><source src="photos/case-food-vid.mp4" type="video/mp4"/></video></div>
-                <figcaption class="how-video-cap">Еда · HoReCa</figcaption>
+                <figcaption class="how-video-cap">Еда · Рестораны</figcaption>
               </figure>
               <figure class="how-video">
                 <div class="how-video-frame has-video" data-niche="education"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-education-vid-poster.jpg"><source src="photos/case-education-vid.mp4" type="video/mp4"/></video></div>
@@ -2971,10 +2935,10 @@ section{padding:clamp(64px,9vh,120px) 0}
         </article>
         <article class="how-stage" data-step="03">
           <div class="how-stage-content">
-            <div class="how-stage-num">Фаза 03 / 03</div>
+            <div class="how-stage-num">Этап 03 / 03</div>
             <div class="how-stage-week">Запуск и оптимизация</div>
-            <h3 class="how-stage-h">Performance</h3>
-            <p class="how-stage-tease">Кампании выходят в эфир. Быстро отключаем то, что не работает, масштабируем то, что работает.</p>
+            <h3 class="how-stage-h">Перформанс</h3>
+            <p class="how-stage-tease">Кампании выходят в эфир. Быстро отключаем то, что не работает, и масштабируем то, что приносит результат.</p>
           </div>
           <aside class="how-stage-reveal">
             <div class="how-stage-reveal-lbl">Реальные цифры</div>
@@ -2982,15 +2946,15 @@ section{padding:clamp(64px,9vh,120px) 0}
               <div class="how-number">
                 <div class="how-number-val"><span data-count="10" data-count-format="x">×10</span><span class="how-number-unit">ROAS</span></div>
                 <div class="how-number-cap">Онлайн-образование</div>
-                <div class="how-number-note">Премиум инфопродукт · только платный трафик</div>
+                <div class="how-number-note">Премиальный инфопродукт · только платный трафик</div>
               </div>
               <div class="how-number">
                 <div class="how-number-val"><span data-count="8" data-count-format="x">×8</span><span class="how-number-unit">ROAS</span></div>
-                <div class="how-number-cap">Wellness-студия</div>
-                <div class="how-number-note">Первое касание · до пожизненной ценности · выше с повторными визитами</div>
+                <div class="how-number-cap">Велнес-студия</div>
+                <div class="how-number-note">Первое касание · без учёта LTV · с повторными визитами выше</div>
               </div>
             </div>
-            <p class="how-numbers-foot">Цифры первого касания из реальных клиентских аккаунтов. С учётом пожизненной ценности оба показателя заметно выше.</p>
+            <p class="how-numbers-foot">Цифры по первому касанию из реальных кабинетов клиентов. С учётом LTV обе заметно выше.</p>
           </aside>
         </article>
       </div>
@@ -3010,32 +2974,32 @@ section{padding:clamp(64px,9vh,120px) 0}
           <h3 class="case-h">От тихого профиля до <em>1.7M просмотров</em></h3>
           <div>
             <div class="case-stat">1.7M</div>
-            <div class="case-stat-cap">органических просмотров · один месяц</div>
+            <div class="case-stat-cap">органических просмотров · месяц</div>
           </div>
-          <p class="case-p">Иммиграционный адвокат, чей Instagram был активен, но вёлся без системы и не давал результатов. После пересборки контента и одного сдвига в позиционировании один месяц дал 1.7M органических просмотров и более тысячи новых подписчиков.</p>
+          <p class="case-p">Иммиграционный адвокат вела Instagram, но без системы и без результата. Мы пересобрали контент и сместили позиционирование, и за один месяц получили 1.7M органических просмотров и больше тысячи новых подписчиков.</p>
         </div>
         <div class="case-card-proof" aria-label="Client Instagram profile">
           <div class="case-card-proof-frame">
             <img src="photos/tatyana-profile.png" alt="Client Instagram profile · immigration attorney" loading="lazy" decoding="async"/>
           </div>
-          <div class="case-card-proof-cap">Профиль клиента в Instagram</div>
+          <div class="case-card-proof-cap">Instagram клиента</div>
         </div>
       </article>
       <article class="case-card reveal reveal-d2">
         <div class="case-card-body">
           <div class="case-tag">Кейс 02 · Онлайн-образование</div>
-          <h3 class="case-h">От контента до <em>200+ премиальных клиентов</em></h3>
+          <h3 class="case-h">От контента до <em>200+ клиентов на премиум</em></h3>
           <div>
             <div class="case-stat">200+</div>
-            <div class="case-stat-cap">новых премиальных клиентов</div>
+            <div class="case-stat-cap">новых клиентов на премиум-продукт</div>
           </div>
-          <p class="case-p">Онлайн-продукт для аудитории экспатов. Мы собрали контент-движок и платную воронку, которые росли месяц к месяцу. Результат: повторяемая система привлечения, которую основатель теперь масштабирует сама.</p>
+          <p class="case-p">Онлайн-курс для русскоязычной аудитории за рубежом. Мы выстроили контент-систему и платную воронку, которые усиливались месяц за месяцем. Итог: повторяемая система привлечения клиентов, которую основатель теперь масштабирует сама.</p>
         </div>
         <div class="case-card-proof" aria-label="Client Instagram profile">
           <div class="case-card-proof-frame">
             <img src="photos/malena-instagram.png" alt="Client Instagram profile · online education" loading="lazy" decoding="async"/>
           </div>
-          <div class="case-card-proof-cap">Профиль клиента в Instagram</div>
+          <div class="case-card-proof-cap">Instagram клиента</div>
         </div>
       </article>
     </div>
@@ -3044,7 +3008,7 @@ section{padding:clamp(64px,9vh,120px) 0}
         <span>Смотреть все кейсы</span>
         <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
       </a>
-      <span class="cases-more-hint">Wellness · HoReCa · Тату · Образование · Право</span>
+      <span class="cases-more-hint">Велнес · Рестораны · Тату · Образование · Право</span>
     </div>
   </div>
 </section>
@@ -3054,7 +3018,7 @@ section{padding:clamp(64px,9vh,120px) 0}
     <div class="cta-inner">
       <div class="cta-eyebrow reveal">Следующий шаг</div>
       <h2 class="cta-h reveal reveal-d1">Получите свой <em>план роста</em></h2>
-      <p class="cta-p reveal reveal-d2">Начните с бесплатного анализа воронки. Вы увидите, где именно теряются заявки, какой шаг даст максимальный эффект и какой план мы бы построили, чтобы вас масштабировать. Если подходим друг другу, следующий шаг это звонок.</p>
+      <p class="cta-p reveal reveal-d2">Начните с бесплатного разбора воронки. Вы увидите, где именно теряете заявки, какое одно изменение даст самый большой эффект и какой план мы бы выстроили, чтобы вас масштабировать. Если подойдём друг другу, звонок будет следующим шагом.</p>
 
       <!-- ============================================================ -->
       <!-- LEAD CAPTURE FORM — submits to FormSubmit.co (no signup needed). -->
@@ -3071,10 +3035,10 @@ section{padding:clamp(64px,9vh,120px) 0}
         autocomplete="on"
       >
         <!-- FormSubmit config: subject line + spam controls + thank-you redirect -->
-        <input type="hidden" name="_subject" value="Новый лид PGL Marketing с лендинга (RU)"/>
+        <input type="hidden" name="_subject" value="Новая заявка с лендинга PGL Marketing (RU)"/>
         <input type="hidden" name="_template" value="table"/>
         <input type="hidden" name="_captcha" value="false"/>
-        <input type="hidden" name="_autoresponse" value="Спасибо за заявку. Лев из PGL Marketing свяжется с вами в течение одного рабочего дня и расскажет о следующих шагах. А пока можете ответить на это письмо и прислать сайт или основной профиль в соцсетях, если ещё не приложили."/>
+        <input type="hidden" name="_autoresponse" value="Спасибо за заявку. Лев из PGL Marketing свяжется с вами в течение одного рабочего дня и расскажет про следующие шаги. Если ещё не отправили, можете ответить на это письмо ссылкой на сайт или основной профиль в соцсетях."/>
         <input type="hidden" name="_next" value="#thanks"/>
         <!-- Honeypot field (hidden from humans; spam bots fill it) -->
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="cta-form-honey" aria-hidden="true"/>
@@ -3100,7 +3064,7 @@ section{padding:clamp(64px,9vh,120px) 0}
 
           <label class="cta-form-field">
             <span class="cta-form-lbl">Название бизнеса или сайт <em>*</em></span>
-            <input type="text" name="Business" required placeholder="acme.com or @yourhandle"/>
+            <input type="text" name="Business" required placeholder="site.com или @ваш_аккаунт"/>
           </label>
 
           <label class="cta-form-field cta-form-field--half">
@@ -3108,22 +3072,22 @@ section{padding:clamp(64px,9vh,120px) 0}
             <select name="Niche" required>
               <option value="">Выберите</option>
               <option>Право / Иммиграция</option>
-              <option>Wellness / Бьюти</option>
-              <option>HoReCa / Еда</option>
+              <option>Велнес / Бьюти</option>
+              <option>Рестораны / Еда</option>
               <option>Онлайн-образование</option>
               <option>E-commerce</option>
-              <option>Локальный сервис</option>
+              <option>Локальные услуги</option>
               <option>Другое</option>
             </select>
           </label>
           <label class="cta-form-field cta-form-field--half">
-            <span class="cta-form-lbl">Текущий бюджет на рекламу в месяц <em>*</em></span>
+            <span class="cta-form-lbl">Текущий рекламный бюджет в месяц <em>*</em></span>
             <select name="Ad spend" required>
               <option value="">Выберите диапазон</option>
               <option>Пока не запускаю рекламу</option>
               <option>До $1,000</option>
-              <option>$1,000 до $5,000</option>
-              <option>$5,000 до $15,000</option>
+              <option>от $1,000 до $5,000</option>
+              <option>от $5,000 до $15,000</option>
               <option>$15,000+</option>
             </select>
           </label>
@@ -3131,22 +3095,22 @@ section{padding:clamp(64px,9vh,120px) 0}
           <label class="cta-form-field">
             <span class="cta-form-lbl">Какой формат вам ближе?</span>
             <select name="Interested format">
-              <option value="">Выберите, что про вас</option>
-              <option>Launch: с нуля, системы ещё нет</option>
-              <option>Growth: есть контент, нужны клиенты с трафика</option>
-              <option>Performance Partner: готовы масштабироваться и делить результат</option>
-              <option>Пока не уверен, помогите определить</option>
+              <option value="">Выберите, что похоже на вас</option>
+              <option>Launch: начинаю с нуля, системы пока нет</option>
+              <option>Growth: есть контент, нужны клиенты через платный трафик</option>
+              <option>Performance Partner: готов масштабироваться и делиться результатом</option>
+              <option>Пока не уверен, помогите разобраться</option>
             </select>
           </label>
 
           <label class="cta-form-field">
             <span class="cta-form-lbl">Главное узкое место в маркетинге сейчас</span>
-            <textarea name="Bottleneck" rows="3" placeholder="Достаточно одного предложения. Например: «лиды приходят, но не закрываются» или «отличный продукт, но нет стабильного трафика»"></textarea>
+            <textarea name="Bottleneck" rows="3" placeholder="Достаточно одного предложения. Например: «заявки есть, но не закрываются» или «продукт отличный, а стабильного трафика нет»"></textarea>
           </label>
         </div>
 
         <button type="submit" class="btn cta-main-btn cta-form-submit">
-          <span>Получить бесплатный анализ</span>
+          <span>Получить бесплатный разбор</span>
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
         </button>
       </form>
@@ -3159,8 +3123,8 @@ section{padding:clamp(64px,9vh,120px) 0}
             <path d="M12 20l5.5 5.5L28 14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3 class="cta-thanks-h">Вы в деле</h3>
-        <p class="cta-thanks-p">Выберите время прямо сейчас, чтобы не созваниваться вслепую. Подберите удобный слот, детали звонка придут на почту. Либо Лев свяжется в течение одного рабочего дня.</p>
+        <h3 class="cta-thanks-h">Готово.</h3>
+        <p class="cta-thanks-p">Выберите время прямо сейчас, чтобы не созваниваться вслепую. Подберите удобный слот, и детали звонка придут на почту. Либо Лев свяжется с вами в течение одного рабочего дня.</p>
         <a class="btn cta-thanks-book" href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener">
           <span>Записаться на звонок</span>
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
@@ -3173,32 +3137,31 @@ section{padding:clamp(64px,9vh,120px) 0}
       </div>
 
       <!-- What you get from the analysis -->
-      <!-- What you actually get on the call — concrete preview -->
       <div class="cta-preview reveal reveal-d4">
         <div class="cta-preview-lbl">Что вы получите</div>
         <div class="cta-preview-grid">
           <div class="cta-preview-item">
             <span class="cta-preview-num">01</span>
-            <span class="cta-preview-txt">Живой аудит вашей воронки: контент, реклама, ответ на лиды</span>
+            <span class="cta-preview-txt">Живой разбор вашей воронки: контент, реклама, дожим</span>
           </div>
           <div class="cta-preview-item">
             <span class="cta-preview-num">02</span>
-            <span class="cta-preview-txt">Одно самое сильное улучшение, которое можно внедрить за 30 дней</span>
+            <span class="cta-preview-txt">Одно изменение, которое даст самый большой эффект за 30 дней</span>
           </div>
           <div class="cta-preview-item">
             <span class="cta-preview-num">03</span>
-            <span class="cta-preview-txt">Реалистичные цифры: какие цели по цене за лид и ROAS</span>
+            <span class="cta-preview-txt">Реальные цифры: к какой цене заявки и ROAS мы бы шли</span>
           </div>
           <div class="cta-preview-item">
             <span class="cta-preview-num">04</span>
-            <span class="cta-preview-txt">Оффер для новых клиентов, если решим работать вместе</span>
+            <span class="cta-preview-txt">Предложение для новых клиентов, если решим двигаться дальше</span>
           </div>
         </div>
       </div>
 
       <!-- Risk reversal -->
       <div class="cta-reassure reveal reveal-d4">
-        Аудит воронки и план на 30 дней остаются у вас, независимо от того, начнём мы работать или нет. Если не подходим друг другу, скажем об этом в первые 10 минут. Без давления и обязательств.
+        Разбор воронки и план на 30 дней останутся у вас в любом случае, будем мы работать вместе или нет. Если не подойдём друг другу, скажем об этом в первые 10 минут. Без давления и навязывания.
       </div>
 
       <div class="cta-alt reveal reveal-d4">
@@ -3212,69 +3175,19 @@ section{padding:clamp(64px,9vh,120px) 0}
 
       <div class="cta-availability reveal reveal-d4">
         <span class="cta-pulse"></span>
-        Берём ограниченное число новых клиентов в месяц
+        Каждый месяц берём ограниченное число новых клиентов
       </div>
     </div>
   </div>
 </section>
 
-<!-- Marquee 01 — between Cases and Comparison -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Performance-маркетинг</span>
-    <span class="marquee-dot"></span>
-    <span>Клиенты по всему миру</span>
-    <span class="marquee-dot"></span>
-    <span>База в Сан-Диего</span>
-    <span class="marquee-dot"></span>
-    <span>Разные ниши</span>
-    <span class="marquee-dot"></span>
-    <span>Контент · Трафик · Воронка</span>
-    <span class="marquee-dot"></span>
-    <span>Performance-маркетинг</span>
-    <span class="marquee-dot"></span>
-    <span>Клиенты по всему миру</span>
-    <span class="marquee-dot"></span>
-    <span>База в Сан-Диего</span>
-    <span class="marquee-dot"></span>
-    <span>Разные ниши</span>
-    <span class="marquee-dot"></span>
-    <span>Контент · Трафик · Воронка</span>
-    <span class="marquee-dot"></span>
-  </div>
-</div>
+
 
 <!-- ============================================================ -->
 <!-- COMPARISON — PGL vs alternatives -->
 <!-- Addresses the main buyer objection: why an agency vs hiring in-house / freelancers -->
 <!-- ============================================================ -->
-<section class="system">
-  <div class="container">
-    <div class="section-eyebrow reveal">Наша система</div>
-    <h2 class="section-h reveal reveal-d1">Почему наша система роста <em>работает</em></h2>
-    <p class="section-lead reveal reveal-d2">Не хаотичный постинг и надежда. Три части, которые складываются в предсказуемых клиентов.</p>
-    <div class="system-grid">
-      <div class="system-card reveal reveal-d1">
-        <span class="system-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5-8 4.5-8-4.5L12 3z"/><path d="M4 12l8 4.5L20 12"/><path d="M4 16.5L12 21l8-4.5"/></svg></span>
-        <div class="system-num">01</div>
-        <h3 class="system-card-h">Специальные форматы</h3>
-        <p class="system-card-p">Форматы контента, подобранные так, чтобы притягивать нужную аудиторию и держать внимание тех, кого стоит конвертировать.</p>
-      </div>
-      <div class="system-card reveal reveal-d2">
-        <span class="system-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v6l-4 2v-8L3 5z"/></svg></span>
-        <div class="system-num">02</div>
-        <h3 class="system-card-h">Воронка внутри профиля</h3>
-        <p class="system-card-p">Каждый элемент профиля ведёт человека дальше: сохранить, подписаться, записаться.</p>
-      </div>
-      <div class="system-card reveal reveal-d3">
-        <span class="system-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
-        <div class="system-num">03</div>
-        <h3 class="system-card-h">Масштабируемый рост</h3>
-        <p class="system-card-p">Соцсети, которые работают стабильно и масштабируются, а не один вирусный пост и тишина.</p>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ============================================================ -->
 <!-- V2 NEW · FUNNEL LEAK — diagnostic block, sets up the call -->
@@ -3297,22 +3210,22 @@ section{padding:clamp(64px,9vh,120px) 0}
       </div>
       <div class="founders-content reveal reveal-d2">
         <div class="section-eyebrow">Кто мы</div>
-        <h2 class="founders-h">Для основателей, которым нужна<br><em>система, а не подрядчик</em></h2>
-        <p class="founders-p">Мы запустили PGL после того, как вели контент и платные кампании в очень разных нишах и каждый раз видели одно и то же: отличный контент без воронки или воронка, в которую ничего не заходит. Когда относишься к ним как к одной связанной системе: контент в трафик, трафик в конверсию, конверсия в удержание, цифры начинают расти стабильно. Именно эту систему мы строим каждому клиенту.</p>
+        <h2 class="founders-h">Для тех, кому нужна<br><em>система, а не подрядчик</em></h2>
+        <p class="founders-p">Мы запустили PGL после того, как вели контент и платные кампании в самых разных нишах и каждый раз видели одно и то же: либо отличный контент без воронки, либо воронка, которую нечем наполнять. Цифры сдвигались только тогда, когда всё работало как единая система: контент → трафик → конверсия → удержание. Именно эту систему мы теперь строим каждому клиенту.</p>
         
         
         <div class="founders-meta">
           <div>
             <div class="founders-meta-num">По всему миру</div>
-            <div class="founders-meta-lbl">клиенты в<br>разных нишах</div>
+            <div class="founders-meta-lbl">клиенты<br>в разных нишах</div>
           </div>
           <div>
-            <div class="founders-meta-num">3 в 1</div>
-            <div class="founders-meta-lbl">контент + трафик +<br>воронка под одной крышей</div>
+            <div class="founders-meta-num">3 in 1</div>
+            <div class="founders-meta-lbl">контент + трафик +<br>воронка в одном месте</div>
           </div>
           <div>
-            <div class="founders-meta-num">В штате</div>
-            <div class="founders-meta-lbl">продюсер, сценарии, монтаж,<br>таргет · одна команда</div>
+            <div class="founders-meta-num">Своя команда</div>
+            <div class="founders-meta-lbl">продюсер, сценарии, монтаж,<br>реклама · одна команда</div>
           </div>
         </div>
       </div>
@@ -3334,17 +3247,17 @@ section{padding:clamp(64px,9vh,120px) 0}
         <div class="team-strip-photo team-strip-photo--lg">
           <img src="photos/founders-new-5.jpg" alt="Lev · founder, PGL Marketing" style="object-position:center 35%" loading="lazy" decoding="async"/>
         </div>
-        <div class="team-strip-name">Лев</div>
-        <div class="team-strip-role">Основатель · Стратегия и Performance</div>
-        <p class="team-strip-bio">Отвечает за performance: платный трафик, архитектура воронки, еженедельный разбор KPI. Ведёт стратегию по каждому клиенту.</p>
+        <div class="team-strip-name">Lev</div>
+        <div class="team-strip-role">Основатель · Стратегия и перформанс</div>
+        <p class="team-strip-bio">Отвечает за перформанс: платный трафик, архитектуру воронок и еженедельный разбор KPI. Ведёт стратегию на каждом проекте.</p>
       </article>
       <article class="team-strip-card team-strip-card--founder reveal reveal-d2">
         <div class="team-strip-photo team-strip-photo--lg">
           <img src="photos/malena-founder.jpg" alt="Malena · co-founder, PGL Marketing" loading="lazy" decoding="async"/>
         </div>
-        <div class="team-strip-name">Малена</div>
-        <div class="team-strip-role">Со-основатель · Контент и рост</div>
-        <p class="team-strip-bio">Основатель онлайн-программы, которая стала первым пруфом PGL: 200+ платящих клиентов. Ведёт креативное направление и рост контента.</p>
+        <div class="team-strip-name">Malena</div>
+        <div class="team-strip-role">Сооснователь · Контент и рост</div>
+        <p class="team-strip-bio">Запустила онлайн-образование, которое стало первым доказательством системы PGL, 200+ платящих клиентов. Ведёт креативное направление и рост через контент.</p>
       </article>
     </div>
 
@@ -3356,7 +3269,7 @@ section{padding:clamp(64px,9vh,120px) 0}
       <div class="team-strip-card reveal reveal-d1">
         <div class="team-strip-photo"><img src="photos/team-Daria.jpeg" alt="Dasha · PGL Marketing" loading="lazy" decoding="async"/></div>
         <div class="team-strip-name">Дарья</div>
-        <div class="team-strip-role">Клиент-сервис</div>
+        <div class="team-strip-role">Клиентский сервис</div>
       </div>
       <div class="team-strip-card reveal reveal-d2">
         <div class="team-strip-photo"><img src="photos/team-maria.jpeg" alt="Masha · PGL Marketing" loading="lazy" decoding="async"/></div>
@@ -3366,7 +3279,7 @@ section{padding:clamp(64px,9vh,120px) 0}
       <div class="team-strip-card reveal reveal-d3">
         <div class="team-strip-photo"><img src="photos/team-valeria.jpeg" alt="Valeria · PGL Marketing" loading="lazy" decoding="async"/></div>
         <div class="team-strip-name">Валерия</div>
-        <div class="team-strip-role">Таргет</div>
+        <div class="team-strip-role">Реклама</div>
       </div>
       <div class="team-strip-card reveal reveal-d4">
         <div class="team-strip-photo"><img src="photos/team-alexandra.jpeg" alt="Aleksandra · PGL Marketing" loading="lazy" decoding="async"/></div>
@@ -3377,102 +3290,34 @@ section{padding:clamp(64px,9vh,120px) 0}
   </div>
 </section>
 
-<!-- Marquee 02 — between Team and Packages -->
-<div class="marquee marquee--dark" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Превращаем просмотры в клиентов</span>
-    <span class="marquee-dot"></span>
-    <span>Контент, который конвертит</span>
-    <span class="marquee-dot"></span>
-    <span>Трафик с юнит-экономикой</span>
-    <span class="marquee-dot"></span>
-    <span>Еженедельный разбор KPI</span>
-    <span class="marquee-dot"></span>
-    <span>Превращаем просмотры в клиентов</span>
-    <span class="marquee-dot"></span>
-    <span>Контент, который конвертит</span>
-    <span class="marquee-dot"></span>
-    <span>Трафик с юнит-экономикой</span>
-    <span class="marquee-dot"></span>
-    <span>Еженедельный разбор KPI</span>
-    <span class="marquee-dot"></span>
-  </div>
-</div>
+
 
 <!-- ============================================================ -->
 <!-- PACKAGES (no prices) -->
 <!-- [VERIFY] Package names and contents · confirm before going live -->
 <!-- ============================================================ -->
 <!-- ============================================================ -->
-<!-- OFFER BAND -->
+<!-- OFFER BAND — Grand Slam offer (front-end framing for the packages) -->
 <!-- ============================================================ -->
-<section class="offer" id="offer">
-  <div class="container">
-    <div class="section-eyebrow reveal">Оффер</div>
-    <h2 class="section-h reveal reveal-d1">Система <em>привлечения клиентов</em></h2>
-    <p class="section-lead reveal reveal-d2">Одна система, которая превращает контент и платный трафик в реальные заявки на вашу услугу, под ключ и в эфире за 30 дней.</p>
-    <div class="offer-grid">
-      <div class="offer-stack reveal reveal-d1">
-        <div class="offer-stack-lbl">Что вы получаете</div>
-        <ul class="offer-list">
-          <li><strong>Контент, который смотрят</strong>, со съёмкой вас на локации</li>
-          <li><strong>Платный трафик, который приносит заявки</strong>, а не просто лайки</li>
-          <li><strong>Рабочая система в эфире за 30 дней</strong></li>
-          <li><strong>Еженедельный разбор KPI</strong>, маркетинг как строка P&amp;L</li>
-          <li><strong>Живой аудит воронки и план на 30 дней</strong> на первом звонке, остаётся вам</li>
-        </ul>
-        <div class="offer-add-lbl">Добавляем, где это даёт результат</div>
-        <p class="offer-add">Лендинг, мгновенный ответ на лиды, работа над конверсией или AI-видео. Подключаем только когда воронке это реально нужно, чтобы вы не платили за то, что уже есть.</p>
-      </div>
-      <aside class="offer-side reveal reveal-d2">
-        <div class="offer-anchor">Нанять это в штат это контент-лид, монтажёр, таргетолог и строитель воронки, и целый квартал на сборку. Вы получаете всё под одной крышей и запуск за дни.</div>
-        <div class="offer-guarantee">
-          <div class="offer-guarantee-lbl">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
-            Гарантия заявок за 30 дней
-          </div>
-          <p>За 30 дней у вас будет рабочая система, которая даёт реальные заявки на вашу услугу, или мы вернём наш гонорар. Правильно собранная воронка всегда даёт отклик: единственная переменная это цена, и её мы постоянно оптимизируем. Полные условия в договоре.</p>
-        </div>
-        <div>
-          <div class="offer-not-lbl">Чего вам не нужно делать</div>
-          <ul class="offer-not">
-            <li>Нанимать и вести штатную команду</li>
-            <li>Сниматься в кадре (закроет AI-видео)</li>
-            <li>Брифовать и пинать четырёх фрилансеров</li>
-            <li>Самому учиться запускать рекламу</li>
-          </ul>
-        </div>
-        <a href="#cta" class="btn">
-          <span>Записаться на звонок</span>
-          <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
-        </a>
-        <div class="offer-scarcity">Берём ограниченное число новых клиентов в месяц</div>
-      </aside>
-    </div>
-  </div>
-</section>
+
 
 <section class="packages" id="packages">
   <div class="container">
     <div class="section-eyebrow reveal">Что вам подходит</div>
-    <h2 class="section-h reveal reveal-d1">Выберите формат, <em>который подходит вам сейчас</em></h2>
-    <p class="section-lead reveal reveal-d2">Каждый формат это ежемесячный ретейнер с минимумом 3 месяца. Цену подбираем на коротком звонке и подтверждаем подходящий вариант. Бюджет на рекламу платится напрямую в Meta и Google, отдельно от ретейнера.</p>
+    <h2 class="section-h reveal reveal-d1">Выберите формат <em>под вашу ситуацию</em></h2>
+    <p class="section-lead reveal reveal-d2">Каждый формат, это ежемесячная работа с минимумом 3 месяца. Стоимость определяем на коротком звонке и подтверждаем, что формат подходит. Рекламный бюджет оплачивается напрямую в Meta и Google, отдельно от гонорара.</p>
     <div class="packages-grid">
       <div class="pkg pkg--launch reveal reveal-d1" data-pkg="launch" role="button" tabindex="0">
         <div class="pkg-situation">
           <span class="pkg-situation-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2.5 4 2.5 4H5"/></svg></span>
-          <span class="pkg-situation-txt"><strong>Вы стартуете с нуля</strong><span>Пока нет ни системы, ни контента</span></span>
+          <span class="pkg-situation-txt"><strong>Вы начинаете с нуля</strong><span>Системы и контента пока нет</span></span>
         </div>
         <div class="pkg-name">Launch</div>
-        <p class="pkg-desc">Собираем фундамент с нуля и запускаем первую кампанию: из ничего к рабочему присутствию, которое приносит заявки.</p>
+        <p class="pkg-desc">Собираем фундамент с нуля и запускаем первую кампанию, чтобы вы перешли от пустоты к присутствию, которое реально приносит заявки.</p>
         <ul>
-          <li>Launch Sprint: настройка и онбординг</li>
-          <li>Аудит профиля и конкурентов</li>
           <li>Одно чёткое позиционирование</li>
-          <li>Сборка базовой воронки</li>
-          <li>Съёмочный день на локации каждый месяц</li>
-          <li>Reels: сценарий + съёмка + монтаж</li>
-          <li>Постинг в Instagram + контент-план</li>
+          <li>Профиль и базовая воронка</li>
+          <li>Съёмочный день в месяц + Reels</li>
           <li>Запуск первой платной кампании</li>
         </ul>
         <span class="pkg-more">Подробнее &rarr;</span>
@@ -3480,19 +3325,15 @@ section{padding:clamp(64px,9vh,120px) 0}
       <div class="pkg pkg--growth reveal reveal-d2" data-pkg="growth" role="button" tabindex="0">
         <div class="pkg-situation">
           <span class="pkg-situation-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
-          <span class="pkg-situation-txt"><strong>Есть контент, нужны клиенты</strong><span>Готовы масштабироваться платным трафиком</span></span>
+          <span class="pkg-situation-txt"><strong>У вас есть контент, нужны клиенты</strong><span>Готовы расти через платный трафик</span></span>
         </div>
         <div class="pkg-name">Growth</div>
-        <p class="pkg-desc">Контент, реклама и воронка работают как одна система по платформам, настраиваются каждую неделю и приводят качественные заявки, которые можно планировать.</p>
+        <p class="pkg-desc">Контент, реклама и воронка работают как единая система на всех площадках, и каждую неделю настраиваются так, чтобы приносить целевые заявки, на которые можно планировать.</p>
         <ul>
-          <li>Полная стратегия контента и дистрибуции</li>
-          <li>Съёмочный день на локации каждый месяц</li>
-          <li>Премиум-продакшн Reels</li>
-          <li>Управление платной рекламой</li>
-          <li>Воронка в профиле</li>
-          <li>Постинг в Instagram + YouTube</li>
-          <li>Еженедельный разбор KPI и аналитика</li>
-          <li>Добавляем по необходимости: лендинг, follow-up</li>
+          <li>Контент, платный трафик и воронка как единая система</li>
+          <li>Съёмка в месяц, премиальные Reels</li>
+          <li>Ведение рекламы в Instagram + YouTube</li>
+          <li>Еженедельный разбор KPI</li>
         </ul>
         <span class="pkg-more">Подробнее &rarr;</span>
       </div>
@@ -3501,19 +3342,15 @@ section{padding:clamp(64px,9vh,120px) 0}
         <div class="pkg-badge">Наш флагман</div>
         <div class="pkg-situation">
           <span class="pkg-situation-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/></svg></span>
-          <span class="pkg-situation-txt"><strong>Готовы масштабироваться</strong><span>Проверенный оффер, хотите долю в результате</span></span>
+          <span class="pkg-situation-txt"><strong>Вы готовы масштабироваться</strong><span>Оффер проверен, хотите делить результат</span></span>
         </div>
         <div class="pkg-name">Performance Partner</div>
-        <p class="pkg-desc">Полная система привлечения под ключ, сниженная база плюс доля от выручки, которую мы приводим. Мы зарабатываем больше только когда растёте вы.</p>
+        <p class="pkg-desc">Вся система привлечения под ключ, с меньшим фиксом плюс долей от выручки, которую приносим. Мы выигрываем больше только когда выигрываете вы.</p>
         <ul>
-          <li>Полный контент-движок, на локации каждый месяц</li>
-          <li>Платный трафик в Instagram, YouTube, TikTok</li>
-          <li>Полная воронка, собранная и оптимизированная под конверсию</li>
-          <li>Длинный контент для YouTube</li>
-          <li>Авто-прогрев в директе и email</li>
-          <li>Мгновенный ответ на лиды</li>
-          <li>Выделенный еженедельный разбор</li>
-          <li>База + доля от выручки после рекламы</li>
+          <li>Вся система, масштабированная по каналам</li>
+          <li>Автопрогрев + мгновенный дожим заявок</li>
+          <li>Отдельный еженедельный разбор результатов</li>
+          <li>Фикс + доля от выручки после рекламного бюджета</li>
         </ul>
         <span class="pkg-more">Подробнее &rarr;</span>
       </div>
@@ -3525,16 +3362,16 @@ section{padding:clamp(64px,9vh,120px) 0}
         <span>Узнать цену на звонке</span>
         <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
       </a>
-      <span class="packages-cta-hint">Звонок 30 минут · без обязательств · оффер для новых клиентов</span>
+      <span class="packages-cta-hint">Звонок 30 минут · без обязательств · спецусловия для новых клиентов</span>
     </div>
 
     <!-- Soft alternative for buyers who don't fit the three packages -->
     <div class="pkg-custom reveal">
       <div class="pkg-custom-inner">
         <div class="pkg-custom-text">
-          <div class="pkg-custom-eyebrow">Ничего не подходит?</div>
+          <div class="pkg-custom-eyebrow">Ничего не подошло?</div>
           <h3 class="pkg-custom-h">Скажите, что нужно <em>соберём под вас</em></h3>
-          <p class="pkg-custom-p">Если вы масштабируетесь за пределы этих тарифов, работаете в нише, которой нет в списке, или нужен гибрид (только трафик, только контент, только AI-продакшн), собираем индивидуальный формат. Один звонок, чтобы определить объём работ и сколько это стоит.</p>
+          <p class="pkg-custom-p">Если вы выросли за рамки этих форматов, работаете в нише, которой нет в списке, или хотите гибрид (только трафик, только контент, продакшн только на AI), соберём индивидуальный формат. Один звонок, чтобы зафиксировать объём и цену.</p>
         </div>
         <a href="#cta" class="btn btn-outline-dark">
           <span>Запросить индивидуальный формат</span>
@@ -3545,18 +3382,18 @@ section{padding:clamp(64px,9vh,120px) 0}
   </div>
 <div class="pkg-modal-overlay" id="pkgModal" hidden>
   <div class="pkg-modal-backdrop" data-close></div>
-  <div class="pkg-modal" role="dialog" aria-modal="true" aria-label="Детали пакета">
-    <button class="pkg-modal-close" data-close aria-label="Закрыть">&times;</button>
+  <div class="pkg-modal" role="dialog" aria-modal="true" aria-label="Package details">
+    <button class="pkg-modal-close" data-close aria-label="Close">&times;</button>
     <div class="pkg-modal-panel" data-panel="launch">
       <div class="pkg-modal-head">
-        <div class="pkg-modal-sit">Вы стартуете с нуля</div>
+        <div class="pkg-modal-sit">Вы начинаете с нуля</div>
         <div class="pkg-modal-name">Launch</div>
-        <p class="pkg-modal-desc">Для основателей, у которых ещё нет системы. Собираем фундамент с нуля: одно чёткое позиционирование, перестроенный профиль, базовую воронку и первый месяц контента, затем запускаем первую платную кампанию. Из ничего к присутствию, которое реально приносит заявки.</p>
+        <p class="pkg-modal-desc">Для тех, у кого пока нет системы. Собираем фундамент с нуля: одно чёткое позиционирование, пересобранный профиль, базовая воронка и первый месяц контента, затем запуск первой платной кампании. Вы переходите от пустоты к присутствию, которое реально приносит заявки.</p>
       </div>
       <div class="pkg-modal-body">
-        <div class="pkg-modal-lbl">What you getЧто входит</div>
+        <div class="pkg-modal-lbl">Что вы получите</div>
         <ul class="pkg-modal-list">
-          <li>Launch Sprint: настройка и онбординг</li>
+          <li>Launch-спринт: настройка и онбординг</li>
           <li>Аудит профиля и конкурентов</li>
           <li>Одно чёткое позиционирование</li>
           <li>Сборка базовой воронки</li>
@@ -3567,55 +3404,55 @@ section{padding:clamp(64px,9vh,120px) 0}
         </ul>
       </div>
       <div class="pkg-modal-foot">
-        <div class="pkg-modal-note">Ежемесячный ретейнер + разовый Launch Sprint · минимум 3 месяца · цена на звонке</div>
+        <div class="pkg-modal-note">Ежемесячный гонорар + разовый Launch-спринт · минимум 3 месяца · цену определяем на звонке</div>
         <a class="btn" href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener"><span>Записаться на звонок</span><svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></a>
       </div>
     </div>
     <div class="pkg-modal-panel" data-panel="growth">
       <div class="pkg-modal-head">
-        <div class="pkg-modal-sit">Есть контент, нужны клиенты</div>
+        <div class="pkg-modal-sit">У вас есть контент, нужны клиенты</div>
         <div class="pkg-modal-name">Growth</div>
-        <p class="pkg-modal-desc">Для бизнеса с работающим контентом, готового добавить платный трафик. Контент, реклама и воронка как одна система по платформам, оптимизируются каждую неделю и приводят качественные заявки, которые можно планировать.</p>
+        <p class="pkg-modal-desc">Для бизнеса с рабочей контент-базой, готового добавить платный трафик. Контент, реклама и воронка работают как единая система на всех площадках и оптимизируются каждую неделю, чтобы приносить целевые заявки, на которые можно планировать, а не просто охваты.</p>
       </div>
       <div class="pkg-modal-body">
-        <div class="pkg-modal-lbl">What you getЧто входит</div>
+        <div class="pkg-modal-lbl">Что вы получите</div>
         <ul class="pkg-modal-list">
           <li>Полная стратегия контента и дистрибуции</li>
           <li>Съёмочный день на локации каждый месяц</li>
-          <li>Премиум-продакшн Reels</li>
-          <li>Управление платной рекламой</li>
-          <li>Воронка в профиле</li>
+          <li>Продакшн премиальных Reels</li>
+          <li>Ведение платной рекламы</li>
+          <li>Воронка внутри профиля</li>
           <li>Постинг в Instagram + YouTube</li>
           <li>Еженедельный разбор KPI и аналитика</li>
-          <li>Добавляем по необходимости: лендинг, follow-up</li>
+          <li>Дополнения по необходимости: лендинг, дожим</li>
         </ul>
       </div>
       <div class="pkg-modal-foot">
-        <div class="pkg-modal-note">Ежемесячный ретейнер · минимум 3 месяца · цена на звонке</div>
+        <div class="pkg-modal-note">Ежемесячный гонорар · минимум 3 месяца · цену определяем на звонке</div>
         <a class="btn" href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener"><span>Записаться на звонок</span><svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></a>
       </div>
     </div>
     <div class="pkg-modal-panel" data-panel="pp">
       <div class="pkg-modal-head">
-        <div class="pkg-modal-sit">Готовы масштабироваться</div>
+        <div class="pkg-modal-sit">Вы готовы масштабироваться</div>
         <div class="pkg-modal-name">Performance Partner</div>
-        <p class="pkg-modal-desc">Наш флагман, для проверенных офферов, готовых масштабировать бюджет и делить результат. Полная система привлечения под ключ, сниженная база плюс доля от выручки, которую мы приводим. Мы зарабатываем больше только когда растёте вы.</p>
+        <p class="pkg-modal-desc">Наш флагман, для проверенных офферов, готовых масштабировать бюджет на общих интересах. Вся система привлечения под ключ, с меньшим фиксом плюс долей от выручки, которую приносим. Мы выигрываем больше только когда выигрываете вы.</p>
       </div>
       <div class="pkg-modal-body">
-        <div class="pkg-modal-lbl">What you getЧто входит</div>
+        <div class="pkg-modal-lbl">Что вы получите</div>
         <ul class="pkg-modal-list">
-          <li>Полный контент-движок, на локации каждый месяц</li>
+          <li>Полный контент-движок, съёмки на локации каждый месяц</li>
           <li>Платный трафик в Instagram, YouTube, TikTok</li>
-          <li>Полная воронка, собранная и оптимизированная под конверсию</li>
-          <li>Длинный контент для YouTube</li>
-          <li>Авто-прогрев в директе и email</li>
-          <li>Мгновенный ответ на лиды</li>
-          <li>Выделенный еженедельный разбор</li>
-          <li>База + доля от выручки после рекламы</li>
+          <li>Полная воронка, собранная и заточенная под конверсию</li>
+          <li>Длинный контент на YouTube</li>
+          <li>Автопрогрев в директе и email</li>
+          <li>Мгновенный дожим заявок</li>
+          <li>Отдельный еженедельный разбор результатов</li>
+          <li>Фикс + доля от выручки после рекламного бюджета</li>
         </ul>
       </div>
       <div class="pkg-modal-foot">
-        <div class="pkg-modal-note">Сниженная база + доля от выручки после рекламы · условия под нишу на звонке</div>
+        <div class="pkg-modal-note">Меньший фикс + доля от выручки после рекламного бюджета · условия под вашу нишу на звонке</div>
         <a class="btn" href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener"><span>Записаться на звонок</span><svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></a>
       </div>
     </div>
@@ -3636,9 +3473,22 @@ section{padding:clamp(64px,9vh,120px) 0}
 <!-- ============================================================ -->
 
 
+<!-- GUARANTEE BAND (moved from offer) -->
+<section class="gband">
+  <div class="container">
+    <div class="gband-inner reveal">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+      <div>
+        <div class="gband-h">Гарантия заявок за 30 дней</div>
+        <p class="gband-p">За 30 дней у вас будет работающая система, которая приносит реальные заявки, или мы вернём свой гонорар. Полные условия, в договоре.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="faq">
   <div class="container">
-    <div class="section-eyebrow reveal">FAQ</div>
+    <div class="section-eyebrow reveal">Частые вопросы</div>
     <h2 class="section-h reveal reveal-d1">Вопросы <em>перед звонком</em></h2>
     <div class="faq-list">
       <details class="faq-item reveal reveal-d1">
@@ -3646,35 +3496,35 @@ section{padding:clamp(64px,9vh,120px) 0}
           <span class="faq-q">Как быстро можно запуститься?</span>
           <span class="faq-mark"></span>
         </summary>
-        <div class="faq-a">Быстро. В зависимости от бизнеса первая кампания может выйти в эфир уже за 6 дней: для тату-студии мы запустились и получили первые лиды за шесть дней. Полная система обычно собирается за первые 30 дней: стратегия на первой неделе, продакшн на второй и третьей. Точные сроки подтвердим на звонке, исходя из вашей готовности.</div>
+        <div class="faq-a">Быстро. Первая кампания может выйти уже через 6 дней, а вся система обычно собирается за первые 30. Точные сроки фиксируем на звонке.</div>
       </details>
       <details class="faq-item reveal reveal-d1">
         <summary>
           <span class="faq-q">Обязательно ли быть в кадре?</span>
           <span class="faq-mark"></span>
         </summary>
-        <div class="faq-a">Большинство фаундеров хотят быть в кадре, и это наш предпочтительный формат: когда основатель сам себя презентует, доверие выше, а у нас большой опыт сделать съёмку комфортной, чтобы вы выглядели и звучали наилучшим образом при минимуме времени на площадке (один съёмочный день в месяц, на локации). Если кадр не для вас, есть альтернативы: AI-контент и спикеры, под которые мы выстраиваем материал. Но самый сильный результат, когда в кадре действительно вы, поэтому именно этот формат у нас основной.</div>
+        <div class="faq-a">Большинство основателей хотят быть в кадре, и это наш любимый формат: один съёмочный день в месяц на локации, мы всё делаем максимально просто. Не ваш вариант? Есть форматы на AI.</div>
       </details>
       <details class="faq-item reveal reveal-d2">
         <summary>
           <span class="faq-q">А если цифры не сдвинутся?</span>
           <span class="faq-mark"></span>
         </summary>
-        <div class="faq-a">Мы гарантируем систему, а не удачу. Это наша гарантия заявок за 30 дней: за 30 дней у вас будет рабочая система привлечения, которая даёт реальные заявки на вашу услугу, или мы вернём наш гонорар. Правильно собранная воронка всегда даёт отклик, единственная переменная это цена за лид, и её мы постоянно оптимизируем. Точные условия прописаны в договоре. Аудит и план на 30 дней остаются у вас.</div>
+        <div class="faq-a">Мы гарантируем систему, а не везение. За 30 дней у вас будет работающая система с реальными заявками, или мы вернём гонорар, а разбор и план на 30 дней останутся у вас в любом случае.</div>
       </details>
       <details class="faq-item reveal reveal-d2">
         <summary>
-          <span class="faq-q">Какой минимальный бюджет на рекламу?</span>
+          <span class="faq-q">Какой минимальный рекламный бюджет?</span>
           <span class="faq-mark"></span>
         </summary>
-        <div class="faq-a">Бюджет на рекламу идёт напрямую в Meta или Google и не входит в ретейнер. Правильный стартовый бюджет зависит от ниши, рынка и цели. Подберём его вместе на звонке, исходя из целевой стоимости клиента.</div>
+        <div class="faq-a">Рекламный бюджет идёт напрямую в Meta или Google, отдельно от нашего гонорара. Подходящий стартовый бюджет подбираем вместе на звонке, исходя из вашей целевой цены за клиента.</div>
       </details>
       <details class="faq-item reveal reveal-d3">
         <summary>
           <span class="faq-q">Кто делает работу?</span>
           <span class="faq-mark"></span>
         </summary>
-        <div class="faq-a">Выделенная команда: продюсер, который ведёт ваш аккаунт каждый день, ведущий по сценариям и монтажу, специалист по таргету и основатели на стратегии и разборе. Никаких SMM-стажёров и контент-фабрик на аутсорсе. Познакомитесь с командой в первый день.</div>
+        <div class="faq-a">Выделенная команда: продюсер на вашем проекте, ответственный за сценарии и монтаж, специалист по платной рекламе и основатели на стратегии. Без стажёров и аутсорс-фабрик. Вы знакомитесь с ними в первый день.</div>
       </details>
     </div>
   </div>
@@ -3689,11 +3539,11 @@ section{padding:clamp(64px,9vh,120px) 0}
 <aside class="sticky-cta" id="stickyCta" aria-hidden="true">
   <div class="sticky-cta-inner">
     <div class="sticky-cta-text">
-      <strong>Готовы к системе, которая окупается?</strong>
-      <span>Аудит 30 минут · спец-оффер для новых клиентов</span>
+      <strong>Готовы превратить просмотры в клиентов?</strong>
+      <span>Разбор 30 минут · спецпредложение для новых клиентов</span>
     </div>
     <a href="#cta" class="sticky-cta-btn">
-      <span>На звонок</span>
+      <span>Записаться</span>
       <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
     </a>
   </div>
@@ -3914,7 +3764,7 @@ section{padding:clamp(64px,9vh,120px) 0}
       const submitBtn = leadForm.querySelector('.cta-form-submit');
       const originalText = submitBtn.querySelector('span').textContent;
       submitBtn.disabled = true;
-      submitBtn.querySelector('span').textContent = 'Sending...';
+      submitBtn.querySelector('span').textContent = 'Отправляем...';
       try {
         const formData = new FormData(leadForm);
         // Send lead to GoHighLevel inbound webhook (creates a contact in GHL on submit)
