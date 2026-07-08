@@ -130,6 +130,21 @@
     .steps{grid-template-columns:1fr;gap:0}
     .step{margin-top:22px}
   }
+  .bform{max-width:520px;margin:26px auto 0;text-align:left;background:var(--bone-pure);border:1px solid rgba(11,17,25,0.1);border-radius:14px;padding:clamp(22px,3vw,32px);box-shadow:0 24px 60px -34px rgba(11,17,25,0.28)}
+  .bform-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .bfield{display:flex;flex-direction:column;gap:5px}
+  .bfield--full{grid-column:1/-1}
+  .bfield span{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-gray)}
+  .bfield span em{color:var(--ember-deep);font-style:normal}
+  .bfield input,.bfield textarea{font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--bone);border:1px solid rgba(11,17,25,0.14);border-radius:8px;padding:12px 13px;width:100%;transition:border-color .2s}
+  .bfield input:focus,.bfield textarea:focus{border-color:var(--ember);outline:none}
+  .bfield textarea{resize:vertical;min-height:64px}
+  .bhoney{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+  .bform .btn-main{width:100%;justify-content:center;margin-top:14px}
+  .bform-fine{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--warm-gray);text-align:center;margin-top:10px}
+  .bthanks h3{font-family:var(--display);font-weight:400;font-size:26px;color:var(--ink);margin:6px 0 8px}
+  .bthanks p{font-size:14.5px;color:var(--warm-gray);max-width:34ch;margin:0 auto 16px}
+  @media(max-width:600px){.bform-grid{grid-template-columns:1fr}}
   @media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -226,9 +241,30 @@
   <div class="wrap">
     <div class="eyebrow reveal">Дальше ваша студия</div>
     <h2 class="reveal">Соберём такую же систему <em>для вашей студии</em></h2>
-    <p class="reveal">Адаптируем под ваши услуги, ваш город и ваш календарь, и покажем план на коротком звонке. Бесплатно, без обязательств.</p>
-    <a href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener" class="btn btn-main reveal">Записаться на звонок</a>
-    <div class="cta-alt reveal">или напишите нам на <a href="mailto:lev.pocladov@gmail.com">lev.pocladov@gmail.com</a></div>
+    <p class="reveal">Оставьте заявку, и мы вернёмся с планом под ваши услуги, ваш город и ваш календарь. Разбор бесплатный, без обязательств.</p>
+    <form id="bLeadForm" class="bform reveal" action="https://formsubmit.co/lev.pocladov@gmail.com" method="POST" autocomplete="on">
+      <input type="hidden" name="_subject" value="Новый лид PGL Beauty (кейс, RU)"/>
+      <input type="hidden" name="_template" value="table"/>
+      <input type="hidden" name="_captcha" value="false"/>
+      <input type="hidden" name="_autoresponse" value="Спасибо, что написали. Лев из PGL Marketing свяжется в течение рабочего дня и пришлёт план под вашу студию. Если не указали, ответьте, пожалуйста, ссылкой на Instagram студии."/>
+      <input type="hidden" name="Niche" value="Wellness / Beauty"/>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="bhoney" aria-hidden="true"/>
+      <div class="bform-grid">
+        <label class="bfield"><span>Имя <em>*</em></span><input type="text" name="First name" required autocomplete="given-name"/></label>
+        <label class="bfield"><span>Телефон</span><input type="tel" name="Phone" autocomplete="tel"/></label>
+        <label class="bfield bfield--full"><span>Email <em>*</em></span><input type="email" name="Email" required autocomplete="email"/></label>
+        <label class="bfield bfield--full"><span>Студия или Instagram <em>*</em></span><input type="text" name="Business" required placeholder="@вашастудия или сайт"/></label>
+        <label class="bfield bfield--full"><span>Что для вас сейчас главное</span><textarea name="Bottleneck" rows="2" placeholder="Например: пустые окна у нового мастера, или клиенты приходят раз и не возвращаются"></textarea></label>
+      </div>
+      <button type="submit" class="btn btn-main">Получить план для студии</button>
+      <div class="bform-fine">Ответим в течение рабочего дня · без обязательств</div>
+    </form>
+    <div class="cta-alt reveal">или сразу <a href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener">забронируйте звонок</a></div>
+    <div class="bthanks reveal" id="bThanks" hidden>
+      <h3>Готово.</h3>
+      <p>Забронируйте удобное время, чтобы не терять день на переписку. Или Лев напишет в течение рабочего дня.</p>
+      <a class="btn btn-main bThanksBook" href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener">Записаться на звонок</a>
+    </div>
   </div>
 </section>
 
@@ -246,6 +282,28 @@
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){reveal(e.target);io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
     document.querySelectorAll('.reveal').forEach(function(el,i){ el.style.transitionDelay=(i%4*0.06)+'s'; io.observe(el); });
     setTimeout(function(){ document.querySelectorAll('.reveal:not(.in)').forEach(reveal); }, 2500);
+    var bForm=document.getElementById('bLeadForm'), bThanks=document.getElementById('bThanks');
+    if(bForm&&bThanks){
+      bForm.addEventListener('submit',function(e){
+        e.preventDefault();
+        var btn=bForm.querySelector('button[type=submit]'), orig=btn.textContent; btn.disabled=true; btn.textContent='Отправляем...';
+        var fd=new FormData(bForm);
+        try{
+          var gp=new URLSearchParams();
+          fd.forEach(function(v,k){ if(k.indexOf('_')!==0) gp.append(k,v); });
+          gp.append('full_name',(fd.get('First name')||'').trim());
+          gp.append('source','PGL beauty case RU');
+          fetch('https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6',{method:'POST',body:gp,keepalive:true}).catch(function(){});
+        }catch(err){}
+        fetch(bForm.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}}).then(function(r){
+          if(r.ok){
+            bForm.hidden=true; bThanks.hidden=false;
+            try{ var bk=bThanks.querySelector('.bThanksBook'); if(bk){ var pf=new URLSearchParams({first_name:fd.get('First name')||'',email:fd.get('Email')||'',phone:fd.get('Phone')||''}); bk.href='https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call?'+pf.toString(); } }catch(e2){}
+            bThanks.scrollIntoView({behavior:'smooth',block:'center'});
+          } else { btn.disabled=false; btn.textContent=orig; bForm.submit(); }
+        }).catch(function(){ btn.disabled=false; btn.textContent=orig; bForm.submit(); });
+      });
+    }
   })();
 </script>
 </body>

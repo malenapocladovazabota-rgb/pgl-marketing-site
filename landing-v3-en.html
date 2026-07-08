@@ -1016,7 +1016,7 @@ img,video{display:block;max-width:100%}
           var ghlParams = new URLSearchParams();
           formData.forEach(function(v,k){ if(k.indexOf('_')!==0) ghlParams.append(k,v); });
           ghlParams.append('full_name', ((formData.get('First name')||'')+' '+(formData.get('Last name')||'')).trim());
-          ghlParams.append('source', 'PGL landing form');
+          ghlParams.append('source', 'PGL landing v3');
           fetch('https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6', {
             method:'POST', body:ghlParams, keepalive:true
           }).catch(function(){});
