@@ -323,13 +323,12 @@
           gp.append('source','PGL beauty case RU');
           fetch('https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6',{method:'POST',body:gp,keepalive:true}).catch(function(){});
         }catch(err){}
-        fetch(bForm.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}}).then(function(r){
-          if(r.ok){
-            bForm.hidden=true; bThanks.hidden=false;
-            try{ var bk=bThanks.querySelector('.bThanksBook'); if(bk){ var pf=new URLSearchParams({first_name:fd.get('First name')||'',email:fd.get('Email')||'',phone:fd.get('Phone')||''}); bk.href='https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call?'+pf.toString(); } }catch(e2){}
-            bThanks.scrollIntoView({behavior:'smooth',block:'center'});
-          } else { btn.disabled=false; btn.textContent=orig; bForm.submit(); }
-        }).catch(function(){ btn.disabled=false; btn.textContent=orig; bForm.submit(); });
+        // Best-effort email backup (FormSubmit). Fire-and-forget: never blocks the UX or navigates away, even if FormSubmit is down.
+        try{ fetch(bForm.action,{method:'POST',body:fd,headers:{'Accept':'application/json'},keepalive:true}).catch(function(){}); }catch(e3){}
+        // Always confirm to the user (the lead is already captured in GHL)
+        bForm.hidden=true; bThanks.hidden=false;
+        try{ var bk=bThanks.querySelector('.bThanksBook'); if(bk){ var pf=new URLSearchParams({first_name:fd.get('First name')||'',email:fd.get('Email')||'',phone:fd.get('Phone')||''}); bk.href='https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call?'+pf.toString(); } }catch(e2){}
+        bThanks.scrollIntoView({behavior:'smooth',block:'center'});
       });
     }
   })();

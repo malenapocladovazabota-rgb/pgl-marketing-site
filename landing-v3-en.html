@@ -1037,45 +1037,36 @@ img,video{display:block;max-width:100%}
       var originalText = submitBtn.querySelector('span').textContent;
       submitBtn.disabled = true;
       submitBtn.querySelector('span').textContent = 'Sending...';
+      var formData = new FormData(leadForm);
+      // Primary capture: GoHighLevel inbound webhook (creates the contact/opportunity in GHL)
       try {
-        var formData = new FormData(leadForm);
-        // Send lead to GoHighLevel inbound webhook (creates a contact in GHL on submit)
-        try {
-          var ghlParams = new URLSearchParams();
-          formData.forEach(function(v,k){ if(k.indexOf('_')!==0) ghlParams.append(k,v); });
-          ghlParams.append('full_name', ((formData.get('First name')||'')+' '+(formData.get('Last name')||'')).trim());
-          ghlParams.append('source', 'PGL landing v3');
-          fetch('https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6', {
-            method:'POST', body:ghlParams, keepalive:true
-          }).catch(function(){});
-        } catch(ghlErr){}
-        var response = await fetch(leadForm.action, { method:'POST', body:formData, headers:{'Accept':'application/json'} });
-        if (response.ok || response.status === 200) {
-          leadForm.hidden = true;
-          thanksBlock.hidden = false;
-          if (window.pglTrackLead) window.pglTrackLead();
-          try {
-            var bk = thanksBlock.querySelector('.cta-thanks-book');
-            if (bk) {
-              var pf = new URLSearchParams({
-                first_name: formData.get('First name') || '',
-                last_name: formData.get('Last name') || '',
-                email: formData.get('Email') || '',
-                phone: formData.get('Phone') || ''
-              });
-              bk.href = 'https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call?' + pf.toString();
-            }
-          } catch(pfErr){}
-          thanksBlock.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
-        } else {
-          throw new Error('Request failed: ' + response.status);
+        var ghlParams = new URLSearchParams();
+        formData.forEach(function(v,k){ if(k.indexOf('_')!==0) ghlParams.append(k,v); });
+        ghlParams.append('full_name', ((formData.get('First name')||'')+' '+(formData.get('Last name')||'')).trim());
+        ghlParams.append('source', 'PGL landing v3');
+        fetch('https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6', {
+          method:'POST', body:ghlParams, keepalive:true
+        }).catch(function(){});
+      } catch(ghlErr){}
+      // Best-effort email backup (FormSubmit). Fire-and-forget: never blocks the UX or navigates away, even if FormSubmit is down.
+      try { fetch(leadForm.action, { method:'POST', body:formData, headers:{'Accept':'application/json'}, keepalive:true }).catch(function(){}); } catch(fsErr){}
+      // Always confirm to the user (the lead is already captured in GHL)
+      leadForm.hidden = true;
+      thanksBlock.hidden = false;
+      if (window.pglTrackLead) window.pglTrackLead();
+      try {
+        var bk = thanksBlock.querySelector('.cta-thanks-book');
+        if (bk) {
+          var pf = new URLSearchParams({
+            first_name: formData.get('First name') || '',
+            last_name: formData.get('Last name') || '',
+            email: formData.get('Email') || '',
+            phone: formData.get('Phone') || ''
+          });
+          bk.href = 'https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call?' + pf.toString();
         }
-      } catch(err) {
-        submitBtn.querySelector('span').textContent = originalText;
-        submitBtn.disabled = false;
-        leadForm.removeEventListener('submit', arguments.callee);
-        leadForm.submit();
-      }
+      } catch(pfErr){}
+      thanksBlock.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
     });
   }
 

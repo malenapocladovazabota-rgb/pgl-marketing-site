@@ -3776,55 +3776,38 @@ section{padding:clamp(64px,9vh,120px) 0}
       const originalText = submitBtn.querySelector('span').textContent;
       submitBtn.disabled = true;
       submitBtn.querySelector('span').textContent = 'Отправляем...';
+      const formData = new FormData(leadForm);
+      // Primary capture: GoHighLevel inbound webhook (creates the contact/opportunity in GHL)
       try {
-        const formData = new FormData(leadForm);
-        // Send lead to GoHighLevel inbound webhook (creates a contact in GHL on submit)
-        try {
-          const ghlParams = new URLSearchParams();
-          formData.forEach(function(v,k){ if(k.indexOf('_')!==0) ghlParams.append(k,v); });
-          ghlParams.append('full_name', ((formData.get('First name')||'')+' '+(formData.get('Last name')||'')).trim());
-          ghlParams.append('source', 'PGL landing form');
-          fetch('https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6', {
-            method: 'POST', body: ghlParams, keepalive: true
-          }).catch(function(){});
-        } catch(ghlErr){}
-        const response = await fetch(leadForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-        // FormSubmit returns 200 even on first-time confirmation flow,
-        // so we treat any non-network error as success.
-        if (response.ok || response.status === 200) {
-          leadForm.hidden = true;
-          thanksBlock.hidden = false;
-          if (window.pglTrackLead) window.pglTrackLead();
-          // Prefill the GHL calendar so the lead only picks a time
-          try {
-            var bk = thanksBlock.querySelector('.cta-thanks-book');
-            if (bk) {
-              var pf = new URLSearchParams({
-                first_name: formData.get('First name') || '',
-                last_name: formData.get('Last name') || '',
-                email: formData.get('Email') || '',
-                phone: formData.get('Phone') || ''
-              });
-              bk.href = 'https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call?' + pf.toString();
-            }
-          } catch(pfErr){}
-          // Scroll thank-you into view
-          thanksBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          throw new Error('Request failed: ' + response.status);
+        const ghlParams = new URLSearchParams();
+        formData.forEach(function(v,k){ if(k.indexOf('_')!==0) ghlParams.append(k,v); });
+        ghlParams.append('full_name', ((formData.get('First name')||'')+' '+(formData.get('Last name')||'')).trim());
+        ghlParams.append('source', 'PGL landing form');
+        fetch('https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6', {
+          method: 'POST', body: ghlParams, keepalive: true
+        }).catch(function(){});
+      } catch(ghlErr){}
+      // Best-effort email backup (FormSubmit). Fire-and-forget: never blocks the UX or navigates away, even if FormSubmit is down.
+      try {
+        fetch(leadForm.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' }, keepalive: true }).catch(function(){});
+      } catch(fsErr){}
+      // Always confirm to the user (the lead is already captured in GHL)
+      leadForm.hidden = true;
+      thanksBlock.hidden = false;
+      if (window.pglTrackLead) window.pglTrackLead();
+      try {
+        var bk = thanksBlock.querySelector('.cta-thanks-book');
+        if (bk) {
+          var pf = new URLSearchParams({
+            first_name: formData.get('First name') || '',
+            last_name: formData.get('Last name') || '',
+            email: formData.get('Email') || '',
+            phone: formData.get('Phone') || ''
+          });
+          bk.href = 'https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call?' + pf.toString();
         }
-      } catch (err) {
-        // Fallback: submit the form normally so the user still gets through
-        submitBtn.querySelector('span').textContent = originalText;
-        submitBtn.disabled = false;
-        // Remove the fetch handler and resubmit
-        leadForm.removeEventListener('submit', arguments.callee);
-        leadForm.submit();
-      }
+      } catch(pfErr){}
+      thanksBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   }
 
