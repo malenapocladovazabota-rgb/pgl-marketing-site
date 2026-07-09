@@ -2072,6 +2072,11 @@ section{padding:clamp(64px,9vh,120px) 0}
   cursor:pointer;
 }
 .cta-form-submit[disabled]{opacity:0.55;cursor:wait}
+.cta-form-continue{font-size:13px;padding:20px 36px;font-weight:600;width:auto;margin:2px auto 0;display:inline-flex;cursor:pointer}
+.cta-step2{animation:ctaStepIn .45s ease}
+@keyframes ctaStepIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.cta-step2-note{font-family:var(--sans);font-weight:400;font-size:14px;line-height:1.55;color:var(--warm-gray);margin:2px 0 18px;text-align:center}
+.cta-step2 .cta-form-submit{margin-top:16px}
 
 /* Thank-you state */
 .cta-thanks{
@@ -2119,6 +2124,7 @@ section{padding:clamp(64px,9vh,120px) 0}
   .cta-form-field select,
   .cta-form-field textarea{font-size:16px;padding:13px 14px}
   .cta-form-submit{width:100%;justify-content:center}
+  .cta-form-continue{width:100%;justify-content:center}
 }
 
 /* CTA: "On the call" preview grid */
@@ -3117,7 +3123,7 @@ section{padding:clamp(64px,9vh,120px) 0}
         <!-- Honeypot field (hidden from humans; spam bots fill it) -->
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="cta-form-honey" aria-hidden="true"/>
 
-        <div class="cta-form-grid">
+        <div class="cta-form-grid cta-step" id="ctaStep1">
           <label class="cta-form-field cta-form-field--half">
             <span class="cta-form-lbl">First name <em>*</em></span>
             <input type="text" name="First name" required autocomplete="given-name"/>
@@ -3135,58 +3141,68 @@ section{padding:clamp(64px,9vh,120px) 0}
             <span class="cta-form-lbl">Phone</span>
             <input type="tel" name="Phone" autocomplete="tel" placeholder="(555) 123-4567"/>
           </label>
-
-          <label class="cta-form-field">
-            <span class="cta-form-lbl">Business name or website <em>*</em></span>
-            <input type="text" name="Business" required placeholder="acme.com or @yourhandle"/>
-          </label>
-
-          <label class="cta-form-field cta-form-field--half">
-            <span class="cta-form-lbl">Your niche <em>*</em></span>
-            <select name="Niche" required>
-              <option value="">Select one</option>
-              <option>Law / Immigration</option>
-              <option>Wellness / Beauty</option>
-              <option>Hospitality / Food</option>
-              <option>Online Education</option>
-              <option>E-commerce</option>
-              <option>Local Service</option>
-              <option>Other</option>
-            </select>
-          </label>
-          <label class="cta-form-field cta-form-field--half">
-            <span class="cta-form-lbl">Current monthly ad spend <em>*</em></span>
-            <select name="Ad spend" required>
-              <option value="">Select range</option>
-              <option>Not running ads yet</option>
-              <option>Under $1,000</option>
-              <option>$1,000 to $5,000</option>
-              <option>$5,000 to $15,000</option>
-              <option>$15,000+</option>
-            </select>
-          </label>
-
-          <label class="cta-form-field">
-            <span class="cta-form-lbl">Which format fits you best?</span>
-            <select name="Interested format">
-              <option value="">Pick the one that sounds like you</option>
-              <option>Launch: starting from zero, no system yet</option>
-              <option>Growth: have content, need clients with paid traffic</option>
-              <option>Performance Partner: ready to scale and share upside</option>
-              <option>Not sure yet, help me figure it out</option>
-            </select>
-          </label>
-
-          <label class="cta-form-field">
-            <span class="cta-form-lbl">Biggest marketing bottleneck right now</span>
-            <textarea name="Bottleneck" rows="3" placeholder="One sentence is fine. For example: 'leads come but never close' or 'great product, no consistent traffic'"></textarea>
-          </label>
         </div>
 
-        <button type="submit" class="btn cta-main-btn cta-form-submit">
-          <span>Get my free analysis</span>
+        <button type="button" class="btn cta-main-btn cta-form-continue" id="ctaContinue">
+          <span>Continue</span>
           <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
         </button>
+
+        <div class="cta-step2" id="ctaStep2" hidden>
+          <p class="cta-step2-note">Great. A few quick questions so the analysis is actually useful to you.</p>
+          <div class="cta-form-grid">
+            <label class="cta-form-field">
+              <span class="cta-form-lbl">Business name or website <em>*</em></span>
+              <input type="text" name="Business" data-req placeholder="acme.com or @yourhandle"/>
+            </label>
+
+            <label class="cta-form-field cta-form-field--half">
+              <span class="cta-form-lbl">Your niche <em>*</em></span>
+              <select name="Niche" data-req>
+                <option value="">Select one</option>
+                <option>Law / Immigration</option>
+                <option>Wellness / Beauty</option>
+                <option>Hospitality / Food</option>
+                <option>Online Education</option>
+                <option>E-commerce</option>
+                <option>Local Service</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="cta-form-field cta-form-field--half">
+              <span class="cta-form-lbl">Current monthly ad spend <em>*</em></span>
+              <select name="Ad spend" data-req>
+                <option value="">Select range</option>
+                <option>Not running ads yet</option>
+                <option>Under $1,000</option>
+                <option>$1,000 to $5,000</option>
+                <option>$5,000 to $15,000</option>
+                <option>$15,000+</option>
+              </select>
+            </label>
+
+            <label class="cta-form-field">
+              <span class="cta-form-lbl">Which format fits you best?</span>
+              <select name="Interested format">
+                <option value="">Pick the one that sounds like you</option>
+                <option>Launch: starting from zero, no system yet</option>
+                <option>Growth: have content, need clients with paid traffic</option>
+                <option>Performance Partner: ready to scale and share upside</option>
+                <option>Not sure yet, help me figure it out</option>
+              </select>
+            </label>
+
+            <label class="cta-form-field">
+              <span class="cta-form-lbl">Biggest marketing bottleneck right now</span>
+              <textarea name="Bottleneck" rows="3" placeholder="One sentence is fine. For example: 'leads come but never close' or 'great product, no consistent traffic'"></textarea>
+            </label>
+          </div>
+
+          <button type="submit" class="btn cta-main-btn cta-form-submit">
+            <span>Get my free analysis</span>
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
+          </button>
+        </div>
       </form>
 
       <!-- Thank-you state — shown after form submit via JS -->
@@ -3833,31 +3849,56 @@ section{padding:clamp(64px,9vh,120px) 0}
   const leadForm = document.getElementById('leadForm');
   const thanksBlock = document.getElementById('cta-thanks');
   if (leadForm && thanksBlock) {
-    leadForm.addEventListener('submit', async (e) => {
+    var ghlWebhook = 'https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6';
+    // Fire the lead to GoHighLevel (primary capture). status = 'partial' (after step 1) or 'complete' (after step 2).
+    function pglGhlFire(status){
+      try {
+        var fd = new FormData(leadForm);
+        var p = new URLSearchParams();
+        fd.forEach(function(v,k){ if(k.indexOf('_')!==0 && (''+v).trim()!=='') p.append(k,v); });
+        p.append('full_name', ((fd.get('First name')||'')+' '+(fd.get('Last name')||'')).trim());
+        p.append('source', 'PGL landing form');
+        p.append('form_status', status);
+        fetch(ghlWebhook, { method:'POST', body:p, keepalive:true }).catch(function(){});
+      } catch(e){}
+    }
+    var step1 = document.getElementById('ctaStep1');
+    var step2 = document.getElementById('ctaStep2');
+    var contBtn = document.getElementById('ctaContinue');
+    var partialSent = false;
+    // Step 1 -> capture the partial lead (name/email/phone) and reveal step 2
+    function revealStep2(){
+      if (!partialSent){ pglGhlFire('partial'); if (window.pglTrackLead) window.pglTrackLead(); partialSent = true; }
+      if (step2){
+        step2.hidden = false;
+        step2.querySelectorAll('[data-req]').forEach(function(el){ el.required = true; });
+        if (contBtn) contBtn.hidden = true;
+        step2.scrollIntoView({ behavior:'smooth', block:'center' });
+        var first = step2.querySelector('input,select,textarea'); if(first) first.focus();
+      }
+    }
+    if (contBtn){
+      contBtn.addEventListener('click', function(){
+        var inputs = step1 ? step1.querySelectorAll('input,select,textarea') : [];
+        for (var i=0;i<inputs.length;i++){ if(!inputs[i].checkValidity()){ inputs[i].reportValidity(); return; } }
+        revealStep2();
+      });
+    }
+    leadForm.addEventListener('submit', function(e){
       e.preventDefault();
-      const submitBtn = leadForm.querySelector('.cta-form-submit');
-      const originalText = submitBtn.querySelector('span').textContent;
-      submitBtn.disabled = true;
-      submitBtn.querySelector('span').textContent = 'Sending...';
-      const formData = new FormData(leadForm);
-      // Primary capture: GoHighLevel inbound webhook (creates the contact/opportunity in GHL)
-      try {
-        const ghlParams = new URLSearchParams();
-        formData.forEach(function(v,k){ if(k.indexOf('_')!==0) ghlParams.append(k,v); });
-        ghlParams.append('full_name', ((formData.get('First name')||'')+' '+(formData.get('Last name')||'')).trim());
-        ghlParams.append('source', 'PGL landing form');
-        fetch('https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6', {
-          method: 'POST', body: ghlParams, keepalive: true
-        }).catch(function(){});
-      } catch(ghlErr){}
-      // Best-effort email backup (FormSubmit). Fire-and-forget: never blocks the UX or navigates away, even if FormSubmit is down.
-      try {
-        fetch(leadForm.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' }, keepalive: true }).catch(function(){});
-      } catch(fsErr){}
+      // If step 2 isn't open yet (e.g. Enter key on step 1), treat submit as "continue"
+      if (step2 && step2.hidden){ revealStep2(); return; }
+      var submitBtn = leadForm.querySelector('.cta-form-submit');
+      if (submitBtn){ submitBtn.disabled = true; var sp = submitBtn.querySelector('span'); if(sp) sp.textContent = 'Sending...'; }
+      var formData = new FormData(leadForm);
+      // Primary capture: full lead to GoHighLevel (updates the same contact from step 1)
+      pglGhlFire('complete');
+      // Best-effort email backup (FormSubmit). Fire-and-forget: never blocks the UX or navigates away.
+      try { fetch(leadForm.action, { method:'POST', body:formData, headers:{'Accept':'application/json'}, keepalive:true }).catch(function(){}); } catch(fsErr){}
       // Always confirm to the user (the lead is already captured in GHL)
       leadForm.hidden = true;
       thanksBlock.hidden = false;
-      if (window.pglTrackLead) window.pglTrackLead();
+      if (!partialSent && window.pglTrackLead) window.pglTrackLead();
       try {
         var bk = thanksBlock.querySelector('.cta-thanks-book');
         if (bk) {
@@ -3870,7 +3911,7 @@ section{padding:clamp(64px,9vh,120px) 0}
           bk.href = 'https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call?' + pf.toString();
         }
       } catch(pfErr){}
-      thanksBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      thanksBlock.scrollIntoView({ behavior:'smooth', block:'center' });
     });
   }
 
