@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>PGL Marketing · Turn views into customers · San Diego</title>
+<meta name="description" content="We build the content and run the paid traffic so the attention you get turns into booked clients. Done for you, in San Diego."/>
+<meta name="robots" content="noindex"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>window.PGL_META_PIXEL_ID = "1598891935248269";
+(function(){ if(!window.PGL_META_PIXEL_ID) return;
+ !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', window.PGL_META_PIXEL_ID); fbq('track','PageView');
+ window.pglTrackLead=function(){ try{ fbq('track','Lead'); }catch(e){} };
+})();</script>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --paper:#F4EFE8; --sand:#EAE1D4; --rose:#E7D3CC; --rose-deep:#D9BEB4;
+  --ink:#181316; --ink-soft:#2A2320; --cream:#F6F1EA;
+  --ember:#C9A84C; --ember-deep:#8A6E28; --warm:#6E6259;
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Hanken Grotesk',system-ui,sans-serif;
+  --r:26px; --r-sm:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--body); color:var(--ink); line-height:1.55;
+  background:var(--paper);
+  background-image:
+    radial-gradient(120% 60% at 82% -4%, rgba(231,211,204,.9) 0%, rgba(231,211,204,0) 55%),
+    radial-gradient(90% 40% at 6% 30%, rgba(201,168,76,.10) 0%, rgba(201,168,76,0) 60%);
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* eyebrow / labels */
+.eyebrow{font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ember-deep);display:inline-flex;align-items:center;gap:9px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--ember)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;padding:12px 0}
+.nav-in{display:flex;align-items:center;justify-content:space-between;
+  background:rgba(246,241,234,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(24,19,22,.07);border-radius:999px;padding:9px 9px 9px 20px}
+.brand{font-family:var(--disp);font-weight:800;font-size:17px;letter-spacing:-.01em}
+.brand span{color:var(--ember-deep)}
+.pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-weight:600;
+  font-size:14px;line-height:1;padding:13px 20px;border-radius:999px;cursor:pointer;
+  transition:transform .25s ease,background .25s ease,color .25s ease,box-shadow .25s ease;border:0}
+.pill svg{width:14px;height:10px}
+.pill--dark{background:var(--ink);color:var(--cream)}
+.pill--dark:hover{transform:translateY(-1px);box-shadow:0 10px 24px -12px rgba(24,19,22,.5)}
+.pill--gold{background:var(--ember);color:var(--ink)}
+.pill--gold:hover{transform:translateY(-1px);box-shadow:0 12px 26px -12px rgba(201,168,76,.7)}
+.pill--ghost{background:transparent;color:var(--ink);border:1px solid rgba(24,19,22,.16)}
+.pill--ghost:hover{background:rgba(24,19,22,.04)}
+
+/* hero */
+.hero{padding:34px 0 20px;text-align:left}
+.hero h1{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.98;
+  font-size:clamp(52px,15.5vw,124px);margin:20px 0 0;color:var(--ink)}
+.hero h1 .u{position:relative;white-space:nowrap;color:var(--ember-deep)}
+.hero h1 .u::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.11em;border-radius:99px;
+  background:var(--ember);transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1) .5s}
+.js .hero.in h1 .u::after{transform:scaleX(1)}
+.hero-sub{font-size:clamp(17px,4.6vw,21px);line-height:1.5;color:var(--warm);max-width:30ch;margin:22px 0 0;font-weight:500}
+.hero-cta{display:flex;flex-direction:column;gap:12px;margin:30px 0 0;align-items:flex-start}
+.hero-cta .pill{padding:17px 26px;font-size:15px}
+.hero-note{font-size:13px;color:var(--warm);margin:16px 0 0;display:flex;align-items:center;gap:8px}
+.hero-note::before{content:"";width:7px;height:7px;border-radius:99px;background:var(--ember);flex:none}
+
+/* section rhythm */
+.sec{padding:56px 0}
+.sec-head{max-width:22ch}
+.sec-h{font-family:var(--disp);font-weight:700;letter-spacing:-.025em;line-height:1.02;
+  font-size:clamp(34px,9vw,60px);margin:14px 0 0}
+.sec-lead{font-size:17px;color:var(--warm);margin:16px 0 0;max-width:34ch;font-weight:500}
+
+/* proof cards */
+.proof{display:flex;flex-direction:column;gap:14px;margin:30px 0 0}
+.stat{background:var(--cream);border:1px solid rgba(24,19,22,.06);border-radius:var(--r);
+  padding:26px 24px;box-shadow:0 20px 50px -40px rgba(24,19,22,.5)}
+.stat-n{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.9;
+  font-size:clamp(56px,17vw,88px);color:var(--ink)}
+.stat-n em{font-style:normal;color:var(--ember-deep)}
+.stat-l{font-size:15px;color:var(--ink);font-weight:600;margin:12px 0 0}
+.stat-t{font-family:var(--body);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm);font-weight:600;margin:6px 0 0}
+
+/* how */
+.how{background:var(--ink);color:var(--cream);border-radius:34px;margin-top:12px;
+  padding:52px 0;position:relative;overflow:hidden}
+.how::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 55% at 85% 0%,rgba(201,168,76,.16),transparent 60%);pointer-events:none}
+.how .wrap{position:relative}
+.how .eyebrow{color:var(--ember)}
+.how .eyebrow::before{background:var(--ember)}
+.how .sec-h{color:var(--cream)}
+.how-grid{display:flex;flex-direction:column;gap:14px;margin:30px 0 0}
+.phase{background:rgba(246,241,234,.05);border:1px solid rgba(246,241,234,.12);border-radius:var(--r);padding:24px 22px}
+.phase-n{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--ember)}
+.phase-h{font-family:var(--disp);font-weight:700;letter-spacing:-.02em;font-size:30px;margin:10px 0 8px;color:var(--cream)}
+.phase-p{font-size:15.5px;line-height:1.5;color:rgba(246,241,234,.72);font-weight:500}
+
+/* cases */
+.cases-grid{display:flex;flex-direction:column;gap:18px;margin:30px 0 0}
+.case{border-radius:var(--r);overflow:hidden;background:var(--cream);border:1px solid rgba(24,19,22,.06);
+  box-shadow:0 24px 60px -44px rgba(24,19,22,.6)}
+.case-img{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--sand)}
+.case-img img{width:100%;height:100%;object-fit:cover}
+.case-badge{position:absolute;left:14px;bottom:14px;background:rgba(24,19,22,.82);color:var(--cream);
+  backdrop-filter:blur(6px);border-radius:16px;padding:12px 16px}
+.case-badge b{font-family:var(--disp);font-weight:800;font-size:30px;letter-spacing:-.02em;display:block;line-height:.95}
+.case-badge span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,241,234,.72);font-weight:600}
+.case-body{padding:22px 22px 24px}
+.case-tag{font-family:var(--body);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-deep);font-weight:600}
+.case-p{font-family:var(--disp);font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:10px 0 0}
+.cases-more{margin:22px 0 0}
+
+/* founders */
+.founders{background:var(--ink);color:var(--cream);border-radius:34px;padding:52px 0;overflow:hidden;position:relative}
+.founders::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 50% at 10% 100%,rgba(201,168,76,.14),transparent 60%);pointer-events:none}
+.founders .wrap{position:relative}
+.founders .eyebrow{color:var(--ember)}
+.founders .eyebrow::before{background:var(--ember)}
+.founders-photo{border-radius:var(--r);overflow:hidden;margin:22px 0 0;aspect-ratio:4/3;background:var(--ink-soft)}
+.founders-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+.founders-copy{font-family:var(--disp);font-weight:600;font-size:clamp(24px,6.4vw,34px);line-height:1.22;letter-spacing:-.02em;margin:26px 0 0;color:var(--cream)}
+.founders-team{font-size:14.5px;color:rgba(246,241,234,.66);margin:18px 0 0;font-weight:500}
+.founders-team b{color:var(--cream);font-weight:600}
+
+/* CTA form */
+.cta{padding:58px 0 40px}
+.cta-card{background:var(--cream);border:1px solid rgba(24,19,22,.07);border-radius:32px;
+  padding:30px 22px;box-shadow:0 40px 90px -60px rgba(24,19,22,.7)}
+.cta .sec-h{font-size:clamp(32px,8.5vw,52px)}
+.cta-lead{font-size:16.5px;color:var(--warm);margin:14px 0 0;max-width:40ch;font-weight:500}
+.form{margin:26px 0 0}
+.f-grid{display:flex;flex-direction:column;gap:14px}
+.f-row{display:flex;flex-direction:column;gap:14px}
+.f-field{display:flex;flex-direction:column;gap:7px}
+.f-lbl{font-family:var(--body);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--warm);font-weight:600}
+.f-lbl em{font-style:normal;color:var(--ember-deep)}
+.form input,.form select,.form textarea{
+  font-family:var(--body);font-size:16px;color:var(--ink);background:var(--paper);
+  border:1px solid rgba(24,19,22,.14);border-radius:14px;padding:15px 16px;width:100%;
+  transition:border-color .2s ease,box-shadow .2s ease}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--ember);box-shadow:0 0 0 3px rgba(201,168,76,.16)}
+.form textarea{resize:vertical;min-height:76px}
+.f-honey{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.f-continue,.f-submit{width:100%;justify-content:center;padding:18px 26px;font-size:15px;margin:16px 0 0}
+.f-continue[hidden]{display:none}
+.f-step2{animation:stepIn .45s ease}
+@keyframes stepIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.f-step2-note{font-size:14.5px;color:var(--warm);margin:2px 0 16px;font-weight:500}
+.f-fine{font-size:12.5px;color:var(--warm);text-align:center;margin:14px 0 0;font-weight:500}
+.thanks{display:none;text-align:center;padding:14px 0}
+.thanks.on{display:block;animation:stepIn .5s ease}
+.thanks-h{font-family:var(--disp);font-weight:700;font-size:30px;letter-spacing:-.02em}
+.thanks-p{font-size:15.5px;color:var(--warm);margin:12px auto 20px;max-width:34ch;font-weight:500}
+
+/* footer */
+.foot{padding:40px 0 120px;text-align:center}
+.foot-brand{font-family:var(--disp);font-weight:800;font-size:20px}
+.foot-brand span{color:var(--ember-deep)}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0}
+.foot-links a{font-size:13px;font-weight:600;padding:10px 16px;border-radius:999px;border:1px solid rgba(24,19,22,.14)}
+.foot-links a:hover{background:rgba(24,19,22,.04)}
+.foot-legal{font-size:12px;color:var(--warm);margin:10px 0 0;font-weight:500}
+
+/* sticky mobile CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background:linear-gradient(0deg,var(--paper) 60%,rgba(244,239,232,0));pointer-events:none;
+  transform:translateY(120%);transition:transform .4s ease}
+.sticky.on{transform:none}
+.sticky .pill{width:100%;justify-content:center;padding:17px 24px;font-size:15px;pointer-events:auto}
+
+/* desktop */
+@media (min-width:820px){
+  .wrap{padding:0 40px}
+  .hero{padding:56px 0 30px}
+  .hero-cta{flex-direction:row;align-items:center;gap:14px}
+  .hero-sub{font-size:22px;max-width:34ch}
+  .sec{padding:84px 0}
+  .proof{flex-direction:row;gap:18px}
+  .stat{flex:1}
+  .how,.founders{padding:78px 0;border-radius:44px}
+  .how-grid{flex-direction:row;gap:18px}
+  .phase{flex:1}
+  .cases-grid{flex-direction:row;gap:22px}
+  .case{flex:1}
+  .founders-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  .founders-photo{margin:0;aspect-ratio:4/5}
+  .founders-copy{margin:0}
+  .cta-card{padding:48px 44px}
+  .f-row{flex-direction:row}
+  .f-row .f-field{flex:1}
+  .f-continue,.f-submit{width:auto;margin:18px auto 0;display:inline-flex}
+  .f-continue[hidden]{display:none}
+  .sticky{display:none}
+  .foot{padding:56px 0}
+}
+@media (min-width:820px) and (max-width:1000px){ .hero h1{font-size:104px} }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-in">
+      <a class="brand" href="#top"><span>PGL</span> Marketing</a>
+      <a class="pill pill--dark" href="#book">Book a call
+        <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero rv" id="top">
+  <div class="wrap">
+    <span class="eyebrow">PGL Marketing · San Diego</span>
+    <h1>Turn views into <span class="u">customers</span></h1>
+    <p class="hero-sub">We build the content and run the paid traffic, so the attention you get turns into booked clients.</p>
+    <div class="hero-cta">
+      <a class="pill pill--gold" href="#book">Get my free funnel analysis
+        <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+      <a class="pill pill--ghost" href="#proof">See the results</a>
+    </div>
+    <p class="hero-note">Done for you. Content plus paid traffic, run as one system.</p>
+  </div>
+</header>
+
+<section class="sec" id="proof">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Real results</span>
+      <h2 class="sec-h">Numbers from real client accounts</h2>
+    </div>
+    <div class="proof">
+      <div class="stat rv">
+        <div class="stat-n">1.7M</div>
+        <div class="stat-l">Organic views in one month</div>
+        <div class="stat-t">Immigration law</div>
+      </div>
+      <div class="stat rv">
+        <div class="stat-n"><em>&times;</em>10</div>
+        <div class="stat-l">Return on ad spend</div>
+        <div class="stat-t">Online education</div>
+      </div>
+      <div class="stat rv">
+        <div class="stat-n">30</div>
+        <div class="stat-l">Days to a fully booked studio</div>
+        <div class="stat-t">Wellness</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:8px">
+  <div class="wrap">
+    <div class="how rv">
+      <div class="wrap" style="padding:0 20px">
+        <div class="sec-head">
+          <span class="eyebrow">How we work</span>
+          <h2 class="sec-h">Your first month, step by step</h2>
+        </div>
+        <div class="how-grid">
+          <div class="phase">
+            <div class="phase-n">01</div>
+            <h3 class="phase-h">Strategy</h3>
+            <p class="phase-p">We find the one angle that makes you different, then build everything around it.</p>
+          </div>
+          <div class="phase">
+            <div class="phase-n">02</div>
+            <h3 class="phase-h">Content</h3>
+            <p class="phase-p">We shoot and edit the content your campaigns will run on.</p>
+          </div>
+          <div class="phase">
+            <div class="phase-n">03</div>
+            <h3 class="phase-h">Performance</h3>
+            <p class="phase-p">Ads go live. We cut what fails fast and scale what works.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="cases">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Case studies</span>
+      <h2 class="sec-h">What the system produced</h2>
+      <p class="sec-lead">Different niches, real clients, the actual numbers.</p>
+    </div>
+    <div class="cases-grid">
+      <article class="case rv">
+        <div class="case-img">
+          <img src="photos/tatyana-profile.png" alt="Immigration attorney Instagram profile" loading="lazy" decoding="async"/>
+          <div class="case-badge"><b>1.7M</b><span>Organic views · one month</span></div>
+        </div>
+        <div class="case-body">
+          <div class="case-tag">Immigration law</div>
+          <p class="case-p">A quiet profile to 1.7M organic views and over a thousand new followers.</p>
+        </div>
+      </article>
+      <article class="case rv">
+        <div class="case-img">
+          <img src="photos/wellness-profile.jpg" alt="Wellness studio Instagram profile" loading="lazy" decoding="async"/>
+          <div class="case-badge"><b>30 days</b><span>To a fully booked studio</span></div>
+        </div>
+        <div class="case-body">
+          <div class="case-tag">Wellness studio</div>
+          <p class="case-p">A brand-new location, fully booked in 30 days with paid bookings every week.</p>
+        </div>
+      </article>
+    </div>
+    <div class="cases-more rv"><a class="pill pill--ghost" href="cases-en.html">See all case studies
+      <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+    </a></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="founders rv">
+      <div class="wrap" style="padding:0 20px">
+        <div class="founders-inner">
+          <div class="founders-photo"><img src="photos/founders-new-8.jpg" alt="Lev and Malena Pokladov, founders of PGL Marketing" loading="lazy" decoding="async"/></div>
+          <div>
+            <span class="eyebrow">Who runs it</span>
+            <p class="founders-copy">Built by Lev and Malena Pokladov. We run content and paid traffic as one system, the way we proved it on our own projects first.</p>
+            <p class="founders-team">Small senior team: <b>strategy, scripts, edit, paid ads, and client success</b>. You work with the people doing the work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="book">
+  <div class="wrap">
+    <div class="cta-card rv">
+      <span class="eyebrow">Free, no obligation</span>
+      <h2 class="sec-h">Get your free funnel analysis</h2>
+      <p class="cta-lead">See where you are leaking leads and the one fix that moves the needle most. If we are a fit, the call is the next step.</p>
+
+      <form class="form" id="leadForm" action="https://formsubmit.co/lev.pocladov@gmail.com" method="POST" autocomplete="on">
+        <input type="hidden" name="_subject" value="New PGL lead (landing v5)"/>
+        <input type="hidden" name="_template" value="table"/>
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="hidden" name="_autoresponse" value="Thanks for reaching out. Lev from PGL Marketing will be in touch within one business day. Feel free to reply with your website or main social profile."/>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="f-honey" aria-hidden="true"/>
+
+        <div class="f-grid f-step" id="ctaStep1">
+          <div class="f-row">
+            <label class="f-field"><span class="f-lbl">First name <em>*</em></span><input type="text" name="First name" required autocomplete="given-name"/></label>
+            <label class="f-field"><span class="f-lbl">Last name</span><input type="text" name="Last name" autocomplete="family-name"/></label>
+          </div>
+          <div class="f-row">
+            <label class="f-field"><span class="f-lbl">Email <em>*</em></span><input type="email" name="Email" required autocomplete="email" placeholder="you@yourbusiness.com"/></label>
+            <label class="f-field"><span class="f-lbl">Phone</span><input type="tel" name="Phone" autocomplete="tel" placeholder="(555) 123-4567"/></label>
+          </div>
+        </div>
+
+        <button type="button" class="pill pill--gold f-continue" id="ctaContinue">Continue
+          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+
+        <div class="f-step2" id="ctaStep2" hidden>
+          <p class="f-step2-note">Great. A few quick questions so the analysis is actually useful to you.</p>
+          <div class="f-grid">
+            <label class="f-field"><span class="f-lbl">Business name or website <em>*</em></span><input type="text" name="Business" data-req placeholder="acme.com or @yourhandle"/></label>
+            <div class="f-row">
+              <label class="f-field"><span class="f-lbl">Your niche <em>*</em></span>
+                <select name="Niche" data-req>
+                  <option value="">Select one</option>
+                  <option>Law / Immigration</option>
+                  <option>Wellness / Beauty</option>
+                  <option>Hospitality / Food</option>
+                  <option>Online Education</option>
+                  <option>E-commerce</option>
+                  <option>Local Service</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label class="f-field"><span class="f-lbl">Monthly ad spend <em>*</em></span>
+                <select name="Ad spend" data-req>
+                  <option value="">Select range</option>
+                  <option>Not running ads yet</option>
+                  <option>Under $1,000</option>
+                  <option>$1,000 to $5,000</option>
+                  <option>$5,000 to $15,000</option>
+                  <option>$15,000+</option>
+                </select>
+              </label>
+            </div>
+            <label class="f-field"><span class="f-lbl">Biggest marketing bottleneck right now</span><textarea name="Bottleneck" rows="2" placeholder="One sentence is fine. For example: leads come but never close."></textarea></label>
+          </div>
+          <button type="submit" class="pill pill--dark f-submit"><span>Get my free analysis</span>
+            <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+        </div>
+        <p class="f-fine">We reply within one business day. No obligation.</p>
+      </form>
+
+      <div class="thanks" id="cta-thanks">
+        <div class="thanks-h">You're in.</div>
+        <p class="thanks-p">Grab a time now so we don't play phone tag. Otherwise Lev reaches out within one business day.</p>
+        <a class="pill pill--gold cta-thanks-book" href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener">Book your strategy call
+          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><span>PGL</span> Marketing</div>
+    <div class="foot-links">
+      <a href="#proof">Results</a>
+      <a href="cases-en.html">Case studies</a>
+      <a href="#book">Free analysis</a>
+      <a href="tel:+16193460678">(619) 346-0678</a>
+    </div>
+    <p class="foot-legal">© 2026 Personal Growth Lab LLC · San Diego, California</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="pill pill--gold" href="#book">Get my free funnel analysis
+    <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+  </a>
+</div>
+
+<script>
+(function(){
+  // reveal on scroll
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  var hero=document.querySelector('.hero'); if(hero) hero.classList.add('in');
+  setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in');});},2600);
+
+  // sticky mobile CTA: show after hero, hide near the form
+  var sticky=document.getElementById('sticky'), book=document.getElementById('book'), top=document.getElementById('top');
+  if(sticky&&book&&top){
+    var atForm=false, pastHero=false;
+    new IntersectionObserver(function(es){pastHero=!es[0].isIntersecting;toggle();},{rootMargin:'-60px 0px 0px 0px'}).observe(top);
+    new IntersectionObserver(function(es){atForm=es[0].isIntersecting;toggle();},{threshold:.05}).observe(book);
+    function toggle(){ if(pastHero&&!atForm) sticky.classList.add('on'); else sticky.classList.remove('on'); }
+  }
+
+  // two-step lead form
+  var leadForm=document.getElementById('leadForm'), thanks=document.getElementById('cta-thanks');
+  if(leadForm&&thanks){
+    var hook='https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6';
+    function fire(status){try{var fd=new FormData(leadForm);var p=new URLSearchParams();fd.forEach(function(v,k){if(k.indexOf('_')!==0&&(''+v).trim()!=='')p.append(k,v);});p.append('full_name',((fd.get('First name')||'')+' '+(fd.get('Last name')||'')).trim());p.append('source','PGL landing v5');p.append('form_status',status);fetch(hook,{method:'POST',body:p,keepalive:true}).catch(function(){});}catch(e){}}
+    var s1=document.getElementById('ctaStep1'),s2=document.getElementById('ctaStep2'),cont=document.getElementById('ctaContinue'),sent=false;
+    function reveal(){if(!sent){fire('partial');if(window.pglTrackLead)window.pglTrackLead();sent=true;}if(s2){s2.hidden=false;s2.querySelectorAll('[data-req]').forEach(function(el){el.required=true;});if(cont)cont.hidden=true;s2.scrollIntoView({behavior:'smooth',block:'center'});var f=s2.querySelector('input,select,textarea');if(f)f.focus();}}
+    if(cont){cont.addEventListener('click',function(){var ins=s1?s1.querySelectorAll('input,select,textarea'):[];for(var i=0;i<ins.length;i++){if(!ins[i].checkValidity()){ins[i].reportValidity();return;}}reveal();});}
+    leadForm.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(s2&&s2.hidden){reveal();return;}
+      var btn=leadForm.querySelector('.f-submit');if(btn){btn.disabled=true;var sp=btn.querySelector('span');if(sp)sp.textContent='Sending...';}
+      var fd=new FormData(leadForm);
+      fire('complete');
+      try{fetch(leadForm.action,{method:'POST',body:fd,headers:{'Accept':'application/json'},keepalive:true}).catch(function(){});}catch(e2){}
+      leadForm.style.display='none';thanks.classList.add('on');
+      if(!sent&&window.pglTrackLead)window.pglTrackLead();
+      try{var bk=thanks.querySelector('.cta-thanks-book');if(bk){var pf=new URLSearchParams({first_name:fd.get('First name')||'',last_name:fd.get('Last name')||'',email:fd.get('Email')||'',phone:fd.get('Phone')||''});bk.href='https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call?'+pf.toString();}}catch(e3){}
+      thanks.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  }
+})();
+</script>
+</body>
+</html>
