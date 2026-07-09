@@ -107,26 +107,36 @@ a{color:inherit;text-decoration:none}
 .how .eyebrow{color:var(--ember)}
 .how .eyebrow::before{background:var(--ember)}
 .how .sec-h{color:var(--cream)}
-.how-grid{display:flex;flex-direction:column;gap:14px;margin:30px 0 0}
-.phase{background:rgba(246,241,234,.05);border:1px solid rgba(246,241,234,.12);border-radius:var(--r);padding:24px 22px}
-.phase-n{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.1em;color:var(--ember)}
-.phase-h{font-family:var(--disp);font-weight:700;letter-spacing:-.02em;font-size:30px;margin:10px 0 8px;color:var(--cream)}
+.how-grid{position:relative;display:flex;flex-direction:column;gap:16px;margin:34px 0 0}
+.how-grid::before{content:"";position:absolute;left:19px;top:16px;bottom:16px;width:2px;border-radius:2px;background:linear-gradient(180deg,var(--ember),rgba(201,168,76,.12))}
+.phase{position:relative;padding-left:56px}
+.phase-dot{position:absolute;left:8px;top:2px;width:24px;height:24px;border-radius:99px;background:var(--ink);border:2px solid var(--ember);z-index:1;
+  display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:800;font-size:11px;color:var(--ember)}
+.phase-body{background:rgba(246,241,234,.05);border:1px solid rgba(246,241,234,.12);border-radius:var(--r);padding:20px 22px}
+.phase-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
+.phase-week{font-family:var(--body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);font-weight:600}
+.phase-ico{width:26px;height:26px;color:var(--ember);opacity:.9;flex:none}
+.phase-ico svg{width:100%;height:100%;display:block}
+.phase-h{font-family:var(--disp);font-weight:700;letter-spacing:-.02em;font-size:28px;margin:2px 0 8px;color:var(--cream)}
 .phase-p{font-size:15.5px;line-height:1.5;color:rgba(246,241,234,.72);font-weight:500}
 
-/* cases */
-.cases-grid{display:flex;flex-direction:column;gap:18px;margin:30px 0 0}
-.case{border-radius:var(--r);overflow:hidden;background:var(--cream);border:1px solid rgba(24,19,22,.06);
-  box-shadow:0 24px 60px -44px rgba(24,19,22,.6)}
-.case-img{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--sand)}
-.case-img img{width:100%;height:100%;object-fit:cover}
-.case-badge{position:absolute;left:14px;bottom:14px;background:rgba(24,19,22,.82);color:var(--cream);
-  backdrop-filter:blur(6px);border-radius:16px;padding:12px 16px}
-.case-badge b{font-family:var(--disp);font-weight:800;font-size:30px;letter-spacing:-.02em;display:block;line-height:.95}
-.case-badge span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,241,234,.72);font-weight:600}
-.case-body{padding:22px 22px 24px}
-.case-tag{font-family:var(--body);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-deep);font-weight:600}
-.case-p{font-family:var(--disp);font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:10px 0 0}
-.cases-more{margin:22px 0 0}
+/* cases: swipeable video story-cards */
+.case-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:28px 20px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.case-rail::-webkit-scrollbar{display:none}
+.ccard{flex:none;width:272px;scroll-snap-align:center;margin:0}
+.ccard-media{position:relative;aspect-ratio:9/15;border-radius:24px;overflow:hidden;background:var(--ink);box-shadow:0 30px 62px -40px rgba(24,19,22,.62)}
+.ccard-media img,.ccard-media video{width:100%;height:100%;object-fit:cover}
+.ccard-media img{object-position:top center}
+.ccard-scrim{position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(9,7,8,.86) 100%);pointer-events:none}
+.ccard-badge{position:absolute;top:14px;left:14px;font-family:var(--body);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#fff;font-weight:600;background:rgba(9,7,8,.4);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:7px 12px}
+.ccard-over{position:absolute;left:18px;right:18px;bottom:18px}
+.ccard-stat{font-family:var(--disp);font-weight:800;font-size:40px;letter-spacing:-.03em;line-height:.92;color:#fff}
+.ccard-stat em{font-style:normal;color:var(--ember)}
+.ccard-stat span{display:block;font-family:var(--body);font-weight:600;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.82);margin:9px 0 0}
+.ccard-foot{padding:16px 4px 0}
+.ccard-tag{font-family:var(--body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-deep);font-weight:600}
+.ccard-foot p{font-family:var(--disp);font-weight:600;font-size:16.5px;line-height:1.3;letter-spacing:-.01em;margin:8px 0 0;color:var(--ink)}
+.cases-more{margin:14px 0 0}
 
 /* founders */
 .founders{background:var(--ink);color:var(--cream);border-radius:34px;padding:52px 0;overflow:hidden;position:relative}
@@ -186,6 +196,63 @@ a{color:inherit;text-decoration:none}
 .sticky.on{transform:none}
 .sticky .pill{width:100%;justify-content:center;padding:17px 24px;font-size:15px;pointer-events:auto}
 
+/* marquee */
+.marquee{overflow:hidden;border-top:1px solid rgba(24,19,22,.08);border-bottom:1px solid rgba(24,19,22,.08);padding:15px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marq 30s linear infinite}
+.marquee-track span{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:-.01em;color:var(--warm);padding:0 26px;position:relative;white-space:nowrap}
+.marquee-track span::after{content:"";position:absolute;right:-4px;top:50%;width:6px;height:6px;border-radius:99px;background:var(--ember);transform:translateY(-50%)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* case metrics */
+.case-metrics{display:flex;gap:8px;margin:16px 0 0}
+.cm{flex:1;min-width:0;background:var(--paper);border:1px solid rgba(24,19,22,.07);border-radius:14px;padding:12px 11px}
+.cm b{font-family:var(--disp);font-weight:800;font-size:18px;letter-spacing:-.02em;display:block;line-height:1;color:var(--ink)}
+.cm b em{font-style:normal;color:var(--ember-deep)}
+.cm span{font-size:10.5px;color:var(--warm);font-weight:600;display:block;margin:6px 0 0;line-height:1.25}
+
+/* work rail (content samples) */
+.work .sec-head{margin-bottom:0}
+.work-rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px 20px 8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.work-rail::-webkit-scrollbar{display:none}
+.work-card{flex:none;width:212px;scroll-snap-align:center;margin:0}
+.work-vid{aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:var(--ink);border:1px solid rgba(24,19,22,.08);box-shadow:0 26px 54px -36px rgba(24,19,22,.6)}
+.work-vid video{width:100%;height:100%;object-fit:cover}
+.work-card figcaption{font-family:var(--body);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--warm);font-weight:600;margin:12px 0 0;text-align:center}
+
+/* hover micro-interactions */
+@media (hover:hover){
+  .stat,.ccard-media,.phase-body{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease}
+  .stat:hover{transform:translateY(-4px);box-shadow:0 34px 66px -42px rgba(24,19,22,.55)}
+  .ccard:hover .ccard-media{transform:translateY(-5px)}
+  .phase-body:hover{border-color:rgba(201,168,76,.4);background:rgba(246,241,234,.08)}
+  .pill svg{transition:transform .25s ease}
+  .pill:hover svg{transform:translateX(3px)}
+}
+
+/* hero load stagger */
+.js .hero .eyebrow,.js .hero h1,.js .hero-sub,.js .hero-cta,.js .hero-note{opacity:0;transform:translateY(18px);animation:heroRise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.js .hero .eyebrow{animation-delay:.05s}
+.js .hero h1{animation-delay:.14s}
+.js .hero-sub{animation-delay:.34s}
+.js .hero-cta{animation-delay:.46s}
+.js .hero-note{animation-delay:.56s}
+@keyframes heroRise{to{opacity:1;transform:none}}
+
+/* reveal stagger inside grids */
+.js .case-rail .rv:nth-child(2){transition-delay:.05s}
+.js .case-rail .rv:nth-child(3){transition-delay:.1s}
+.js .case-rail .rv:nth-child(4){transition-delay:.15s}
+.js .proof .rv:nth-child(2){transition-delay:.05s}
+.js .proof .rv:nth-child(3){transition-delay:.1s}
+.js .how-grid .phase:nth-child(2){transition-delay:.05s}
+.js .how-grid .phase:nth-child(3){transition-delay:.1s}
+
+@media (prefers-reduced-motion:reduce){
+  .marquee-track{animation:none}
+  .js .hero .eyebrow,.js .hero h1,.js .hero-sub,.js .hero-cta,.js .hero-note{animation:none;opacity:1;transform:none}
+}
+
 /* desktop */
 @media (min-width:820px){
   .wrap{padding:0 40px}
@@ -197,10 +264,12 @@ a{color:inherit;text-decoration:none}
   .proof{flex-direction:row;gap:18px}
   .stat{flex:1}
   .how,.founders{padding:78px 0;border-radius:44px}
-  .how-grid{flex-direction:row;gap:18px}
-  .phase{flex:1}
-  .cases-grid{flex-direction:row;gap:22px}
-  .case{flex:1}
+  .how-grid{flex-direction:row;gap:22px}
+  .how-grid::before{left:13px;right:13px;top:12px;bottom:auto;width:auto;height:2px;background:linear-gradient(90deg,var(--ember),rgba(201,168,76,.12))}
+  .phase{flex:1;padding-left:0;padding-top:42px}
+  .phase-dot{left:0;top:0}
+  .case-rail{max-width:1120px;margin:0 auto;padding:30px 40px 10px}
+  .ccard{width:290px}
   .founders-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
   .founders-photo{margin:0;aspect-ratio:4/5}
   .founders-copy{margin:0}
@@ -228,7 +297,7 @@ a{color:inherit;text-decoration:none}
   </div>
 </nav>
 
-<header class="hero rv" id="top">
+<header class="hero" id="top">
   <div class="wrap">
     <span class="eyebrow">PGL Marketing · San Diego</span>
     <h1>Turn views into <span class="u">customers</span></h1>
@@ -242,6 +311,13 @@ a{color:inherit;text-decoration:none}
     <p class="hero-note">Done for you. Content plus paid traffic, run as one system.</p>
   </div>
 </header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>immigration</span><span>wellness</span><span>hospitality</span><span>tattoo</span><span>online education</span><span>e-commerce</span><span>local service</span>
+    <span>immigration</span><span>wellness</span><span>hospitality</span><span>tattoo</span><span>online education</span><span>e-commerce</span><span>local service</span>
+  </div>
+</div>
 
 <section class="sec" id="proof">
   <div class="wrap">
@@ -278,21 +354,30 @@ a{color:inherit;text-decoration:none}
           <h2 class="sec-h">Your first month, step by step</h2>
         </div>
         <div class="how-grid">
-          <div class="phase">
-            <div class="phase-n">01</div>
-            <h3 class="phase-h">Strategy</h3>
-            <p class="phase-p">We find the one angle that makes you different, then build everything around it.</p>
-          </div>
-          <div class="phase">
-            <div class="phase-n">02</div>
-            <h3 class="phase-h">Content</h3>
-            <p class="phase-p">We shoot and edit the content your campaigns will run on.</p>
-          </div>
-          <div class="phase">
-            <div class="phase-n">03</div>
-            <h3 class="phase-h">Performance</h3>
-            <p class="phase-p">Ads go live. We cut what fails fast and scale what works.</p>
-          </div>
+          <article class="phase">
+            <span class="phase-dot">01</span>
+            <div class="phase-body">
+              <div class="phase-top"><span class="phase-week">Week one</span><span class="phase-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/></svg></span></div>
+              <h3 class="phase-h">Strategy</h3>
+              <p class="phase-p">We find the one angle that makes you different, then build everything around it.</p>
+            </div>
+          </article>
+          <article class="phase">
+            <span class="phase-dot">02</span>
+            <div class="phase-body">
+              <div class="phase-top"><span class="phase-week">Production</span><span class="phase-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.2l5 2.8-5 2.8z" fill="currentColor" stroke="none"/></svg></span></div>
+              <h3 class="phase-h">Content</h3>
+              <p class="phase-p">We shoot and edit the content your campaigns will run on.</p>
+            </div>
+          </article>
+          <article class="phase">
+            <span class="phase-dot">03</span>
+            <div class="phase-body">
+              <div class="phase-top"><span class="phase-week">Launch</span><span class="phase-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16"/><path d="M5 15l4-4 3 3 6-7"/></svg></span></div>
+              <h3 class="phase-h">Performance</h3>
+              <p class="phase-p">Ads go live. We cut what fails fast and scale what works.</p>
+            </div>
+          </article>
         </div>
       </div>
     </div>
@@ -304,29 +389,50 @@ a{color:inherit;text-decoration:none}
     <div class="sec-head rv">
       <span class="eyebrow">Case studies</span>
       <h2 class="sec-h">What the system produced</h2>
-      <p class="sec-lead">Different niches, real clients, the actual numbers.</p>
+      <p class="sec-lead">Real clients, real content, the actual numbers. Swipe.</p>
     </div>
-    <div class="cases-grid">
-      <article class="case rv">
-        <div class="case-img">
+    <div class="case-rail" id="caseRail" aria-label="Client case studies">
+
+      <article class="ccard rv">
+        <div class="ccard-media">
           <img src="photos/tatyana-profile.png" alt="Immigration attorney Instagram profile" loading="lazy" decoding="async"/>
-          <div class="case-badge"><b>1.7M</b><span>Organic views · one month</span></div>
+          <div class="ccard-scrim"></div>
+          <span class="ccard-badge">Immigration · US</span>
+          <div class="ccard-over"><div class="ccard-stat">1.7M<span>organic views · one month</span></div></div>
         </div>
-        <div class="case-body">
-          <div class="case-tag">Immigration law</div>
-          <p class="case-p">A quiet profile to 1.7M organic views and over a thousand new followers.</p>
-        </div>
+        <div class="ccard-foot"><span class="ccard-tag">Immigration attorney</span><p>A quiet profile to 1.7M organic views and 1,000+ new followers.</p></div>
       </article>
-      <article class="case rv">
-        <div class="case-img">
-          <img src="photos/wellness-profile.jpg" alt="Wellness studio Instagram profile" loading="lazy" decoding="async"/>
-          <div class="case-badge"><b>30 days</b><span>To a fully booked studio</span></div>
+
+      <article class="ccard rv">
+        <div class="ccard-media">
+          <video autoplay muted loop playsinline preload="metadata" poster="photos/case-wellness-vid-poster.jpg"><source src="photos/case-wellness-vid.mp4" type="video/mp4"/></video>
+          <div class="ccard-scrim"></div>
+          <span class="ccard-badge">Wellness · San Diego</span>
+          <div class="ccard-over"><div class="ccard-stat">30 days<span>to a fully booked studio</span></div></div>
         </div>
-        <div class="case-body">
-          <div class="case-tag">Wellness studio</div>
-          <p class="case-p">A brand-new location, fully booked in 30 days with paid bookings every week.</p>
-        </div>
+        <div class="ccard-foot"><span class="ccard-tag">Wellness studio</span><p>Brand-new location, booked out in 30 days with &times;8 first-touch ROAS.</p></div>
       </article>
+
+      <article class="ccard rv">
+        <div class="ccard-media">
+          <video autoplay muted loop playsinline preload="metadata" poster="photos/case-tattoo-vid-poster.jpg"><source src="photos/case-tattoo-vid.mp4" type="video/mp4"/></video>
+          <div class="ccard-scrim"></div>
+          <span class="ccard-badge">Tattoo · San Diego</span>
+          <div class="ccard-over"><div class="ccard-stat">$2.90<span>per qualified lead</span></div></div>
+        </div>
+        <div class="ccard-foot"><span class="ccard-tag">Tattoo studio</span><p>An owner who speaks no English, first booked leads in six days.</p></div>
+      </article>
+
+      <article class="ccard rv">
+        <div class="ccard-media">
+          <video autoplay muted loop playsinline preload="metadata" poster="photos/case-food-vid-poster.jpg"><source src="photos/case-food-vid.mp4" type="video/mp4"/></video>
+          <div class="ccard-scrim"></div>
+          <span class="ccard-badge">Food · San Diego</span>
+          <div class="ccard-over"><div class="ccard-stat">435+<span>banquet inquiries</span></div></div>
+        </div>
+        <div class="ccard-foot"><span class="ccard-tag">Food service</span><p>A chaotic feed to 435+ inquiries in a month, ad spend recovered.</p></div>
+      </article>
+
     </div>
     <div class="cases-more rv"><a class="pill pill--ghost" href="cases-en.html">See all case studies
       <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -339,10 +445,10 @@ a{color:inherit;text-decoration:none}
     <div class="founders rv">
       <div class="wrap" style="padding:0 20px">
         <div class="founders-inner">
-          <div class="founders-photo"><img src="photos/founders-new-8.jpg" alt="Lev and Malena Pokladov, founders of PGL Marketing" loading="lazy" decoding="async"/></div>
+          <div class="founders-photo"><img src="photos/founders-new-8.jpg" alt="Lev Pocladov and Malena Pocladova, founders of PGL Marketing" loading="lazy" decoding="async"/></div>
           <div>
             <span class="eyebrow">Who runs it</span>
-            <p class="founders-copy">Built by Lev and Malena Pokladov. We run content and paid traffic as one system, the way we proved it on our own projects first.</p>
+            <p class="founders-copy">Built by Lev Pocladov and Malena Pocladova. We run content and paid traffic as one system, the way we proved it on our own projects first.</p>
             <p class="founders-team">Small senior team: <b>strategy, scripts, edit, paid ads, and client success</b>. You work with the people doing the work.</p>
           </div>
         </div>
@@ -454,6 +560,13 @@ a{color:inherit;text-decoration:none}
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
   var hero=document.querySelector('.hero'); if(hero) hero.classList.add('in');
   setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in');});},2600);
+
+  // play case videos only while on screen (mobile perf)
+  var cvids=document.querySelectorAll('.ccard-media video');
+  if(cvids.length&&'IntersectionObserver' in window){
+    var vio=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){});}else{v.pause();}});},{threshold:.4});
+    cvids.forEach(function(v){vio.observe(v);});
+  }
 
   // sticky mobile CTA: show after hero, hide near the form
   var sticky=document.getElementById('sticky'), book=document.getElementById('book'), top=document.getElementById('top');
