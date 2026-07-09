@@ -120,6 +120,63 @@ a{color:inherit;text-decoration:none}
 .phase-h{font-family:var(--disp);font-weight:700;letter-spacing:-.02em;font-size:28px;margin:2px 0 8px;color:var(--cream)}
 .phase-p{font-size:15.5px;line-height:1.5;color:rgba(246,241,234,.72);font-weight:500}
 
+/* how timeline: line draws in, dots light up gold one by one */
+.how-grid::before{transform:scaleY(0);transform-origin:top;transition:transform 1.15s cubic-bezier(.4,0,.2,1) .15s}
+.js .how.in .how-grid::before{transform:scaleY(1)}
+.phase-dot{transition:border-color .5s ease,color .5s ease,background .5s ease,box-shadow .5s ease}
+.js .how .phase-dot{border-color:rgba(201,168,76,.26);color:rgba(201,168,76,.42)}
+.js .how .phase-body{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.js .how.in .phase:nth-child(1) .phase-dot{border-color:var(--ember);background:var(--ember);color:var(--ink);box-shadow:0 0 0 5px rgba(201,168,76,.16);transition-delay:.5s}
+.js .how.in .phase:nth-child(2) .phase-dot{border-color:var(--ember);background:var(--ember);color:var(--ink);box-shadow:0 0 0 5px rgba(201,168,76,.16);transition-delay:.85s}
+.js .how.in .phase:nth-child(3) .phase-dot{border-color:var(--ember);background:var(--ember);color:var(--ink);box-shadow:0 0 0 5px rgba(201,168,76,.16);transition-delay:1.2s}
+.js .how.in .phase:nth-child(1) .phase-body{opacity:1;transform:none;transition-delay:.45s}
+.js .how.in .phase:nth-child(2) .phase-body{opacity:1;transform:none;transition-delay:.8s}
+.js .how.in .phase:nth-child(3) .phase-body{opacity:1;transform:none;transition-delay:1.15s}
+
+/* abbreviation tooltips (ROAS / KPI / LTV) */
+.gloss{border-bottom:1px dotted currentColor;cursor:help;position:relative;outline:none}
+.gloss::after{content:attr(data-def);position:absolute;left:50%;bottom:calc(100% + 9px);transform:translateX(-50%) translateY(5px);
+  width:max-content;max-width:230px;background:var(--ink);color:var(--cream);font-family:var(--body);font-weight:500;font-size:12.5px;line-height:1.4;
+  letter-spacing:0;text-transform:none;padding:9px 12px;border-radius:12px;box-shadow:0 18px 40px -18px rgba(24,19,22,.7);
+  opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;z-index:20}
+.gloss::before{content:"";position:absolute;left:50%;bottom:calc(100% + 3px);transform:translateX(-50%) translateY(5px);
+  border:6px solid transparent;border-top-color:var(--ink);opacity:0;transition:opacity .2s ease,transform .2s ease;z-index:20}
+.gloss:hover::after,.gloss:focus::after,.gloss:hover::before,.gloss:focus::before{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* packages */
+.pkgs .sec-head{max-width:26ch}
+.pkg-grid{display:flex;flex-direction:column;gap:16px;margin:30px 0 0}
+.pkg{position:relative;background:var(--cream);border:1px solid rgba(24,19,22,.08);border-radius:var(--r);
+  padding:26px 24px;box-shadow:0 24px 56px -44px rgba(24,19,22,.5);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.pkg--pop{border-color:rgba(201,168,76,.55);box-shadow:0 30px 64px -40px rgba(201,168,76,.4)}
+.pkg-tab{position:absolute;top:-11px;left:24px;font-family:var(--body);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+  color:var(--ink);background:var(--ember);border-radius:99px;padding:6px 13px}
+.pkg-name{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;font-size:26px;margin:2px 0 0}
+.pkg-scope{font-family:var(--body);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ember-deep);font-weight:700;margin:8px 0 0}
+.pkg-desc{font-size:14.5px;color:var(--warm);margin:12px 0 0;font-weight:500;line-height:1.5}
+.pkg-list{list-style:none;margin:18px 0 0;display:flex;flex-direction:column;gap:10px}
+.pkg-list li{position:relative;padding-left:26px;font-size:14.5px;font-weight:500;color:var(--ink);line-height:1.4}
+.pkg-list li::before{content:"";position:absolute;left:0;top:6px;width:15px;height:15px;border-radius:99px;
+  background:radial-gradient(circle at 50% 50%,var(--ember) 0 4px,transparent 5px),rgba(201,168,76,.18)}
+.pkg-price{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-.01em;margin:20px 0 0;color:var(--ink)}
+.pkg-price span{display:block;font-family:var(--body);font-size:12.5px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--warm);margin:4px 0 0}
+.pkg .pill{margin:18px 0 0;width:100%;justify-content:center;padding:15px 22px;font-size:14.5px}
+.guar{display:flex;align-items:center;justify-content:center;gap:9px;margin:22px 0 0;text-align:center;
+  font-size:13.5px;color:var(--warm);font-weight:500}
+.guar svg{width:16px;height:16px;color:var(--ember-deep);flex:none}
+
+/* faq */
+.faq-list{margin:28px 0 0;border-top:1px solid rgba(24,19,22,.1)}
+.faq-item{border-bottom:1px solid rgba(24,19,22,.1)}
+.faq-item summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;position:relative;
+  font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;
+  background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 1v10M1 6h10' stroke='%238A6E28' stroke-width='1.6'/%3E%3C/svg%3E");
+  transform:translateY(-50%);transition:transform .3s ease}
+.faq-item[open] summary::after{transform:translateY(-50%) rotate(135deg)}
+.faq-item p{font-size:15px;color:var(--warm);font-weight:500;line-height:1.55;padding:0 30px 22px 0;margin:0}
+
 /* cases: swipeable video story-cards */
 .case-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:28px 20px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .case-rail::-webkit-scrollbar{display:none}
@@ -245,12 +302,18 @@ a{color:inherit;text-decoration:none}
 .js .case-rail .rv:nth-child(4){transition-delay:.15s}
 .js .proof .rv:nth-child(2){transition-delay:.05s}
 .js .proof .rv:nth-child(3){transition-delay:.1s}
+.js .proof .rv:nth-child(4){transition-delay:.15s}
+.js .pkg-grid .rv:nth-child(2){transition-delay:.06s}
+.js .pkg-grid .rv:nth-child(3){transition-delay:.12s}
 .js .how-grid .phase:nth-child(2){transition-delay:.05s}
 .js .how-grid .phase:nth-child(3){transition-delay:.1s}
 
 @media (prefers-reduced-motion:reduce){
   .marquee-track{animation:none}
   .js .hero .eyebrow,.js .hero h1,.js .hero-sub,.js .hero-cta,.js .hero-note{animation:none;opacity:1;transform:none}
+  .how-grid::before,.js .how.in .how-grid::before{transform:none;transition:none}
+  .js .how .phase-body{opacity:1;transform:none;transition:none}
+  .js .how .phase-dot{border-color:var(--ember);background:var(--ember);color:var(--ink)}
 }
 
 /* desktop */
@@ -265,7 +328,9 @@ a{color:inherit;text-decoration:none}
   .stat{flex:1}
   .how,.founders{padding:78px 0;border-radius:44px}
   .how-grid{flex-direction:row;gap:22px}
-  .how-grid::before{left:13px;right:13px;top:12px;bottom:auto;width:auto;height:2px;background:linear-gradient(90deg,var(--ember),rgba(201,168,76,.12))}
+  .how-grid::before{left:13px;right:13px;top:12px;bottom:auto;width:auto;height:2px;background:linear-gradient(90deg,var(--ember),rgba(201,168,76,.12));
+    transform:scaleX(0);transform-origin:left;transition:transform 1.15s cubic-bezier(.4,0,.2,1) .15s}
+  .js .how.in .how-grid::before{transform:scaleX(1)}
   .phase{flex:1;padding-left:0;padding-top:42px}
   .phase-dot{left:0;top:0}
   .case-rail{max-width:1120px;margin:0 auto;padding:30px 40px 10px}
@@ -273,6 +338,14 @@ a{color:inherit;text-decoration:none}
   .founders-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
   .founders-photo{margin:0;aspect-ratio:4/5}
   .founders-copy{margin:0}
+  .pkg-grid{flex-direction:row;align-items:stretch;gap:20px}
+  .pkg{flex:1;display:flex;flex-direction:column}
+  .pkg .pill{margin-top:auto}
+  .pkg--pop{transform:translateY(-8px)}
+  .pkg:hover{transform:translateY(-4px);box-shadow:0 34px 70px -44px rgba(24,19,22,.5)}
+  .pkg--pop:hover{transform:translateY(-12px)}
+  .faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+  .faq-list{margin-top:0}
   .cta-card{padding:48px 44px}
   .f-row{flex-direction:row}
   .f-row .f-field{flex:1}
@@ -314,8 +387,8 @@ a{color:inherit;text-decoration:none}
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>immigration</span><span>wellness</span><span>hospitality</span><span>tattoo</span><span>online education</span><span>e-commerce</span><span>local service</span>
-    <span>immigration</span><span>wellness</span><span>hospitality</span><span>tattoo</span><span>online education</span><span>e-commerce</span><span>local service</span>
+    <span>immigration</span><span>wellness</span><span>beauty</span><span>medspa</span><span>hospitality</span><span>food</span><span>tattoo</span><span>online education</span><span>e-commerce</span><span>fitness</span><span>local service</span><span>dental</span><span>coaching</span>
+    <span>immigration</span><span>wellness</span><span>beauty</span><span>medspa</span><span>hospitality</span><span>food</span><span>tattoo</span><span>online education</span><span>e-commerce</span><span>fitness</span><span>local service</span><span>dental</span><span>coaching</span>
   </div>
 </div>
 
@@ -340,6 +413,11 @@ a{color:inherit;text-decoration:none}
         <div class="stat-n">30</div>
         <div class="stat-l">Days to a fully booked studio</div>
         <div class="stat-t">Wellness</div>
+      </div>
+      <div class="stat rv">
+        <div class="stat-n"><em>&times;</em>8</div>
+        <div class="stat-l">First-touch <span class="gloss" tabindex="0" data-def="ROAS: return on ad spend, the revenue you earn for every dollar spent on ads.">ROAS</span></div>
+        <div class="stat-t">Wellness studio</div>
       </div>
     </div>
   </div>
@@ -395,22 +473,12 @@ a{color:inherit;text-decoration:none}
 
       <article class="ccard rv">
         <div class="ccard-media">
-          <img src="photos/tatyana-profile.png" alt="Immigration attorney Instagram profile" loading="lazy" decoding="async"/>
-          <div class="ccard-scrim"></div>
-          <span class="ccard-badge">Immigration · US</span>
-          <div class="ccard-over"><div class="ccard-stat">1.7M<span>organic views · one month</span></div></div>
-        </div>
-        <div class="ccard-foot"><span class="ccard-tag">Immigration attorney</span><p>A quiet profile to 1.7M organic views and 1,000+ new followers.</p></div>
-      </article>
-
-      <article class="ccard rv">
-        <div class="ccard-media">
           <video autoplay muted loop playsinline preload="metadata" poster="photos/case-wellness-vid-poster.jpg"><source src="photos/case-wellness-vid.mp4" type="video/mp4"/></video>
           <div class="ccard-scrim"></div>
           <span class="ccard-badge">Wellness · San Diego</span>
           <div class="ccard-over"><div class="ccard-stat">30 days<span>to a fully booked studio</span></div></div>
         </div>
-        <div class="ccard-foot"><span class="ccard-tag">Wellness studio</span><p>Brand-new location, booked out in 30 days with &times;8 first-touch ROAS.</p></div>
+        <div class="ccard-foot"><span class="ccard-tag">Wellness studio</span><p>Brand-new location, booked out in 30 days with &times;8 first-touch <span class="gloss" tabindex="0" data-def="ROAS: return on ad spend, the revenue you earn for every dollar spent on ads.">ROAS</span>.</p></div>
       </article>
 
       <article class="ccard rv">
@@ -433,6 +501,16 @@ a{color:inherit;text-decoration:none}
         <div class="ccard-foot"><span class="ccard-tag">Food service</span><p>A chaotic feed to 435+ inquiries in a month, ad spend recovered.</p></div>
       </article>
 
+      <article class="ccard rv">
+        <div class="ccard-media">
+          <img src="photos/malena-insights.png" alt="Instagram insights for the online education account: 14 million views and 9.3 million accounts reached" loading="lazy" decoding="async"/>
+          <div class="ccard-scrim"></div>
+          <span class="ccard-badge">Online education</span>
+          <div class="ccard-over"><div class="ccard-stat">200+<span>high-ticket clients</span></div></div>
+        </div>
+        <div class="ccard-foot"><span class="ccard-tag">Online education</span><p>200+ high-ticket clients from paid traffic. PGL's first proof point.</p></div>
+      </article>
+
     </div>
     <div class="cases-more rv"><a class="pill pill--ghost" href="cases-en.html">See all case studies
       <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -449,9 +527,103 @@ a{color:inherit;text-decoration:none}
           <div>
             <span class="eyebrow">Who runs it</span>
             <p class="founders-copy">Built by Lev Pocladov and Malena Pocladova. We run content and paid traffic as one system, the way we proved it on our own projects first.</p>
-            <p class="founders-team">Small senior team: <b>strategy, scripts, edit, paid ads, and client success</b>. You work with the people doing the work.</p>
+            <p class="founders-team">Senior team: <b>strategy, scripts, edit, paid ads, and client success</b>. You work with the people doing the work.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec pkgs" id="packages">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">Ways to work together</span>
+      <h2 class="sec-h">Pick the level of firepower</h2>
+      <p class="sec-lead">Three ways in, split by scope, not by how much of the same thing you get. We scope exact pricing on the call.</p>
+    </div>
+    <div class="pkg-grid">
+
+      <article class="pkg rv">
+        <div class="pkg-name">Launch</div>
+        <div class="pkg-scope">Paid traffic</div>
+        <p class="pkg-desc">We run the ads and keep the creative fresh. Best when you already have content and just want traffic handled well.</p>
+        <ul class="pkg-list">
+          <li>Paid ad management</li>
+          <li>Creative refresh cycle</li>
+          <li>Weekly reporting by source</li>
+        </ul>
+        <div class="pkg-price">Pricing on a call<span>Ad spend billed separately</span></div>
+        <a class="pill pill--ghost" href="#book">Get a quote
+          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+      </article>
+
+      <article class="pkg pkg--pop rv">
+        <span class="pkg-tab">Most popular</span>
+        <div class="pkg-name">Growth</div>
+        <div class="pkg-scope">Brand plus traffic</div>
+        <p class="pkg-desc">The full engine. Content, organic, and paid run as one funnel so attention actually turns into booked clients.</p>
+        <ul class="pkg-list">
+          <li>Everything in Launch</li>
+          <li>Content production</li>
+          <li>Organic plus paid funnel</li>
+          <li>Lead tracking and follow-up</li>
+        </ul>
+        <div class="pkg-price">Pricing on a call<span>Ad spend billed separately</span></div>
+        <a class="pill pill--gold" href="#book">Get my free analysis
+          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+      </article>
+
+      <article class="pkg rv">
+        <div class="pkg-name">Performance Partner</div>
+        <div class="pkg-scope">Scale partner</div>
+        <p class="pkg-desc">We plug in as your growth team and win bigger only when you do. By qualification, so it stays a real partnership.</p>
+        <ul class="pkg-list">
+          <li>Everything in Growth</li>
+          <li>Dedicated scale strategy</li>
+          <li>Revenue share model</li>
+          <li>Priority production</li>
+        </ul>
+        <div class="pkg-price">By qualification<span>Assessed on the call</span></div>
+        <a class="pill pill--dark" href="#book">Book a call
+          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+      </article>
+
+    </div>
+    <p class="guar rv">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      Backed by a 30 day guarantee. If the system is not bringing you booked calls, we keep working at no extra cost.
+    </p>
+  </div>
+</section>
+
+<section class="sec" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="faq-wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Good to know</span>
+        <h2 class="sec-h">Questions we get a lot</h2>
+      </div>
+      <div class="faq-list rv">
+        <details class="faq-item">
+          <summary>What does it cost?</summary>
+          <p>Pricing depends on scope, so we share exact numbers on the call once we know what you actually need. Retainers start with a three month minimum, and ad spend is paid straight to the platforms, separate from the fee.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How fast do we see results?</summary>
+          <p>Your first content and ads are usually live inside the first month. Paid traffic can bring leads in the first weeks, and organic compounds from there.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you work with my niche?</summary>
+          <p>We have run content and paid traffic across law, wellness, hospitality, education, and more. If attention can turn into booked clients, the system fits.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Who actually does the work?</summary>
+          <p>The senior team you meet on the call. Strategy, scripts, edit, paid ads, and client success, with no handoff to juniors.</p>
+        </details>
       </div>
     </div>
   </div>
@@ -540,6 +712,7 @@ a{color:inherit;text-decoration:none}
     <div class="foot-links">
       <a href="#proof">Results</a>
       <a href="cases-en.html">Case studies</a>
+      <a href="#packages">Packages</a>
       <a href="#book">Free analysis</a>
       <a href="tel:+16193460678">(619) 346-0678</a>
     </div>
