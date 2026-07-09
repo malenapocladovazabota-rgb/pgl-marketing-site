@@ -3,6 +3,34 @@
 <head>
 <meta charset="UTF-8"/>
 <script>document.documentElement.classList.add('js')</script>
+<!-- Meta Pixel -->
+<script>
+  window.PGL_META_PIXEL_ID = "1598891935248269";
+  window.PGL_GA4_ID = "";
+  (function(){
+    var p = window.PGL_META_PIXEL_ID, g = window.PGL_GA4_ID;
+    if (p) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', p); fbq('track', 'PageView');
+    }
+    if (g) {
+      var sc=document.createElement('script');sc.async=true;
+      sc.src='https://www.googletagmanager.com/gtag/js?id='+g;
+      document.head.appendChild(sc);
+      window.dataLayer=window.dataLayer||[];
+      window.gtag=function(){dataLayer.push(arguments);};
+      gtag('js', new Date()); gtag('config', g);
+    }
+  })();
+  window.pglTrackLead = function(){
+    try { if (window.fbq) fbq('track','Lead'); } catch(e){}
+    try { if (window.gtag) gtag('event','generate_lead'); } catch(e){}
+  };
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>PGL Marketing · Кейс бьюти и велнес · Полная запись за 30 дней</title>
 <meta name="description" content="Как мы заполнили новую велнес-студию за 30 дней: отслеживаемая локальная реклама, SMS-напоминания и возвратные офферы. Клиенты, которые записываются и возвращаются, а не просто просмотры."/>
@@ -54,7 +82,7 @@
   .ledger-grid{display:grid;grid-template-columns:repeat(4,1fr)}
   .led{padding:6px clamp(14px,2.5vw,30px);text-align:center;position:relative}
   .led + .led::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:rgba(11,17,25,0.12)}
-  .led-n{font-family:var(--display);font-weight:300;font-size:clamp(38px,5vw,64px);line-height:0.95;letter-spacing:-0.04em;color:var(--ink);display:inline-flex;align-items:baseline;gap:6px}
+  .led-n{font-family:var(--display);font-weight:300;font-size:clamp(38px,5vw,64px);line-height:0.95;letter-spacing:-0.04em;color:var(--ink);display:inline-flex;align-items:baseline;gap:6px;white-space:nowrap}
   .led-n small{font-family:var(--mono);font-size:13px;letter-spacing:0.08em;color:var(--ember-deep);font-weight:500}
   .led-l{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gray);margin-top:12px;line-height:1.5}
 
@@ -177,7 +205,7 @@
       <div class="led reveal"><div class="led-n"><span data-count="30">30</span><small>дней</small></div><div class="led-l">до полной записи</div></div>
       <div class="led reveal"><div class="led-n"><small>×</small><span data-count="8">8</span></div><div class="led-l"><span class="gloss" tabindex="0">ROAS<span class="gloss-def">Окупаемость рекламы. ×8 значит, что каждый вложенный в рекламу $1 принёс $8 выручки.</span></span>, первое касание</div></div>
       <div class="led reveal"><div class="led-n"><span data-count="28">28</span></div><div class="led-l">платных записей за неделю, около $21 каждая</div></div>
-      <div class="led reveal"><div class="led-n"><span data-count="12000" data-sep=" " data-suffix="+">12 000+</span></div><div class="led-l">подписчиков органически, видео на 2+ млн просмотров</div></div>
+      <div class="led reveal"><div class="led-n"><span>12K+</span></div><div class="led-l">подписчиков органически, видео на 2+ млн просмотров</div></div>
     </div>
   </div>
 </section>

@@ -3,6 +3,34 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<!-- Meta Pixel -->
+<script>
+  window.PGL_META_PIXEL_ID = "1598891935248269";
+  window.PGL_GA4_ID = "";
+  (function(){
+    var p = window.PGL_META_PIXEL_ID, g = window.PGL_GA4_ID;
+    if (p) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', p); fbq('track', 'PageView');
+    }
+    if (g) {
+      var sc=document.createElement('script');sc.async=true;
+      sc.src='https://www.googletagmanager.com/gtag/js?id='+g;
+      document.head.appendChild(sc);
+      window.dataLayer=window.dataLayer||[];
+      window.gtag=function(){dataLayer.push(arguments);};
+      gtag('js', new Date()); gtag('config', g);
+    }
+  })();
+  window.pglTrackLead = function(){
+    try { if (window.fbq) fbq('track','Lead'); } catch(e){}
+    try { if (window.gtag) gtag('event','generate_lead'); } catch(e){}
+  };
+</script>
 <title>PGL Marketing · Кейсы · Сан-Диего</title>
 <meta name="description" content="Реальные результаты PGL Marketing для клиентов в иммиграционном праве, онлайн-образовании, велнесе, ресторанном бизнесе и тату-студиях."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
