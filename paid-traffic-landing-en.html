@@ -790,6 +790,70 @@ section{padding:clamp(64px,9vh,120px) 0}
 }
 .how-story-val strong{color:var(--ink);font-weight:500;background:linear-gradient(180deg, transparent 65%, rgba(201,168,76,0.25) 65%, rgba(201,168,76,0.25) 100%);padding:0 2px}
 
+/* ===== Phase 01: strategy distillation (raw inputs -> one angle -> result) ===== */
+.how-distill{
+  border-left:1px solid rgba(201,168,76,0.4);
+  padding-left:22px;
+  margin-left:2px;
+  max-width:440px;
+}
+.how-distill-tag{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--ember-deep);font-weight:500;margin-bottom:20px;padding-bottom:14px;
+  border-bottom:1px solid rgba(201,168,76,0.2);
+}
+.how-distill-cap{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--warm-gray);font-weight:500;margin-bottom:13px;
+}
+.how-distill-inputs{display:flex;flex-wrap:wrap;gap:8px}
+.how-distill-chip{
+  font-family:var(--sans);font-size:13px;font-weight:450;color:var(--ink);
+  background:var(--bone-pure);border:1px solid rgba(11,17,25,0.12);
+  border-radius:999px;padding:8px 15px;line-height:1;white-space:nowrap;
+  opacity:0;transform:translateY(6px);
+  transition:opacity .5s ease, transform .5s ease;
+  transition-delay:calc(.15s + var(--i) * .13s);
+}
+.how-stage.is-revealed .how-distill-chip{opacity:1;transform:translateY(0)}
+.how-distill-flow{height:44px;margin:4px 0 2px}
+.how-distill-flow svg{width:100%;height:100%;display:block;overflow:visible}
+.how-distill-flow path{
+  fill:none;stroke:var(--ember);stroke-width:1.4;opacity:.6;
+  stroke-dasharray:1;stroke-dashoffset:1;
+  transition:stroke-dashoffset 1s ease;transition-delay:.55s;
+}
+.how-stage.is-revealed .how-distill-flow path{stroke-dashoffset:0}
+.how-distill-node{fill:var(--ember);opacity:0;transform-origin:150px 45px;transition:opacity .4s ease;transition-delay:1.4s}
+.how-stage.is-revealed .how-distill-node{opacity:1;animation:distillPulse 2.4s ease-in-out 1.5s infinite}
+@keyframes distillPulse{0%,100%{r:3.4}50%{r:4.6}}
+.how-distill-angle{
+  position:relative;overflow:hidden;
+  background:var(--ink);color:var(--bone);
+  border-radius:12px;padding:18px 22px 20px;
+  opacity:0;transform:translateY(10px);
+  transition:opacity .6s ease, transform .6s ease;transition-delay:.95s;
+}
+.how-stage.is-revealed .how-distill-angle{opacity:1;transform:translateY(0)}
+.how-distill-angle::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--ember),var(--gold))}
+.how-distill-angle-lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ember);margin-bottom:10px}
+.how-distill-angle-txt{font-family:var(--display);font-weight:300;font-size:clamp(21px,2.1vw,27px);line-height:1.12;letter-spacing:-0.02em;color:var(--bone-pure)}
+.how-distill-out{
+  display:flex;align-items:center;gap:10px;margin:15px 0 16px;padding-left:2px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--warm-gray);
+  opacity:0;transition:opacity .6s ease;transition-delay:1.15s;
+}
+.how-stage.is-revealed .how-distill-out{opacity:1}
+.how-distill-out::before{content:"";width:16px;height:1px;background:var(--ember)}
+.how-distill-result{
+  display:flex;align-items:baseline;gap:16px;
+  opacity:0;transform:translateY(8px);
+  transition:opacity .6s ease, transform .6s ease;transition-delay:1.3s;
+}
+.how-stage.is-revealed .how-distill-result{opacity:1;transform:translateY(0)}
+.how-distill-result-stat{font-family:var(--display);font-weight:300;font-size:clamp(42px,5vw,60px);line-height:.88;letter-spacing:-.03em;color:var(--ink);white-space:nowrap}
+.how-distill-result-cap{font-family:var(--sans);font-size:13px;line-height:1.5;color:var(--warm-gray);max-width:210px}
+
 /* ===== Phase 02: video samples grid (fits side panel) ===== */
 .how-videos{
   display:grid;
@@ -942,6 +1006,9 @@ section{padding:clamp(64px,9vh,120px) 0}
 @media (max-width:760px){
   .how-numbers{grid-template-columns:1fr;gap:14px}
   .how-story-row{grid-template-columns:1fr;gap:6px}
+  .how-distill{max-width:none}
+  .how-distill-result{flex-direction:column;gap:6px}
+  .how-distill-result-cap{max-width:none}
 }
 
 /* Mobile: keep the animated sticky rail, just slimmer */
@@ -2882,19 +2949,30 @@ section{padding:clamp(64px,9vh,120px) 0}
           </div>
           <aside class="how-stage-reveal">
             <div class="how-stage-reveal-lbl">A real case</div>
-            <div class="how-story">
-              <div class="how-story-tag">Wellness Embassy · San Diego</div>
-              <div class="how-story-row">
-                <div class="how-story-lbl">Goal</div>
-                <div class="how-story-val">Fully book 4 masters at a brand-new studio location.</div>
+            <div class="how-distill">
+              <div class="how-distill-tag">Wellness Embassy · San Diego</div>
+              <div class="how-distill-cap">What she already had</div>
+              <div class="how-distill-inputs">
+                <span class="how-distill-chip" style="--i:0">Her signature method</span>
+                <span class="how-distill-chip" style="--i:1">Her philosophy</span>
+                <span class="how-distill-chip" style="--i:2">The studio atmosphere</span>
               </div>
-              <div class="how-story-row">
-                <div class="how-story-lbl">Our angle</div>
-                <div class="how-story-val">We took what she'd already put into the studio, her signature method, her philosophy, the whole atmosphere, and made that the heart of the message and the ads.</div>
+              <div class="how-distill-flow" aria-hidden="true">
+                <svg viewBox="0 0 300 48" preserveAspectRatio="none">
+                  <path pathLength="1" d="M45 3 C45 30 150 22 150 45"/>
+                  <path pathLength="1" d="M150 3 L150 45"/>
+                  <path pathLength="1" d="M255 3 C255 30 150 22 150 45"/>
+                  <circle class="how-distill-node" cx="150" cy="45" r="3.4"/>
+                </svg>
               </div>
-              <div class="how-story-row">
-                <div class="how-story-lbl">Result</div>
-                <div class="how-story-val"><strong>30 days to a fully booked schedule.</strong> All four masters running at capacity, paid bookings flowing weekly.</div>
+              <div class="how-distill-angle">
+                <div class="how-distill-angle-lbl">The one angle we built on</div>
+                <div class="how-distill-angle-txt">Make her own method the whole message.</div>
+              </div>
+              <div class="how-distill-out">Becomes the core of every ad</div>
+              <div class="how-distill-result">
+                <div class="how-distill-result-stat">30 days</div>
+                <div class="how-distill-result-cap">to a fully booked schedule. All four masters at capacity, paid bookings weekly.</div>
               </div>
             </div>
           </aside>
