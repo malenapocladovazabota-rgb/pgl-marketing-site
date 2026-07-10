@@ -1,5 +1,6 @@
-# Clean URLs: EN = root (index.html), RU = /ru. Old paths 301 to canonical.
-/ru                    /landing-v5-ru.html   200
-/en                    /                      301
-/landing-v5-en         /                      301
-/landing-v5-en.html    /                      301
+# Clean URLs: EN = root (index.html), RU = /ru (ru.html). Old paths 301 to canonical.
+/en                    /       301
+/landing-v5-en         /       301
+/landing-v5-en.html    /       301
+/landing-v5-ru         /ru     301
+/landing-v5-ru.html    /ru     301
