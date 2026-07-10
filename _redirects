@@ -1,3 +1,5 @@
-# Netlify/Cloudflare clean URLs (root is served by index.html -> v5 EN)
-/en   /landing-v5-en.html   200
-/ru   /landing-v5-ru.html   200
+# Clean URLs: EN = root (index.html), RU = /ru. Old paths 301 to canonical.
+/ru                    /landing-v5-ru.html   200
+/en                    /                      301
+/landing-v5-en         /                      301
+/landing-v5-en.html    /                      301

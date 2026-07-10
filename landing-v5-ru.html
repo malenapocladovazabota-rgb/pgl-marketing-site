@@ -71,7 +71,7 @@ a{color:inherit;text-decoration:none}
 /* hero */
 .hero{padding:34px 0 20px;text-align:left}
 .hero h1{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.98;
-  font-size:clamp(52px,15.5vw,124px);margin:20px 0 0;color:var(--ink)}
+  font-size:clamp(36px,9.5vw,84px);margin:20px 0 0;color:var(--ink)}
 .hero h1 .u{position:relative;white-space:nowrap;color:var(--ember-deep)}
 .hero h1 .u::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.11em;border-radius:99px;
   background:var(--ember);transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1) .5s}
@@ -354,7 +354,7 @@ a{color:inherit;text-decoration:none}
   .sticky{display:none}
   .foot{padding:56px 0}
 }
-@media (min-width:820px) and (max-width:1000px){ .hero h1{font-size:104px} }
+@media (min-width:820px) and (max-width:1000px){ .hero h1{font-size:74px} }
 
 /* ===== ambient micro-motion (subtle, always-on) ===== */
 @keyframes pglShine{0%{transform:translateX(-130%) skewX(-18deg)}55%,100%{transform:translateX(260%) skewX(-18deg)}}
@@ -390,7 +390,7 @@ a{color:inherit;text-decoration:none}
     <div class="nav-in">
       <a class="brand" href="#top"><span>PGL</span> Marketing</a>
       <div style="display:flex;align-items:center;gap:8px">
-        <a class="pill pill--ghost" href="landing-v5-en.html" aria-label="English version">EN</a>
+        <a class="pill pill--ghost" href="/" aria-label="English version">EN</a>
         <a class="pill pill--dark" href="#book">Записаться на звонок
           <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
         </a>
@@ -547,6 +547,83 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<section class="cta" id="book">
+  <div class="wrap">
+    <div class="cta-card rv">
+      <span class="eyebrow">Бесплатно и ни к чему не обязывает</span>
+      <h2 class="sec-h">Запишитесь на бесплатный разбор</h2>
+      <p class="cta-lead">Покажем, где вы теряете заявки и что изменить в первую очередь для максимального эффекта. Если мы подходим друг другу, звонок станет следующим шагом.</p>
+
+      <form class="form" id="leadForm" action="https://formsubmit.co/lev.pocladov@gmail.com" method="POST" autocomplete="on">
+        <input type="hidden" name="_subject" value="New PGL lead (landing v5 RU)"/>
+        <input type="hidden" name="_template" value="table"/>
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="hidden" name="_autoresponse" value="Спасибо за заявку! Лев из PGL Marketing свяжется с вами в течение одного рабочего дня. Можете в ответ прислать сайт или основной профиль в соцсетях."/>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="f-honey" aria-hidden="true"/>
+
+        <div class="f-grid f-step" id="ctaStep1">
+          <div class="f-row">
+            <label class="f-field"><span class="f-lbl">Имя <em>*</em></span><input type="text" name="First name" required autocomplete="given-name"/></label>
+            <label class="f-field"><span class="f-lbl">Фамилия</span><input type="text" name="Last name" autocomplete="family-name"/></label>
+          </div>
+          <div class="f-row">
+            <label class="f-field"><span class="f-lbl">Email <em>*</em></span><input type="email" name="Email" required autocomplete="email" placeholder="you@company.com"/></label>
+            <label class="f-field"><span class="f-lbl">Телефон</span><input type="tel" name="Phone" autocomplete="tel" placeholder="(555) 123-4567"/></label>
+          </div>
+        </div>
+
+        <button type="button" class="pill pill--gold f-continue" id="ctaContinue">Далее
+          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </button>
+
+        <div class="f-step2" id="ctaStep2" hidden>
+          <p class="f-step2-note">Отлично. Пара коротких вопросов, чтобы разбор был реально полезным.</p>
+          <div class="f-grid">
+            <label class="f-field"><span class="f-lbl">Название бизнеса или сайт <em>*</em></span><input type="text" name="Business" data-req placeholder="site.com или @ваш_аккаунт"/></label>
+            <div class="f-row">
+              <label class="f-field"><span class="f-lbl">Ваша ниша <em>*</em></span>
+                <select name="Niche" data-req>
+                  <option value="">Выберите</option>
+                  <option>Право / Иммиграция</option>
+                  <option>Wellness / Бьюти</option>
+                  <option>Рестораны / Еда</option>
+                  <option>Онлайн-образование</option>
+                  <option>E-commerce</option>
+                  <option>Локальные услуги</option>
+                  <option>Другое</option>
+                </select>
+              </label>
+              <label class="f-field"><span class="f-lbl">Бюджет на рекламу в месяц <em>*</em></span>
+                <select name="Ad spend" data-req>
+                  <option value="">Выберите</option>
+                  <option>Пока не запускаю рекламу</option>
+                  <option>До $1,000</option>
+                  <option>от $1,000 до $5,000</option>
+                  <option>от $5,000 до $15,000</option>
+                  <option>$15,000+</option>
+                </select>
+              </label>
+            </div>
+            <label class="f-field"><span class="f-lbl">Главное узкое место в маркетинге сейчас</span><textarea name="Bottleneck" rows="2" placeholder="Достаточно одного предложения. Например: заявки есть, но не закрываются."></textarea></label>
+          </div>
+          <button type="submit" class="pill pill--dark f-submit"><span>Записаться на разбор</span>
+            <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+        </div>
+        <p class="f-fine">Отвечаем в течение одного рабочего дня. Ни к чему не обязывает.</p>
+      </form>
+
+      <div class="thanks" id="cta-thanks">
+        <div class="thanks-h">Готово.</div>
+        <p class="thanks-p">Выберите время сразу, чтобы не терять его на переписку. Иначе Лев напишет вам в течение одного рабочего дня.</p>
+        <a class="pill pill--gold cta-thanks-book" href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener">Выбрать время звонка
+          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec">
   <div class="wrap">
     <div class="founders rv">
@@ -694,79 +771,15 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<section class="cta" id="book">
+<section class="cta" id="book-bottom" style="padding-top:8px">
   <div class="wrap">
-    <div class="cta-card rv">
+    <div class="cta-card rv" style="text-align:center">
       <span class="eyebrow">Бесплатно и ни к чему не обязывает</span>
-      <h2 class="sec-h">Запишитесь на бесплатный разбор</h2>
-      <p class="cta-lead">Покажем, где вы теряете заявки и что изменить в первую очередь для максимального эффекта. Если мы подходим друг другу, звонок станет следующим шагом.</p>
-
-      <form class="form" id="leadForm" action="https://formsubmit.co/lev.pocladov@gmail.com" method="POST" autocomplete="on">
-        <input type="hidden" name="_subject" value="New PGL lead (landing v5 RU)"/>
-        <input type="hidden" name="_template" value="table"/>
-        <input type="hidden" name="_captcha" value="false"/>
-        <input type="hidden" name="_autoresponse" value="Спасибо за заявку! Лев из PGL Marketing свяжется с вами в течение одного рабочего дня. Можете в ответ прислать сайт или основной профиль в соцсетях."/>
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="f-honey" aria-hidden="true"/>
-
-        <div class="f-grid f-step" id="ctaStep1">
-          <div class="f-row">
-            <label class="f-field"><span class="f-lbl">Имя <em>*</em></span><input type="text" name="First name" required autocomplete="given-name"/></label>
-            <label class="f-field"><span class="f-lbl">Фамилия</span><input type="text" name="Last name" autocomplete="family-name"/></label>
-          </div>
-          <div class="f-row">
-            <label class="f-field"><span class="f-lbl">Email <em>*</em></span><input type="email" name="Email" required autocomplete="email" placeholder="you@company.com"/></label>
-            <label class="f-field"><span class="f-lbl">Телефон</span><input type="tel" name="Phone" autocomplete="tel" placeholder="(555) 123-4567"/></label>
-          </div>
-        </div>
-
-        <button type="button" class="pill pill--gold f-continue" id="ctaContinue">Далее
-          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
-        </button>
-
-        <div class="f-step2" id="ctaStep2" hidden>
-          <p class="f-step2-note">Отлично. Пара коротких вопросов, чтобы разбор был реально полезным.</p>
-          <div class="f-grid">
-            <label class="f-field"><span class="f-lbl">Название бизнеса или сайт <em>*</em></span><input type="text" name="Business" data-req placeholder="site.com или @ваш_аккаунт"/></label>
-            <div class="f-row">
-              <label class="f-field"><span class="f-lbl">Ваша ниша <em>*</em></span>
-                <select name="Niche" data-req>
-                  <option value="">Выберите</option>
-                  <option>Право / Иммиграция</option>
-                  <option>Wellness / Бьюти</option>
-                  <option>Рестораны / Еда</option>
-                  <option>Онлайн-образование</option>
-                  <option>E-commerce</option>
-                  <option>Локальные услуги</option>
-                  <option>Другое</option>
-                </select>
-              </label>
-              <label class="f-field"><span class="f-lbl">Бюджет на рекламу в месяц <em>*</em></span>
-                <select name="Ad spend" data-req>
-                  <option value="">Выберите</option>
-                  <option>Пока не запускаю рекламу</option>
-                  <option>До $1,000</option>
-                  <option>от $1,000 до $5,000</option>
-                  <option>от $5,000 до $15,000</option>
-                  <option>$15,000+</option>
-                </select>
-              </label>
-            </div>
-            <label class="f-field"><span class="f-lbl">Главное узкое место в маркетинге сейчас</span><textarea name="Bottleneck" rows="2" placeholder="Достаточно одного предложения. Например: заявки есть, но не закрываются."></textarea></label>
-          </div>
-          <button type="submit" class="pill pill--dark f-submit"><span>Записаться на разбор</span>
-            <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
-          </button>
-        </div>
-        <p class="f-fine">Отвечаем в течение одного рабочего дня. Ни к чему не обязывает.</p>
-      </form>
-
-      <div class="thanks" id="cta-thanks">
-        <div class="thanks-h">Готово.</div>
-        <p class="thanks-p">Выберите время сразу, чтобы не терять его на переписку. Иначе Лев напишет вам в течение одного рабочего дня.</p>
-        <a class="pill pill--gold cta-thanks-book" href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener">Выбрать время звонка
-          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
-        </a>
-      </div>
+      <h2 class="sec-h">Готовы превращать просмотры в клиентов?</h2>
+      <p class="cta-lead" style="margin:14px auto 0">Один короткий звонок. Покажем, где вы теряете заявки и что изменить в первую очередь для максимального эффекта.</p>
+      <a class="pill pill--gold" href="#book" style="margin-top:22px">Записаться на бесплатный разбор
+        <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
     </div>
   </div>
 </section>
