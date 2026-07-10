@@ -6,6 +6,15 @@
 <title>PGL Marketing · Turn views into customers · San Diego</title>
 <meta name="description" content="We build the content and run the paid traffic so the attention you get turns into booked clients. Done for you, in San Diego."/>
 <link rel="canonical" href="https://pgl.marketing/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://pgl.marketing/"/>
+<meta property="og:title" content="PGL Marketing · Turn views into customers"/>
+<meta property="og:description" content="We build the content and run the paid traffic so the attention you get turns into booked clients. San Diego, CA."/>
+<meta property="og:image" content="https://pgl.marketing/photos/og-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://pgl.marketing/photos/og-image.jpg"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -605,6 +614,10 @@ a{color:inherit;text-decoration:none}
             </div>
             <label class="f-field"><span class="f-lbl">Biggest marketing bottleneck right now</span><textarea name="Bottleneck" rows="2" placeholder="One sentence is fine. For example: leads come but never close."></textarea></label>
           </div>
+          <label class="f-consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0 0;font-size:13px;color:var(--warm);line-height:1.5;font-weight:500;cursor:pointer">
+            <input type="checkbox" name="Consent" value="I agree" data-req required style="width:18px;height:18px;margin-top:1px;flex:0 0 auto;accent-color:#8A6E28"/>
+            <span>I agree to the <a href="/privacy-en" target="_blank" rel="noopener" style="color:#8A6E28">Privacy Policy</a> and <a href="/terms-en" target="_blank" rel="noopener" style="color:#8A6E28">Terms</a>, and consent to PGL Marketing contacting me about my inquiry.</span>
+          </label>
           <button type="submit" class="pill pill--dark f-submit"><span>Book my free strategy call</span>
             <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
           </button>
@@ -792,6 +805,8 @@ a{color:inherit;text-decoration:none}
       <a href="#packages">Packages</a>
       <a href="#book">Strategy call</a>
       <a href="tel:+16193460678">(619) 346-0678</a>
+      <a href="/privacy-en">Privacy</a>
+      <a href="/terms-en">Terms</a>
     </div>
     <p class="foot-legal">© 2026 Personal Growth Lab LLC · San Diego, California</p>
   </div>
@@ -838,6 +853,7 @@ a{color:inherit;text-decoration:none}
     leadForm.addEventListener('submit',function(e){
       e.preventDefault();
       if(s2&&s2.hidden){reveal();return;}
+      if(s2){var v2=s2.querySelectorAll('[data-req]');for(var vi=0;vi<v2.length;vi++){if(!v2[vi].checkValidity()){v2[vi].reportValidity();return;}}}
       var btn=leadForm.querySelector('.f-submit');if(btn){btn.disabled=true;var sp=btn.querySelector('span');if(sp)sp.textContent='Sending...';}
       var fd=new FormData(leadForm);
       fire('complete');

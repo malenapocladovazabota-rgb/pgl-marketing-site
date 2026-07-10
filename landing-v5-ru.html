@@ -5,7 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>PGL Marketing · Превращаем просмотры в клиентов · Сан-Диего</title>
 <meta name="description" content="Делаем контент и ведём платный трафик под ключ, чтобы внимание превращалось в записи и заявки. Сан-Диего."/>
-<link rel="canonical" href="https://pgl.marketing/landing-v5-ru"/>
+<link rel="canonical" href="https://pgl.marketing/ru"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://pgl.marketing/ru"/>
+<meta property="og:locale" content="ru_RU"/>
+<meta property="og:title" content="PGL Marketing · Превращаем просмотры в клиентов"/>
+<meta property="og:description" content="Контент и платный трафик под ключ, чтобы внимание превращалось в записи и заявки. Сан-Диего."/>
+<meta property="og:image" content="https://pgl.marketing/photos/og-image-ru.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://pgl.marketing/photos/og-image-ru.jpg"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -606,6 +616,10 @@ a{color:inherit;text-decoration:none}
             </div>
             <label class="f-field"><span class="f-lbl">Главное узкое место в маркетинге сейчас</span><textarea name="Bottleneck" rows="2" placeholder="Достаточно одного предложения. Например: заявки есть, но не закрываются."></textarea></label>
           </div>
+          <label class="f-consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0 0;font-size:13px;color:var(--warm);line-height:1.5;font-weight:500;cursor:pointer">
+            <input type="checkbox" name="Consent" value="Согласен" data-req required style="width:18px;height:18px;margin-top:1px;flex:0 0 auto;accent-color:#8A6E28"/>
+            <span>Я соглашаюсь с <a href="/privacy-ru" target="_blank" rel="noopener" style="color:#8A6E28">Политикой конфиденциальности</a> и <a href="/terms-ru" target="_blank" rel="noopener" style="color:#8A6E28">Условиями</a> и даю согласие на обработку моих данных и связь со мной по моему запросу.</span>
+          </label>
           <button type="submit" class="pill pill--dark f-submit"><span>Записаться на разбор</span>
             <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
           </button>
@@ -793,6 +807,8 @@ a{color:inherit;text-decoration:none}
       <a href="#packages">Пакеты</a>
       <a href="#book">Разбор</a>
       <a href="tel:+16193460678">(619) 346-0678</a>
+      <a href="/privacy-ru">Политика</a>
+      <a href="/terms-ru">Условия</a>
     </div>
     <p class="foot-legal">© 2026 Personal Growth Lab LLC · Сан-Диего, Калифорния</p>
   </div>
@@ -839,6 +855,7 @@ a{color:inherit;text-decoration:none}
     leadForm.addEventListener('submit',function(e){
       e.preventDefault();
       if(s2&&s2.hidden){reveal();return;}
+      if(s2){var v2=s2.querySelectorAll('[data-req]');for(var vi=0;vi<v2.length;vi++){if(!v2[vi].checkValidity()){v2[vi].reportValidity();return;}}}
       var btn=leadForm.querySelector('.f-submit');if(btn){btn.disabled=true;var sp=btn.querySelector('span');if(sp)sp.textContent='Sending...';}
       var fd=new FormData(leadForm);
       fire('complete');
