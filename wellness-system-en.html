@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Wellness Embassy · The full growth system we built · PGL Marketing</title>
+<meta name="description" content="How PGL Marketing turned a San Diego wellness studio into a growth engine: paid acquisition, end-to-end tracking, CRM, follow-ups, loyalty and retention, all built and running live."/>
+<link rel="canonical" href="https://pgl-marketing-site.pages.dev/wellness-system-en"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>window.PGL_META_PIXEL_ID = "1598891935248269";
+(function(){ if(!window.PGL_META_PIXEL_ID) return;
+ !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', window.PGL_META_PIXEL_ID); fbq('track','PageView');
+})();</script>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --paper:#F4EFE8; --sand:#EAE1D4; --rose:#E7D3CC; --rose-deep:#D9BEB4;
+  --ink:#181316; --ink-soft:#2A2320; --cream:#F6F1EA;
+  --ember:#C9A84C; --ember-deep:#8A6E28; --warm:#6E6259;
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Hanken Grotesk',system-ui,sans-serif;
+  --r:26px; --r-sm:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);color:var(--ink);line-height:1.6;background:var(--paper);
+  background-image:radial-gradient(120% 60% at 82% -4%,rgba(231,211,204,.9) 0%,rgba(231,211,204,0) 55%),radial-gradient(90% 40% at 6% 30%,rgba(201,168,76,.10) 0%,rgba(201,168,76,0) 60%);
+  background-attachment:fixed;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+.eyebrow{font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ember-deep);display:inline-flex;align-items:center;gap:9px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--ember)}
+
+/* pills / nav */
+.pill{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-weight:600;font-size:14px;line-height:1;padding:13px 20px;border-radius:999px;cursor:pointer;border:0;transition:transform .25s ease,background .25s ease,color .25s ease,box-shadow .25s ease}
+.pill svg{width:14px;height:10px;transition:transform .25s ease}
+.pill--dark{background:var(--ink);color:var(--cream)}
+.pill--dark:hover{transform:translateY(-1px);box-shadow:0 10px 24px -12px rgba(24,19,22,.5)}
+.pill--gold{background:var(--ember);color:var(--ink)}
+.pill--gold:hover{transform:translateY(-1px);box-shadow:0 12px 26px -12px rgba(201,168,76,.7)}
+.pill--ghost{background:transparent;color:var(--ink);border:1px solid rgba(24,19,22,.16)}
+.pill--ghost:hover{background:rgba(24,19,22,.04)}
+@media (hover:hover){.pill:hover svg{transform:translateX(3px)}}
+.nav{position:sticky;top:0;z-index:50;padding:12px 0}
+.nav-in{display:flex;align-items:center;justify-content:space-between;background:rgba(246,241,234,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(24,19,22,.07);border-radius:999px;padding:9px 9px 9px 20px}
+.brand{font-family:var(--disp);font-weight:800;font-size:17px;letter-spacing:-.01em}
+.brand span{color:var(--ember-deep)}
+.nav-r{display:flex;align-items:center;gap:8px}
+
+/* hero */
+.hero{padding:34px 0 8px}
+.hero-tag{font-family:var(--body);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm);font-weight:600;margin:14px 0 0}
+.hero h1{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.98;font-size:clamp(48px,13vw,104px);margin:16px 0 0}
+.hero h1 span{color:var(--ember-deep)}
+.hero-sub{font-size:clamp(18px,2.4vw,24px);line-height:1.4;color:var(--ink);max-width:24ch;margin:20px 0 0;font-weight:600;font-family:var(--disp);letter-spacing:-.01em}
+.hero-lead{font-size:16.5px;color:var(--warm);max-width:60ch;margin:18px 0 0;font-weight:500}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 0}
+
+/* stats band (dark) */
+.band{background:var(--ink);color:var(--cream);border-radius:34px;padding:40px 0;margin:26px 0 0;position:relative;overflow:hidden}
+.band::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 55% at 85% 0%,rgba(201,168,76,.16),transparent 60%);pointer-events:none}
+.band .wrap{position:relative}
+.statgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px}
+.stat .n{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.9;font-size:clamp(40px,10vw,64px);color:var(--cream)}
+.stat .n em{font-style:normal;color:var(--ember)}
+.stat .l{font-size:13.5px;color:rgba(246,241,234,.72);font-weight:500;margin:8px 0 0;line-height:1.4}
+
+/* sections */
+.sec{padding:52px 0}
+.sec-n{font-family:var(--disp);font-weight:800;font-size:13px;color:var(--ember-deep);letter-spacing:.04em}
+.sec-h{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:1.02;font-size:clamp(30px,6vw,52px);margin:10px 0 0}
+.sec-lead{font-size:16.5px;color:var(--warm);max-width:60ch;margin:16px 0 0;font-weight:500}
+.prose p{font-size:16.5px;color:var(--ink);margin:16px 0 0;max-width:64ch}
+.prose strong{font-weight:700;background:linear-gradient(180deg,transparent 62%,rgba(201,168,76,.32) 62%);padding:0 2px}
+
+/* six systems grid */
+.sysgrid{display:grid;grid-template-columns:1fr;gap:16px;margin:30px 0 0}
+.sys{background:var(--cream);border:1px solid rgba(24,19,22,.07);border-radius:var(--r);padding:24px 22px;box-shadow:0 20px 50px -42px rgba(24,19,22,.5)}
+.sys-top{display:flex;align-items:center;gap:12px}
+.sys-ico{width:40px;height:40px;flex:none;border-radius:12px;background:rgba(201,168,76,.14);color:var(--ember-deep);display:flex;align-items:center;justify-content:center}
+.sys-ico svg{width:22px;height:22px}
+.sys-num{font-family:var(--body);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--warm);font-weight:700}
+.sys-h{font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:-.01em;margin:2px 0 0}
+.sys ul{list-style:none;margin:16px 0 0;display:flex;flex-direction:column;gap:10px}
+.sys li{position:relative;padding-left:22px;font-size:14.5px;font-weight:500;color:var(--ink);line-height:1.45}
+.sys li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:99px;background:var(--ember)}
+.sys li b{font-weight:700}
+
+/* media proof */
+.media{display:flex;flex-direction:column;gap:26px;align-items:center;margin:32px 0 0}
+.m-reel{width:min(220px,66%);border-radius:26px;overflow:hidden;border:7px solid var(--ink);box-shadow:0 30px 60px -30px rgba(24,19,22,.5);background:#000;line-height:0}
+.m-reel video{width:100%;display:block;border-radius:19px}
+.m-cap{font-family:var(--body);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--warm);font-weight:600;text-align:center;margin:11px 0 0}
+.m-browser{width:100%;max-width:560px}
+.m-browser-win{background:var(--ink);border-radius:16px 16px 4px 4px;padding:14px;border:1px solid rgba(24,19,22,.2);box-shadow:0 40px 80px -34px rgba(24,19,22,.4)}
+.m-browser-bar{display:flex;justify-content:center;padding-bottom:11px}
+.m-browser-bar span{width:6px;height:6px;border-radius:50%;background:rgba(246,241,234,.3)}
+.m-browser-screen{background:#fff;border-radius:6px;overflow:hidden}
+.m-browser-screen img{width:100%;display:block}
+
+/* results cards */
+.res{display:grid;grid-template-columns:1fr;gap:16px;margin:30px 0 0}
+.rcard{background:var(--cream);border:1px solid rgba(24,19,22,.07);border-radius:var(--r);padding:26px 24px}
+.rcard .n{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.9;font-size:clamp(44px,11vw,64px);color:var(--ink)}
+.rcard .n em{font-style:normal;color:var(--ember-deep)}
+.rcard .h{font-family:var(--disp);font-weight:700;font-size:18px;margin:12px 0 0}
+.rcard p{font-size:15px;color:var(--warm);font-weight:500;margin:8px 0 0}
+.rcard p b{color:var(--ink);font-weight:700}
+.math{background:var(--ink);color:var(--cream);border-radius:var(--r);padding:24px 22px;margin:16px 0 0}
+.math .row{display:flex;justify-content:space-between;gap:14px;padding:11px 0;font-size:14.5px;font-weight:500;border-top:1px solid rgba(246,241,234,.14)}
+.math .row:first-child{border-top:0}
+.math .row b{font-family:var(--disp);font-weight:800;color:var(--ember)}
+.note{background:rgba(201,168,76,.09);border:1px solid rgba(201,168,76,.3);border-radius:var(--r);padding:22px 22px;margin:24px 0 0;font-size:15.5px;color:var(--ink);font-weight:500;max-width:64ch}
+.note b{font-weight:700}
+
+/* principles */
+.prin{display:grid;grid-template-columns:1fr;gap:16px;margin:28px 0 0}
+.pcard{background:var(--cream);border:1px solid rgba(24,19,22,.07);border-radius:var(--r);padding:24px 22px}
+.pcard .k{font-family:var(--body);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ember-deep);font-weight:700}
+.pcard .h{font-family:var(--disp);font-weight:800;font-size:20px;letter-spacing:-.01em;margin:8px 0 0}
+.pcard p{font-size:15px;color:var(--warm);font-weight:500;margin:10px 0 0}
+
+/* scale list */
+.scale{list-style:none;margin:24px 0 0;display:flex;flex-direction:column;gap:0}
+.scale li{display:flex;gap:14px;padding:16px 0;border-top:1px solid rgba(24,19,22,.1);font-size:15.5px;font-weight:500;color:var(--ink);line-height:1.45}
+.scale li:first-child{border-top:0}
+.scale li::before{content:"";flex:none;width:22px;height:22px;border-radius:99px;margin-top:1px;background:no-repeat center/12px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10'%3E%3Cpath d='M1 5h12M9 1l4 4-4 4' stroke='%238A6E28' stroke-width='1.6' fill='none'/%3E%3C/svg%3E"),rgba(201,168,76,.14)}
+
+/* CTA */
+.cta{padding:8px 0 40px}
+.cta-band{position:relative;overflow:hidden;background:var(--ink);color:var(--cream);border-radius:34px;padding:clamp(48px,9vh,90px) clamp(24px,5vw,48px);text-align:center}
+.cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 55% at 50% 0%,rgba(201,168,76,.16),transparent 60%);pointer-events:none}
+.cta-in{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.cta-h{font-family:var(--disp);font-weight:800;font-size:clamp(32px,6.4vw,60px);line-height:1;letter-spacing:-.03em;color:var(--cream)}
+.cta-p{font-size:16.5px;color:rgba(246,241,234,.82);font-weight:500;margin:16px auto 26px;max-width:48ch}
+
+/* footer */
+.foot{padding:36px 0 60px;text-align:center}
+.foot-brand{font-family:var(--disp);font-weight:800;font-size:20px}
+.foot-brand span{color:var(--ember-deep)}
+.foot-legal{font-size:12.5px;color:var(--warm);margin:14px 0 0;font-weight:500}
+
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (min-width:760px){
+  .statgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sysgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .res{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .prin{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .band,.cta-band{border-radius:44px}
+  .sec{padding:80px 0}
+  .hero{padding:52px 0 8px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="nav-in">
+      <a class="brand" href="landing-v5-en.html"><span>PGL</span> Marketing</a>
+      <div class="nav-r">
+        <a class="pill pill--ghost" href="wellness-system-ru.html" aria-label="Русская версия">RU</a>
+        <a class="pill pill--dark" href="landing-v5-en.html#book">Book a call
+          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Growth case study</span>
+    <div class="hero-tag">San Diego · 2026</div>
+    <h1>Wellness <span>Embassy</span></h1>
+    <p class="hero-sub">A face and body studio, built into a growth engine.</p>
+    <p class="hero-lead">A full-stack partnership: from paid acquisition and content, through end-to-end tracking, into a complete client-experience and retention system. Everything below was designed, built, and is running live.</p>
+    <div class="hero-cta">
+      <a class="pill pill--gold" href="landing-v5-en.html#book">Book my free strategy call
+        <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+      <a class="pill pill--ghost" href="cases-en.html">All case studies</a>
+    </div>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <div class="statgrid">
+      <div class="stat rv"><div class="n">12.6K</div><div class="l">Instagram followers, plus 12K in about four months</div></div>
+      <div class="stat rv"><div class="n">2.1M</div><div class="l">Views on a single educational Reel</div></div>
+      <div class="stat rv"><div class="n"><em>~</em>8x</div><div class="l">Ad payback on the first visit alone</div></div>
+      <div class="stat rv"><div class="n">100%</div><div class="l">Bookings tracked to their source</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-n">01</div>
+      <h2 class="sec-h">The client</h2>
+    </div>
+    <div class="prose rv">
+      <p>Wellness Embassy is a holistic lymphatic and facial studio in Sorrento Valley, San Diego, founded by Angela, a licensed esthetician with a signature author's method across lymphatic, buccal, myofascial, and sculpting work. The offering is genuinely differentiated.</p>
+      <p>What it did not have was a system to fill the calendar predictably, keep clients coming back, and prove where every dollar went. Our mandate was to <strong>own the whole growth stack</strong>, from the first ad a stranger sees to the tenth visit of a loyal client, and make all of it measurable.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-n">02</div>
+      <h2 class="sec-h">What we built</h2>
+      <p class="sec-lead">Six connected systems. Each one works on its own; together they form a loop where paid traffic becomes a booked client, a booked client becomes a repeat client, and every step reports back with real numbers.</p>
+    </div>
+    <div class="sysgrid">
+
+      <article class="sys rv">
+        <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11l18-7-7 18-2.5-8.5z"/></svg></span>
+          <div><div class="sys-num">01 · Acquisition</div><div class="sys-h">Paid traffic and content</div></div>
+        </div>
+        <ul>
+          <li><b>Meta and Instagram ad campaigns</b>, geo-targeted to San Diego, Rancho Santa Fe, La Jolla and Del Mar, with retargeting.</li>
+          <li><b>Content engine</b>: Reels and ad scripts written in Angela's expert voice, education first, not brochure copy.</li>
+          <li>Organic growth compounding the paid work: 91 posts and a library of high-performing educational Reels.</li>
+        </ul>
+      </article>
+
+      <article class="sys rv">
+        <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+          <div><div class="sys-num">02 · Analytics</div><div class="sys-h">End-to-end attribution</div></div>
+        </div>
+        <ul>
+          <li><b>Full-funnel tracking</b>: ad, click, booking and revenue, tied together.</li>
+          <li>UTM taxonomy plus first and last-touch attribution, so we know <b>which ad brought which lead</b>.</li>
+          <li><b>Weekly reports</b>: spend, bookings by source, bookings by day, and return on ad spend, with concrete changes proposed from the numbers.</li>
+        </ul>
+      </article>
+
+      <article class="sys rv">
+        <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></span>
+          <div><div class="sys-num">03 · Operations</div><div class="sys-h">CRM and booking backbone</div></div>
+        </div>
+        <ul>
+          <li><b>GoHighLevel</b> set up as the single source of truth: calendars, services and booking pages.</li>
+          <li>Booking flow hardened: reschedule confirmations, corrected pricing and staff data-access controls.</li>
+          <li><b>Custom fields</b> for visit count, feedback score and client history.</li>
+        </ul>
+      </article>
+
+      <article class="sys rv">
+        <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <div><div class="sys-num">04 · Messaging</div><div class="sys-h">Follow-ups and compliance</div></div>
+        </div>
+        <ul>
+          <li>Automated <b>SMS confirmations and reminders</b> for every appointment.</li>
+          <li><b>A2P 10DLC</b> brand and campaign registration plus a WhatsApp channel for deliverability.</li>
+          <li>Instagram <b>welcome DM</b> for new followers, plus hosted privacy, terms and refund pages with proper consent.</li>
+        </ul>
+      </article>
+
+      <article class="sys rv">
+        <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg></span>
+          <div><div class="sys-num">05 · Retention</div><div class="sys-h">Loyalty engine</div></div>
+        </div>
+        <ul>
+          <li><b>10-visit loyalty program</b> with automatic visit counting and gifts at visits 1, 4, 7 and 10.</li>
+          <li><b>Pre-bonus nudge</b>: an automated message when a client is one visit from a reward.</li>
+          <li>A <b>live digital loyalty card</b>: one permanent link per client that always shows current progress, plus printed in-studio cards. Rewards without discounting, so the ticket and tips stay whole.</li>
+        </ul>
+      </article>
+
+      <article class="sys rv">
+        <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2-6.3-4.6L5.7 21 8 13.8 2 9.4h7.6z"/></svg></span>
+          <div><div class="sys-num">06 · Experience</div><div class="sys-h">Feedback and consultation</div></div>
+        </div>
+        <ul>
+          <li><b>Post-visit feedback flow</b> with a 1 to 10 score, routing happy clients toward public reviews.</li>
+          <li>A <b>digital consultation record</b> on every client: goals, health flags, contraindications, techniques and plan.</li>
+          <li>Client history that follows the person, so every visit is personalized.</li>
+        </ul>
+      </article>
+
+    </div>
+
+    <div class="media rv">
+      <div>
+        <div class="m-reel"><video autoplay muted loop playsinline preload="metadata" poster="photos/case-wellness-vid-poster.jpg"><source src="photos/case-wellness-vid.mp4" type="video/mp4"/></video></div>
+        <div class="m-cap">Content produced in Angela's expert voice</div>
+      </div>
+      <div>
+        <div class="m-browser"><div class="m-browser-win"><div class="m-browser-bar"><span></span></div><div class="m-browser-screen"><img src="photos/wellness-report-en-jul.jpg" alt="Weekly ad report: 28 bookings in one week, tracked by source" loading="lazy" decoding="async"/></div></div></div>
+        <div class="m-cap">Weekly report, every booking tracked to its source</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-n">03</div>
+      <h2 class="sec-h">The results</h2>
+    </div>
+    <div class="res">
+      <div class="rcard rv">
+        <div class="n">12.6K</div>
+        <div class="h">An audience built from near zero</div>
+        <p>More than <b>12,000 new Instagram followers in roughly four months</b>, over 10,000 in the last month alone, with a breakout educational Reel at 2.1M views. A brand people now follow to learn, not just a business that runs ads.</p>
+      </div>
+      <div class="rcard rv">
+        <div class="n"><em>~</em>8x</div>
+        <div class="h">Advertising that pays for itself</div>
+        <p>Paid traffic returns <b>up to about 8x on the first visit alone</b>, before any repeat visits or lifetime value are counted.</p>
+      </div>
+      <div class="rcard rv">
+        <div class="n">100%</div>
+        <div class="h">Every booking attributed</div>
+        <p>No guessing. In one week bookings broke down as <b>profile bio 9, Rancho Santa Fe 6, manual 5, San Diego 3, referral 2, welcome DM 2, social 1</b>, so we scale the winners and cut the rest.</p>
+      </div>
+      <div class="rcard rv">
+        <div class="n">Repeat</div>
+        <div class="h">Retention engineered, not left to chance</div>
+        <p>Repeat visits already sit in a healthy range for the industry, and the loyalty, reminder and feedback systems are purpose-built to push that higher.</p>
+      </div>
+    </div>
+
+    <div class="math rv">
+      <div class="row"><span>28 bookings &times; ~$200 average ticket</span><b>$5,600 earned</b></div>
+      <div class="row"><span>$5,600 earned minus $577.69 in booking ads</span><b>$5,022 profit</b></div>
+      <div class="row"><span>$5,022 profit divided by $577.69 spent</span><b>~870% return</b></div>
+    </div>
+    <div class="m-cap" style="text-align:left">Representative week, June 30 to July 6, about a 9.7x return on ad spend</div>
+
+    <p class="note rv"><b>The important context:</b> these returns run on a deliberately capped budget. The studio currently works with two part-time practitioners, so ad spend is matched to available capacity, not to demand. Growth here is limited by chairs, not by results. As the team expands with two more practitioners, budget and volume scale with it, and the same machine simply runs larger.</p>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-n">04</div>
+      <h2 class="sec-h">The approach</h2>
+      <p class="sec-lead">We did not run ads and hand over a report. We built the entire path a client travels, made every step measurable, and grew the studio on value, never on discounts.</p>
+    </div>
+    <div class="prin">
+      <div class="pcard rv">
+        <div class="k">Principle</div>
+        <div class="h">Grown on value, not discounts</div>
+        <p>No deep discounts, no bait pricing, no cutting the experience. We sold the studio as a premium, one-of-a-kind solution. The results hold because clients were never trained to wait for a sale.</p>
+      </div>
+      <div class="pcard rv">
+        <div class="k">Principle</div>
+        <div class="h">Loyalty that protects the ticket</div>
+        <p>We deliberately rejected bulk prepaid packages, the easy move most studios make. Bulk drags the average ticket down and removes tips. Our program rewards clients along the way instead, so they feel valued while the ticket stays whole.</p>
+      </div>
+      <div class="pcard rv">
+        <div class="k">Principle</div>
+        <div class="h">Optimized from the numbers</div>
+        <p>Because the full funnel is tracked, we do not guess. Every week we read spend, sources and returns, then propose specific changes. The strategy adjusts to what the data actually shows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="rv">
+      <div class="sec-n">05</div>
+      <h2 class="sec-h">Built and ready to scale</h2>
+      <p class="sec-lead">The next phase needs no new build. Everything below is already in place and tested; it switches on as the team grows.</p>
+    </div>
+    <ul class="scale rv">
+      <li>Ad budget scales up in step with the two new practitioners joining the studio.</li>
+      <li>Win-back sequence is built and ready to switch on for lapsed clients.</li>
+      <li>New-versus-returning and source revenue reporting is set up, ready to enable.</li>
+      <li>Digital loyalty card and in-studio cards ready to roll to every client.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="cta-in">
+        <h2 class="cta-h rv">Want a system like this?</h2>
+        <p class="cta-p rv">This is what a full-stack partnership looks like. If you want the whole path built for your business, book a call and we will map it.</p>
+        <a class="pill pill--gold rv" href="landing-v5-en.html#book">Book my free strategy call
+          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-brand"><span>PGL</span> Marketing</div>
+    <p class="foot-legal">Full-stack growth · San Diego · © 2026 Personal Growth Lab LLC</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in');});},2600);
+  var v=document.querySelector('.m-reel video');
+  if(v&&'IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=e.target.play();if(p&&p.catch)p.catch(function(){});}else{e.target.pause();}});},{threshold:.4}).observe(v);}
+})();
+</script>
+</body>
+</html>
