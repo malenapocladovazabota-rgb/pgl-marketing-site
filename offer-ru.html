@@ -85,8 +85,11 @@ h2{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.0
 .tier{position:relative;display:flex;flex-direction:column}
 .tier .price{font-family:var(--disp);font-weight:800;font-size:32px;margin:4px 0 2px;letter-spacing:-.01em}
 .tier .per{font-size:13.5px;color:var(--warm);font-weight:600}
-.tier .forwho{font-size:13.5px;color:var(--ember-deep);font-weight:700;margin:12px 0 2px}
-.dark .tier .forwho{color:var(--ember)}
+.tier .forwho{font-size:13.5px;color:var(--warm);font-weight:600;margin:12px 0 2px}
+.tier .tagline{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ember-deep);margin:3px 0 6px}
+.dark .tier .tagline{color:var(--ember)}
+.tier li strong{font-weight:800;color:var(--ink)}
+.dark .tier li strong{color:var(--paper)}
 .tier ul{list-style:none;margin-top:12px}
 .tier li{font-size:14.5px;color:var(--ink);padding:6px 0 6px 24px;position:relative;line-height:1.4}
 .dark .tier li{color:var(--paper)}
@@ -277,34 +280,38 @@ h2{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.0
   <div class="grid g3" style="margin-top:8px">
     <div class="card tier reveal">
       <h3>Launch</h3>
+      <div class="tagline">Только реклама</div>
       <div class="price">от $1,500<span class="per"> / мес</span></div>
-      <div class="forwho">Для тех, кто уже делает контент и хочет только поток заявок.</div>
+      <div class="forwho">Контент у вас уже есть. Нужен только поток заявок.</div>
       <ul>
-        <li>Продающие креативы</li>
+        <li>Креативы из ваших материалов</li>
         <li>Запуск и ведение рекламы</li>
         <li>Базовый трекинг заявок</li>
       </ul>
     </div>
     <div class="card tier reveal">
       <h3>Growth</h3>
+      <div class="tagline">Контент + реклама</div>
       <div class="price">от $2,500<span class="per"> / мес</span></div>
-      <div class="forwho">Для тех, кто хочет стабильный поток и чтобы всё вели за них.</div>
+      <div class="forwho">Контента нет или некогда. Снимаем и ведём за вас.</div>
       <ul>
-        <li>Контент и съёмка под вашу подачу</li>
-        <li>Реклама, трекинг и CRM</li>
-        <li>Автоответы и еженедельная оптимизация</li>
+        <li>Всё из Launch, плюс:</li>
+        <li><strong>Съёмка и контент под ваш угол</strong></li>
+        <li><strong>CRM и автоответы на заявки</strong></li>
+        <li>Еженедельная оптимизация</li>
       </ul>
     </div>
     <div class="card tier feat reveal">
       <span class="tag">Популярный</span>
       <h3>Full Engine</h3>
+      <div class="tagline">Вся система роста</div>
       <div class="price">$3,500<span class="per"> / мес</span></div>
-      <div class="forwho">Для тех, кто хочет полный маркетинг под ключ и максимальный рост.</div>
+      <div class="forwho">Нужны не только заявки, но и рост бренда и удержание.</div>
       <ul>
-        <li>Контент, съёмка и продакшн</li>
-        <li>Реклама, трекинг и CRM</li>
-        <li>Органический рост под ключ</li>
-        <li>Удержание, реактивации и аналитика</li>
+        <li>Всё из Growth, плюс:</li>
+        <li><strong>Органический рост под ключ</strong></li>
+        <li><strong>Удержание и реактивации</strong></li>
+        <li>Сквозная аналитика</li>
       </ul>
     </div>
   </div>
