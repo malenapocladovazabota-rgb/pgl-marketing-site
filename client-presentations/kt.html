@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>K&amp;T Diagnostic — In-Home Health Checkup</title>
+<style>
+  :root{
+    --ink:#111418;--paper:#F6F4F0;--blue:#025598;--blue-dark:#013a68;
+    --accent:#0f9d8c;--gold:#C8963E;--muted:#6B7885;--line:#DFE5EA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:#1a1d21;color:var(--ink);-webkit-font-smoothing:antialiased;}
+  .slide{display:none;width:100vw;height:100vh;padding:62px 76px 74px;background:var(--paper);
+    flex-direction:column;position:relative;overflow:hidden;}
+  .slide.on{display:flex;}
+  .slide.dark{background:var(--ink);color:var(--paper);}
+  .slide.blue{background:linear-gradient(150deg,var(--blue-dark),var(--blue) 75%);color:#fff;}
+  .kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:16px;}
+  .dark .kicker,.blue .kicker{color:#7fe3d3;}
+  h1{font-size:58px;line-height:1.08;font-weight:800;letter-spacing:-.025em;}
+  h2{font-size:40px;line-height:1.14;font-weight:700;letter-spacing:-.02em;}
+  .sub{font-size:20px;color:var(--muted);max-width:880px;line-height:1.45;margin-top:14px;}
+  .dark .sub,.blue .sub{color:rgba(255,255,255,.82);}
+  .body{flex:1;display:flex;flex-direction:column;justify-content:center;}
+  .top{margin-bottom:26px;}
+  .num{font-size:15px;color:var(--muted);position:absolute;bottom:30px;right:76px;letter-spacing:.05em;}
+  .dark .num,.blue .num{color:rgba(255,255,255,.5);}
+  .brandmark{position:absolute;bottom:30px;left:76px;font-size:13px;color:var(--muted);letter-spacing:.06em;}
+  .dark .brandmark,.blue .brandmark{color:rgba(255,255,255,.5);}
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 28px;}
+  .dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);}
+  .blue .card{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.2);}
+  .card h3{font-size:20px;margin-bottom:8px;color:var(--blue-dark);font-weight:700;}
+  .dark .card h3,.blue .card h3{color:#fff;}
+  .card p{font-size:16px;color:var(--muted);line-height:1.5;}
+  .dark .card p,.blue .card p{color:rgba(255,255,255,.78);}
+  .big{font-size:50px;font-weight:800;color:var(--blue);line-height:1;letter-spacing:-.02em;}
+  .dark .big,.blue .big{color:#7fe3d3;}
+  .biglbl{font-size:15px;color:var(--muted);margin-top:8px;line-height:1.35;}
+  .dark .biglbl,.blue .biglbl{color:rgba(255,255,255,.75);}
+  ul.clean{list-style:none;}
+  ul.clean li{font-size:19px;padding:11px 0 11px 32px;position:relative;border-top:1px solid var(--line);line-height:1.4;}
+  ul.clean li:first-child{border-top:none;}
+  .dark ul.clean li,.blue ul.clean li{border-color:rgba(255,255,255,.15);}
+  ul.clean li::before{content:"";position:absolute;left:6px;top:20px;width:7px;height:7px;border-radius:50%;background:var(--accent);}
+  ul.clean li b{color:var(--blue-dark);}
+  .dark ul.clean li b,.blue ul.clean li b{color:#fff;}
+  .step{display:flex;gap:18px;align-items:flex-start;padding:16px 0;border-top:1px solid var(--line);}
+  .step:first-child{border-top:none;}
+  .dark .step{border-color:rgba(255,255,255,.15);}
+  .step .n2{flex:0 0 42px;height:42px;border-radius:50%;background:var(--blue);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;}
+  .dark .step .n2,.blue .step .n2{background:#7fe3d3;color:var(--ink);}
+  .step .t{font-size:19px;font-weight:700;color:var(--blue-dark);margin-bottom:3px;}
+  .dark .step .t,.blue .step .t{color:#fff;}
+  .step .d{font-size:16px;color:var(--muted);line-height:1.45;}
+  .dark .step .d,.blue .step .d{color:rgba(255,255,255,.78);}
+  .price-row{display:flex;gap:20px;}
+  .price{flex:1;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:24px;text-align:center;}
+  .price.main{border-color:var(--blue);border-width:2.5px;box-shadow:0 16px 40px -22px rgba(2,85,152,.6);}
+  .price .pn{font-size:15px;color:var(--muted);font-weight:600;margin-bottom:6px;}
+  .price .pv{font-size:40px;font-weight:800;color:var(--blue-dark);line-height:1;}
+  .price .pd{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.45;}
+  .tag{display:inline-block;padding:4px 13px;border-radius:30px;font-size:14px;font-weight:700;
+    background:rgba(15,157,140,.14);color:#0c7d6f;}
+  .tag.gold{background:rgba(200,150,62,.16);color:#8a6418;}
+  .nav{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:8px;align-items:center;
+    z-index:50;background:rgba(0,0,0,.5);padding:8px 14px;border-radius:40px;backdrop-filter:blur(8px);}
+  .nav button{background:none;border:none;color:#fff;font-size:17px;cursor:pointer;padding:3px 9px;border-radius:20px;font-family:inherit;}
+  .nav button:hover{background:rgba(255,255,255,.18);}
+  .nav .pos{color:#fff;font-size:13px;min-width:56px;text-align:center;letter-spacing:.04em;}
+
+  /* ---- PGL block on the closing slide ---- */
+  .pglcard{margin-top:34px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
+    border-radius:14px;padding:24px 28px;max-width:1020px;}
+  .pgltop{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .pglname{font-size:24px;font-weight:800;letter-spacing:-.01em;color:#fff;}
+  .pglmeta{font-size:14px;color:rgba(255,255,255,.7);margin-top:4px;letter-spacing:.02em;}
+  .pglbtn{display:inline-block;padding:11px 22px;border-radius:30px;background:#7fe3d3;color:#013a68;
+    font-size:16px;font-weight:800;text-decoration:none;white-space:nowrap;transition:transform .15s ease;}
+  .pglbtn:hover{transform:translateY(-1px);}
+  .pgldesc{font-size:16px;line-height:1.55;color:rgba(255,255,255,.82);margin-top:14px;max-width:840px;}
+  .pglcontact{font-size:15px;color:rgba(255,255,255,.7);margin-top:12px;}
+  .pglcontact a{color:#7fe3d3;text-decoration:none;}
+  .brandmark a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);}
+
+  /* ---- password gate ---- */
+  body.locked .slide{display:none !important;}
+  body.locked .nav{display:none !important;}
+  #gate{display:none;position:fixed;inset:0;z-index:200;background:linear-gradient(150deg,#013a68,#025598 75%);
+    align-items:center;justify-content:center;padding:24px;}
+  body.locked #gate{display:flex;}
+  .gatebox{width:100%;max-width:420px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);
+    border-radius:18px;padding:38px 34px;text-align:center;backdrop-filter:blur(8px);}
+  .gatebox .gk{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#7fe3d3;font-weight:700;}
+  .gatebox h2{font-size:26px;color:#fff;margin:12px 0 6px;font-weight:800;letter-spacing:-.01em;}
+  .gatebox p{font-size:15px;color:rgba(255,255,255,.72);line-height:1.5;margin-bottom:22px;}
+  .gatebox input{width:100%;padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.28);
+    background:rgba(255,255,255,.1);color:#fff;font-size:17px;font-family:inherit;text-align:center;letter-spacing:.04em;}
+  .gatebox input::placeholder{color:rgba(255,255,255,.45);letter-spacing:normal;}
+  .gatebox input:focus{outline:none;border-color:#7fe3d3;}
+  .gatebox button{width:100%;margin-top:12px;padding:14px;border:none;border-radius:10px;background:#7fe3d3;
+    color:#013a68;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;}
+  .gatebox button:hover{opacity:.9;}
+  .gateerr{color:#ffb4b4;font-size:14px;margin-top:12px;min-height:19px;}
+  .gatefoot{margin-top:26px;font-size:13px;color:rgba(255,255,255,.55);}
+  .gatefoot a{color:#7fe3d3;text-decoration:none;}
+  @media print{#gate{display:none !important;}body.locked .slide{display:flex !important;}}
+  @media print{.slide{display:flex !important;page-break-after:always;height:auto;min-height:96vh;}.nav{display:none;}}
+</style>
+</head>
+<body class="locked">
+
+<!-- 1 -->
+<section class="slide blue on">
+  <div class="body">
+    <div class="kicker">Partnership Proposal · August 2026</div>
+    <h1>In-Home Preventive<br>Health Checkup</h1>
+    <p class="sub">Launching a direct-to-consumer line for K&amp;T Diagnostic: a complete client acquisition system built on the infrastructure you already run.</p>
+  </div>
+  <div class="brandmark">Prepared by <a href="https://pgl.marketing" target="_blank" rel="noopener">PGL Marketing</a> · San Diego</div>
+  <div class="num">01</div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="top">
+    <div class="kicker">Our approach</div>
+    <h2>We do performance marketing</h2>
+    <p class="sub">Our objective is a paid, completed visit and a measurable return on every dollar spent.</p>
+  </div>
+  <div class="body">
+    <div class="g3">
+      <div class="card">
+        <h3>We measure down to revenue</h3>
+        <p>Every lead is tracked through to a completed visit. We know the cost per acquired client by channel, campaign and creative.</p>
+      </div>
+      <div class="card">
+        <h3>We work across the whole chain</h3>
+        <p>Website, creative, advertising, lead routing, customer database, repeat visits. We see the full picture and plug in at every stage.</p>
+      </div>
+      <div class="card">
+        <h3>We make the brand memorable</h3>
+        <p>We build recognition so that someone who sees your ad today comes back to you weeks later, when they are ready to decide.</p>
+      </div>
+    </div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">02</div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="top">
+    <div class="kicker">What our work covers</div>
+    <h2>The full path from ad to client in your database</h2>
+  </div>
+  <div class="body">
+    <div class="step"><div class="n2">1</div><div><div class="t">Website and packaging</div><div class="d">A consumer-facing site built around one goal: booking an appointment. Design, copy, structure, booking form, mobile.</div></div></div>
+    <div class="step"><div class="n2">2</div><div><div class="t">Creative and video</div><div class="d">Scripts, filming, editing. We write the scripts ourselves and manage video production through to finished assets.</div></div></div>
+    <div class="step"><div class="n2">3</div><div><div class="t">Advertising and targeting</div><div class="d">Facebook and Instagram as the primary channel, Google to capture active intent. Campaign setup, audiences, ZIP-level geo targeting.</div></div></div>
+    <div class="step"><div class="n2">4</div><div><div class="t">Lead routing</div><div class="d">Leads reach your team instantly and in a usable format. Dedicated phone number, notifications, call script.</div></div></div>
+    <div class="step"><div class="n2">5</div><div><div class="t">Customer database</div><div class="d">Every contact is stored in your database with full history: source, purchase, when to bring them back. The database is yours.</div></div></div>
+    <div class="step"><div class="n2">6</div><div><div class="t">Analytics and reporting</div><div class="d">A dashboard covering spend, leads, cost per client and return. Delivered weekly, in numbers.</div></div></div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">03</div>
+</section>
+
+<!-- 4 -->
+<section class="slide dark">
+  <div class="top">
+    <div class="kicker">Our track record</div>
+    <h2>What this looks like in a live account</h2>
+    <p class="sub">A local wellness business in San Diego. The audience is close to yours: affluent people who invest in their health.</p>
+  </div>
+  <div class="body">
+    <div class="g4" style="margin-bottom:28px">
+      <div class="card"><div class="big">$250</div><div class="biglbl">average service ticket</div></div>
+      <div class="card"><div class="big">$25</div><div class="biglbl">cost per acquired client</div></div>
+      <div class="card"><div class="big">10x</div><div class="biglbl">return on ad spend from the first visit</div></div>
+      <div class="card"><div class="big">5</div><div class="biglbl">months running and growing</div></div>
+    </div>
+    <div class="card">
+      <p style="font-size:18px">For this account we built the entire system: booking, payment processing, retention automations, SMS communication, personalized loyalty links, and automated review collection routing positive reviews to Google. We onboarded their staff and set up the processes. The owner now focuses on delivering the service.</p>
+    </div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">04</div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="top">
+    <div class="kicker">The opportunity</div>
+    <h2>There is open space between two players</h2>
+  </div>
+  <div class="body">
+    <div class="g3">
+      <div class="card">
+        <div class="tag gold">Mass market</div>
+        <h3 style="margin-top:14px">Life Line Screening</h3>
+        <p><b style="font-size:26px;color:var(--blue-dark)">$186 – $483</b><br><br>
+        Screenings take place in a rented hall and the customer drives there. In their own words on their site, no physicians are on site. Results arrive in 10 days or more.</p>
+      </div>
+      <div class="card" style="border-color:var(--accent);border-width:2px">
+        <div class="tag">Open position</div>
+        <h3 style="margin-top:14px">Where you fit</h3>
+        <p><b style="font-size:26px;color:var(--blue-dark)">$490 – $1,690</b><br><br>
+        Full diagnostic imaging at home, a report signed by a California-licensed physician, fast turnaround, published pricing. A single purchase with no required membership.</p>
+      </div>
+      <div class="card">
+        <div class="tag gold">Premium</div>
+        <h3 style="margin-top:14px">ConciergeMD LA</h3>
+        <p><b style="font-size:26px;color:var(--blue-dark)">$499 – $1,199</b> <span style="color:var(--muted)">per month</span><br><br>
+        They sell memberships. Their entire site publishes one price, for an IV drip. Customers learn the cost of diagnostics at step six of checkout.</p>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:26px">Los Angeles is already accustomed to paying for medical care delivered at home. The habit exists.</p>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">05</div>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="top">
+    <div class="kicker">Division of roles</div>
+    <h2>What we handle and where we need you</h2>
+  </div>
+  <div class="body">
+    <div class="g2">
+      <div class="card">
+        <h3 style="font-size:22px;margin-bottom:14px">Our side</h3>
+        <ul class="clean" style="font-size:17px">
+          <li>Website, design, copy</li>
+          <li>Video scripts, filming and editing</li>
+          <li>Advertising, audiences, optimization</li>
+          <li>Analytics, attribution, dashboard</li>
+          <li>Support with lead handling and upsell scripts</li>
+          <li>Customer database and retention communication</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="font-size:22px;margin-bottom:14px">Your involvement</h3>
+        <ul class="clean" style="font-size:17px">
+          <li>Confirm the service lineup and pricing</li>
+          <li>Confirm operations: who takes the lead, how it is booked, how the visit runs</li>
+          <li>Define the service area and available technician capacity</li>
+          <li>Legal framework: ordering physician, consent form</li>
+          <li>Review materials before they go live</li>
+        </ul>
+        <p style="font-size:16px;margin-top:16px;color:var(--muted)">We come to you with finished work and specific questions. Your time goes into confirming, not developing.</p>
+      </div>
+    </div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">06</div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <div class="top">
+    <div class="kicker">Phase 1</div>
+    <h2>Launch</h2>
+    <p class="sub">The opening weeks. We start narrow, across a few ZIP codes with a limited package lineup, to gather real data before expanding.</p>
+  </div>
+  <div class="body">
+    <div class="g2">
+      <div class="card">
+        <h3 style="font-size:21px;margin-bottom:12px">What we deliver</h3>
+        <ul class="clean" style="font-size:17px">
+          <li>Website and booking form</li>
+          <li>First round of creative and video</li>
+          <li>Analytics and tracking setup</li>
+          <li>Dedicated number and lead routing to your team</li>
+          <li>Campaign launch in the selected areas</li>
+          <li>Support with lead handling and visit scripts</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="font-size:21px;margin-bottom:12px">What we watch</h3>
+        <ul class="clean" style="font-size:17px">
+          <li>Cost per lead and cost per acquired client</li>
+          <li>Website to lead conversion</li>
+          <li>Lead to booking conversion</li>
+          <li>Share of booked clients who complete the visit</li>
+          <li>Which package sells most and the resulting average ticket</li>
+          <li>Rate of review accumulation</li>
+        </ul>
+        <p style="font-size:16px;margin-top:14px;color:var(--muted)">We agree target thresholds for each metric before launch, so decisions are made on numbers.</p>
+      </div>
+    </div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">07</div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="top">
+    <div class="kicker">Phase 2</div>
+    <h2>Scaling</h2>
+    <p class="sub">Once the launch numbers are confirmed, we expand across channels, geography and product.</p>
+  </div>
+  <div class="body">
+    <div class="g4">
+      <div class="card"><h3>Geography</h3><p>Expansion into adjacent areas as route density allows, then Ventura and Orange counties.</p></div>
+      <div class="card"><h3>Product</h3><p>The full package lineup, a couples offer, and an annual membership with a yearly checkup.</p></div>
+      <div class="card"><h3>Channels</h3><p>YouTube, review generation, a referral program, and partnerships with clinics and premium communities.</p></div>
+      <div class="card"><h3>Retention</h3><p>Automated annual checkup reminders, database reactivation, follow-up on results.</p></div>
+    </div>
+    <div class="card" style="margin-top:24px;background:#fff">
+      <p style="font-size:18px;color:var(--ink)">Advertising budget grows only behind confirmed return. Every increase is based on the data from the prior period.</p>
+    </div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">08</div>
+</section>
+
+<!-- 9 -->
+<section class="slide blue">
+  <div class="top">
+    <div class="kicker">Horizon</div>
+    <h2>Where this line goes over three years</h2>
+  </div>
+  <div class="body">
+    <div class="g3" style="margin-bottom:28px">
+      <div class="card"><div class="biglbl" style="margin-bottom:10px">Year 1</div><div class="big">$734K</div><div class="biglbl">in revenue. The year builds brand, reviews and data</div></div>
+      <div class="card"><div class="biglbl" style="margin-bottom:10px">Year 2</div><div class="big">$2.57M</div><div class="biglbl">in revenue, roughly $590K operating profit</div></div>
+      <div class="card" style="border-color:#7fe3d3;border-width:2px"><div class="biglbl" style="margin-bottom:10px">Year 3</div><div class="big">$4.28M</div><div class="biglbl">in revenue, roughly $1M operating profit</div></div>
+    </div>
+    <div class="card">
+      <p style="font-size:19px"><b style="color:#fff">Direct-to-consumer gives you what the insurance model cannot.</b> You set your own prices. You build and own your customer database. You reach a new category of paying patients and generate recurring revenue from annual checkups.</p>
+    </div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">09</div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <div class="top">
+    <div class="kicker">Commercial terms</div>
+    <h2>Three components of the cost</h2>
+  </div>
+  <div class="body">
+    <div class="price-row" style="margin-bottom:26px">
+      <div class="price">
+        <div class="pn">Setup, one-time</div>
+        <div class="pv">$5,000</div>
+        <div class="pd">Building the entire system from scratch: website, creative, analytics, setup and launch.</div>
+      </div>
+      <div class="price">
+        <div class="pn">Management, monthly</div>
+        <div class="pv">$2,000</div>
+        <div class="pd">Ongoing work on campaigns, creative and analytics.</div>
+      </div>
+      <div class="price main">
+        <div class="pn" style="color:var(--blue)">Performance</div>
+        <div class="pv">10%</div>
+        <div class="pd">Of revenue from completed visits, less advertising spend.</div>
+      </div>
+    </div>
+    <div class="g2">
+      <div class="card" style="background:#fff"><h3 style="font-size:18px">Advertising budget</h3><p style="font-size:16px">Paid by you directly to the platforms, with no agency markup. We set the amount together at launch and adjust based on results.</p></div>
+      <div class="card" style="background:#fff"><h3 style="font-size:18px">All assets are yours</h3><p style="font-size:16px">Website, creative, video, analytics configuration, customer database and scripts remain the property of K&amp;T Diagnostic.</p></div>
+    </div>
+    <p class="sub" style="margin-top:20px;font-size:18px">The following slides break down each component in detail.</p>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">10</div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <div class="top">
+    <div class="kicker">Setup · $5,000 one-time</div>
+    <h2>What we build before the first ad runs</h2>
+  </div>
+  <div class="body">
+    <div class="g3" style="margin-bottom:20px">
+      <div class="card" style="padding:22px 24px">
+        <h3 style="font-size:18px">1 · Strategy and groundwork</h3>
+        <p style="font-size:15px">Competitor and pricing analysis. Audience segment definition. Positioning and offers. Media plan by area and channel.</p>
+      </div>
+      <div class="card" style="padding:22px 24px">
+        <h3 style="font-size:18px">2 · Website</h3>
+        <p style="font-size:15px">Structure and wireframe. Design built around your product. Sales copy. Development and mobile version. Booking form with instant notifications.</p>
+      </div>
+      <div class="card" style="padding:22px 24px">
+        <h3 style="font-size:18px">3 · Creative and video</h3>
+        <p style="font-size:15px">Video scripts. Shoot planning and production. Editing, subtitles, adaptation to every ad format. Static creative assets.</p>
+      </div>
+      <div class="card" style="padding:22px 24px">
+        <h3 style="font-size:18px">4 · Technical foundation</h3>
+        <p style="font-size:15px">Ad accounts. Pixels and conversion event setup. Link tagging. Dedicated phone number with call tracking. Lead database and dashboard.</p>
+      </div>
+      <div class="card" style="padding:22px 24px">
+        <h3 style="font-size:18px">5 · Process support</h3>
+        <p style="font-size:15px">We prepare a call script for your team and recommendations for the on-visit upsell. We help set up handling of the new inbound flow and stay available as it runs.</p>
+      </div>
+      <div class="card" style="padding:22px 24px">
+        <h3 style="font-size:18px">6 · Build and launch</h3>
+        <p style="font-size:15px">Campaign structure, audiences, ZIP-level geo targeting. End-to-end test of the full chain. Launch and initial optimization on live data.</p>
+      </div>
+    </div>
+    <div class="card" style="background:#fff">
+      <p style="font-size:17px;color:var(--ink)">Setup timeline: approximately two weeks from signing. Everything built at this stage remains your property regardless of how the engagement continues.</p>
+    </div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">11</div>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <div class="top">
+    <div class="kicker">Management · $2,000 per month</div>
+    <h2>What we do every month</h2>
+  </div>
+  <div class="body">
+    <div class="g2">
+      <div class="card">
+        <h3 style="font-size:19px;margin-bottom:10px">Advertising operations</h3>
+        <ul class="clean" style="font-size:16px">
+          <li>Daily monitoring of campaigns and spend</li>
+          <li>Audience and bid optimization</li>
+          <li>Shifting budget toward what returns</li>
+          <li>Scaling the combinations that work</li>
+          <li>Shutting down what does not perform</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="font-size:19px;margin-bottom:10px">Creative</h3>
+        <ul class="clean" style="font-size:16px">
+          <li>New creative assets every month</li>
+          <li>Replacing fatigued material</li>
+          <li>Testing new scripts and angles</li>
+          <li>Adapting to season and to segments</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="font-size:19px;margin-bottom:10px">Analytics and reporting</h3>
+        <ul class="clean" style="font-size:16px">
+          <li>Weekly report in hard numbers</li>
+          <li>Dashboard you can open at any time</li>
+          <li>Funnel review and bottleneck analysis</li>
+          <li>Product and pricing recommendations based on data</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="font-size:19px;margin-bottom:10px">Growth and communication</h3>
+        <ul class="clean" style="font-size:16px">
+          <li>Testing new channels and audiences</li>
+          <li>Website edits and improvements</li>
+          <li>Work on lead to booking conversion</li>
+          <li>Weekly call and direct access between calls</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">12</div>
+</section>
+
+<!-- 13 -->
+<section class="slide dark">
+  <div class="top">
+    <div class="kicker">Performance · 10%</div>
+    <h2>How the performance fee is calculated</h2>
+  </div>
+  <div class="body">
+    <div class="g2" style="align-items:flex-start">
+      <div>
+        <div class="card" style="margin-bottom:18px">
+          <h3 style="font-size:19px;margin-bottom:10px">The formula</h3>
+          <p style="font-size:17px;line-height:1.6">We take the revenue from <b style="color:#fff">completed, paid visits</b> in the month.<br><br>
+          We subtract the <b style="color:#fff">advertising spend</b> for the same month.<br><br>
+          Our fee is <b style="color:#fff">10%</b> of what remains.</p>
+        </div>
+        <div class="card">
+          <h3 style="font-size:19px;margin-bottom:10px">What is excluded</h3>
+          <p style="font-size:16px">Your existing patients, physician-referred appointments, and your entire current insurance-billed volume. We count only the clients marketing brought in.</p>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:18px">
+          <h3 style="font-size:19px;margin-bottom:12px">Worked example, one month</h3>
+          <table style="width:100%;font-size:17px;color:rgba(255,255,255,.85)">
+            <tr><td style="padding:9px 0;border:none">Revenue from completed visits</td><td style="padding:9px 0;text-align:right;border:none;color:#fff;font-weight:700">$40,000</td></tr>
+            <tr><td style="padding:9px 0;border:none;border-top:1px solid rgba(255,255,255,.15)">Advertising spend</td><td style="padding:9px 0;text-align:right;border:none;border-top:1px solid rgba(255,255,255,.15);color:#fff;font-weight:700">−$8,000</td></tr>
+            <tr><td style="padding:9px 0;border:none;border-top:1px solid rgba(255,255,255,.15)">Calculation base</td><td style="padding:9px 0;text-align:right;border:none;border-top:1px solid rgba(255,255,255,.15);color:#fff;font-weight:700">$32,000</td></tr>
+            <tr><td style="padding:9px 0;border:none;border-top:1px solid rgba(255,255,255,.15)">Performance fee, 10%</td><td style="padding:9px 0;text-align:right;border:none;border-top:1px solid rgba(255,255,255,.15);color:#7fe3d3;font-weight:800;font-size:20px">$3,200</td></tr>
+            <tr><td style="padding:9px 0;border:none;border-top:1px solid rgba(255,255,255,.15)">Plus monthly management</td><td style="padding:9px 0;text-align:right;border:none;border-top:1px solid rgba(255,255,255,.15);color:#fff;font-weight:700">$2,000</td></tr>
+            <tr><td style="padding:11px 0 0;border:none;border-top:1px solid rgba(255,255,255,.3);font-weight:700;color:#fff">Total for the month</td><td style="padding:11px 0 0;text-align:right;border:none;border-top:1px solid rgba(255,255,255,.3);color:#7fe3d3;font-weight:800;font-size:24px">$5,200</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <h3 style="font-size:19px;margin-bottom:8px">Transparency</h3>
+          <p style="font-size:16px">Calculated from a shared booking log you have access to. Every visit is visible with its source. Invoiced monthly against completed visits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">13</div>
+</section>
+
+<!-- 14 -->
+<section class="slide dark">
+  <div class="top">
+    <div class="kicker">Next step</div>
+    <h2>We start now, first leads in September</h2>
+  </div>
+  <div class="body">
+    <div class="step"><div class="n2">1</div><div><div class="t">Agree terms and sign</div><div class="d">We lock the scope of work, the timeline and the payment schedule.</div></div></div>
+    <div class="step"><div class="n2">2</div><div><div class="t">Move straight into production</div><div class="d">We begin the website, design, video scripts and filming. In parallel we stand up analytics and build the lead routing.</div></div></div>
+    <div class="step"><div class="n2">3</div><div><div class="t">Confirm pricing, services and processes with you</div><div class="d">We bring finished work, you confirm it. This is the shortest part of your involvement.</div></div></div>
+    <div class="step"><div class="n2">4</div><div><div class="t">Launch campaigns and take the first leads</div><div class="d">Target timeline: first customer inquiries in September.</div></div></div>
+  </div>
+  <div class="brandmark">K&amp;T Diagnostic</div>
+  <div class="num">14</div>
+</section>
+
+<!-- 15 -->
+<section class="slide blue">
+  <div class="body" style="justify-content:center">
+    <div class="kicker">Why this works</div>
+    <h1 style="font-size:48px;max-width:1020px">You have the technicians, the equipment,<br>the physician and fifteen years of operations.<br>We add the flow of private clients.</h1>
+    <p class="sub" style="font-size:22px;margin-top:26px">We start narrow, measure every dollar, and expand on confirmed numbers.</p>
+    <div class="pglcard">
+      <div class="pgltop">
+        <div>
+          <div class="pglname">PGL Marketing</div>
+          <div class="pglmeta">Performance marketing · San Diego, California · Personal Growth Lab LLC</div>
+        </div>
+        <a class="pglbtn" href="https://pgl.marketing" target="_blank" rel="noopener">See our work at pgl.marketing →</a>
+      </div>
+      <p class="pgldesc">We build and run everything between the ad and the paid client: campaigns, lead capture and routing, the customer database, and reporting that ties every dollar of spend back to revenue. Ad accounts, CRM, domain and data are registered in the client's name from day one and stay with them.</p>
+      <div class="pglcontact">Lev Pocladov · <a href="mailto:lev@pgl.marketing">lev@pgl.marketing</a> · <a href="https://pgl.marketing" target="_blank" rel="noopener">pgl.marketing</a></div>
+    </div>
+  </div>
+  <div class="brandmark"><a href="https://pgl.marketing" target="_blank" rel="noopener">PGL Marketing</a> · pgl.marketing</div>
+  <div class="num">15</div>
+</section>
+
+<div id="gate">
+  <div class="gatebox">
+    <div class="gk">Private document</div>
+    <h2>K&amp;T Diagnostic</h2>
+    <p>This proposal is confidential. Enter the access code you received to continue.</p>
+    <form id="gateform" autocomplete="off">
+      <input id="gatepass" type="password" placeholder="Access code" autocomplete="off" spellcheck="false">
+      <button type="submit">Open presentation</button>
+    </form>
+    <div class="gateerr" id="gateerr"></div>
+    <div class="gatefoot">Prepared by <a href="https://pgl.marketing" target="_blank" rel="noopener">PGL Marketing</a>, San Diego</div>
+  </div>
+</div>
+
+<div class="nav">
+  <button id="prev">‹</button>
+  <span class="pos" id="pos">1 / 15</span>
+  <button id="next">›</button>
+</div>
+
+<script>
+/* ================================================================
+   ACCESS CODE. Change the value below to set a new password.
+   Case-insensitive, spaces ignored.
+   ================================================================ */
+var PGL_ACCESS_CODE = "KT2026";
+
+(function(){
+  var f=document.getElementById('gateform');
+  var inp=document.getElementById('gatepass');
+  var err=document.getElementById('gateerr');
+  function norm(v){return String(v||'').replace(/\s+/g,'').toLowerCase();}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(norm(inp.value)===norm(PGL_ACCESS_CODE)){
+      document.body.classList.remove('locked');
+      err.textContent='';
+      window.scrollTo(0,0);
+    }else{
+      err.textContent='Incorrect code. Please check the message you received.';
+      inp.value='';
+      inp.focus();
+    }
+  });
+  window.addEventListener('load',function(){inp.focus();});
+})();
+</script>
+
+<script>
+(function(){
+  var s=document.querySelectorAll('.slide'), i=0;
+  function go(n){
+    i=Math.max(0,Math.min(s.length-1,n));
+    s.forEach(function(el,k){el.classList.toggle('on',k===i);});
+    document.getElementById('pos').textContent=(i+1)+' / '+s.length;
+  }
+  document.getElementById('next').onclick=function(){go(i+1);};
+  document.getElementById('prev').onclick=function(){go(i-1);};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(i+1);}
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(i-1);}
+    if(e.key==='Home')go(0); if(e.key==='End')go(s.length-1);
+  });
+  go(0);
+})();
+</script>
+</body>
+</html>
