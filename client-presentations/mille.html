@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Mille Casa Riyadh · Система привлечения клиентов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0B1119;--bone:#FAF8F3;--pure:#fff;--warm:#F4ECDF;--gold:#D4B68C;--ember:#C9A84C;--deep:#9B7E2E;--gray:#6B6358;--line:#E5DDD0;--green:#2F7A57}
+html,body{height:100%}
+body{background:#0a0a0c;font-family:'Bricolage Grotesque',-apple-system,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.deck{position:relative;width:100vw;height:100vh;overflow:hidden}
+.s{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:5.5vh 7vw;background:var(--bone);overflow-y:auto}
+.s.on{display:flex}
+.s.dark{background:var(--ink);color:var(--bone)}
+.s.warm{background:var(--warm)}
+h1{font-family:'Fraunces',serif;font-size:clamp(30px,4.4vw,58px);line-height:1.08;letter-spacing:-.02em;font-weight:600}
+h2{font-family:'Fraunces',serif;font-size:clamp(23px,3vw,40px);line-height:1.14;letter-spacing:-.02em;font-weight:600;margin-bottom:2.2vh}
+h3{font-family:'Fraunces',serif;font-size:clamp(16px,1.5vw,21px);font-weight:600;margin-bottom:.6vh}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:clamp(9px,.72vw,11px);letter-spacing:.2em;text-transform:uppercase;color:var(--deep);margin-bottom:1.6vh}
+.dark .eyebrow{color:var(--ember)}
+.lede{font-size:clamp(14px,1.25vw,19px);color:var(--gray);max-width:60ch;line-height:1.5}
+.dark .lede{color:#B9B2A6}
+p{font-size:clamp(13px,1.05vw,16px);line-height:1.5}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:2vw}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6vw}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2vw}
+.card{background:var(--pure);border:1px solid var(--line);border-radius:10px;padding:2.2vh 1.5vw}
+.dark .card{background:#151b24;border-color:#252d38}
+.card.hi{border-color:var(--ember);border-width:2px;background:var(--warm)}
+.dark .card.hi{background:#1c2028;border-color:var(--ember)}
+.num{font-family:'Fraunces',serif;font-size:clamp(26px,3.4vw,46px);font-weight:600;line-height:1;color:var(--deep)}
+.dark .num{color:var(--ember)}
+.lbl{font-size:clamp(11px,.85vw,13px);color:var(--gray);margin-top:.7vh;line-height:1.35}
+.dark .lbl{color:#9A9389}
+ul{list-style:none}
+li{font-size:clamp(12px,1vw,15px);line-height:1.45;padding-left:1.1em;position:relative;margin-bottom:.85vh}
+li:before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--ember)}
+ol{counter-reset:o;list-style:none}
+ol li{counter-increment:o;padding-left:2em}
+ol li:before{content:counter(o,decimal-leading-zero);font-family:'JetBrains Mono',monospace;font-size:.8em;color:var(--deep);background:none;width:auto;height:auto;top:.15em;border-radius:0}
+table{width:100%;border-collapse:collapse;font-size:clamp(11px,.95vw,15px);background:var(--pure)}
+.dark table{background:transparent}
+th{background:var(--ink);color:var(--warm);text-align:left;padding:1.1vh .85vw;font-weight:600;font-size:.92em}
+.dark th{background:#1c232d}
+td{padding:1vh .85vw;border-bottom:1px solid var(--line);vertical-align:top}
+.dark td{border-color:#252d38}
+tbody tr:nth-child(even) td{background:#FCFAF6}
+.dark tbody tr:nth-child(even) td{background:#12181f}
+tr.hi td{background:var(--warm);font-weight:600}
+.dark tr.hi td{background:#1c2028}
+.pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:clamp(9px,.7vw,11px);letter-spacing:.08em;text-transform:uppercase;padding:.35em .7em;border-radius:3px;background:var(--warm);color:var(--deep)}
+.dark .pill{background:#1c2028;color:var(--ember)}
+.big{font-family:'Fraunces',serif;font-size:clamp(24px,2.9vw,42px);line-height:1.2;font-weight:600;max-width:22ch}
+.note{font-size:clamp(11px,.85vw,13px);color:var(--gray);margin-top:1.4vh;line-height:1.45}
+.dark .note{color:#8A8780}
+.pg{position:fixed;bottom:2.2vh;right:2.6vw;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gray);z-index:20}
+.dark-pg{color:#6B6358}
+.bar{position:fixed;top:0;left:0;height:2px;background:var(--ember);z-index:30;transition:width .25s}
+.nav{position:fixed;bottom:2.2vh;left:2.6vw;display:flex;gap:8px;z-index:20}
+.nav button{border:1px solid var(--line);background:rgba(255,255,255,.75);color:var(--ink);width:30px;height:30px;border-radius:5px;cursor:pointer;font-size:14px;line-height:1}
+.nav button:hover{background:var(--warm)}
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:2.4vw;align-items:start}
+.mono{font-family:'JetBrains Mono',monospace;font-size:clamp(11px,.9vw,14px)}
+@media print{
+ body{background:#fff}
+ .deck{height:auto}
+ .s{display:flex!important;position:relative;height:100vh;page-break-after:always;inset:auto}
+ .nav{display:none}
+}
+
+/* ---- блок PGL на финальном слайде ---- */
+.pglcard{margin-top:2.6vh;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);
+  border-radius:16px;padding:2.2vh 2.2vw;max-width:80ch}
+.pgltop{display:flex;align-items:center;justify-content:space-between;gap:2vw;flex-wrap:wrap}
+.pglname{font-family:'Fraunces',serif;font-size:clamp(19px,2.1vh,26px);font-weight:700;color:#fff;letter-spacing:-.01em}
+.pglmeta{font-size:clamp(11px,1.25vh,14px);color:rgba(255,255,255,.62);margin-top:.4vh;letter-spacing:.02em}
+.pglbtn{display:inline-block;padding:1.1vh 1.6vw;border-radius:40px;background:var(--gold);color:#0B1119;
+  font-size:clamp(12px,1.4vh,15px);font-weight:700;text-decoration:none;white-space:nowrap}
+.pglbtn:hover{background:var(--ember)}
+.pgldesc{font-size:clamp(12px,1.45vh,16px);line-height:1.55;color:rgba(255,255,255,.78);margin-top:1.4vh;max-width:70ch}
+.pglcontact{font-size:clamp(11px,1.3vh,14px);color:rgba(255,255,255,.62);margin-top:1.1vh}
+.pglcontact a{color:var(--gold);text-decoration:none}
+
+/* ---- экран с кодом доступа ---- */
+body.locked .deck,body.locked .nav,body.locked .pg,body.locked #bar{display:none!important}
+#gate{display:none;position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 120% at 50% 0%,#141B26 0%,#0B1119 60%,#07090d 100%);
+  align-items:center;justify-content:center;padding:24px;font-family:'Bricolage Grotesque',-apple-system,sans-serif}
+body.locked #gate{display:flex}
+.gatebox{width:100%;max-width:430px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);
+  border-radius:20px;padding:40px 34px;text-align:center;backdrop-filter:blur(10px)}
+.gatebox .gk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.gatebox h2{font-family:'Fraunces',serif;font-size:27px;color:#fff;margin:14px 0 8px;font-weight:600;letter-spacing:-.01em}
+.gatebox p{font-size:14.5px;color:rgba(255,255,255,.66);line-height:1.55;margin-bottom:24px}
+.gatebox input{width:100%;padding:15px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.07);color:#fff;font-size:17px;font-family:inherit;text-align:center;letter-spacing:.06em}
+.gatebox input::placeholder{color:rgba(255,255,255,.38);letter-spacing:normal}
+.gatebox input:focus{outline:none;border-color:var(--gold)}
+.gatebox button{width:100%;margin-top:12px;padding:15px;border:none;border-radius:12px;background:var(--gold);
+  color:#0B1119;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer}
+.gatebox button:hover{background:var(--ember)}
+.gateerr{color:#F0A9A9;font-size:13.5px;margin-top:12px;min-height:19px}
+.gatefoot{margin-top:28px;font-size:12.5px;color:rgba(255,255,255,.45)}
+.gatefoot a{color:var(--gold);text-decoration:none}
+@media print{#gate{display:none!important}body.locked .deck{display:block!important}}
+</style>
+</head>
+<body class="locked">
+<div class="bar" id="bar"></div>
+<div class="deck" id="deck">
+
+<section class="s dark on">
+  <div class="eyebrow">Август 2026</div>
+  <h1>План работ<br>Mille Casa Riyadh</h1>
+  <p class="lede" style="margin-top:2.4vh">Instagram и Meta, контент и креативы, Google, блогеры по бартеру. Как эти четыре направления связываются в одну систему и что происходит по неделям.</p>
+</section>
+
+<section class="s">
+  <div class="eyebrow">Начало работы</div>
+  <h2>С чего мы заходим в проект</h2>
+  <div class="g2" style="margin-top:1.5vh">
+    <ol>
+      <li><strong>Разбор кабинетов.</strong> Заходим в Meta и Google, смотрим что накоплено: структура кампаний, аудитории, история конверсий, какие связки работали и какие нет.</li>
+      <li><strong>Разбор воронки.</strong> Как люди попадают к вам сейчас, через какие точки, что происходит с обращением дальше, на каком шаге теряются.</li>
+      <li><strong>Кто покупает.</strong> Собираем портрет на данных: кто оставляет заявки, кто доходит до шоурума, кто подписывает заказ.</li>
+    </ol>
+    <ol start="4" style="counter-reset:o 3">
+      <li><strong>Сильные и слабые стороны.</strong> Что уже работает и требует усиления, что забирает бюджет без результата.</li>
+      <li><strong>Стратегия и контент-план.</strong> На основе разбора собираем новую структуру кампаний, аудитории и план контента.</li>
+      <li><strong>Гипотезы и тесты.</strong> Запускаем несколько подходов параллельно и проверяем деньгами, какой из них даёт визиты в шоурум.</li>
+    </ol>
+  </div>
+  <div class="card hi" style="margin-top:2.4vh">
+    <p>Первые два шага занимают несколько дней после выдачи доступов. Мы не начинаем строить новое поверх того, что уже накоплено, пока не увидим, что там внутри.</p>
+  </div>
+</section>
+
+<section class="s dark">
+  <div class="eyebrow">Как это связывается</div>
+  <h2>Одна система, четыре входа</h2>
+  <div class="g3" style="margin-top:2vh">
+    <div class="card"><h3>Вход</h3><ul style="margin-top:1.2vh"><li>Meta и Instagram</li><li>Google</li><li>Блогеры</li><li>Органика и рекомендации</li></ul><p class="note">Четыре источника, один учёт. По каждому обращению видно, откуда оно пришло.</p></div>
+    <div class="card hi"><h3>Обработка</h3><ul style="margin-top:1.2vh"><li>Быстрый ответ на обращение</li><li>Квалификация по 4 вопросам</li><li>Запись на слот в шоуруме</li><li>Подтверждение накануне и в день</li></ul><p class="note">Обращения приходят, дальше учёта нет. Здесь теряется больше всего.</p></div>
+    <div class="card"><h3>Возврат</h3><ul style="margin-top:1.2vh"><li>Кто не дошёл до визита</li><li>Кто пришёл и ушёл думать</li><li>База прошлых обращений</li><li>Сезонные поводы</li></ul><p class="note">Решение о мебели на такую сумму принимается неделями. Один контакт этого не закрывает.</p></div>
+  </div>
+  <p class="lede" style="margin-top:2.6vh;max-width:74ch">Каждое из четырёх направлений заводит людей в один контур обработки. Поэтому мы не запускаем их по очереди: без общей обработки и учёта любой новый канал добавляет потерянных обращений.</p>
+</section>
+
+<section class="s">
+  <div class="eyebrow">Направление 01 · Instagram и Meta</div>
+  <h2>Аудитории</h2>
+  <div class="split" style="margin-top:1.5vh">
+    <div>
+      <table>
+        <thead><tr><th>Кого берём</th><th>Как находим</th><th>Очередь</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><strong>Были на сайте и в профиле</strong></td><td>Пиксель, посетители карточек товара, взаимодействие с профилем</td><td>Неделя 1</td></tr>
+          <tr class="hi"><td><strong>Строят или обставляют дом</strong></td><td>Гео на районы новой застройки Эр-Рияда</td><td>Неделя 1</td></tr>
+          <tr><td><strong>Похожие на ваших покупателей</strong></td><td>Look-alike от базы прошлых заказов</td><td>Неделя 2</td></tr>
+          <tr><td><strong>Принимают гостей</strong></td><td>Интересы вокруг приёма и интерьера. Отдельная линия креативов</td><td>Неделя 3</td></tr>
+          <tr><td><strong>Интерьерная профессия</strong></td><td>Дизайнеры и архитекторы. Ведём отдельно от розницы</td><td>Неделя 3</td></tr>
+        </tbody>
+      </table>
+      <div class="note">Сейчас таргетинг построен на косвенных признаках: должность и уровень дохода. Переносим его на прямые сигналы: человек смотрел товар, живёт в районе новой застройки, взаимодействовал с профилем.</div>
+    </div>
+    <div>
+      <div class="card hi">
+        <h3>Что меняем в кампаниях</h3>
+        <ul style="margin-top:1.2vh">
+          <li>Три уровня вместо плоской структуры: возврат, тёплые, холодные</li>
+          <li>Бюджет собирается на работающих связках</li>
+          <li>Проверяем шаг подтверждения телефона в форме</li>
+          <li>Отдельные кампании под арабский и английский</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s warm">
+  <div class="eyebrow">Направление 02 · Креативы</div>
+  <h2>Как устроена работа с контентом</h2>
+  <div class="split" style="margin-top:1.5vh">
+    <div>
+      <ol>
+        <li><strong>Идеи и сценарии.</strong> В рамках теста прописываем 10 роликов: о чём каждый, на кого рассчитан, какую гипотезу проверяет.</li>
+        <li><strong>Шот-лист.</strong> По каждому ролику конкретный список кадров: что снять, с какого ракурса, сколько дублей.</li>
+        <li><strong>Съёмка.</strong> Снимает ваш видеограф, который уже работает с шоурумом. Мы даём готовые задания, ей остаётся выполнить их по списку.</li>
+        <li><strong>Монтаж и адаптация.</strong> Сборка, версии под разные форматы, тексты на арабском и английском на нашей стороне.</li>
+        <li><strong>Досъёмка.</strong> По результатам теста доснимаем то, что дало отклик. Батчем, одной сменой, а не по одному ролику.</li>
+      </ol>
+    </div>
+    <div>
+      <div class="card hi">
+        <h3>Направления роликов</h3>
+        <ul style="margin-top:1.2vh">
+          <li>Материалы и ткани вблизи</li>
+          <li>Как считается посадка под комнату</li>
+          <li>Производство и сборка</li>
+          <li>Доставка и установка</li>
+          <li>Разговор о продукте у мебели</li>
+          <li>Отзывы клиентов</li>
+        </ul>
+        <p class="note">Конкретные сценарии прописываем на старте, когда будут понятны приоритеты по моделям и по аудиториям.</p>
+      </div>
+      <div class="card" style="margin-top:1.6vh">
+        <p style="color:var(--gray)">Из одной смены собирается 10 до 15 объявлений. Библиотека пополняется постоянно, чтобы объявления не выгорали на одной аудитории.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="eyebrow">Направление 03 · Google</div>
+  <h2>Забираем тех, кто уже ищет</h2>
+  <div class="split" style="margin-top:1.5vh">
+    <div>
+      <table>
+        <thead><tr><th>Кампания</th><th>Что закрывает</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td><strong>Защита бренда</strong></td><td>Запросы со словом Mille</td></tr>
+          <tr class="hi"><td><strong>Категория, арабский</strong></td><td>Диваны, меджлис, мебель на заказ</td></tr>
+          <tr><td><strong>Категория, английский</strong></td><td>European sofa, custom sofa Riyadh</td></tr>
+          <tr><td><strong>Конкуренты</strong></td><td>Кто ищет другие европейские марки в городе</td></tr>
+        </tbody>
+      </table>
+      <div class="note">На сайте уже стоит счётчик Google Ads с настроенными конверсиями. Значит аккаунт существует. Первое действие: получить доступ и посмотреть накопленную историю.</div>
+    </div>
+    <div>
+      <div class="card hi">
+        <h3>Что делаем</h3>
+        <ul style="margin-top:1.2vh">
+          <li>Собираем семантику на двух языках</li>
+          <li>Пишем объявления под группы запросов</li>
+          <li>Готовим страницы под арабский трафик</li>
+          <li>Заводим карточки шоурумов на картах</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:1.6vh">
+        <p style="color:var(--gray)">Google подключаем параллельно с Meta и смотрим на реальный объём поиска по вашей нише. Решение о том, сколько бюджета сюда направлять, принимаем по первым данным.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s dark">
+  <div class="eyebrow">Направление 04 · Блогеры</div>
+  <h2>Как работает бартер в этой категории</h2>
+  <div class="g3" style="margin-top:1.5vh">
+    <div class="card hi">
+      <span class="pill">Тир 1</span>
+      <h3 style="margin-top:1.2vh">До 50 тысяч подписчиков</h3>
+      <p style="color:#B9B2A6;margin-top:.8vh">Чистый бартер работает. Даём предмет с доставкой и сборкой, получаем ролик и серию сторис. Экономика сходится: товар кратно дороже их обычной ставки.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Тир 2</span>
+      <h3 style="margin-top:1.2vh">От 50 до 250 тысяч</h3>
+      <p style="color:#B9B2A6;margin-top:.8vh">Рыночная норма это товар плюс гонорар. Идём сюда после того, как первый тир покажет отклик.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Тир 3</span>
+      <h3 style="margin-top:1.2vh">Свыше 250 тысяч</h3>
+      <p style="color:#B9B2A6;margin-top:.8vh">Только оплата. Рассматриваем точечно, под конкретную задачу.</p>
+    </div>
+  </div>
+  <div class="g2" style="margin-top:2.4vh">
+    <div class="card">
+      <h3>Как выбираем</h3>
+      <p style="color:#B9B2A6;margin-top:.8vh">По вовлечённости, а не по числу подписчиков. В нише интерьера Эр-Рияда есть аккаунты на 35 до 70 тысяч с вовлечённостью в 6 до 7 процентов. Начинаем с них.</p>
+    </div>
+    <div class="card hi">
+      <h3>Обязательное условие</h3>
+      <p style="color:#B9B2A6;margin-top:.8vh">В Саудовской Аравии реклама у блогера требует лицензии, и бартер тоже считается рекламой. Проверяем лицензию до отправки товара, прописываем маркировку и права на использование материала в договоре.</p>
+    </div>
+  </div>
+  <div class="note">Единицу товара от завода используем на первый тир. Каждому блогеру выдаём отдельную ссылку или номер, чтобы обращения от него считались.</div>
+</section>
+
+<section class="s">
+  <div class="eyebrow">Куда ведём людей</div>
+  <h2>Четыре пути, проверяем одновременно</h2>
+  <div class="g4" style="margin-top:2vh">
+    <div class="card"><h3>Сообщение</h3><p style="color:var(--gray)">Текущий путь. Оставляем как точку отсчёта, чтобы было с чем сравнивать.</p></div>
+    <div class="card hi"><h3>Запись на визит</h3><p style="color:var(--gray)">Человек сам выбирает слот. Двухчасовые окна, потому что приходят не минута в минуту.</p></div>
+    <div class="card hi"><h3>Форма и звонок</h3><p style="color:var(--gray)">Даёт телефон. Значит человека можно вернуть через неделю и через месяц.</p></div>
+    <div class="card"><h3>Каталог решений</h3><p style="color:var(--gray)">Подборка под саудовский дом: мужской и женский зал, метры посадки, готовые стили.</p></div>
+  </div>
+  <div class="card hi" style="margin-top:2.6vh">
+    <p>Через две недели откручивания видно, какие пути дают визиты в шоурум. Бюджет переносится на них, остальные закрываются. Мы не угадываем заранее, потому что поведение покупателя на этом рынке проверяется деньгами.</p>
+  </div>
+</section>
+
+<section class="s warm">
+  <div class="eyebrow">Обработка</div>
+  <h2>Что происходит с обращением</h2>
+  <div class="g4" style="margin-top:2vh">
+    <div class="card"><span class="pill">Шаг 1</span><h3 style="margin-top:1vh">Ответ</h3><p style="color:var(--gray)">Автоответ сразу, живой ответ в течение рабочего окна. Скрипт на арабском и английском.</p></div>
+    <div class="card"><span class="pill">Шаг 2</span><h3 style="margin-top:1vh">Квалификация</h3><p style="color:var(--gray)">Четыре вопроса: что за помещение, стадия стройки, срок, сколько метров посадки.</p></div>
+    <div class="card hi"><span class="pill">Шаг 3</span><h3 style="margin-top:1vh">Запись</h3><p style="color:var(--gray)">Слот в шоуруме, подтверждение накануне и в день визита. Не пришёл, попадает в цепочку возврата.</p></div>
+    <div class="card"><span class="pill">Шаг 4</span><h3 style="margin-top:1vh">Визит и замер</h3><p style="color:var(--gray)">Фиксируем результат каждого визита. Ушёл думать, попадает в отдельную работу.</p></div>
+  </div>
+  <div class="g2" style="margin-top:2.4vh">
+    <div class="card"><h3>Что даём мы</h3><ul style="margin-top:1vh"><li>Тексты всех касаний на двух языках</li><li>Скрипт звонка и квалификации</li><li>Автоматические напоминания</li><li>Цепочку возврата</li></ul></div>
+    <div class="card hi"><h3>Что нужно со стороны Mille</h3><ul style="margin-top:1vh"><li>Человек, который отвечает за обращения</li><li>Норматив ответа в рабочие часы</li><li>Слоты в шоуруме под записи</li><li>Отметка результата визита в системе</li></ul></div>
+  </div>
+</section>
+
+<section class="s dark">
+  <div class="eyebrow">Учёт</div>
+  <h2>Откуда пришёл каждый заказ</h2>
+  <div class="g3" style="margin-top:2vh">
+    <div class="card"><h3>Сейчас</h3><ul style="margin-top:1.2vh"><li>Учёт в таблице</li><li>Обращения в директе и переписке</li><li>Источник заказа неизвестен</li><li>Нельзя сказать, какая реклама сработала</li></ul></div>
+    <div class="card hi"><h3>Строим</h3><ul style="margin-top:1.2vh"><li>Система со стадиями под ваш процесс</li><li>Метка источника на каждом обращении</li><li>Учёт до подписанного заказа</li><li>Доступ одинаковый у всех</li></ul></div>
+    <div class="card"><h3>Что это даёт</h3><ul style="margin-top:1.2vh"><li>Стоимость обращения по каналам</li><li>Стоимость визита в шоурум</li><li>Стоимость заказа</li><li>Бюджет двигается по цифрам</li></ul></div>
+  </div>
+  <p class="lede" style="margin-top:2.6vh;max-width:74ch">Первые две недели отчёт по обращениям приходит почти каждый день. Дальше раз в неделю, с разбором: что сработало, что выключаем, куда переносим деньги.</p>
+</section>
+
+<section class="s">
+  <div class="eyebrow">График</div>
+  <h2>Четыре недели от даты доступов</h2>
+  <table style="margin-top:1.5vh">
+    <thead><tr><th>Неделя</th><th>Что запускается</th><th>Что появляется</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td><strong>1</strong></td><td>Доступы и проверка кабинетов. Возврат и гео-кампании в Meta. Защита бренда и арабская категория в Google. Система учёта. Сценарии и шот-листы. Аутрич блогерам</td><td>Первые обращения. Понятно, что накоплено в кабинетах до нас</td></tr>
+      <tr class="hi"><td><strong>2</strong></td><td>Съёмка в шоуруме по шот-листу. Форма записи и страницы под каждый путь. Скрипты обработки. Первые отправки товара блогерам</td><td>Первые записи на визит. Стоимость обращения по каждому пути</td></tr>
+      <tr><td><strong>3</strong></td><td>Первая партия роликов в рекламе. Английская категория в Google. Look-alike от базы</td><td>Первые визиты с известным источником. Видно, какие пути живые</td></tr>
+      <tr><td><strong>4</strong></td><td>Бюджет собирается на работающих связках. Досъёмка по результатам. Цепочки возврата. Первые публикации у блогеров</td><td>Стоимость визита. Первые заказы с меткой источника</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="s">
+  <div class="eyebrow">Горизонт</div>
+  <h2>Каких результатов ждём</h2>
+  <div class="g3" style="margin-top:2vh">
+    <div class="card">
+      <span class="pill">Первый месяц</span>
+      <h3 style="margin-top:1.2vh">Поток и данные</h3>
+      <ul style="margin-top:1.2vh">
+        <li>Четыре пути в работе, два выбраны как рабочие</li>
+        <li>Известна стоимость обращения</li>
+        <li>Идут записи и первые визиты</li>
+        <li>Все обращения в системе учёта</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="pill">Второй месяц</span>
+      <h3 style="margin-top:1.2vh">Система</h3>
+      <ul style="margin-top:1.2vh">
+        <li>Известна стоимость визита в шоурум</li>
+        <li>Первые заказы с подтверждённым источником</li>
+        <li>Работают цепочки возврата</li>
+        <li>Библиотека контента пополняется регулярно</li>
+      </ul>
+    </div>
+    <div class="card hi">
+      <span class="pill">Третий месяц</span>
+      <h3 style="margin-top:1.2vh">Масштаб</h3>
+      <ul style="margin-top:1.2vh">
+        <li>Известна стоимость заказа</li>
+        <li>Бюджет растёт на подтверждённых связках</li>
+        <li>Новые каналы поверх работающих</li>
+        <li>Партнёрское направление в работе</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">Заказ, оформленный в один месяц, приезжает клиенту позже. Поэтому первые месяцы меряем обращения и визиты, а выручку считаем от даты подписания.</div>
+</section>
+
+<section class="s warm">
+  <div class="eyebrow">Экономика</div>
+  <h2>Сколько заказов нужно, чтобы выйти в ноль</h2>
+  <div class="split" style="margin-top:1.5vh">
+    <div>
+      <table>
+        <thead><tr><th>Средний чек</th><th>Маржа с заказа</th><th>Заказов до нуля</th><th>Визитов в месяц</th></tr></thead>
+        <tbody>
+          <tr><td>$8,000</td><td>$1,425</td><td>28</td><td>32 до 57</td></tr>
+          <tr class="hi"><td>$10,000</td><td>$3,425</td><td>12</td><td>13 до 24</td></tr>
+          <tr class="hi"><td>$15,000</td><td>$8,425</td><td>5</td><td>5 до 10</td></tr>
+          <tr><td>$20,000</td><td>$13,425</td><td>3</td><td>3 до 6</td></tr>
+        </tbody>
+      </table>
+      <div class="note">Расчёт от постоянных расходов около $30,500 в месяц плюс рекламный бюджет $10,000. Переменные затраты на заказ около $6,575. Визиты посчитаны от конверсии из визита в заказ.</div>
+    </div>
+    <div class="card hi">
+      <h3>Зачем это здесь</h3>
+      <p style="color:var(--gray);margin-top:1vh">Число заказов, при котором всё сходится, зависит от среднего чека сильнее, чем от любого другого фактора. При заказе на два зала разом порог опускается до 3 до 12 заказов в месяц.</p>
+      <p style="color:var(--gray);margin-top:1.2vh">Поэтому на старте просим суммы последних заказов и себестоимость. С ними называем точное число визитов в месяц, к которому идём, вместо диапазона.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s">
+  <div class="eyebrow">Роли</div>
+  <h2>Кто что делает</h2>
+  <div class="g2" style="margin-top:1.5vh">
+    <div class="card">
+      <h3>Лев и Николае</h3>
+      <ul style="margin-top:1.2vh">
+        <li>Реклама в Meta и Google целиком</li>
+        <li>Воронки, формы, страницы</li>
+        <li>Сценарии, шот-листы, монтаж, тексты на двух языках</li>
+        <li>Система учёта и скрипты обработки</li>
+        <li>Блогеры: отбор, договорённости, контроль публикаций</li>
+        <li>Дизайнеры, архитекторы, реселлеры</li>
+        <li>Отчётность и еженедельный разбор</li>
+      </ul>
+    </div>
+    <div class="card hi">
+      <h3>Mille</h3>
+      <ul style="margin-top:1.2vh">
+        <li>Доступы к кабинетам и сайту</li>
+        <li>Человек на обработке обращений</li>
+        <li>Видеограф на съёмку по нашему шот-листу</li>
+        <li>Согласование креативов и текстов</li>
+        <li>Слоты в шоуруме под записи</li>
+        <li>Отметка результата каждого визита</li>
+      </ul>
+      <p class="note">Мы приходим с готовыми решениями. Со стороны Mille нужно подтверждение и работа с людьми в зале.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s dark">
+  <div class="eyebrow">Старт</div>
+  <h2>Что нужно, чтобы начать</h2>
+  <div class="g3" style="margin-top:1.5vh">
+    <div class="card hi"><span class="pill">Блокирует запуск</span><h3 style="margin-top:1.2vh">Доступы</h3><ul style="margin-top:1vh"><li>Meta Business Manager и рекламный кабинет</li><li>Google Ads и аналитика</li><li>Доступ к сайту</li><li>Рабочий номер для обращений</li></ul></div>
+    <div class="card hi"><span class="pill">Блокирует запуск</span><h3 style="margin-top:1.2vh">Люди</h3><ul style="margin-top:1vh"><li>Кто отвечает на обращения и в каком графике</li><li>Кто ставит отметку о результате визита</li><li>Видеограф и её доступность под смену</li></ul></div>
+    <div class="card"><span class="pill">Нужно на первой неделе</span><h3 style="margin-top:1.2vh">Данные и материалы</h3><ul style="margin-top:1vh"><li>Суммы последних заказов и себестоимость</li><li>База прошлых обращений с контактами</li><li>Что даёт завод под блогеров и в какие сроки</li></ul></div>
+  </div>
+  <p class="lede" style="margin-top:2.6vh;max-width:72ch">Наша часть готова к запуску сразу. Отсчёт четырёх недель идёт от даты, когда мы зашли в кабинеты.</p>
+  <div class="pglcard">
+    <div class="pgltop">
+      <div>
+        <div class="pglname">PGL Marketing</div>
+        <div class="pglmeta">Перформанс-маркетинг · Сан-Диего, Калифорния · Personal Growth Lab LLC</div>
+      </div>
+      <a class="pglbtn" href="https://pgl.marketing" target="_blank" rel="noopener">Наши работы на pgl.marketing →</a>
+    </div>
+    <p class="pgldesc">Мы собираем и обслуживаем всё, что находится между объявлением и оплатившим клиентом: кампании, приём и маршрутизацию заявок, базу клиентов и отчётность, которая связывает каждый потраченный доллар с выручкой. Рекламный кабинет, CRM, домен и данные оформлены на клиента с первого дня и остаются у него.</p>
+    <div class="pglcontact">Лев Покладов · <a href="mailto:lev@pgl.marketing">lev@pgl.marketing</a> · <a href="https://pgl.marketing" target="_blank" rel="noopener">pgl.marketing</a></div>
+  </div>
+</section>
+
+</div>
+<div class="pg" id="pg">01 / 15</div>
+<div id="gate">
+  <div class="gatebox">
+    <div class="gk">Конфиденциальный документ</div>
+    <h2>Mille Casa Riyadh</h2>
+    <p>Этот план работ конфиденциален. Введите код доступа, который вы получили.</p>
+    <form id="gateform" autocomplete="off">
+      <input id="gatepass" type="password" placeholder="Код доступа" autocomplete="off" spellcheck="false">
+      <button type="submit">Открыть презентацию</button>
+    </form>
+    <div class="gateerr" id="gateerr"></div>
+    <div class="gatefoot">Подготовлено <a href="https://pgl.marketing" target="_blank" rel="noopener">PGL Marketing</a>, Сан-Диего</div>
+  </div>
+</div>
+
+<div class="nav"><button id="prev">‹</button><button id="next">›</button></div>
+<script>
+/* ================================================================
+   КОД ДОСТУПА. Чтобы поменять пароль, измените значение ниже.
+   Регистр и пробелы не важны.
+   ================================================================ */
+var PGL_ACCESS_CODE = "MILLE2026";
+
+(function(){
+  var f=document.getElementById('gateform');
+  var inp=document.getElementById('gatepass');
+  var err=document.getElementById('gateerr');
+  function norm(v){return String(v||'').replace(/\s+/g,'').toLowerCase();}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(norm(inp.value)===norm(PGL_ACCESS_CODE)){
+      document.body.classList.remove('locked');
+      err.textContent='';
+      window.scrollTo(0,0);
+    }else{
+      err.textContent='Неверный код. Проверьте сообщение, которое вам прислали.';
+      inp.value=''; inp.focus();
+    }
+  });
+  window.addEventListener('load',function(){inp.focus();});
+})();
+</script>
+
+<script>
+const slides=[...document.querySelectorAll('.s')];let i=0;
+const pg=document.getElementById('pg'),bar=document.getElementById('bar');
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+pg.textContent=String(i+1).padStart(2,'0')+' / '+slides.length;pg.classList.toggle('dark-pg',slides[i].classList.contains('dark'));
+bar.style.width=((i+1)/slides.length*100)+'%';slides[i].scrollTop=0;}
+document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}
+if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);});
+document.getElementById('next').onclick=()=>show(i+1);document.getElementById('prev').onclick=()=>show(i-1);
+let x0=null;document.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+document.addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>60)show(i+(d<0?1:-1));x0=null},{passive:true});
+show(0);
+</script>
+</body></html>
