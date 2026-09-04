@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Открыться со спросом · PGL Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#0B1119;--bone:#FAF8F3;--pure:#fff;--warm:#F4ECDF;--gold:#D4B68C;--ember:#C9A84C;--deep:#9B7E2E;--gray:#6B6358;--line:#E5DDD0;--green:#2F7A57}
+html,body{height:100%}
+body{background:#0a0a0c;font-family:'Bricolage Grotesque',-apple-system,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.deck{position:relative;width:100vw;height:100vh;overflow:hidden}
+.s{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:5.5vh 7vw;background:var(--bone);overflow-y:auto}
+.s.on{display:flex}
+.s.dark{background:var(--ink);color:var(--bone)}
+.s.warm{background:var(--warm)}
+h1{font-family:'Fraunces',serif;font-size:clamp(30px,4.4vw,58px);line-height:1.08;letter-spacing:-.02em;font-weight:600}
+h2{font-family:'Fraunces',serif;font-size:clamp(23px,3vw,40px);line-height:1.14;letter-spacing:-.02em;font-weight:600;margin-bottom:2.2vh}
+h3{font-family:'Fraunces',serif;font-size:clamp(16px,1.5vw,21px);font-weight:600;margin-bottom:.6vh}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:clamp(9px,.72vw,11px);letter-spacing:.2em;text-transform:uppercase;color:var(--deep);margin-bottom:1.6vh}
+.dark .eyebrow{color:var(--ember)}
+.lede{font-size:clamp(14px,1.25vw,19px);color:var(--gray);max-width:60ch;line-height:1.5}
+.dark .lede{color:#B9B2A6}
+p{font-size:clamp(13px,1.05vw,16px);line-height:1.5}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:2vw}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6vw}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2vw}
+.card{background:var(--pure);border:1px solid var(--line);border-radius:10px;padding:2.2vh 1.5vw}
+.dark .card{background:#151b24;border-color:#252d38}
+.card.hi{border-color:var(--ember);border-width:2px;background:var(--warm)}
+.dark .card.hi{background:#1c2028;border-color:var(--ember)}
+.num{font-family:'Fraunces',serif;font-size:clamp(26px,3.4vw,46px);font-weight:600;line-height:1;color:var(--deep)}
+.dark .num{color:var(--ember)}
+.lbl{font-size:clamp(11px,.85vw,13px);color:var(--gray);margin-top:.7vh;line-height:1.35}
+.dark .lbl{color:#9A9389}
+ul{list-style:none}
+li{font-size:clamp(12px,1vw,15px);line-height:1.45;padding-left:1.1em;position:relative;margin-bottom:.85vh}
+li:before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--ember)}
+ol{counter-reset:o;list-style:none}
+ol li{counter-increment:o;padding-left:2em}
+ol li:before{content:counter(o,decimal-leading-zero);font-family:'JetBrains Mono',monospace;font-size:.8em;color:var(--deep);background:none;width:auto;height:auto;top:.15em;border-radius:0}
+table{width:100%;border-collapse:collapse;font-size:clamp(11px,.95vw,15px);background:var(--pure)}
+.dark table{background:transparent}
+th{background:var(--ink);color:var(--warm);text-align:left;padding:1.1vh .85vw;font-weight:600;font-size:.92em}
+.dark th{background:#1c232d}
+td{padding:1vh .85vw;border-bottom:1px solid var(--line);vertical-align:top}
+.dark td{border-color:#252d38}
+tbody tr:nth-child(even) td{background:#FCFAF6}
+.dark tbody tr:nth-child(even) td{background:#12181f}
+tr.hi td{background:var(--warm);font-weight:600}
+.dark tr.hi td{background:#1c2028}
+.pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:clamp(9px,.7vw,11px);letter-spacing:.08em;text-transform:uppercase;padding:.35em .7em;border-radius:3px;background:var(--warm);color:var(--deep)}
+.dark .pill{background:#1c2028;color:var(--ember)}
+.big{font-family:'Fraunces',serif;font-size:clamp(24px,2.9vw,42px);line-height:1.2;font-weight:600;max-width:22ch}
+.note{font-size:clamp(11px,.85vw,13px);color:var(--gray);margin-top:1.4vh;line-height:1.45}
+.dark .note{color:#8A8780}
+.pg{position:fixed;bottom:2.2vh;right:2.6vw;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gray);z-index:20}
+.dark-pg{color:#6B6358}
+.bar{position:fixed;top:0;left:0;height:2px;background:var(--ember);z-index:30;transition:width .25s}
+.nav{position:fixed;bottom:2.2vh;left:2.6vw;display:flex;gap:8px;z-index:20}
+.nav button{border:1px solid var(--line);background:rgba(255,255,255,.75);color:var(--ink);width:30px;height:30px;border-radius:5px;cursor:pointer;font-size:14px;line-height:1}
+.nav button:hover{background:var(--warm)}
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:2.4vw;align-items:start}
+.mono{font-family:'JetBrains Mono',monospace;font-size:clamp(11px,.9vw,14px)}
+@media print{
+ body{background:#fff}
+ .deck{height:auto}
+ .s{display:flex!important;position:relative;height:100vh;page-break-after:always;inset:auto}
+ .nav{display:none}
+}
+
+/* ---- блок PGL на финальном слайде ---- */
+.pglcard{margin-top:2.6vh;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);
+  border-radius:16px;padding:2.2vh 2.2vw;max-width:80ch}
+.pgltop{display:flex;align-items:center;justify-content:space-between;gap:2vw;flex-wrap:wrap}
+.pglname{font-family:'Fraunces',serif;font-size:clamp(19px,2.1vh,26px);font-weight:700;color:#fff;letter-spacing:-.01em}
+.pglmeta{font-size:clamp(11px,1.25vh,14px);color:rgba(255,255,255,.62);margin-top:.4vh;letter-spacing:.02em}
+.pglbtn{display:inline-block;padding:1.1vh 1.6vw;border-radius:40px;background:var(--gold);color:#0B1119;
+  font-size:clamp(12px,1.4vh,15px);font-weight:700;text-decoration:none;white-space:nowrap}
+.pglbtn:hover{background:var(--ember)}
+.pgldesc{font-size:clamp(12px,1.45vh,16px);line-height:1.55;color:rgba(255,255,255,.78);margin-top:1.4vh;max-width:70ch}
+.pglcontact{font-size:clamp(11px,1.3vh,14px);color:rgba(255,255,255,.62);margin-top:1.1vh}
+.pglcontact a{color:var(--gold);text-decoration:none}
+
+/* ---- экран с кодом доступа ---- */
+body.locked .deck,body.locked .nav,body.locked .pg,body.locked #bar{display:none!important}
+#gate{display:none;position:fixed;inset:0;z-index:9999;background:radial-gradient(120% 120% at 50% 0%,#141B26 0%,#0B1119 60%,#07090d 100%);
+  align-items:center;justify-content:center;padding:24px;font-family:'Bricolage Grotesque',-apple-system,sans-serif}
+body.locked #gate{display:flex}
+.gatebox{width:100%;max-width:430px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);
+  border-radius:20px;padding:40px 34px;text-align:center;backdrop-filter:blur(10px)}
+.gatebox .gk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.gatebox h2{font-family:'Fraunces',serif;font-size:27px;color:#fff;margin:14px 0 8px;font-weight:600;letter-spacing:-.01em}
+.gatebox p{font-size:14.5px;color:rgba(255,255,255,.66);line-height:1.55;margin-bottom:24px}
+.gatebox input{width:100%;padding:15px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.07);color:#fff;font-size:17px;font-family:inherit;text-align:center;letter-spacing:.06em}
+.gatebox input::placeholder{color:rgba(255,255,255,.38);letter-spacing:normal}
+.gatebox input:focus{outline:none;border-color:var(--gold)}
+.gatebox button{width:100%;margin-top:12px;padding:15px;border:none;border-radius:12px;background:var(--gold);
+  color:#0B1119;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer}
+.gatebox button:hover{background:var(--ember)}
+.gateerr{color:#F0A9A9;font-size:13.5px;margin-top:12px;min-height:19px}
+.gatefoot{margin-top:28px;font-size:12.5px;color:rgba(255,255,255,.45)}
+.gatefoot a{color:var(--gold);text-decoration:none}
+@media print{#gate{display:none!important}body.locked .deck{display:block!important}}
+</style></head>
+<body>
+<div class="bar" id="bar"></div>
+<div class="deck" id="deck">
+
+<section class="s dark on">
+  <div class="eyebrow">PGL Marketing · Сан-Диего, Калифорния</div>
+  <h1>Открыться со спросом,<br>а не с надеждой</h1>
+  <p class="lede" style="margin-top:2.4vh">Маркетинг для бизнеса, который ещё не открылся. Мы собираем очередь клиентов, пока идёт стройка, чтобы первая неделя работы была загружена, а не пустая.</p>
+</section>
+
+<section class="s">
+  <div class="eyebrow">Как это обычно происходит</div>
+  <h2>Открытие, потом тишина</h2>
+  <div class="g4" style="margin-top:2vh">
+    <div class="card"><div class="num">01</div><p class="lbl">Открытие. Друзья, знакомые, соседи. Первая неделя выглядит нормально, появляется ощущение, что всё пойдёт само.</p></div>
+    <div class="card"><div class="num">02</div><p class="lbl">Вторая неделя. Знакомые закончились. Приходит два человека в день, и оба спрашивают, есть ли скидка.</p></div>
+    <div class="card"><div class="num">03</div><p class="lbl">Первый месяц закрыт. Начинается поиск маркетолога и запуск рекламы в режиме срочности.</p></div>
+    <div class="card hi"><div class="num">04</div><p class="lbl">Ещё месяц уходит на тесты и обучение алгоритмов. Реклама начинает работать к третьему месяцу.</p></div>
+  </div>
+  <div class="card hi" style="margin-top:2.6vh">
+    <p>Два, три месяца при полной аренде, зарплатах и уже купленном оборудовании. Это самая дорогая ошибка запуска, и она полностью предотвратима.</p>
+  </div>
+</section>
+
+<section class="s dark">
+  <div class="eyebrow">Почему так выходит</div>
+  <h2>Маркетинг начинают после открытия, а надо до</h2>
+  <div class="split" style="margin-top:1.5vh">
+    <div>
+      <ul>
+        <li><strong>Реклама не работает с первого дня.</strong> Алгоритмам нужны данные и время, чтобы научиться находить ваших людей. Этот период вы всё равно оплатите. Вопрос только в том, оплатите вы его до открытия или из выручки первого месяца.</li>
+        <li><strong>Карточка в Google не появляется мгновенно.</strong> Верификация адреса, накопление отзывов, позиция в локальной выдаче. Это недели, и купить их нельзя.</li>
+        <li><strong>Доверия к новому месту нет.</strong> Ноль отзывов это стоп-сигнал. Первые отзывы должны появиться в первую неделю работы, а для этого их надо готовить заранее.</li>
+        <li><strong>Стройка проходит один раз.</strong> Самый сильный контент вашего бизнеса снимается прямо сейчас и потом не восстанавливается.</li>
+      </ul>
+    </div>
+    <div class="card hi">
+      <h3>Что это значит на практике</h3>
+      <p style="margin-top:1.2vh">Работа, которую можно сделать спокойно и дёшево за два месяца до открытия, после открытия делается в панике, дороже и на фоне уходящих денег.</p>
+      <p class="note">Мы приходим до открытия именно поэтому.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s warm">
+  <div class="eyebrow">Чем мы отличаемся</div>
+  <h2>Вам нечего аудировать, и мы это понимаем</h2>
+  <div class="g2" style="margin-top:1.5vh">
+    <div class="card">
+      <h3>Что предлагает обычное агентство</h3>
+      <ul style="margin-top:1.2vh">
+        <li>Аудит рекламных кабинетов</li>
+        <li>Анализ вашей текущей воронки</li>
+        <li>Похожие аудитории с базы клиентов</li>
+        <li>Ретаргет по накопленным данным</li>
+        <li>Оптимизация текущих показателей</li>
+      </ul>
+      <p class="note">Всё это требует бизнеса, который уже работает. У вас его пока нет, и предложение повисает в воздухе.</p>
+    </div>
+    <div class="card hi">
+      <h3>Что делаем мы</h3>
+      <ul style="margin-top:1.2vh">
+        <li>Разбираем конкурентов и цены вокруг вашего адреса</li>
+        <li>Проверяем оффер и цену рекламой до открытия</li>
+        <li>Считаем, сколько можно платить за клиента при вашем чеке</li>
+        <li>Собираем базу и лист ожидания заранее</li>
+        <li>Строим приём заявок так, чтобы он работал с первого дня</li>
+      </ul>
+      <p class="note">Мы не оптимизируем то, чего нет. Мы это создаём.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s dark">
+  <div class="eyebrow">Результат</div>
+  <h2>Что у вас есть в день открытия</h2>
+  <div class="g3" style="margin-top:2vh">
+    <div class="card hi"><h3>Люди</h3><ul style="margin-top:1.2vh"><li>Собранная база с телефонами и почтами</li><li>Лист ожидания на первые недели</li><li>Записи с датами, а не абстрактный интерес</li><li>Аудитория в соцсетях, которая следила за стройкой</li></ul></div>
+    <div class="card"><h3>Инфраструктура</h3><ul style="margin-top:1.2vh"><li>Работающая карточка в Google с отзывами на подходе</li><li>Страница с записью и формой</li><li>Реклама, которая уже обучена на живых заявках</li><li>Приём заявок с автоответом в первую минуту</li></ul></div>
+    <div class="card"><h3>Знание</h3><ul style="margin-top:1.2vh"><li>Проверенный оффер, а не догадка</li><li>Понятная цена клиента по вашему рынку</li><li>Ясность, какая услуга берётся, а какая нет</li><li>Расчёт, при каком бюджете это сходится</li></ul></div>
+  </div>
+  <p class="lede" style="margin-top:2.6vh;max-width:76ch">Вместо старта с нуля вы стартуете с накопленным. Первая неделя загружается из собранной базы, а не из холодной рекламы.</p>
+</section>
+
+<section class="s">
+  <div class="eyebrow">Как устроена работа</div>
+  <h2>Три фазы</h2>
+  <table style="margin-top:1.5vh">
+    <thead><tr><th style="width:18%">Фаза</th><th style="width:22%">Когда</th><th>Что происходит</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td><strong>До открытия</strong></td><td>8 до 12 недель до даты</td><td>Разбор рынка и конкурентов, расчёт экономики, проверка оффера, сбор базы и листа ожидания, карточка в Google, контент со стройки, настройка приёма заявок</td></tr>
+      <tr><td><strong>Открытие</strong></td><td>Неделя до и первые 4 недели</td><td>Открываем запись для собранной базы, загружаем расписание, собираем первые отзывы, снимаем живых клиентов, проверяем, что процесс внутри держит поток</td></tr>
+      <tr><td><strong>Рост</strong></td><td>Со второго месяца</td><td>Появляются собственные данные. Масштабируем то, что подтвердилось цифрами, отключаем то, что нет, включаем повторные визиты</td></tr>
+    </tbody>
+  </table>
+  <p class="note" style="margin-top:1.8vh">Восемь недель это минимум, при котором успевает пройти верификация карточки, накопиться аудитория и отработать два цикла тестов. Если времени меньше, план сжимается, но часть работ придётся вести параллельно с открытием, и это дороже.</p>
+</section>
+
+<section class="s warm">
+  <div class="eyebrow">Ваш ресурс, который уходит прямо сейчас</div>
+  <h2>Стройка это самый сильный контент, который у вас будет</h2>
+  <div class="g3" style="margin-top:2vh">
+    <div class="card"><h3>Процесс смотрят лучше готового</h3><p class="lbl">Люди подписываются на становление. На готовое место подписываться незачем, туда просто приходят или не приходят.</p></div>
+    <div class="card hi"><h3>Появляется причина следить</h3><p class="lbl">Открытие превращается в событие, которое человек ждал, а не в вывеску, которую он однажды заметил.</p></div>
+    <div class="card"><h3>Это невозможно доснять</h3><p class="lbl">После открытия стены закрыты, оборудование установлено, история пропущена. Восстановить нельзя.</p></div>
+  </div>
+  <div class="card hi" style="margin-top:2.6vh">
+    <p>Съёмка на объекте это единственная часть работы, которую мы не можем закрыть удалённо. Нужен человек с телефоном на площадке примерно раз в неделю. Что снимать, как и что с этим делать дальше, берём на себя мы.</p>
+  </div>
+</section>
+
+<section class="s dark">
+  <div class="eyebrow">Что мы берём на себя</div>
+  <h2>Всё между объявлением и оплатившим клиентом</h2>
+  <div class="g4" style="margin-top:2vh">
+    <div class="card"><h3>Реклама</h3><p class="lbl">Кампании в Meta и Google, аудитории, креативы, тесты, бюджеты и их распределение по неделям.</p></div>
+    <div class="card"><h3>Приём заявок</h3><p class="lbl">Формы, запись, автоответы, цепочки сообщений и писем, маршрутизация, чтобы ни одно обращение не потерялось.</p></div>
+    <div class="card"><h3>База и данные</h3><p class="lbl">Единая база контактов, счётчики, события, отчётность, которая связывает потраченный доллар с результатом.</p></div>
+    <div class="card hi"><h3>Контент</h3><p class="lbl">Сценарии съёмки, монтаж, тексты, публикация, отбор лучшего в рекламу.</p></div>
+  </div>
+  <div class="card hi" style="margin-top:2.6vh">
+    <p>Рекламный кабинет, база клиентов, домен, карточка в Google и данные оформляются на вас с первого дня и остаются у вас при любом развитии событий. Мы работаем внутри ваших аккаунтов, а не вместо них.</p>
+  </div>
+</section>
+
+<section class="s">
+  <div class="eyebrow">Честно</div>
+  <h2>Чего мы не пообещаем</h2>
+  <div class="g3" style="margin-top:2vh">
+    <div class="card"><h3>Окупаемость в первый месяц</h3><p class="lbl">До открытия нет данных, на которых она считается. Любой, кто называет вам конкретный возврат на вложения до старта, называет выдуманное число.</p></div>
+    <div class="card"><h3>Точную стоимость клиента</h3><p class="lbl">Она станет известна после первых десятков реальных обращений. До этого мы называем диапазон по рынку и говорим, что это диапазон.</p></div>
+    <div class="card"><h3>Что сработает именно у вас</h3><p class="lbl">Мы знаем, что проверять и в каком порядке. Какая связка выстрелит, покажут тесты. Ради этого фаза до открытия и существует.</p></div>
+  </div>
+  <div class="card hi" style="margin-top:2.4vh">
+    <p>Что мы берём на себя: к дате открытия у вас есть собранная база, работающая карточка в Google, настроенный приём заявок, проверенный оффер и загруженная первая неделя. Это зависит от нас, и за это мы отвечаем.</p>
+  </div>
+</section>
+
+<section class="s dark">
+  <div class="eyebrow">Следующий шаг</div>
+  <h2>Разбор до подписания</h2>
+  <div class="split" style="margin-top:1.5vh">
+    <div>
+      <p style="margin-bottom:1.6vh">Чтобы посчитать вашу ситуацию, нам нужно шесть вещей:</p>
+      <ol>
+        <li><strong>Дата открытия</strong>, хотя бы диапазоном в две недели</li>
+        <li><strong>Адрес и радиус</strong>, откуда реально поедут люди</li>
+        <li><strong>Что продаёте</strong>, список услуг и черновые цены</li>
+        <li><strong>Мощность</strong>, сколько клиентов обслуживаете в день и в неделю</li>
+        <li><strong>Кто отвечает</strong> на заявки и с какого момента этот человек есть</li>
+        <li><strong>Бюджет</strong>, на который вы рассчитываете до открытия</li>
+      </ol>
+    </div>
+    <div class="card hi">
+      <h3>Что вы получите после встречи</h3>
+      <ul style="margin-top:1.2vh">
+        <li>Разбор конкурентов и цен по вашему адресу</li>
+        <li>Расчёт экономики от вашего чека и мощности</li>
+        <li>План по неделям с бюджетами и сроками</li>
+        <li>Договор с зафиксированным разделением работ</li>
+      </ul>
+      <p class="note">Разбор и предварительный расчёт делаются до подписания. Вы видите, как мы считаем, прежде чем принимать решение.</p>
+    </div>
+  </div>
+</section>
+
+<section class="s dark">
+  <div class="eyebrow">Контакты</div>
+  <h1>Аренда начинается<br>в день открытия</h1>
+  <p class="lede" style="margin-top:2.4vh;max-width:72ch">До этого дня у вас есть то, чего не будет потом: время и материал. Дальше остаётся только считать убыток по неделям.</p>
+  <div class="pglcard">
+    <div class="pgltop">
+      <div>
+        <div class="pglname">PGL Marketing</div>
+        <div class="pglmeta">Перформанс-маркетинг · Сан-Диего, Калифорния · Personal Growth Lab LLC</div>
+      </div>
+      <a class="pglbtn" href="https://pgl.marketing" target="_blank" rel="noopener">Наши работы на pgl.marketing →</a>
+    </div>
+    <p class="pgldesc">Мы собираем и обслуживаем всё, что находится между объявлением и оплатившим клиентом: кампании, приём и маршрутизацию заявок, базу клиентов и отчётность, которая связывает каждый потраченный доллар с выручкой. Рекламный кабинет, CRM, домен и данные оформлены на клиента с первого дня и остаются у него.</p>
+    <div class="pglcontact">Лев Покладов · <a href="mailto:lev@pgl.marketing">lev@pgl.marketing</a> · <a href="https://pgl.marketing" target="_blank" rel="noopener">pgl.marketing</a></div>
+  </div>
+</section>
+
+</div>
+<div class="pg" id="pg">01 / 11</div>
+
+<div class="nav"><button id="prev">‹</button><button id="next">›</button></div>
+
+<script>
+const slides=[...document.querySelectorAll('.s')];let i=0;
+const pg=document.getElementById('pg'),bar=document.getElementById('bar');
+function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+pg.textContent=String(i+1).padStart(2,'0')+' / '+slides.length;pg.classList.toggle('dark-pg',slides[i].classList.contains('dark'));
+bar.style.width=((i+1)/slides.length*100)+'%';slides[i].scrollTop=0;}
+document.addEventListener('keydown',e=>{if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();show(i+1)}
+if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();show(i-1)}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);});
+document.getElementById('next').onclick=()=>show(i+1);document.getElementById('prev').onclick=()=>show(i-1);
+let x0=null;document.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+document.addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>60)show(i+(d<0?1:-1));x0=null},{passive:true});
+show(0);
+</script>
+</body></html>
