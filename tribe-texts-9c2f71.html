@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+</head>
+<body>
+<title>Tribe Community. Тексты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500;600;700;800&family=Golos+Text:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --ground:#F6F4EE; --surface:#FFFFFF; --sunk:#EDEBE2; --deep:#1C1B17;
+  --ink:#1C1B17; --ink-soft:#4A483F; --muted:#7A7768;
+  --line:#E2DFD3; --line-hard:#C8C4B3;
+  --teal:#2C6F6C; --teal-soft:#6FAFAC; --teal-wash:#E4EFEE;
+  --amber:#B8860B; --amber-wash:#FAF3DC;
+  --shadow:0 1px 2px rgba(28,27,23,.04), 0 12px 30px -22px rgba(28,27,23,.45);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#141412; --surface:#1D1C19; --sunk:#252420; --deep:#0E0E0C;
+    --ink:#F0EDE3; --ink-soft:#CAC7BC; --muted:#8E8B80;
+    --line:#2C2A25; --line-hard:#3E3B34;
+    --teal:#76BFBC; --teal-soft:#478B88; --teal-wash:#182928;
+    --amber:#E8C547; --amber-wash:#2B2413;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 14px 34px -24px rgba(0,0,0,.95);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#141412; --surface:#1D1C19; --sunk:#252420; --deep:#0E0E0C;
+  --ink:#F0EDE3; --ink-soft:#CAC7BC; --muted:#8E8B80;
+  --line:#2C2A25; --line-hard:#3E3B34;
+  --teal:#76BFBC; --teal-soft:#478B88; --teal-wash:#182928;
+  --amber:#E8C547; --amber-wash:#2B2413;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 14px 34px -24px rgba(0,0,0,.95);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:"Golos Text","Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+.page{max-width:860px;margin:0 auto;padding:0 20px 120px}
+h1,h2,h3,h4{margin:0;text-wrap:balance;font-family:"Onest","Golos Text",sans-serif}
+p{margin:0}
+.lab{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+header{padding:44px 0 26px;border-bottom:1px solid var(--line-hard)}
+.htop{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:baseline}
+h1{font-weight:800;letter-spacing:-.03em;line-height:1.04;font-size:clamp(30px,5.6vw,46px);margin-top:20px}
+.tagline{margin-top:14px;font-size:17px;color:var(--ink-soft);max-width:58ch}
+
+.how{margin-top:26px;background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:20px 22px;display:flex;flex-direction:column;gap:9px;box-shadow:var(--shadow)}
+.how h3{font-size:16px;font-weight:700;letter-spacing:-.01em}
+.how ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.how li{font-size:15px;color:var(--ink-soft)}
+.how li b{color:var(--ink);font-weight:600}
+
+.changed{margin-top:14px;background:var(--amber-wash);border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;display:flex;flex-direction:column;gap:7px}
+.changed h3{font-size:15px;font-weight:700}
+.changed ul{margin:0;padding-left:19px;display:flex;flex-direction:column;gap:5px}
+.changed li{font-size:14.5px;color:var(--ink-soft)}
+
+.slot{padding-top:44px}
+.slot-head{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.slot-head h2{font-size:20px;font-weight:700;letter-spacing:-.018em}
+.slot-head .ctx{font-size:15px;color:var(--muted);max-width:64ch}
+.vars{display:flex;flex-direction:column;gap:10px}
+.var{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px 15px;
+  display:flex;flex-direction:column;gap:9px;box-shadow:var(--shadow);cursor:pointer}
+.var.sel{border-color:var(--teal);background:var(--teal-wash)}
+.var-top{display:flex;align-items:center;gap:9px}
+.mark{width:17px;height:17px;border-radius:50%;border:1.5px solid var(--line-hard);flex:none;
+  display:grid;place-items:center}
+.var.sel .mark{border-color:var(--teal)}
+.var.sel .mark::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--teal)}
+.var-top .vn{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--muted)}
+.var.sel .vn{color:var(--teal)}
+.var-top .tone{margin-left:auto;font-size:12.5px;color:var(--muted)}
+.msgs{display:flex;flex-direction:column;gap:7px}
+.msg{background:var(--sunk);border-radius:4px 12px 12px 12px;padding:9px 12px;font-size:15px;
+  outline:none;cursor:text}
+.var.sel .msg{background:var(--surface)}
+.msg:focus{box-shadow:inset 0 0 0 2px var(--teal-soft)}
+.btnrow{display:flex;flex-wrap:wrap;gap:6px}
+.qb{border:1px solid var(--teal-soft);color:var(--teal);border-radius:999px;padding:5px 12px;
+  font-size:13px;outline:none;cursor:text}
+.qb:focus{box-shadow:0 0 0 2px var(--teal-soft)}
+.note{margin-top:10px}
+.note label{display:block;font-size:12.5px;color:var(--muted);margin-bottom:5px}
+.note textarea{width:100%;min-height:52px;resize:vertical;background:var(--surface);
+  border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:14.5px;
+  color:var(--ink)}
+.note textarea:focus{outline:none;border-color:var(--teal-soft)}
+
+.bar{position:sticky;bottom:0;margin-top:44px;background:var(--surface);border:1px solid var(--line-hard);
+  border-radius:14px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;
+  box-shadow:0 -6px 30px -20px rgba(0,0,0,.5)}
+.bar .st{font-size:14px;color:var(--muted);flex:1;min-width:200px}
+button.save{font:inherit;font-weight:600;font-size:15px;border:none;border-radius:999px;
+  background:var(--teal);color:#fff;padding:10px 22px;cursor:pointer}
+button.save:disabled{opacity:.5;cursor:default}
+button.save:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line-hard);
+  font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+</style>
+
+<script type="application/json" id="state">{"v":1}</script>
+
+<div class="page">
+  <header>
+    <div class="htop">
+      <div class="lab">PGL Marketing &nbsp;для&nbsp; Tribe Coffee</div>
+      <div class="lab">тексты воронки · сентябрь 2026</div>
+    </div>
+    <h1>Tribe Community.<br>Тексты сообщений</h1>
+    <p class="tagline">Каждое сообщение в двух-трёх вариантах. Выберите тот, что ближе, поправьте прямо в тексте, а в конце скачайте файл со своими правками и пришлите его нам.</p>
+
+    <div class="how">
+      <h3>Как этим пользоваться</h3>
+      <ol>
+        <li><b>Нажмите на вариант</b>, который нравится больше. Он подсветится.</li>
+        <li><b>Кликните в любой текст и правьте</b> прямо здесь, включая надписи на кнопках.</li>
+        <li><b>Напишите комментарий</b> под блоком, если хочется сказать словами, а не правкой.</li>
+        <li><b>Когда закончите, нажмите «Скачать файл с правками»</b> внизу и отправьте этот файл Льву. Правки не потеряются, даже если закроете страницу.</li>
+      </ol>
+    </div>
+
+    <div class="changed">
+      <h3>Что поправили после созвона</h3>
+      <ul>
+        <li>Вместо «клуб» везде «community»: слово легче и ближе к тому, что вы и так говорите.</li>
+        <li>Убрали апгрейд размера, потому что все напитки 12 унций. Вместо него сироп, секретный напиток и накопительная карта.</li>
+        <li>Локация больше не вшита в текст: вместо конкретной точки ссылка, где всегда видно, где джип сейчас.</li>
+        <li>Для звонка сделали три варианта: с именем Алекса, без имени и с номером, с которого позвонят.</li>
+        <li>Есть версии без видео, чтобы можно было стартовать до того, как оно снято.</li>
+      </ul>
+    </div>
+  </header>
+
+  <div id="slots"></div>
+
+  <div class="bar">
+    <div class="st" id="status">Правки сохраняются в браузере автоматически. В конце скачайте файл и отправьте его нам.</div>
+    <button class="save" id="savetxt" style="background:transparent;color:var(--teal);border:1px solid var(--teal-soft)">Скачать текстом</button>
+    <button class="save" id="save">Скачать файл с правками</button>
+  </div>
+
+  <footer>PGL Marketing · Tribe Coffee · тексты на согласование</footer>
+</div>
+
+<script>
+const SLOTS = [
+  { id:"greet", title:"Первое сообщение и главный вопрос",
+    ctx:"Приходит сразу после подписки или первого сообщения. Задача: коротко объяснить, кто мы, и развести людей на две ветки.",
+    vars:[
+      { n:"Вариант А", tone:"тёплый и короткий",
+        msgs:["Hi, thanks for following us.","We're a coffee bar built into a Jeep, and we move around San Diego.","So we know what to send you: are you planning an event, or here for the coffee?"],
+        btns:["Planning an event","Here for the coffee"] },
+      { n:"Вариант Б", tone:"сразу к делу",
+        msgs:["Hi, glad you're here.","Quick one so we don't send you the wrong things: what brings you to us?"],
+        btns:["I'm planning an event","I just love good coffee"] },
+      { n:"Вариант В", tone:"с характером",
+        msgs:["Hi from the Jeep.","We park somewhere new most days, and we bring the whole bar with us.","What are you here for?"],
+        btns:["An event I'm planning","The coffee"] }
+    ] },
+
+  { id:"b2c_invite", title:"B2C. Приглашение в community",
+    ctx:"Человек выбрал «за кофе». Здесь мы объясняем, зачем ему оставлять контакт. Все напитки 12 унций, поэтому апгрейда размера нет.",
+    vars:[
+      { n:"Вариант А", tone:"акцент на локации",
+        msgs:["Then join the Tribe community.","You'll always know where the Jeep is parked, get a free syrup on your first visit, and every fifth drink is on us."],
+        btns:["I'm in","Just show me where you park"] },
+      { n:"Вариант Б", tone:"акцент на накопительной карте",
+        msgs:["Then you'll want our card.","Every visit counts, the fifth drink is free, and you'll always know where to find us."],
+        btns:["Get my card","Maybe later"] },
+      { n:"Вариант В", tone:"акцент на секретном напитке",
+        msgs:["Then come join the community.","Members get the off-menu drink, a free syrup on the first visit, and always know where the Jeep is."],
+        btns:["Sounds good","Just the locations please"] }
+    ] },
+
+  { id:"b2c_contact", title:"B2C. Просим контакт",
+    ctx:"Один шаг, без полей для ввода: почта или телефон подставляются из профиля в одно нажатие.",
+    vars:[
+      { n:"Вариант А", tone:"нейтральный",
+        msgs:["Where should we send your card?"], btns:["Use my email","Use my number"] },
+      { n:"Вариант Б", tone:"мягче",
+        msgs:["Almost done. Where do you want your card?"], btns:["Email","Text me"] }
+    ] },
+
+  { id:"b2c_card", title:"B2C. Карта выдана",
+    ctx:"Первое сообщение после вступления. Вместо конкретной точки ссылка, где всегда видно, где джип сейчас.",
+    vars:[
+      { n:"Вариант А", tone:"со ссылкой на локации",
+        msgs:["You're in. Here's your card.","This link always shows where we are this week: [ссылка]","Show your code at the Jeep and the first syrup is on us."] },
+      { n:"Вариант Б", tone:"короче",
+        msgs:["You're in, here's your card.","See where we're parked this week: [ссылка]"] }
+    ] },
+
+  { id:"b2b_type", title:"B2B. Что за мероприятие",
+    ctx:"Человек выбрал «планирую мероприятие». Первый уточняющий вопрос, всё кнопками.",
+    vars:[
+      { n:"Вариант А", tone:"нейтральный",
+        msgs:["Nice. What are you planning?"],
+        btns:["Corporate or office","Community or market","Private party","Something else"] },
+      { n:"Вариант Б", tone:"чуть теплее",
+        msgs:["Love that. Tell us a bit about it."],
+        btns:["Corporate or office","Community or market","Private party","Something else"] }
+    ] },
+
+  { id:"b2b_price", title:"B2B. Вилка цены",
+    ctx:"Ключевое место. Цена звучит рано, чтобы человек шёл дальше осознанно. Вилки подтверждает Алекс.",
+    vars:[
+      { n:"Вариант А", tone:"с цифрами сразу",
+        msgs:["Corporate mornings are what we do most. Two to three hours, unlimited drinks, usually $550 to $750."] },
+      { n:"Вариант Б", tone:"цифры плюс что входит",
+        msgs:["Those usually run two to three hours and land between $550 and $750.","That's the Jeep, a barista and unlimited drinks for your guests, nothing extra to arrange."] },
+      { n:"Вариант В", tone:"без цифр, если решите не называть",
+        msgs:["Those are our most booked ones.","A couple of questions and we'll send you an exact number."] }
+    ] },
+
+  { id:"b2b_size", title:"B2B. Сколько людей и когда",
+    ctx:"Два коротких вопроса подряд, оба кнопками. Точную дату не спрашиваем, она отпугивает на этом шаге.",
+    vars:[
+      { n:"Вариант А", tone:"нейтральный",
+        msgs:["How many people?"], btns:["Under 50","50 to 150","150+"] },
+      { n:"Вариант Б", tone:"мягче",
+        msgs:["Roughly how many guests are you expecting?"], btns:["Under 50","50 to 150","150+"] }
+    ] },
+
+  { id:"b2b_when", title:"B2B. Срок",
+    ctx:"Ответ на этот вопрос определяет приоритет: «в течение месяца» уходит Алексу с пометкой звонить сегодня.",
+    vars:[
+      { n:"Вариант А", tone:"нейтральный",
+        msgs:["And when is it?"], btns:["Within a month","In 1 to 3 months","Still exploring"] },
+      { n:"Вариант Б", tone:"без давления",
+        msgs:["Do you have a date in mind?"], btns:["Within a month","In a month or two","Still figuring it out"] }
+    ] },
+
+  { id:"b2b_video", title:"B2B. Объяснение процесса",
+    ctx:"Место под видео. Пока оно не снято, работает версия без видео.",
+    vars:[
+      { n:"Вариант А", tone:"с видео",
+        msgs:["Here's how it works, in two minutes. [видео]"] },
+      { n:"Вариант Б", tone:"без видео, текстом",
+        msgs:["Here's how it works: we park, set up in about 40 minutes, and serve your guests the whole time. You don't arrange anything else.","Power and a small parking spot is all we need."] }
+    ] },
+
+  { id:"b2b_fork", title:"B2B. Развилка: цена или дегустация",
+    ctx:"Тем, кто готов, даём цифру. Тем, кто нет, даём повод приехать и попробовать.",
+    vars:[
+      { n:"Вариант А", tone:"нейтральный",
+        msgs:["What would you like to do?"], btns:["Send me the price","Come taste it first"] },
+      { n:"Вариант Б", tone:"с приглашением вперёд",
+        msgs:["Two options: we can send your number now, or you can come try us at one of our spots first, on us."],
+        btns:["Come try it","Just the number"] }
+    ] },
+
+  { id:"b2b_quote", title:"B2B. Точная цена и контакты",
+    ctx:"Сумма считается под его количество гостей и часы. Контакты просим уже после цифры.",
+    vars:[
+      { n:"Вариант А", tone:"прямо",
+        msgs:["For 80 people over 3 hours it's $750 plus tax, everything included. Shall we hold your date?"],
+        btns:["Use my email","Use my number"] },
+      { n:"Вариант Б", tone:"мягче",
+        msgs:["For a group that size over three hours it comes to $750 plus tax, all in.","If that works, we can hold the date for you."],
+        btns:["Yes, hold it","I'll think about it"] }
+    ] },
+
+  { id:"b2b_call", title:"B2B. Время звонка",
+    ctx:"Про это спрашивали отдельно: называть Алекса или нет. Три варианта, в том числе с номером, с которого позвонят.",
+    vars:[
+      { n:"Вариант А", tone:"с именем",
+        msgs:["Done. When is a good time for Alex to call?"],
+        btns:["Today","Tomorrow morning","Tomorrow afternoon"] },
+      { n:"Вариант Б", tone:"без имени",
+        msgs:["Done. When's a good time to call you?"],
+        btns:["Today","Tomorrow morning","Tomorrow afternoon"] },
+      { n:"Вариант В", tone:"с номером, чтобы взяли трубку",
+        msgs:["Done. We'll call from [номер] so you know it's us.","When works for you?"],
+        btns:["Today","Tomorrow morning","Tomorrow afternoon"] }
+    ] },
+
+  { id:"fu_quiet", title:"Догоняющее. Ответил и пропал",
+    ctx:"Через час. Ничего не спрашиваем, просто напоминаем о себе.",
+    vars:[
+      { n:"Вариант А", tone:"со ссылкой",
+        msgs:["Just so you know where to find us this week: [ссылка]"] },
+      { n:"Вариант Б", tone:"с приглашением",
+        msgs:["We're out again this weekend. Here's where: [ссылка]","Come say hi."] }
+    ] },
+
+  { id:"fu_price", title:"Догоняющее. Видел цену, не оставил контакты",
+    ctx:"Через день. Один конкретный выезд вместо описания услуги.",
+    vars:[
+      { n:"Вариант А", tone:"через пример",
+        msgs:["Last week we did a corporate morning for 80 people. Setup took 40 minutes and nobody waited more than a couple of minutes.","If that's close to what you have in mind, tell us your date and we'll check it."] },
+      { n:"Вариант Б", tone:"короче",
+        msgs:["Still thinking it over?","Tell us your date and we'll check if it's free, no commitment."] }
+    ] },
+
+  { id:"fu_joined", title:"Догоняющее. Вступил, но не приходил",
+    ctx:"Через три дня. Одна задача: довести до первого визита.",
+    vars:[
+      { n:"Вариант А", tone:"нейтральный",
+        msgs:["Your card is still waiting.","Here's where we are this week: [ссылка]"] },
+      { n:"Вариант Б", tone:"с напоминанием про бонус",
+        msgs:["Your first syrup is still on us whenever you come by.","This week's spots: [ссылка]"] }
+    ] },
+
+  { id:"fu_silent", title:"Догоняющее. B2B молчит неделю",
+    ctx:"Через семь дней. Один раз и прямо, без длинной подводки.",
+    vars:[
+      { n:"Вариант А", tone:"прямо",
+        msgs:["Is your date still on?","If it moved, tell us the new one and we'll hold it."] },
+      { n:"Вариант Б", tone:"мягче",
+        msgs:["Just checking in on your event.","If the timing changed, no problem, we'll work around it."] }
+    ] },
+
+  { id:"weekly", title:"Еженедельная рассылка локаций",
+    ctx:"Каждый понедельник по всей базе. Ради этого сообщения люди и вступают.",
+    vars:[
+      { n:"Вариант А", tone:"списком",
+        msgs:["This week you'll find us here: [список точек]","Members get their syrup on us every time."] },
+      { n:"Вариант Б", tone:"со ссылкой",
+        msgs:["Here's where the Jeep will be this week: [ссылка]","See you out there."] }
+    ] },
+
+  { id:"after_visit", title:"После визита",
+    ctx:"Приходит, когда сотрудник отметил код. Для B2C это прогресс карты, для B2B к этому моменту Алексу уже пришло уведомление.",
+    vars:[
+      { n:"Вариант А", tone:"B2C, прогресс",
+        msgs:["Thanks for coming by today. One visit down, four to go until your free drink."] },
+      { n:"Вариант Б", tone:"B2C и B2B вместе",
+        msgs:["Thanks for stopping by today.","And if you ever need coffee at an event, you've now seen how we do it."] }
+    ] },
+
+  { id:"reactivation", title:"Разовое. Приглашение по августовской базе",
+    ctx:"Тем, кто писал и оставлял заявки в августе. Отправляем один раз на старте.",
+    vars:[
+      { n:"Вариант А", tone:"напоминание",
+        msgs:["Hi, you got in touch with us a few weeks ago.","We've started a community since then: you'll always know where the Jeep is, and every fifth drink is free. Want in?"] },
+      { n:"Вариант Б", tone:"без отсылки к прошлому",
+        msgs:["We've started something new: the Tribe community.","You'll know where the Jeep is each week and every fifth drink is on us. Want your card?"] }
+    ] }
+];
+
+let state = null;
+const ORIGINAL = "<!doctype html>\n" + document.documentElement.outerHTML;
+let dirty = false;
+const KEY = "tribe_texts_v1";
+
+function freshState(){
+  const s = { slots:{} };
+  SLOTS.forEach(sl=>{
+    s.slots[sl.id] = { sel:0, note:"", vars: sl.vars.map(v=>({ msgs:v.msgs.slice(), btns:(v.btns||[]).slice() })) };
+  });
+  return s;
+}
+function loadState(){
+  try{ const l = localStorage.getItem(KEY); if(l){ const p = JSON.parse(l); if(p && p.slots) return p; } }catch(e){}
+  try{ const raw = JSON.parse(document.getElementById("state").textContent); if(raw && raw.slots) return raw; }catch(e){}
+  return freshState();
+}
+function mark(){
+  dirty = true;
+  try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+  document.getElementById("status").textContent = "Правки сохранены в браузере. Скачайте файл, чтобы отправить их нам.";
+}
+
+function render(){
+  const root = document.getElementById("slots");
+  root.textContent = "";
+  SLOTS.forEach(sl=>{
+    const st = state.slots[sl.id] || (state.slots[sl.id] = { sel:0, note:"", vars: sl.vars.map(v=>({msgs:v.msgs.slice(), btns:(v.btns||[]).slice()})) });
+    const sec = document.createElement("section"); sec.className = "slot";
+    const head = document.createElement("div"); head.className = "slot-head";
+    const h = document.createElement("h2"); h.textContent = sl.title;
+    const c = document.createElement("p"); c.className = "ctx"; c.textContent = sl.ctx;
+    head.appendChild(h); head.appendChild(c); sec.appendChild(head);
+
+    const wrap = document.createElement("div"); wrap.className = "vars";
+    sl.vars.forEach((v,i)=>{
+      const card = document.createElement("div");
+      card.className = "var" + (st.sel===i ? " sel" : "");
+      card.addEventListener("click", e=>{
+        if(e.target.isContentEditable || e.target.tagName==="TEXTAREA") return;
+        st.sel = i; mark(); render();
+      });
+      const top = document.createElement("div"); top.className = "var-top";
+      const m = document.createElement("span"); m.className = "mark";
+      const nn = document.createElement("span"); nn.className = "vn"; nn.textContent = v.n;
+      const tn = document.createElement("span"); tn.className = "tone"; tn.textContent = v.tone;
+      top.appendChild(m); top.appendChild(nn); top.appendChild(tn); card.appendChild(top);
+
+      const msgs = document.createElement("div"); msgs.className = "msgs";
+      st.vars[i].msgs.forEach((line,li)=>{
+        const d = document.createElement("div"); d.className = "msg";
+        d.contentEditable = "true"; d.spellcheck = false; d.textContent = line;
+        d.addEventListener("input", ()=>{ st.vars[i].msgs[li] = d.textContent; mark(); });
+        msgs.appendChild(d);
+      });
+      card.appendChild(msgs);
+
+      if(st.vars[i].btns.length){
+        const br = document.createElement("div"); br.className = "btnrow";
+        st.vars[i].btns.forEach((b,bi)=>{
+          const q = document.createElement("span"); q.className = "qb";
+          q.contentEditable = "true"; q.spellcheck = false; q.textContent = b;
+          q.addEventListener("input", ()=>{ st.vars[i].btns[bi] = q.textContent; mark(); });
+          br.appendChild(q);
+        });
+        card.appendChild(br);
+      }
+      wrap.appendChild(card);
+    });
+    sec.appendChild(wrap);
+
+    const note = document.createElement("div"); note.className = "note";
+    const lb = document.createElement("label"); lb.textContent = "Комментарий";
+    const ta = document.createElement("textarea");
+    ta.placeholder = "Что поменять, что не нравится, свой вариант";
+    ta.value = st.note || "";
+    ta.addEventListener("input", ()=>{ st.note = ta.value; mark(); });
+    note.appendChild(lb); note.appendChild(ta); sec.appendChild(note);
+
+    root.appendChild(sec);
+  });
+}
+
+function download(name, text, type){
+  const blob = new Blob([text], {type: type + ";charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = name; document.body.appendChild(a); a.click();
+  setTimeout(()=>{ document.body.removeChild(a); URL.revokeObjectURL(url); }, 500);
+}
+function saveFile(){
+  const json = JSON.stringify(state).split("<").join("\\u003c");
+  const html = ORIGINAL.replace(/(<script type="application\/json" id="state">)[\s\S]*?(<\/script>)/, "$1" + json.replace(/\$/g,"$$$$") + "$2");
+  download("Tribe-Texts-edited.html", html, "text/html");
+  document.getElementById("status").textContent = "Файл скачан. Отправьте его нам, и мы увидим ваши правки.";
+}
+function saveTxt(){
+  const out = [];
+  SLOTS.forEach(sl=>{
+    const st = state.slots[sl.id]; const v = st.vars[st.sel];
+    out.push("### " + sl.title);
+    v.msgs.forEach(m=>out.push(m));
+    if(v.btns.length) out.push("[ " + v.btns.join(" ] [ ") + " ]");
+    if(st.note && st.note.trim()) out.push("Комментарий: " + st.note.trim());
+    out.push("");
+  });
+  download("Tribe-Texts-selected.txt", out.join("\n"), "text/plain");
+}
+
+state = loadState();
+render();
+document.getElementById("save").addEventListener("click", saveFile);
+document.getElementById("savetxt").addEventListener("click", saveTxt);
+window.addEventListener("beforeunload", e=>{ if(dirty){ e.preventDefault(); e.returnValue = ""; } });
+</script>
+
+</body>
+</html>
