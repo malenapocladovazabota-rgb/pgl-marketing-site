@@ -6,53 +6,50 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <title>Free Booked-Out Plan · PGL Marketing</title>
-<meta name="description" content="Tell us about your studio and we will map how many bookings a month you can realistically add.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--ink:#0B1119;--bone:#FAF8F3;--pure:#fff;--warm:#F4ECDF;--gold:#D4B68C;--ember:#C9A84C;--deep:#9B7E2E;--gray:#6B6358;--line:#E5DDD0;--green:#2F7A57}
-body{background:var(--bone);color:var(--ink);font-family:'Bricolage Grotesque',-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
-.wrap{max-width:720px;margin:0 auto;padding:0 20px 80px}
-header{padding:26px 0 0;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.brand{font-family:'Fraunces',serif;font-weight:700;font-size:17px;letter-spacing:-.01em}
+:root{--ink:#0B1119;--bone:#FAF8F3;--pure:#fff;--warm:#F4ECDF;--gold:#D4B68C;--ember:#C9A84C;--deep:#9B7E2E;--gray:#6B6358;--line:#E5DDD0}
+body{background:var(--bone);color:var(--ink);font-family:'Bricolage Grotesque',-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;min-height:100vh}
+.wrap{max-width:560px;margin:0 auto;padding:0 18px 64px}
+header{padding:22px 0 0;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:16px;letter-spacing:-.01em}
 .brand span{color:var(--deep)}
-.lang{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);cursor:pointer;border:1px solid var(--line);background:var(--pure);padding:6px 11px;border-radius:99px}
-.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--deep);margin:38px 0 12px}
-h1{font-family:'Fraunces',serif;font-size:clamp(28px,5.4vw,42px);line-height:1.1;letter-spacing:-.02em;font-weight:600}
-.lede{margin-top:14px;font-size:clamp(15px,1.6vw,17px);color:var(--gray);max-width:56ch}
-.proof{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.pc{background:var(--pure);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
-.pn{font-family:'Fraunces',serif;font-size:clamp(20px,3vw,27px);font-weight:600;color:var(--deep);line-height:1}
-.pl{font-size:12.5px;color:var(--gray);margin-top:5px;line-height:1.35}
-form{margin-top:34px}
-.q{background:var(--pure);border:1px solid var(--line);border-radius:14px;padding:17px 18px;margin-bottom:12px}
-.q h3{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:11px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);background:var(--bone);border-radius:99px;padding:9px 15px;font:inherit;font-size:14.5px;color:var(--ink);cursor:pointer}
-.chip:hover{border-color:var(--gold)}
-.chip.on{background:var(--warm);border-color:var(--ember);font-weight:600}
-.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.fields .full{grid-column:1/-1}
-input[type=text],input[type=email],input[type=tel]{width:100%;font:inherit;font-size:15.5px;padding:12px 13px;border:1px solid var(--line);border-radius:10px;background:var(--bone);color:var(--ink)}
-input:focus{outline:none;border-color:var(--ember);background:var(--pure)}
+.lang{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);cursor:pointer;border:1px solid var(--line);background:var(--pure);padding:7px 12px;border-radius:99px}
+.bar{margin-top:26px;height:4px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ember);border-radius:99px;transition:width .3s ease}
+.step-lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);margin-top:14px}
+h1{font-family:'Fraunces',serif;font-size:clamp(25px,6vw,34px);line-height:1.15;letter-spacing:-.02em;font-weight:600;margin-top:9px}
+.sub{margin-top:10px;font-size:15px;color:var(--gray)}
+.opts{margin-top:20px;display:flex;flex-direction:column;gap:9px}
+.opt{width:100%;text-align:left;font:inherit;font-size:16.5px;font-weight:500;background:var(--pure);border:1.5px solid var(--line);border-radius:14px;padding:16px 17px;cursor:pointer;color:var(--ink);display:flex;align-items:center;gap:12px;transition:border-color .12s,background .12s}
+.opt:hover{border-color:var(--gold);background:#fffdf8}
+.opt.on{border-color:var(--ember);background:var(--warm);font-weight:600}
+.opt .dot{width:19px;height:19px;border-radius:50%;border:1.5px solid var(--line);flex:none;display:grid;place-items:center}
+.opt.on .dot{border-color:var(--deep)}
+.opt.on .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--deep)}
+.back{margin-top:20px;background:none;border:none;font:inherit;font-size:14.5px;color:var(--gray);cursor:pointer;padding:6px 0}
+.back:hover{color:var(--ink)}
+.fields{display:flex;flex-direction:column;gap:11px;margin-top:20px}
 label.fl{display:block;font-size:12.5px;color:var(--gray);margin:0 0 5px 2px}
-.consent{display:flex;gap:9px;align-items:flex-start;margin-top:14px;font-size:12.5px;color:var(--gray);line-height:1.45}
-.consent input{margin-top:3px;flex:none;width:16px;height:16px;accent-color:var(--deep)}
-button.go{margin-top:16px;width:100%;font:inherit;font-weight:700;font-size:16.5px;border:none;border-radius:99px;background:var(--ink);color:var(--bone);padding:16px;cursor:pointer}
+input{width:100%;font:inherit;font-size:16.5px;padding:14px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--pure);color:var(--ink)}
+input:focus{outline:none;border-color:var(--ember)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:13px;color:var(--gray);line-height:1.45}
+.consent input{margin-top:2px;flex:none;width:19px;height:19px;accent-color:var(--deep)}
+button.go{margin-top:18px;width:100%;font:inherit;font-weight:700;font-size:17px;border:none;border-radius:99px;background:var(--ink);color:var(--bone);padding:17px;cursor:pointer}
 button.go:hover{background:#16202c}
-button.go:disabled{opacity:.45;cursor:default}
-.err{color:#9B2C2C;font-size:13.5px;margin-top:10px;min-height:18px}
-.note{font-size:12.5px;color:var(--gray);margin-top:12px;text-align:center}
-#done{display:none}
-#done.on{display:block}
-#form.off{display:none}
-.tick{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,34px);font-weight:600;line-height:1.15}
-.cal{margin-top:20px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--pure)}
-.cal iframe{width:100%;height:760px;border:0;display:block}
-footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--gray);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+.err{color:#9B2C2C;font-size:14px;margin-top:11px;min-height:19px}
+.note{font-size:12.5px;color:var(--gray);margin-top:14px;text-align:center;line-height:1.45}
+.proof{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.chipf{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;background:var(--pure);border:1px solid var(--line);border-radius:99px;padding:7px 12px;color:var(--gray)}
+.chipf b{color:var(--deep)}
+.cal{margin-top:18px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--pure)}
+.cal iframe{width:100%;height:740px;border:0;display:block}
+footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gray);line-height:1.7}
 footer a{color:var(--deep);text-decoration:none}
-@media(max-width:560px){.proof{grid-template-columns:1fr}.fields{grid-template-columns:1fr}}
+.hidden{display:none!important}
 </style>
 </head>
 <body>
@@ -62,75 +59,20 @@ footer a{color:var(--deep);text-decoration:none}
   <button class="lang" id="lang" type="button">Русский</button>
 </header>
 
-<div id="form">
-  <div class="eyebrow" data-t="eyebrow">For studio owners in Los Angeles</div>
-  <h1 data-t="h1">Your free Booked-Out Plan</h1>
-  <p class="lede" data-t="lede">Six quick questions about your studio. We come back with how many bookings a month you can realistically add at your price point and in your area, and what to fix first. No charge, no obligation.</p>
+<div class="bar"><i id="prog"></i></div>
 
-  <div class="proof">
-    <div class="pc"><div class="pn">$25</div><div class="pl" data-t="p1">per booking for a San Diego wellness studio we run</div></div>
-    <div class="pc"><div class="pn">8x</div><div class="pl" data-t="p2">return on ad spend from the first visit</div></div>
-    <div class="pc"><div class="pn">30</div><div class="pl" data-t="p3">days from a brand new location to a full calendar</div></div>
-  </div>
+<div id="stage"></div>
 
-  <form id="lead" autocomplete="on">
-    <div class="q">
-      <h3 data-t="q1">What kind of studio do you run?</h3>
-      <div class="chips" data-name="Services" data-opts="Med-spa or injectables|Massage and body|Skin and facials|Lashes and brows|Hair or nails|Multi-service space"></div>
-    </div>
-
-    <div class="q">
-      <h3 data-t="q2">What is your average ticket?</h3>
-      <div class="chips" data-name="Average ticket" data-opts="Under $80|$80 to $150|$150 to $250|$250 and up"></div>
-    </div>
-
-    <div class="q">
-      <h3 data-t="q3">How many providers work in the space?</h3>
-      <div class="chips" data-name="Capacity" data-opts="Just me|2 to 4|5 to 9|10 or more"></div>
-    </div>
-
-    <div class="q">
-      <h3 data-t="q4">How full is the calendar right now?</h3>
-      <div class="chips" data-name="Utilization" data-opts="Plenty of open slots|About half full|Mostly full|Booked out"></div>
-    </div>
-
-    <div class="q">
-      <h3 data-t="q5">Are you running ads today?</h3>
-      <div class="chips" data-name="Who runs ads" data-opts="Not running ads|Boosting posts myself|An agency runs them|I run them properly"></div>
-    </div>
-
-    <div class="q">
-      <h3 data-t="q6">What is costing you the most right now?</h3>
-      <div class="chips" data-name="Bottleneck" data-opts="Not enough new clients|Clients do not come back|No-shows and cancellations|No idea where clients come from"></div>
-    </div>
-
-    <div class="q">
-      <h3 data-t="q7">Where do we send the plan?</h3>
-      <div class="fields">
-        <div><label class="fl" data-t="f1">First name</label><input type="text" name="First name" autocomplete="given-name" required></div>
-        <div><label class="fl" data-t="f2">Last name</label><input type="text" name="Last name" autocomplete="family-name"></div>
-        <div class="full"><label class="fl" data-t="f3">Studio name</label><input type="text" name="Business" autocomplete="organization"></div>
-        <div><label class="fl" data-t="f4">Email</label><input type="email" name="Email" autocomplete="email" required></div>
-        <div><label class="fl" data-t="f5">Phone</label><input type="tel" name="Phone" autocomplete="tel" required></div>
-      </div>
-      <label class="consent"><input type="checkbox" name="Consent" value="yes" required><span data-t="consent">I agree to be contacted by PGL Marketing by phone, text and email about my plan. Message and data rates may apply. Reply STOP to opt out.</span></label>
-      <button class="go" type="submit" data-t="cta">Send me my plan</button>
-      <div class="err" id="err"></div>
-      <div class="note" data-t="note">We work with a limited number of studios at a time. If we are not the right fit, we will say so on the call.</div>
-    </div>
-  </form>
-</div>
-
-<div id="done">
-  <div class="eyebrow" data-t="d0">Received</div>
-  <div class="tick" data-t="d1">Got it. Now pick a time and we will walk you through the plan.</div>
-  <p class="lede" style="margin-top:12px" data-t="d2">Fifteen to twenty minutes. We will show you the real weekly report from the studio we run, with every booking traced to the ad that brought it.</p>
+<div id="done" class="hidden">
+  <div class="step-lbl" data-t="d0">Received</div>
+  <h1 data-t="d1">Now pick a time and we will walk you through it.</h1>
+  <p class="sub" data-t="d2">Fifteen to twenty minutes. We will show you the real weekly report from the studio we run, with every booking traced to the ad that brought it.</p>
   <div class="cal"><iframe id="calf" title="Book a call" loading="lazy"></iframe></div>
 </div>
 
 <footer>
-  <span>PGL Marketing · Personal Growth Lab LLC · San Diego, California</span>
-  <span><a href="mailto:lev@pgl.marketing">lev@pgl.marketing</a> · <a href="https://pgl.marketing">pgl.marketing</a></span>
+  <span data-t="foot">PGL Marketing · Personal Growth Lab LLC · San Diego, California</span><br>
+  <a href="mailto:lev@pgl.marketing">lev@pgl.marketing</a> · <a href="https://pgl.marketing">pgl.marketing</a>
 </footer>
 </div>
 
@@ -138,95 +80,176 @@ footer a{color:var(--deep);text-decoration:none}
 var HOOK='https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6';
 var CAL='https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call';
 
-/* ---------- Русская версия. Правится здесь ---------- */
-var RU={
- eyebrow:"Для владельцев студий в Лос-Анджелесе",
- h1:"Бесплатный разбор загрузки",
- lede:"Шесть коротких вопросов о вашей студии. В ответ мы считаем, сколько записей в месяц реально добрать при вашем чеке и в вашем районе, и что чинить первым. Бесплатно и ни к чему не обязывает.",
- p1:"стоит одна запись в wellness-студии, которую мы ведём в Сан-Диего",
- p2:"возврат на рекламу с первого визита",
- p3:"дней от новой локации до полной записи",
- q1:"Какая у вас студия?",
- q2:"Какой у вас средний чек?",
- q3:"Сколько мастеров работает в пространстве?",
- q4:"Насколько заполнен календарь сейчас?",
- q5:"Реклама сейчас идёт?",
- q6:"Что сейчас стоит вам дороже всего?",
- q7:"Куда прислать разбор?",
- f1:"Имя", f2:"Фамилия", f3:"Название студии", f4:"Почта", f5:"Телефон",
- consent:"Согласен получать сообщения от PGL Marketing по телефону, в смс и на почту по поводу моего разбора. Могут применяться тарифы оператора. Ответьте STOP, чтобы отписаться.",
- cta:"Прислать разбор",
- note:"Мы берём ограниченное число студий одновременно. Если мы вам не подходим, скажем об этом на звонке.",
- d0:"Принято", d1:"Готово. Теперь выберите время, и мы разберём план с вами.",
- d2:"От пятнадцати до двадцати минут. Покажем настоящий недельный отчёт студии, которую ведём, где каждая запись привязана к объявлению.",
- opts:{
-  "Services":"Мед-спа и инъекции|Массаж и тело|Косметология и уход|Ресницы и брови|Волосы и ногти|Мультиформатное пространство",
-  "Average ticket":"До $80|$80 до $150|$150 до $250|От $250",
-  "Capacity":"Только я|2 до 4|5 до 9|10 и больше",
-  "Utilization":"Много свободных окон|Примерно наполовину|Почти всё занято|Полная запись",
-  "Who runs ads":"Рекламы нет|Продвигаю посты сама|Ведёт агентство|Веду сама по-настоящему",
-  "Bottleneck":"Мало новых клиентов|Клиенты не возвращаются|Не приходят на запись|Не понимаю, откуда клиенты"
- }
+var EN={
+ intro_lbl:"Free Booked-Out Plan",
+ intro_h:"How many bookings a month can your studio really add?",
+ intro_s:"Six taps. We come back with a number for your price point and your area, and what to fix first. No charge.",
+ intro_btn:"Start",
+ p1:"<b>$20</b> per booking", p2:"<b>$200</b> average service", p3:"<b>×10</b> return", p4:"<b>30 days</b> to a full calendar",
+ q:["What kind of studio do you run?","What is your average ticket?","How many providers work in the space?","How full is the calendar right now?","Are you running ads today?","What is costing you the most right now?"],
+ opts:[
+  ["Med-spa or injectables","Massage and body","Skin and facials","Lashes and brows","Hair or nails","Multi-service space"],
+  ["Under $80","$80 to $150","$150 to $250","$250 and up"],
+  ["Just me","2 to 4","5 to 9","10 or more"],
+  ["Plenty of open slots","About half full","Mostly full","Booked out"],
+  ["Not running ads","Boosting posts myself","An agency runs them","I run them properly"],
+  ["Not enough new clients","Clients do not come back","No-shows and cancellations","No idea where clients come from"]
+ ],
+ c_lbl:"Last step",
+ c_h:"Where do we send the plan?",
+ f:["First name","Last name","Studio name","Email","Phone"],
+ consent:"I agree to be contacted by PGL Marketing by phone, text and email about my plan. Message and data rates may apply. Reply STOP to opt out.",
+ cta:"Send me my plan",
+ note:"We work with a limited number of studios at a time. If we are not the right fit, we will say so on the call.",
+ back:"Back",
+ step:"Question %s of 6",
+ errq:"Pick one to continue.",
+ errf:"Please fill in the required fields.",
+ d0:"Received", d1:"Now pick a time and we will walk you through it.",
+ d2:"Fifteen to twenty minutes. We will show you the real weekly report from the studio we run, with every booking traced to the ad that brought it.",
+ foot:"PGL Marketing · Personal Growth Lab LLC · San Diego, California"
 };
 
-var EN={}, answers={}, ruOn=false;
-document.querySelectorAll('[data-t]').forEach(function(el){EN[el.getAttribute('data-t')]=el.textContent;});
+/* ---------- Русская версия. Правится здесь ---------- */
+var RU={
+ intro_lbl:"Бесплатный разбор загрузки",
+ intro_h:"Сколько записей в месяц реально добрать вашей студии?",
+ intro_s:"Шесть касаний. В ответ считаем цифру под ваш чек и ваш район и говорим, что чинить первым. Бесплатно.",
+ intro_btn:"Начать",
+ p1:"<b>$20</b> за запись", p2:"<b>$200</b> средний чек", p3:"<b>×10</b> возврат", p4:"<b>30 дней</b> до полной записи",
+ q:["Какая у вас студия?","Какой у вас средний чек?","Сколько мастеров работает в пространстве?","Насколько заполнен календарь сейчас?","Реклама сейчас идёт?","Что сейчас стоит вам дороже всего?"],
+ opts:[
+  ["Мед-спа и инъекции","Массаж и тело","Косметология и уход","Ресницы и брови","Волосы и ногти","Мультиформатное пространство"],
+  ["До $80","$80 до $150","$150 до $250","От $250"],
+  ["Только я","2 до 4","5 до 9","10 и больше"],
+  ["Много свободных окон","Примерно наполовину","Почти всё занято","Полная запись"],
+  ["Рекламы нет","Продвигаю посты сама","Ведёт агентство","Веду сама по-настоящему"],
+  ["Мало новых клиентов","Клиенты не возвращаются","Не приходят на запись","Не понимаю, откуда клиенты"]
+ ],
+ c_lbl:"Последний шаг",
+ c_h:"Куда прислать разбор?",
+ f:["Имя","Фамилия","Название студии","Почта","Телефон"],
+ consent:"Согласна получать сообщения от PGL Marketing по телефону, в смс и на почту по поводу моего разбора. Могут применяться тарифы оператора. Ответьте STOP, чтобы отписаться.",
+ cta:"Прислать разбор",
+ note:"Мы берём ограниченное число студий одновременно. Если мы вам не подходим, скажем об этом на звонке.",
+ back:"Назад",
+ step:"Вопрос %s из 6",
+ errq:"Выберите вариант, чтобы продолжить.",
+ errf:"Заполните обязательные поля.",
+ d0:"Принято", d1:"Теперь выберите время, и мы разберём план с вами.",
+ d2:"От пятнадцати до двадцати минут. Покажем настоящий недельный отчёт студии, которую ведём, где каждая запись привязана к объявлению.",
+ foot:"PGL Marketing · Personal Growth Lab LLC · Сан-Диего, Калифорния"
+};
 
-function buildChips(){
-  document.querySelectorAll('.chips').forEach(function(box){
-    var name=box.getAttribute('data-name');
-    var opts=(ruOn&&RU.opts[name]?RU.opts[name]:box.getAttribute('data-opts')).split('|');
-    var en=box.getAttribute('data-opts').split('|');
-    box.textContent='';
-    opts.forEach(function(label,i){
-      var b=document.createElement('button');
-      b.type='button'; b.className='chip'+(answers[name]===en[i]?' on':''); b.textContent=label;
-      b.addEventListener('click',function(){
-        answers[name]=en[i];
-        box.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on');});
-        b.classList.add('on');
-      });
-      box.appendChild(b);
-    });
-  });
-}
-function applyLang(){
-  var src=ruOn?RU:EN;
-  document.querySelectorAll('[data-t]').forEach(function(el){
-    var k=el.getAttribute('data-t'); if(src[k]) el.textContent=src[k];
-  });
-  document.getElementById('lang').textContent=ruOn?'English':'Русский';
-  document.documentElement.lang=ruOn?'ru':'en';
-  buildChips();
-}
-document.getElementById('lang').addEventListener('click',function(){ruOn=!ruOn;applyLang();});
-
-/* prefill from the Facebook form handoff */
+var KEYS=['Services','Average ticket','Capacity','Utilization','Who runs ads','Bottleneck'];
+var ruOn=false, step=-1, ans={}, contact={};
 var qs=new URLSearchParams(location.search);
-function set(n,v){var el=document.querySelector('[name="'+n+'"]');if(el&&v)el.value=v;}
-set('First name',qs.get('first_name')||qs.get('first'));
-set('Last name',qs.get('last_name')||qs.get('last'));
-set('Email',qs.get('email'));
-set('Phone',qs.get('phone'));
-set('Business',qs.get('business')||qs.get('company'));
+if((qs.get('lang')||'').toLowerCase()==='ru') ruOn=true;
+function T(){return ruOn?RU:EN;}
+var stage=document.getElementById('stage');
 
-buildChips();
+function prog(){
+  var pct = step<0 ? 0 : Math.round(((step+1)/7)*100);
+  document.getElementById('prog').style.width=pct+'%';
+}
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
 
-document.getElementById('lead').addEventListener('submit',function(e){
-  e.preventDefault();
-  var err=document.getElementById('err');
-  var need=['Services','Average ticket','Capacity','Utilization','Who runs ads','Bottleneck'];
-  for(var i=0;i<need.length;i++){
-    if(!answers[need[i]]){
-      err.textContent = ruOn ? 'Ответьте, пожалуйста, на все шесть вопросов.' : 'Please answer all six questions.';
-      document.querySelectorAll('.chips')[i].scrollIntoView({behavior:'smooth',block:'center'});
-      return;
-    }
+function renderIntro(){
+  var t=T(); stage.textContent='';
+  stage.appendChild(el('div','step-lbl',t.intro_lbl));
+  stage.appendChild(el('h1',null,t.intro_h));
+  stage.appendChild(el('p','sub',t.intro_s));
+  var pr=el('div','proof');
+  [t.p1,t.p2,t.p3,t.p4].forEach(function(x){var c=el('span','chipf');c.innerHTML=x;pr.appendChild(c);});
+  stage.appendChild(pr);
+  var b=el('button','go',t.intro_btn); b.type='button';
+  b.addEventListener('click',function(){step=0;render();});
+  stage.appendChild(b);
+  prog();
+}
+
+function renderQ(){
+  var t=T(); stage.textContent='';
+  stage.appendChild(el('div','step-lbl',t.step.replace('%s',String(step+1))));
+  stage.appendChild(el('h1',null,t.q[step]));
+  var box=el('div','opts');
+  var enOpts=EN.opts[step];
+  t.opts[step].forEach(function(label,i){
+    var b=el('button','opt'+(ans[KEYS[step]]===enOpts[i]?' on':''));
+    b.type='button';
+    b.appendChild(el('span','dot'));
+    b.appendChild(el('span',null,label));
+    b.addEventListener('click',function(){
+      ans[KEYS[step]]=enOpts[i];
+      box.querySelectorAll('.opt').forEach(function(o){o.classList.remove('on');});
+      b.classList.add('on');
+      setTimeout(function(){ step++; render(); },170);
+    });
+    box.appendChild(b);
+  });
+  stage.appendChild(box);
+  var bk=el('button','back','← '+t.back); bk.type='button';
+  bk.addEventListener('click',function(){step--;render();});
+  stage.appendChild(bk);
+  prog();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderContact(){
+  var t=T(); stage.textContent='';
+  stage.appendChild(el('div','step-lbl',t.c_lbl));
+  stage.appendChild(el('h1',null,t.c_h));
+  var f=document.createElement('form'); f.id='lead'; f.autocomplete='on';
+  var wrapf=el('div','fields');
+  function field(name,label,type,ac,req,half){
+    var d=document.createElement('div');
+    var l=el('label','fl',label);
+    var inp=document.createElement('input');
+    inp.type=type; inp.name=name; inp.autocomplete=ac; if(req) inp.required=true;
+    if(contact[name]) inp.value=contact[name];
+    inp.addEventListener('input',function(){contact[name]=inp.value;});
+    d.appendChild(l); d.appendChild(inp);
+    return d;
   }
-  err.textContent='';
+  var r=el('div','row2');
+  r.appendChild(field('First name',t.f[0],'text','given-name',true));
+  r.appendChild(field('Last name',t.f[1],'text','family-name',false));
+  wrapf.appendChild(r);
+  wrapf.appendChild(field('Business',t.f[2],'text','organization',false));
+  wrapf.appendChild(field('Email',t.f[3],'email','email',true));
+  wrapf.appendChild(field('Phone',t.f[4],'tel','tel',true));
+  f.appendChild(wrapf);
+
+  var cl=el('label','consent');
+  var ci=document.createElement('input'); ci.type='checkbox'; ci.name='Consent'; ci.value='yes'; ci.required=true;
+  cl.appendChild(ci); cl.appendChild(el('span',null,t.consent));
+  f.appendChild(cl);
+
+  var go=el('button','go',t.cta); go.type='submit'; f.appendChild(go);
+  var er=el('div','err'); er.id='err'; f.appendChild(er);
+  f.appendChild(el('p','note',t.note));
+  f.addEventListener('submit',submit);
+  stage.appendChild(f);
+
+  var bk=el('button','back','← '+t.back); bk.type='button';
+  bk.addEventListener('click',function(){step--;render();});
+  stage.appendChild(bk);
+  prog();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function render(){
+  if(step<0) return renderIntro();
+  if(step<6) return renderQ();
+  return renderContact();
+}
+
+function submit(e){
+  e.preventDefault();
+  var f=e.target, t=T();
   var p=new URLSearchParams();
-  new FormData(this).forEach(function(v,k){ if((''+v).trim()!=='') p.append(k,v); });
-  Object.keys(answers).forEach(function(k){ p.append(k,answers[k]); });
+  new FormData(f).forEach(function(v,k){ if((''+v).trim()!=='') p.append(k,v); });
+  Object.keys(ans).forEach(function(k){ p.append(k,ans[k]); });
   p.append('full_name',((p.get('First name')||'')+' '+(p.get('Last name')||'')).trim());
   p.append('Niche','Wellness / Beauty');
   p.append('source','PGL beauty plan LA');
@@ -236,16 +259,44 @@ document.getElementById('lead').addEventListener('submit',function(e){
     var v=qs.get(k); if(v) p.append(k,v);
   });
   fetch(HOOK,{method:'POST',body:p,keepalive:true}).catch(function(){});
-  try{ if(window.fbq) fbq('track','Lead'); }catch(e){}
+  try{ if(window.fbq) fbq('track','Lead'); }catch(err){}
   var pre=[];
-  ['First name','Last name','Email','Phone'].forEach(function(k){
-    var v=p.get(k); if(v) pre.push({'First name':'first_name','Last name':'last_name','Email':'email','Phone':'phone'}[k]+'='+encodeURIComponent(v));
-  });
+  var map={'First name':'first_name','Last name':'last_name','Email':'email','Phone':'phone'};
+  Object.keys(map).forEach(function(k){ var v=p.get(k); if(v) pre.push(map[k]+'='+encodeURIComponent(v)); });
   document.getElementById('calf').src=CAL+(pre.length?'?'+pre.join('&'):'');
-  document.getElementById('form').className='off';
-  document.getElementById('done').className='on';
+  stage.classList.add('hidden');
+  document.getElementById('done').classList.remove('hidden');
+  document.getElementById('prog').style.width='100%';
+  applyDone();
   window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function applyDone(){
+  var t=T();
+  document.querySelectorAll('#done [data-t], footer [data-t]').forEach(function(x){
+    var k=x.getAttribute('data-t'); if(t[k]) x.textContent=t[k];
+  });
+}
+
+document.getElementById('lang').addEventListener('click',function(){
+  ruOn=!ruOn;
+  this.textContent=ruOn?'English':'Русский';
+  document.documentElement.lang=ruOn?'ru':'en';
+  applyDone();
+  if(document.getElementById('done').classList.contains('hidden')) render();
 });
+
+/* prefill from the Facebook form handoff */
+['First name','Last name','Email','Phone','Business'].forEach(function(k){});
+contact['First name']=qs.get('first_name')||qs.get('first')||'';
+contact['Last name']=qs.get('last_name')||qs.get('last')||'';
+contact['Email']=qs.get('email')||'';
+contact['Phone']=qs.get('phone')||'';
+contact['Business']=qs.get('business')||qs.get('company')||'';
+
+if(ruOn) document.getElementById('lang').textContent='English';
+applyDone();
+render();
 </script>
 </body>
 </html>
