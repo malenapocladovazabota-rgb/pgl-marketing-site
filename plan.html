@@ -51,9 +51,9 @@ h1 em{font-style:normal;color:var(--ember-deep)}
 .st b{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.02em;line-height:1;color:var(--ink)}
 .st span{display:block;font-size:12.5px;color:var(--warm);margin-top:6px;line-height:1.35}
 /* form section */
-.start{background:var(--ink);color:var(--paper);padding:56px 0 64px;position:relative;overflow:hidden}
+.start{background:var(--ink);color:var(--paper);padding:34px 0 56px;position:relative;overflow:hidden;min-height:calc(100vh - 62px)}
 .start::before{content:"";position:absolute;width:60vw;height:60vw;right:-20vw;top:-25vw;background:radial-gradient(circle,rgba(201,168,76,.16),transparent 62%);pointer-events:none}
-.start .wrap{position:relative;max-width:620px}
+.start .wrap{position:relative;max-width:600px}
 .start .eyebrow{color:var(--ember)}
 .start h2{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:clamp(28px,4.4vw,44px);margin-top:14px}
 .start .lead{color:#B9AEA2}
@@ -114,24 +114,11 @@ footer a{color:var(--ember-deep)}
 <body>
 <nav><div class="wrap">
   <a class="brand" href="https://pgl.marketing"><span>PGL</span> Marketing</a>
-  <div class="navr"><span class="loc">California, USA</span><a class="btn p sm" href="#start" data-go>Book a call</a></div>
+  <div class="navr"><span class="loc">California, USA</span></div>
 </div></nav>
 
-<section class="hero"><div class="wrap"><div class="g">
-  <div>
-    <div class="eyebrow">PGL Marketing · Lev and Malena</div>
-    <h1>We fill calendars.<br><em>And show you what filled them.</em></h1>
-    <p class="lead">Content, ads, booking and a dashboard where every client is traced to the ad that brought them. One team, one person accountable.</p>
-    <div class="cta"><a class="btn g" href="#start" data-go>Book my free strategy call</a><a class="btn s" href="#how">See how we work</a></div>
-    <p class="tiny">15 to 20 minutes on video. No pitch deck, real numbers from a client we run.</p>
-  </div>
-  <div class="photo"><img src="photos/founders-new-8.jpg" alt="Lev and Malena, founders"><span class="tag">Lev and Malena, founders</span></div>
-</div></div></section>
-
-<section class="proof"><div class="wrap"><div class="g" id="proof"></div></div></section>
-
 <section class="start" id="start"><div class="wrap">
-  <div class="eyebrow">Free strategy call</div>
+  <div class="eyebrow">PGL Marketing · Lev and Malena</div>
   <h2>Six quick questions, then pick a time.</h2>
   <p class="lead">About a minute. It lets us come to the call with numbers for your business instead of generic advice.</p>
   <div class="card">
@@ -145,7 +132,14 @@ footer a{color:var(--ember-deep)}
   </div>
 </div></section>
 
-<section class="sec" id="how"><div class="wrap">
+<section class="sec" id="about"><div class="wrap">
+  <div class="eyebrow">Who you just booked with</div>
+  <h2>We fill calendars. And show you what filled them.</h2>
+  <p class="sub">Content, ads, booking and a dashboard where every client is traced to the ad that brought them. One team, one person accountable.</p>
+  <div class="proof" style="padding:22px 0 0"><div class="g" id="proof"></div></div>
+</div></section>
+
+<section class="sec" id="how" style="padding-top:0"><div class="wrap">
   <div class="eyebrow">How we work</div>
   <h2>Your first month, step by step</h2>
   <p class="sub">We do the heavy lifting up front so your involvement stays at a couple of hours a month.</p>
@@ -168,12 +162,6 @@ footer a{color:var(--ember-deep)}
   </div>
 </div></div></section>
 
-<section class="fin"><div class="wrap">
-  <h2>Let's put numbers on your business.</h2>
-  <p>Six questions, one call, a plan you can act on.</p>
-  <div class="cta"><a class="btn g" href="#start" data-go>Book my free strategy call</a></div>
-</div></section>
-
 <div class="wrap"><footer>
   <span>PGL Marketing · Personal Growth Lab LLC · San Diego, California</span>
   <span><a href="mailto:lev@pgl.marketing">lev@pgl.marketing</a> · <a href="https://pgl.marketing">pgl.marketing</a></span>
@@ -182,7 +170,7 @@ footer a{color:var(--ember-deep)}
 <script>
 var HOOK='https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6';
 var CAL='https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call';
-var T={"lang": "en", "title": "Free strategy call · PGL Marketing", "loc": "California, USA", "nav_cta": "Book a call", "eyebrow": "PGL Marketing · Lev and Malena", "h1_a": "We fill calendars.", "h1_b": "And show you what filled them.", "lead": "Content, ads, booking and a dashboard where every client is traced to the ad that brought them. One team, one person accountable.", "cta1": "Book my free strategy call", "cta2": "See how we work", "tiny": "15 to 20 minutes on video. No pitch deck, real numbers from a client we run.", "phototag": "Lev and Malena, founders", "proof": [["$20", "what one booking costs a client we run today"], ["$200", "their average service"], ["×10", "return on ad spend from the first visit"], ["70+", "bookings a week they take now"], ["30 days", "from a new location to a full calendar"]], "s_eyebrow": "Free strategy call", "s_h": "Six quick questions, then pick a time.", "s_lead": "About a minute. It lets us come to the call with numbers for your business instead of generic advice.", "step": "Question %s of 6", "q": ["What kind of business is it?", "What is your average ticket or order value?", "How big is the team that serves clients?", "How much of your capacity is booked right now?", "Are you running paid ads today?", "What is costing you the most right now?"], "opts": [["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $150", "$150 to $250", "$250 to $500", "$500 to $1,000", "$1,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["Plenty of open capacity", "About half", "Mostly full", "Fully booked"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]], "back": "Back", "d_h": "Pick a time.", "d_p": "We will walk you through what your business can realistically add and show a real weekly report, every booking traced to its source.", "how_eyebrow": "How we work", "how_h": "Your first month, step by step", "how_sub": "We do the heavy lifting up front so your involvement stays at a couple of hours a month.", "steps": [["01", "Strategy", "We find what makes you different and build the plan around it, not around a discount."], ["02", "Content", "Scripts, filming and editing. One shoot covers the month. It grows reach and brings bookings at once."], ["03", "Ads", "We launch, read the numbers weekly and scale what brings bookings."], ["04", "System", "Booking, client database, reminders, win-backs and a dashboard that shows where every client came from."]], "cases_eyebrow": "Real results", "cases_h": "Numbers from real client accounts", "cases": [["case-wellness-vid-poster.jpg", "Wellness studio", "30 days", "From a brand new location to a fully booked team. Today 70+ bookings a week, ×10 return from the first visit."], ["case-food-vid-poster.jpg", "Food service", "435+", "Banquet inquiries in one month from a feed that used to bring nothing."], ["case-education-vid-poster.jpg", "Online education", "200+", "Clients on a premium product from paid traffic, ×10 return."], ["case-tattoo-vid-poster.jpg", "Personal brand", "1.7M", "Organic views in four months from a profile with no reach."]], "f_eyebrow": "Who runs it", "f_h": "Built by Lev Pocladov and Malena Pocladova.", "f_p": "We build the full business system: content and ads bring clients in, and retention brings them back. Behind us is a senior team across strategy, scripts, edit, paid ads and client success.", "f_pills": [["Lev", "paid traffic, funnels, numbers"], ["Malena", "content, positioning, growth"]], "fin_h": "Let's put numbers on your business.", "fin_p": "Six questions, one call, a plan you can act on.", "fin_cta": "Book my free strategy call", "foot": "PGL Marketing · Personal Growth Lab LLC · San Diego, California", "langtag": "EN"};
+var T={"lang": "en", "title": "Free strategy call · PGL Marketing", "loc": "California, USA", "nav_cta": "Book a call", "eyebrow": "PGL Marketing · Lev and Malena", "h1_a": "We fill calendars.", "h1_b": "And show you what filled them.", "lead": "Content, ads, booking and a dashboard where every client is traced to the ad that brought them. One team, one person accountable.", "cta1": "Book my free strategy call", "cta2": "See how we work", "tiny": "15 to 20 minutes on video. No pitch deck, real numbers from a client we run.", "phototag": "Lev and Malena, founders", "proof": [["$20", "what one booking costs a client we run today"], ["$200", "their average service"], ["×10", "return on ad spend from the first visit"], ["70+", "bookings a week they take now"], ["30 days", "from a new location to a full calendar"]], "s_eyebrow": "Free strategy call", "s_h": "Six quick questions, then pick a time.", "s_lead": "About a minute. It lets us come to the call with numbers for your business instead of generic advice.", "step": "Question %s of 6", "q": ["What kind of business is it?", "What is your average ticket or order value?", "How big is the team that serves clients?", "How much of your capacity is booked right now?", "Are you running paid ads today?", "What is costing you the most right now?"], "opts": [["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $150", "$150 to $250", "$250 to $500", "$500 to $1,000", "$1,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["Plenty of open capacity", "About half", "Mostly full", "Fully booked"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]], "back": "Back", "d_h": "Pick a time.", "d_p": "We will walk you through what your business can realistically add and show a real weekly report, every booking traced to its source.", "how_eyebrow": "How we work", "how_h": "Your first month, step by step", "how_sub": "We do the heavy lifting up front so your involvement stays at a couple of hours a month.", "steps": [["01", "Strategy", "We find what makes you different and build the plan around it, not around a discount."], ["02", "Content", "Scripts, filming and editing. One shoot covers the month. It grows reach and brings bookings at once."], ["03", "Ads", "We launch, read the numbers weekly and scale what brings bookings."], ["04", "System", "Booking, client database, reminders, win-backs and a dashboard that shows where every client came from."]], "cases_eyebrow": "Real results", "cases_h": "Numbers from real client accounts", "cases": [["case-wellness-vid-poster.jpg", "Wellness studio", "30 days", "From a brand new location to a fully booked team. Today 70+ bookings a week, ×10 return from the first visit."], ["case-food-vid-poster.jpg", "Food service", "435+", "Banquet inquiries in one month from a feed that used to bring nothing."], ["case-education-vid-poster.jpg", "Online education", "200+", "Clients on a premium product from paid traffic, ×10 return."], ["case-tattoo-vid-poster.jpg", "Personal brand", "1.7M", "Organic views in four months from a profile with no reach."]], "f_eyebrow": "Who runs it", "f_h": "Built by Lev Pocladov and Malena Pocladova.", "f_p": "We build the full business system: content and ads bring clients in, and retention brings them back. Behind us is a senior team across strategy, scripts, edit, paid ads and client success.", "f_pills": [["Lev", "paid traffic, funnels, numbers"], ["Malena", "content, positioning, growth"]], "fin_h": "Let's put numbers on your business.", "fin_p": "Six questions, one call, a plan you can act on.", "fin_cta": "Book my free strategy call", "foot": "PGL Marketing · Personal Growth Lab LLC · San Diego, California", "a_eyebrow": "Who you just booked with", "langtag": "EN"};
 var EN_OPTS=[["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $150", "$150 to $250", "$250 to $500", "$500 to $1,000", "$1,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["Plenty of open capacity", "About half", "Mostly full", "Fully booked"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]];
 var KEYS=['Niche','Average ticket','Capacity','Utilization','Who runs ads','Bottleneck'];
 var LANG='EN';
