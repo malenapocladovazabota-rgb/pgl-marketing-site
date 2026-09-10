@@ -36,6 +36,11 @@ h1{font-family:'Fraunces',serif;font-size:clamp(26px,6.2vw,35px);line-height:1.1
 .note{font-size:12.5px;color:var(--gray);margin-top:14px;line-height:1.45}
 footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gray);line-height:1.7}
 footer a{color:var(--deep);text-decoration:none}
+.lede{margin-top:12px;font-size:15.5px;color:var(--gray);line-height:1.5}
+.proof{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.chipf{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;background:var(--pure);border:1px solid var(--line);border-radius:99px;padding:7px 12px;color:var(--gray)}
+.chipf b{color:var(--deep);font-family:'Fraunces',serif;font-size:13px}
+.ins{margin-top:16px;background:var(--warm);border:1px solid var(--gold);border-left-width:4px;border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.45;color:var(--ink)}
 .hidden{display:none!important}
 </style>
 </head>
@@ -43,7 +48,7 @@ footer a{color:var(--deep);text-decoration:none}
 <div class="wrap">
 <header>
   <div class="brand"><span>PGL</span> Marketing</div>
-  <div class="kicker">PGL Marketing · Los Angeles</div>
+  <div class="kicker">PGL Marketing · California, USA</div>
 </header>
 <div class="bar"><i id="prog"></i></div>
 <div id="stage"></div>
@@ -61,7 +66,7 @@ footer a{color:var(--deep);text-decoration:none}
 <script>
 var HOOK='https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6';
 var CAL='https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call';
-var T={"lang": "en", "title": "Your growth plan · PGL Marketing", "kicker": "PGL Marketing · Los Angeles", "intro": "Six questions, about a minute. Then pick a time.", "step": "Question %s of 6", "q": ["What kind of business is it?", "What is your average ticket or order value?", "How big is the team that serves clients?", "How much of your capacity is booked right now?", "Are you running paid ads today?", "What is costing you the most right now?"], "opts": [["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $150", "$150 to $250", "$250 to $500", "$500 to $1,000", "$1,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["Plenty of open capacity", "About half", "Mostly full", "Fully booked"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]], "d0": "Last step", "d1": "Pick a time and we will walk you through your plan.", "d2": "Fifteen to twenty minutes. We will show you a real weekly report from a client we run, with every booking traced to the ad that brought it.", "back": "Back", "foot": "PGL Marketing · Personal Growth Lab LLC · San Diego, California", "langtag": "EN"};
+var T={"lang": "en", "title": "Your growth plan · PGL Marketing", "kicker": "PGL Marketing · California, USA", "lede": "We build the whole chain between an ad and a paying client: content, ads, booking, the client database and a dashboard where every booking is traced to what produced it. One team, one person accountable.", "intro": "Six questions, about a minute. Then we tell you what your business can realistically add, and you pick a time.", "proof": [["$20", "what one booking costs a client we run"], ["$200", "their average service"], ["30 days", "from a new location to a full calendar"]], "insight": ["", "We never build around a discount. A discount brings the client who leaves for whoever discounts harder. So we ask about money first, not about pretty pictures.", "At a $200 service, a booking that costs $20 pays back ten times on the first visit. Every plan we build starts from that arithmetic.", "The system has to hold a team: each provider gets their own calendar, their own access rights and their own way to take payment.", "Open capacity is what we fill. If you are already fully booked, you do not need ads yet, and we will tell you so.", "Every booking gets traced back to the ad that produced it. Without that you cannot know what to scale."], "step": "Question %s of 6", "q": ["What kind of business is it?", "What is your average ticket or order value?", "How big is the team that serves clients?", "How much of your capacity is booked right now?", "Are you running paid ads today?", "What is costing you the most right now?"], "opts": [["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $150", "$150 to $250", "$250 to $500", "$500 to $1,000", "$1,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["Plenty of open capacity", "About half", "Mostly full", "Fully booked"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]], "d0": "Last step", "d1": "Pick a time and we will walk you through your plan.", "d2": "Fifteen to twenty minutes. We will show you a real weekly report from a client we run, with every booking traced to the ad that brought it.", "back": "Back", "foot": "PGL Marketing · Personal Growth Lab LLC · San Diego, California", "h0": "What could your business realistically add?", "kicker2": "Your growth plan", "langtag": "EN"};
 var EN_OPTS=[["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $150", "$150 to $250", "$250 to $500", "$500 to $1,000", "$1,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["Plenty of open capacity", "About half", "Mostly full", "Fully booked"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]];
 var KEYS=['Niche','Average ticket','Capacity','Utilization','Who runs ads','Bottleneck'];
 var LANG='EN';
@@ -104,9 +109,23 @@ function push(status){
 
 function renderQ(){
   stage.textContent='';
-  stage.appendChild(el('div','step-lbl',T.step.replace('%s',String(step+1))));
-  stage.appendChild(el('h1',null,T.q[step]));
-  if(step===0) stage.appendChild(el('p','sub',T.intro));
+  if(step===0){
+    stage.appendChild(el('div','step-lbl',T.kicker2));
+    stage.appendChild(el('h1',null,T.h0));
+    stage.appendChild(el('p','lede',T.lede));
+    var pr=el('div','proof');
+    T.proof.forEach(function(s){var c=el('span','chipf');var b=el('b',null,s[0]);c.appendChild(b);c.appendChild(document.createTextNode(' '+s[1]));pr.appendChild(c);});
+    stage.appendChild(pr);
+    stage.appendChild(el('p','sub',T.intro));
+    var hr=el('div','step-lbl',T.step.replace('%s','1'));
+    stage.appendChild(hr);
+    var qh=el('h1',null,T.q[0]); qh.style.fontSize='clamp(21px,4.6vw,26px)'; qh.style.marginTop='6px';
+    stage.appendChild(qh);
+  } else {
+    if(T.insight[step]) stage.appendChild(el('div','ins',T.insight[step]));
+    stage.appendChild(el('div','step-lbl',T.step.replace('%s',String(step+1))));
+    stage.appendChild(el('h1',null,T.q[step]));
+  }
   var box=el('div','opts');
   var eo=EN_OPTS[step];
   T.opts[step].forEach(function(label,i){

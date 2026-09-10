@@ -36,6 +36,11 @@ h1{font-family:'Fraunces',serif;font-size:clamp(26px,6.2vw,35px);line-height:1.1
 .note{font-size:12.5px;color:var(--gray);margin-top:14px;line-height:1.45}
 footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gray);line-height:1.7}
 footer a{color:var(--deep);text-decoration:none}
+.lede{margin-top:12px;font-size:15.5px;color:var(--gray);line-height:1.5}
+.proof{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.chipf{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;background:var(--pure);border:1px solid var(--line);border-radius:99px;padding:7px 12px;color:var(--gray)}
+.chipf b{color:var(--deep);font-family:'Fraunces',serif;font-size:13px}
+.ins{margin-top:16px;background:var(--warm);border:1px solid var(--gold);border-left-width:4px;border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.45;color:var(--ink)}
 .hidden{display:none!important}
 </style>
 </head>
@@ -43,7 +48,7 @@ footer a{color:var(--deep);text-decoration:none}
 <div class="wrap">
 <header>
   <div class="brand"><span>PGL</span> Marketing</div>
-  <div class="kicker">PGL Marketing · Лос-Анджелес</div>
+  <div class="kicker">PGL Marketing · Калифорния, США</div>
 </header>
 <div class="bar"><i id="prog"></i></div>
 <div id="stage"></div>
@@ -61,7 +66,7 @@ footer a{color:var(--deep);text-decoration:none}
 <script>
 var HOOK='https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6';
 var CAL='https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call';
-var T={"lang": "ru", "title": "Ваш план роста · PGL Marketing", "kicker": "PGL Marketing · Лос-Анджелес", "intro": "Шесть вопросов, около минуты. Дальше выберете время.", "step": "Вопрос %s из 6", "q": ["Какой у вас бизнес?", "Какой у вас средний чек?", "Сколько человек обслуживает клиентов?", "Насколько загружена мощность сейчас?", "Платная реклама сейчас идёт?", "Что сейчас стоит вам дороже всего?"], "opts": [["Бьюти или велнес студия", "Мед-спа и эстетика", "Фитнес, йога, пилатес", "Ресторан, кафе, кейтеринг", "Услуги на дому", "Клиника, юристы, профуслуги", "Онлайн-образование или коучинг", "Другое"], ["До $150", "$150 до $250", "$250 до $500", "$500 до $1,000", "От $1,000"], ["Только я", "2 до 4", "5 до 9", "10 и больше"], ["Много свободной мощности", "Примерно наполовину", "Почти всё занято", "Загружены полностью"], ["Рекламы нет", "Продвигаю посты сам", "Ведёт агентство", "Веду сам по-настоящему"], ["Мало новых клиентов", "Клиенты не возвращаются", "Не доходят до записи", "Не понимаю, откуда клиенты", "Не получается масштабировать то, что работает"]], "d0": "Последний шаг", "d1": "Выберите время, и мы разберём ваш план вместе.", "d2": "От пятнадцати до двадцати минут. Покажем настоящий недельный отчёт клиента, где каждая заявка привязана к объявлению, которое её принесло.", "back": "Назад", "foot": "PGL Marketing · Personal Growth Lab LLC · Сан-Диего, Калифорния", "langtag": "RU"};
+var T={"lang": "ru", "title": "Ваш план роста · PGL Marketing", "kicker": "PGL Marketing · Калифорния, США", "lede": "Мы строим всю цепочку между объявлением и оплатившим клиентом: контент, рекламу, запись, базу клиентов и дашборд, где каждая заявка привязана к тому, что её принесло. Одна команда, один ответственный.", "intro": "Шесть вопросов, около минуты. Дальше скажем, сколько ваш бизнес реально может добрать, и вы выберете время.", "proof": [["$20", "столько стоит запись у клиента, которого мы ведём"], ["$200", "его средний чек"], ["30 дней", "от новой локации до полной записи"]], "insight": ["", "Мы никогда не строим рекламу вокруг скидки. По скидке приходит тот, кто уйдёт туда, где скидка больше. Поэтому спрашиваем про деньги, а не про красивую картинку.", "При чеке $200 запись за $20 окупается в десять раз с первого визита. Любой наш план начинается с этой арифметики.", "Система должна выдерживать команду: у каждого мастера свой календарь, свои права доступа и свой приём оплаты.", "Свободная мощность это то, что мы заполняем. Если у вас всё занято, реклама вам пока не нужна, и мы так и скажем.", "Каждая запись привязывается к объявлению, которое её принесло. Без этого невозможно понять, что усиливать."], "step": "Вопрос %s из 6", "q": ["Какой у вас бизнес?", "Какой у вас средний чек?", "Сколько человек обслуживает клиентов?", "Насколько загружена мощность сейчас?", "Платная реклама сейчас идёт?", "Что сейчас стоит вам дороже всего?"], "opts": [["Бьюти или велнес студия", "Мед-спа и эстетика", "Фитнес, йога, пилатес", "Ресторан, кафе, кейтеринг", "Услуги на дому", "Клиника, юристы, профуслуги", "Онлайн-образование или коучинг", "Другое"], ["До $150", "$150 до $250", "$250 до $500", "$500 до $1,000", "От $1,000"], ["Только я", "2 до 4", "5 до 9", "10 и больше"], ["Много свободной мощности", "Примерно наполовину", "Почти всё занято", "Загружены полностью"], ["Рекламы нет", "Продвигаю посты сам", "Ведёт агентство", "Веду сам по-настоящему"], ["Мало новых клиентов", "Клиенты не возвращаются", "Не доходят до записи", "Не понимаю, откуда клиенты", "Не получается масштабировать то, что работает"]], "d0": "Последний шаг", "d1": "Выберите время, и мы разберём ваш план вместе.", "d2": "От пятнадцати до двадцати минут. Покажем настоящий недельный отчёт клиента, где каждая заявка привязана к объявлению, которое её принесло.", "back": "Назад", "foot": "PGL Marketing · Personal Growth Lab LLC · Сан-Диего, Калифорния", "h0": "Сколько ваш бизнес реально может добрать?", "kicker2": "Ваш план роста", "langtag": "RU"};
 var EN_OPTS=[["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $150", "$150 to $250", "$250 to $500", "$500 to $1,000", "$1,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["Plenty of open capacity", "About half", "Mostly full", "Fully booked"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]];
 var KEYS=['Niche','Average ticket','Capacity','Utilization','Who runs ads','Bottleneck'];
 var LANG='RU';
@@ -104,9 +109,23 @@ function push(status){
 
 function renderQ(){
   stage.textContent='';
-  stage.appendChild(el('div','step-lbl',T.step.replace('%s',String(step+1))));
-  stage.appendChild(el('h1',null,T.q[step]));
-  if(step===0) stage.appendChild(el('p','sub',T.intro));
+  if(step===0){
+    stage.appendChild(el('div','step-lbl',T.kicker2));
+    stage.appendChild(el('h1',null,T.h0));
+    stage.appendChild(el('p','lede',T.lede));
+    var pr=el('div','proof');
+    T.proof.forEach(function(s){var c=el('span','chipf');var b=el('b',null,s[0]);c.appendChild(b);c.appendChild(document.createTextNode(' '+s[1]));pr.appendChild(c);});
+    stage.appendChild(pr);
+    stage.appendChild(el('p','sub',T.intro));
+    var hr=el('div','step-lbl',T.step.replace('%s','1'));
+    stage.appendChild(hr);
+    var qh=el('h1',null,T.q[0]); qh.style.fontSize='clamp(21px,4.6vw,26px)'; qh.style.marginTop='6px';
+    stage.appendChild(qh);
+  } else {
+    if(T.insight[step]) stage.appendChild(el('div','ins',T.insight[step]));
+    stage.appendChild(el('div','step-lbl',T.step.replace('%s',String(step+1))));
+    stage.appendChild(el('h1',null,T.q[step]));
+  }
   var box=el('div','opts');
   var eo=EN_OPTS[step];
   T.opts[step].forEach(function(label,i){
