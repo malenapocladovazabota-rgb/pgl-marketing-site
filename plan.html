@@ -5,177 +5,257 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>Your growth plan · PGL Marketing</title>
+<title>Free strategy call · PGL Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--ink:#0B1119;--bone:#FAF8F3;--pure:#fff;--warm:#F4ECDF;--gold:#D4B68C;--ember:#C9A84C;--deep:#9B7E2E;--gray:#6B6358;--line:#E5DDD0}
-body{background:var(--bone);color:var(--ink);font-family:'Bricolage Grotesque',-apple-system,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5;min-height:100vh}
-.wrap{max-width:560px;margin:0 auto;padding:0 18px 64px}
-header{padding:20px 0 0;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.brand{font-family:'Fraunces',serif;font-weight:700;font-size:16px;letter-spacing:-.01em}
-.brand span{color:var(--deep)}
-.kicker{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
-.bar{margin-top:18px;height:4px;background:var(--line);border-radius:99px;overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:var(--ember);border-radius:99px;transition:width .3s ease}
-.step-lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);margin-top:18px}
-h1{font-family:'Fraunces',serif;font-size:clamp(26px,6.2vw,35px);line-height:1.14;letter-spacing:-.025em;font-weight:600;margin-top:9px}
-.sub{margin-top:10px;font-size:15.5px;color:var(--gray)}
-.opts{margin-top:20px;display:flex;flex-direction:column;gap:9px}
-.opt{width:100%;text-align:left;font:inherit;font-size:16.5px;font-weight:500;background:var(--pure);border:1.5px solid var(--line);border-radius:14px;padding:16px 17px;cursor:pointer;color:var(--ink);display:flex;align-items:center;gap:12px;transition:border-color .12s,background .12s}
-.opt:hover{border-color:var(--gold);background:#fffdf8}
-.opt.on{border-color:var(--ember);background:var(--warm);font-weight:600}
-.opt .dot{width:19px;height:19px;border-radius:50%;border:1.5px solid var(--line);flex:none;display:grid;place-items:center}
-.opt.on .dot{border-color:var(--deep)}
-.opt.on .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--deep)}
-.back{margin-top:20px;background:none;border:none;font:inherit;font-size:14.5px;color:var(--gray);cursor:pointer;padding:6px 0}
-.back:hover{color:var(--ink)}
-.cal{margin-top:18px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--pure)}
-.cal iframe{width:100%;height:760px;border:0;display:block}
-.note{font-size:12.5px;color:var(--gray);margin-top:14px;line-height:1.45}
-footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gray);line-height:1.7}
-footer a{color:var(--deep);text-decoration:none}
-.lede{margin-top:12px;font-size:15.5px;color:var(--gray);line-height:1.5}
-.proof{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
-.chipf{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;background:var(--pure);border:1px solid var(--line);border-radius:99px;padding:7px 12px;color:var(--gray)}
-.chipf b{color:var(--deep);font-family:'Fraunces',serif;font-size:13px}
-.ins{margin-top:16px;background:var(--warm);border:1px solid var(--gold);border-left-width:4px;border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.45;color:var(--ink)}
+:root{--paper:#F4EFE8;--sand:#EAE1D4;--cream:#F6F1EA;--ink:#181316;--ink-soft:#2A2320;--ember:#C9A84C;--ember-deep:#8A6E28;--warm:#6E6259;--line:#E3DACB;
+--disp:'Bricolage Grotesque',system-ui,sans-serif;--body:'Hanken Grotesk',system-ui,sans-serif;--r:26px;--rs:16px;--ease:cubic-bezier(.23,1,.32,1)}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;line-height:1.5;font-size:16px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+a{color:inherit;text-decoration:none}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(244,239,232,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.brand{font-family:var(--disp);font-weight:800;font-size:18px;letter-spacing:-.02em}
+.brand span{color:var(--ember-deep)}
+.navr{display:flex;align-items:center;gap:14px}
+.loc{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--warm);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--disp);font-weight:700;font-size:15px;border-radius:999px;padding:13px 22px;cursor:pointer;border:1.5px solid transparent;transition:transform .2s var(--ease),background .2s;white-space:nowrap}
+.btn.p{background:var(--ink);color:var(--paper)}
+.btn.p:hover{background:#2A2320;transform:translateY(-1px)}
+.btn.s{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn.s:hover{background:rgba(24,19,22,.05)}
+.btn.g{background:var(--ember);color:var(--ink)}
+.btn.g:hover{background:#D9B95E;transform:translateY(-1px)}
+.btn.sm{padding:10px 16px;font-size:13.5px}
+/* hero */
+.hero{padding:56px 0 34px}
+.hero .g{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-deep);font-weight:700;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--ember)}
+h1{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:1.02;font-size:clamp(38px,6.4vw,66px);margin-top:16px}
+h1 em{font-style:normal;color:var(--ember-deep)}
+.lead{font-size:clamp(16px,1.5vw,19px);color:var(--warm);max-width:52ch;margin-top:18px;line-height:1.55}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.tiny{font-size:13px;color:var(--warm);margin-top:14px}
+.photo{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--sand);box-shadow:0 30px 60px -40px rgba(24,19,22,.5)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo .tag{position:absolute;left:14px;bottom:14px;background:rgba(24,19,22,.86);color:var(--paper);font-size:12.5px;padding:8px 12px;border-radius:999px;backdrop-filter:blur(6px)}
+/* proof */
+.proof{padding:10px 0 46px}
+.proof .g{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.st{background:#fff;border:1px solid var(--line);border-radius:var(--rs);padding:16px 16px 14px}
+.st b{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.02em;line-height:1;color:var(--ink)}
+.st span{display:block;font-size:12.5px;color:var(--warm);margin-top:6px;line-height:1.35}
+/* form section */
+.start{background:var(--ink);color:var(--paper);padding:56px 0 64px;position:relative;overflow:hidden}
+.start::before{content:"";position:absolute;width:60vw;height:60vw;right:-20vw;top:-25vw;background:radial-gradient(circle,rgba(201,168,76,.16),transparent 62%);pointer-events:none}
+.start .wrap{position:relative;max-width:620px}
+.start .eyebrow{color:var(--ember)}
+.start h2{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:clamp(28px,4.4vw,44px);margin-top:14px}
+.start .lead{color:#B9AEA2}
+.card{background:#221B1F;border:1px solid #3A2F35;border-radius:var(--r);padding:24px 22px;margin-top:26px}
+.bar{height:4px;background:#3A2F35;border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ember);border-radius:99px;transition:width .3s var(--ease)}
+.step{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);font-weight:700;margin-top:18px}
+.q{font-family:var(--disp);font-weight:700;font-size:clamp(21px,3vw,26px);letter-spacing:-.02em;line-height:1.15;margin-top:8px}
+.opts{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.opt{width:100%;text-align:left;font:inherit;font-size:16px;font-weight:500;background:#2A2226;border:1.5px solid #3F343A;border-radius:14px;padding:15px 16px;cursor:pointer;color:var(--paper);display:flex;align-items:center;gap:12px;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ember);background:#2F2529}
+.opt.on{border-color:var(--ember);background:#33291B;font-weight:600}
+.opt .dot{width:18px;height:18px;border-radius:50%;border:1.5px solid #5A4C52;flex:none;display:grid;place-items:center}
+.opt.on .dot{border-color:var(--ember)}
+.opt.on .dot::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--ember)}
+.back{margin-top:16px;background:none;border:none;font:inherit;font-size:14px;color:#9A8F86;cursor:pointer;padding:4px 0}
+.back:hover{color:var(--paper)}
+.calwrap{margin-top:18px;border-radius:var(--rs);overflow:hidden;background:#fff}
+.calwrap iframe{width:100%;height:760px;border:0;display:block}
 .hidden{display:none!important}
+/* how */
+.sec{padding:64px 0}
+.sec h2{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:clamp(28px,4.4vw,46px);margin-top:14px;max-width:22ch}
+.sec .sub{font-size:16.5px;color:var(--warm);margin-top:12px;max-width:56ch}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.stp{background:#fff;border:1px solid var(--line);border-radius:var(--rs);padding:20px 18px}
+.stp .n{font-family:var(--disp);font-weight:800;color:var(--ember-deep);font-size:13px;letter-spacing:.08em}
+.stp h3{font-family:var(--disp);font-weight:700;font-size:18px;margin-top:8px;letter-spacing:-.01em}
+.stp p{font-size:14.5px;color:var(--warm);margin-top:6px;line-height:1.5}
+/* cases */
+.cases{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.cs{background:#fff;border:1px solid var(--line);border-radius:var(--rs);overflow:hidden}
+.cs .im{aspect-ratio:4/3;background:var(--sand);overflow:hidden}
+.cs .im img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95)}
+.cs .b{padding:16px 16px 18px}
+.cs .k{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--warm);font-weight:700}
+.cs .v{font-family:var(--disp);font-weight:800;font-size:30px;letter-spacing:-.02em;line-height:1;margin-top:6px}
+.cs p{font-size:14px;color:var(--warm);margin-top:6px;line-height:1.45}
+/* founders */
+.fnd .g{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:center}
+.fnd .photo{aspect-ratio:1/1}
+.fnd p{font-size:17px;line-height:1.6;max-width:52ch;margin-top:14px}
+.fnd .names{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+.pill{font-size:13px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;color:var(--ink)}
+.pill b{color:var(--ember-deep)}
+/* final */
+.fin{background:var(--ink);color:var(--paper);padding:64px 0;text-align:center}
+.fin h2{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:clamp(30px,4.8vw,52px);max-width:18ch;margin:0 auto}
+.fin p{color:#B9AEA2;margin-top:12px;font-size:16.5px}
+.fin .cta{justify-content:center}
+footer{padding:26px 0 40px;font-size:12.5px;color:var(--warm);display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+footer a{color:var(--ember-deep)}
+@media(max-width:860px){.hero .g,.fnd .g{grid-template-columns:1fr}.proof .g{grid-template-columns:repeat(2,1fr)}.steps,.cg{grid-template-columns:repeat(2,1fr)}.photo{aspect-ratio:4/3}.navr .loc{display:none}}
+@media(max-width:520px){.cg,.steps{grid-template-columns:1fr}.hero{padding:34px 0 24px}.proof .g{grid-template-columns:repeat(2,1fr)}.st:last-child{grid-column:1/-1}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <div class="brand"><span>PGL</span> Marketing</div>
-  <div class="kicker">PGL Marketing · California, USA</div>
-</header>
-<div class="bar"><i id="prog"></i></div>
-<div id="stage"></div>
-<div id="done" class="hidden">
-  <div class="step-lbl">Last step</div>
-  <h1>Pick a time and we will walk you through your plan.</h1>
-  <p class="sub">Fifteen to twenty minutes. We will show you a real weekly report from a client we run, with every booking traced to the ad that brought it.</p>
-  <div class="cal"><iframe id="calf" title="Book a call" loading="lazy"></iframe></div>
-</div>
-<footer>
-  PGL Marketing · Personal Growth Lab LLC · San Diego, California<br>
-  <a href="mailto:lev@pgl.marketing">lev@pgl.marketing</a> · <a href="https://pgl.marketing">pgl.marketing</a>
-</footer>
-</div>
+<nav><div class="wrap">
+  <a class="brand" href="https://pgl.marketing"><span>PGL</span> Marketing</a>
+  <div class="navr"><span class="loc">California, USA</span><a class="btn p sm" href="#start" data-go>Book a call</a></div>
+</div></nav>
+
+<section class="hero"><div class="wrap"><div class="g">
+  <div>
+    <div class="eyebrow">PGL Marketing · Lev and Malena</div>
+    <h1>We fill calendars.<br><em>And show you what filled them.</em></h1>
+    <p class="lead">Content, ads, booking and a dashboard where every client is traced to the ad that brought them. One team, one person accountable.</p>
+    <div class="cta"><a class="btn g" href="#start" data-go>Book my free strategy call</a><a class="btn s" href="#how">See how we work</a></div>
+    <p class="tiny">15 to 20 minutes on video. No pitch deck, real numbers from a client we run.</p>
+  </div>
+  <div class="photo"><img src="photos/founders-new-8.jpg" alt="Lev and Malena, founders"><span class="tag">Lev and Malena, founders</span></div>
+</div></div></section>
+
+<section class="proof"><div class="wrap"><div class="g" id="proof"></div></div></section>
+
+<section class="start" id="start"><div class="wrap">
+  <div class="eyebrow">Free strategy call</div>
+  <h2>Six quick questions, then pick a time.</h2>
+  <p class="lead">About a minute. It lets us come to the call with numbers for your business instead of generic advice.</p>
+  <div class="card">
+    <div class="bar"><i id="prog"></i></div>
+    <div id="stage"></div>
+    <div id="done" class="hidden">
+      <div class="step">Pick a time.</div>
+      <p class="lead" style="margin-top:8px">We will walk you through what your business can realistically add and show a real weekly report, every booking traced to its source.</p>
+      <div class="calwrap"><iframe id="calf" title="Book a call" loading="lazy"></iframe></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" id="how"><div class="wrap">
+  <div class="eyebrow">How we work</div>
+  <h2>Your first month, step by step</h2>
+  <p class="sub">We do the heavy lifting up front so your involvement stays at a couple of hours a month.</p>
+  <div class="steps" id="steps"></div>
+</div></section>
+
+<section class="sec cases"><div class="wrap">
+  <div class="eyebrow">Real results</div>
+  <h2>Numbers from real client accounts</h2>
+  <div class="cg" id="cases"></div>
+</div></section>
+
+<section class="sec fnd"><div class="wrap"><div class="g">
+  <div class="photo"><img src="photos/founders-new-7.jpg" alt="Lev and Malena, founders" onerror="this.src='photos/founders-new-8.jpg'"></div>
+  <div>
+    <div class="eyebrow">Who runs it</div>
+    <h2>Built by Lev Pocladov and Malena Pocladova.</h2>
+    <p>We build the full business system: content and ads bring clients in, and retention brings them back. Behind us is a senior team across strategy, scripts, edit, paid ads and client success.</p>
+    <div class="names" id="pills"></div>
+  </div>
+</div></div></section>
+
+<section class="fin"><div class="wrap">
+  <h2>Let's put numbers on your business.</h2>
+  <p>Six questions, one call, a plan you can act on.</p>
+  <div class="cta"><a class="btn g" href="#start" data-go>Book my free strategy call</a></div>
+</div></section>
+
+<div class="wrap"><footer>
+  <span>PGL Marketing · Personal Growth Lab LLC · San Diego, California</span>
+  <span><a href="mailto:lev@pgl.marketing">lev@pgl.marketing</a> · <a href="https://pgl.marketing">pgl.marketing</a></span>
+</footer></div>
+
 <script>
 var HOOK='https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6';
 var CAL='https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call';
-var T={"lang": "en", "title": "Your growth plan · PGL Marketing", "kicker": "PGL Marketing · California, USA", "lede": "We build the whole chain between an ad and a paying client: content, ads, booking, the client database and a dashboard where every booking is traced to what produced it. One team, one person accountable.", "intro": "Six questions, about a minute. Then we tell you what your business can realistically add, and you pick a time.", "proof": [["$20", "what one booking costs a client we run"], ["$200", "their average service"], ["30 days", "from a new location to a full calendar"]], "insight": ["", "We never build around a discount. A discount brings the client who leaves for whoever discounts harder. So we ask about money first, not about pretty pictures.", "At a $200 service, a booking that costs $20 pays back ten times on the first visit. Every plan we build starts from that arithmetic.", "The system has to hold a team: each provider gets their own calendar, their own access rights and their own way to take payment.", "Open capacity is what we fill. If you are already fully booked, you do not need ads yet, and we will tell you so.", "Every booking gets traced back to the ad that produced it. Without that you cannot know what to scale."], "step": "Question %s of 6", "q": ["What kind of business is it?", "What is your average ticket or order value?", "How big is the team that serves clients?", "How much of your capacity is booked right now?", "Are you running paid ads today?", "What is costing you the most right now?"], "opts": [["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $150", "$150 to $250", "$250 to $500", "$500 to $1,000", "$1,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["Plenty of open capacity", "About half", "Mostly full", "Fully booked"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]], "d0": "Last step", "d1": "Pick a time and we will walk you through your plan.", "d2": "Fifteen to twenty minutes. We will show you a real weekly report from a client we run, with every booking traced to the ad that brought it.", "back": "Back", "foot": "PGL Marketing · Personal Growth Lab LLC · San Diego, California", "h0": "What could your business realistically add?", "kicker2": "Your growth plan", "langtag": "EN"};
+var T={"lang": "en", "title": "Free strategy call · PGL Marketing", "loc": "California, USA", "nav_cta": "Book a call", "eyebrow": "PGL Marketing · Lev and Malena", "h1_a": "We fill calendars.", "h1_b": "And show you what filled them.", "lead": "Content, ads, booking and a dashboard where every client is traced to the ad that brought them. One team, one person accountable.", "cta1": "Book my free strategy call", "cta2": "See how we work", "tiny": "15 to 20 minutes on video. No pitch deck, real numbers from a client we run.", "phototag": "Lev and Malena, founders", "proof": [["$20", "what one booking costs a client we run today"], ["$200", "their average service"], ["×10", "return on ad spend from the first visit"], ["70+", "bookings a week they take now"], ["30 days", "from a new location to a full calendar"]], "s_eyebrow": "Free strategy call", "s_h": "Six quick questions, then pick a time.", "s_lead": "About a minute. It lets us come to the call with numbers for your business instead of generic advice.", "step": "Question %s of 6", "q": ["What kind of business is it?", "What is your average ticket or order value?", "How big is the team that serves clients?", "How much of your capacity is booked right now?", "Are you running paid ads today?", "What is costing you the most right now?"], "opts": [["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $150", "$150 to $250", "$250 to $500", "$500 to $1,000", "$1,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["Plenty of open capacity", "About half", "Mostly full", "Fully booked"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]], "back": "Back", "d_h": "Pick a time.", "d_p": "We will walk you through what your business can realistically add and show a real weekly report, every booking traced to its source.", "how_eyebrow": "How we work", "how_h": "Your first month, step by step", "how_sub": "We do the heavy lifting up front so your involvement stays at a couple of hours a month.", "steps": [["01", "Strategy", "We find what makes you different and build the plan around it, not around a discount."], ["02", "Content", "Scripts, filming and editing. One shoot covers the month. It grows reach and brings bookings at once."], ["03", "Ads", "We launch, read the numbers weekly and scale what brings bookings."], ["04", "System", "Booking, client database, reminders, win-backs and a dashboard that shows where every client came from."]], "cases_eyebrow": "Real results", "cases_h": "Numbers from real client accounts", "cases": [["case-wellness-vid-poster.jpg", "Wellness studio", "30 days", "From a brand new location to a fully booked team. Today 70+ bookings a week, ×10 return from the first visit."], ["case-food-vid-poster.jpg", "Food service", "435+", "Banquet inquiries in one month from a feed that used to bring nothing."], ["case-education-vid-poster.jpg", "Online education", "200+", "Clients on a premium product from paid traffic, ×10 return."], ["case-tattoo-vid-poster.jpg", "Personal brand", "1.7M", "Organic views in four months from a profile with no reach."]], "f_eyebrow": "Who runs it", "f_h": "Built by Lev Pocladov and Malena Pocladova.", "f_p": "We build the full business system: content and ads bring clients in, and retention brings them back. Behind us is a senior team across strategy, scripts, edit, paid ads and client success.", "f_pills": [["Lev", "paid traffic, funnels, numbers"], ["Malena", "content, positioning, growth"]], "fin_h": "Let's put numbers on your business.", "fin_p": "Six questions, one call, a plan you can act on.", "fin_cta": "Book my free strategy call", "foot": "PGL Marketing · Personal Growth Lab LLC · San Diego, California", "langtag": "EN"};
 var EN_OPTS=[["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $150", "$150 to $250", "$250 to $500", "$500 to $1,000", "$1,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["Plenty of open capacity", "About half", "Mostly full", "Fully booked"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]];
 var KEYS=['Niche','Average ticket','Capacity','Utilization','Who runs ads','Bottleneck'];
 var LANG='EN';
 var qs=new URLSearchParams(location.search);
+var CID=qs.get('cid')||qs.get('contact_id')||qs.get('c')||'';
+var EMAIL=qs.get('email')||'', PHONE=qs.get('phone')||'';
+var SID=CID||EMAIL||PHONE||('anon-'+Math.random().toString(36).slice(2,10));
+var step=0, ans={};
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
 
-/* кто это. cid приходит из GHL в ссылке, по нему ответы приклеиваются к контакту */
-var CID = qs.get('cid')||qs.get('contact_id')||qs.get('c')||'';
-var EMAIL = qs.get('email')||'';
-var PHONE = qs.get('phone')||'';
-var SID = CID || EMAIL || PHONE || ('anon-'+Math.random().toString(36).slice(2,10));
+/* static blocks */
+(function(){
+  var pr=document.getElementById('proof');
+  T.proof.forEach(function(s){var d=el('div','st');d.appendChild(el('b',null,s[0]));d.appendChild(el('span',null,s[1]));pr.appendChild(d);});
+  var st=document.getElementById('steps');
+  T.steps.forEach(function(s){var d=el('div','stp');d.appendChild(el('div','n',s[0]));d.appendChild(el('h3',null,s[1]));d.appendChild(el('p',null,s[2]));st.appendChild(d);});
+  var cs=document.getElementById('cases');
+  T.cases.forEach(function(c){var d=el('div','cs');var im=el('div','im');var i=document.createElement('img');i.src='photos/'+c[0];i.alt=c[1];i.loading='lazy';im.appendChild(i);d.appendChild(im);var b=el('div','b');b.appendChild(el('div','k',c[1]));b.appendChild(el('div','v',c[2]));b.appendChild(el('p',null,c[3]));d.appendChild(b);cs.appendChild(d);});
+  var pl=document.getElementById('pills');
+  T.f_pills.forEach(function(p){var s=el('span','pill');var b=el('b',null,p[0]+' · ');s.appendChild(b);s.appendChild(document.createTextNode(p[1]));pl.appendChild(s);});
+})();
 
-var step=0, ans={}, sent={};
-var stage=document.getElementById('stage');
-function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
 function prog(){document.getElementById('prog').style.width=Math.round((step/7)*100)+'%';}
-
 function base(status){
   var p=new URLSearchParams();
-  if(CID) p.append('contact_id',CID);
-  if(EMAIL) p.append('Email',EMAIL);
-  if(PHONE) p.append('Phone',PHONE);
-  p.append('session_id',SID);
-  p.append('source','PGL plan');
-  p.append('language',LANG);
-  p.append('form_status',status);
-  p.append('answered', String(Object.keys(ans).length));
-  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','ad_id','adset_id','campaign_id','form_id'].forEach(function(k){
-    var v=qs.get(k); if(v) p.append(k,v);
-  });
-  Object.keys(ans).forEach(function(k){ p.append(k,ans[k]); });
+  if(CID)p.append('contact_id',CID); if(EMAIL)p.append('Email',EMAIL); if(PHONE)p.append('Phone',PHONE);
+  p.append('session_id',SID); p.append('source','PGL plan'); p.append('language',LANG);
+  p.append('form_status',status); p.append('answered',String(Object.keys(ans).length));
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','ad_id','adset_id','campaign_id','form_id'].forEach(function(k){var v=qs.get(k);if(v)p.append(k,v);});
+  Object.keys(ans).forEach(function(k){p.append(k,ans[k]);});
   return p;
 }
 function push(status){
   var p=base(status);
-  try{
-    if(navigator.sendBeacon){ navigator.sendBeacon(HOOK, p); return; }
-  }catch(e){}
+  try{ if(navigator.sendBeacon){navigator.sendBeacon(HOOK,p);return;} }catch(e){}
   fetch(HOOK,{method:'POST',body:p,keepalive:true}).catch(function(){});
 }
-
+var stage=document.getElementById('stage');
 function renderQ(){
   stage.textContent='';
-  if(step===0){
-    stage.appendChild(el('div','step-lbl',T.kicker2));
-    stage.appendChild(el('h1',null,T.h0));
-    stage.appendChild(el('p','lede',T.lede));
-    var pr=el('div','proof');
-    T.proof.forEach(function(s){var c=el('span','chipf');var b=el('b',null,s[0]);c.appendChild(b);c.appendChild(document.createTextNode(' '+s[1]));pr.appendChild(c);});
-    stage.appendChild(pr);
-    stage.appendChild(el('p','sub',T.intro));
-    var hr=el('div','step-lbl',T.step.replace('%s','1'));
-    stage.appendChild(hr);
-    var qh=el('h1',null,T.q[0]); qh.style.fontSize='clamp(21px,4.6vw,26px)'; qh.style.marginTop='6px';
-    stage.appendChild(qh);
-  } else {
-    if(T.insight[step]) stage.appendChild(el('div','ins',T.insight[step]));
-    stage.appendChild(el('div','step-lbl',T.step.replace('%s',String(step+1))));
-    stage.appendChild(el('h1',null,T.q[step]));
-  }
-  var box=el('div','opts');
-  var eo=EN_OPTS[step];
+  stage.appendChild(el('div','step',T.step.replace('%s',String(step+1))));
+  stage.appendChild(el('div','q',T.q[step]));
+  var box=el('div','opts'); var eo=EN_OPTS[step];
   T.opts[step].forEach(function(label,i){
-    var b=el('button','opt'+(ans[KEYS[step]]===eo[i]?' on':''));
-    b.type='button';
-    b.appendChild(el('span','dot'));
-    b.appendChild(el('span',null,label));
+    var b=el('button','opt'+(ans[KEYS[step]]===eo[i]?' on':'')); b.type='button';
+    b.appendChild(el('span','dot')); b.appendChild(el('span',null,label));
     b.addEventListener('click',function(){
       ans[KEYS[step]]=eo[i];
       box.querySelectorAll('.opt').forEach(function(o){o.classList.remove('on');});
-      b.classList.add('on');
-      push('partial');
-      setTimeout(function(){ step++; render(); },170);
+      b.classList.add('on'); push('partial');
+      setTimeout(function(){step++;render();},160);
     });
     box.appendChild(b);
   });
   stage.appendChild(box);
-  if(step>0){
-    var bk=el('button','back','\u2190 '+T.back); bk.type='button';
-    bk.addEventListener('click',function(){step--;render();});
-    stage.appendChild(bk);
-  }
-  prog(); window.scrollTo({top:0,behavior:'smooth'});
+  if(step>0){var bk=el('button','back','← '+T.back);bk.type='button';bk.addEventListener('click',function(){step--;render();});stage.appendChild(bk);}
+  prog();
 }
-
 function renderDone(){
   push('complete');
   var pre=[];
-  if(EMAIL) pre.push('email='+encodeURIComponent(EMAIL));
-  if(PHONE) pre.push('phone='+encodeURIComponent(PHONE));
-  if(qs.get('first_name')) pre.push('first_name='+encodeURIComponent(qs.get('first_name')));
-  if(qs.get('last_name')) pre.push('last_name='+encodeURIComponent(qs.get('last_name')));
+  if(EMAIL)pre.push('email='+encodeURIComponent(EMAIL)); if(PHONE)pre.push('phone='+encodeURIComponent(PHONE));
+  if(qs.get('first_name'))pre.push('first_name='+encodeURIComponent(qs.get('first_name')));
+  if(qs.get('last_name'))pre.push('last_name='+encodeURIComponent(qs.get('last_name')));
   document.getElementById('calf').src=CAL+(pre.length?'?'+pre.join('&'):'');
-  stage.classList.add('hidden');
-  document.getElementById('done').classList.remove('hidden');
+  stage.classList.add('hidden'); document.getElementById('done').classList.remove('hidden');
   document.getElementById('prog').style.width='100%';
   try{ if(window.fbq) fbq('track','Lead'); }catch(e){}
-  window.scrollTo({top:0,behavior:'smooth'});
 }
-
 function render(){ if(step<6) return renderQ(); return renderDone(); }
-
-/* если ушёл, не закончив, отправляем то, что успел ответить */
-window.addEventListener('pagehide',function(){
-  if(step<6 && Object.keys(ans).length>0) push('abandoned');
-});
-document.addEventListener('visibilitychange',function(){
-  if(document.visibilityState==='hidden' && step<6 && Object.keys(ans).length>0) push('abandoned');
-});
-
+document.querySelectorAll('[data-go]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.getElementById('start').scrollIntoView({behavior:'smooth',block:'start'});});});
+window.addEventListener('pagehide',function(){ if(step<6&&Object.keys(ans).length>0) push('abandoned'); });
+document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='hidden'&&step<6&&Object.keys(ans).length>0) push('abandoned'); });
 render();
 </script>
 </body>
