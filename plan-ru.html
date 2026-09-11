@@ -445,6 +445,10 @@ a{color:inherit;text-decoration:none}
 .f-opt.on{border-color:var(--ember);background:#33291B;font-weight:600}
 .f-opt .d{width:18px;height:18px;border-radius:50%;border:1.5px solid #5A4C52;flex:none;display:grid;place-items:center}
 .f-opt.on .d{border-color:var(--ember)}
+.f-opt .di{width:38px;height:38px;border-radius:11px;background:#332A2E;flex:none;display:grid;place-items:center;transition:background .15s}
+.f-opt.on .di{background:var(--ember)}
+.f-ic{width:21px;height:21px;fill:none;stroke:var(--ember);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.f-opt.on .f-ic{stroke:#181316}
 .f-opt.on .d::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--ember)}
 .f-back{margin-top:16px;background:none;border:none;font:inherit;font-size:14px;color:#9A8F86;cursor:pointer;padding:4px 0}
 .f-back:hover{color:#F4EFE8}
@@ -652,7 +656,45 @@ a{color:inherit;text-decoration:none}
 <script>
 var HOOK='https://services.leadconnectorhq.com/hooks/55lHQOuDwUKKCwgmTmLW/webhook-trigger/52e5ef4c-ab3a-4329-8225-36c4b361afe6';
 var CAL='https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call';
-var T={"lang": "ru", "title": "Бесплатный разбор · PGL Marketing", "loc": "Калифорния, США", "eyebrow": "PGL Marketing · Лев и Малена", "s_h": "Посчитаем, сколько клиентов ваш бизнес может добрать.", "s_lead": "Ответьте, и на разборе вы получите цифру под ваш чек и ваш район, а не общие советы.", "step": "Вопрос %s из 6", "back": "Назад", "q": ["Какой у вас бизнес?", "Какой у вас средний чек?", "Сколько человек обслуживает клиентов?", "Сколько ещё клиентов вы могли бы взять прямо сейчас?", "Платная реклама сейчас идёт?", "Что сейчас стоит вам дороже всего?"], "opts": [["Бьюти или велнес студия", "Мед-спа и эстетика", "Фитнес, йога, пилатес", "Ресторан, кафе, кейтеринг", "Услуги на дому", "Клиника, юристы, профуслуги", "Онлайн-образование или коучинг", "Другое"], ["До $200", "$200 до $500", "$500 до $1,000", "$1,000 до $5,000", "От $5,000"], ["Только я", "2 до 4", "5 до 9", "10 и больше"], ["Намного больше, места много", "Заметно больше", "Немного, мы почти на пределе", "Нисколько, мы загружены полностью"], ["Рекламы нет", "Продвигаю посты сам", "Ведёт агентство", "Веду сам по-настоящему"], ["Мало новых клиентов", "Клиенты не возвращаются", "Не доходят до записи", "Не понимаю, откуда клиенты", "Не получается масштабировать то, что работает"]], "d_h": "Выберите время.", "d_p": "Разберём, сколько ваш бизнес реально может добрать, и покажем настоящий недельный отчёт, где каждая запись привязана к источнику.", "langtag": "RU"}; var EN_OPTS=[["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $200", "$200 to $500", "$500 to $1,000", "$1,000 to $5,000", "$5,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["A lot more, we have plenty of room", "Quite a few more", "A handful, we are close to the limit", "None, we are at capacity"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them properly"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]];
+var T={"lang": "ru", "title": "Бесплатный разбор · PGL Marketing", "loc": "Калифорния, США", "eyebrow": "PGL Marketing · Лев и Малена", "s_h": "Посчитаем, сколько клиентов ваш бизнес может добрать.", "s_lead": "Ответьте, и на разборе вы получите цифру под ваш чек и ваш район, а не общие советы.", "step": "Вопрос %s из 6", "back": "Назад", "q": ["Какой у вас бизнес?", "Какой у вас средний чек?", "Сколько человек обслуживает клиентов?", "Сколько ещё клиентов вы могли бы взять прямо сейчас?", "Платная реклама сейчас идёт?", "Что сейчас стоит вам дороже всего?"], "opts": [["Бьюти или велнес студия", "Мед-спа и эстетика", "Фитнес, йога, пилатес", "Ресторан, кафе, кейтеринг", "Услуги на дому", "Клиника, юристы, профуслуги", "Онлайн-образование или коучинг", "Другое"], ["До $200", "$200 до $500", "$500 до $1,000", "$1,000 до $5,000", "От $5,000"], ["Только я", "2 до 4", "5 до 9", "10 и больше"], ["Намного больше, места много", "Заметно больше", "Немного, мы почти на пределе", "Нисколько, мы загружены полностью"], ["Рекламы нет", "Продвигаю посты сам", "Ведёт агентство", "Веду сам через Ads Manager"], ["Мало новых клиентов", "Клиенты не возвращаются", "Не доходят до записи", "Не понимаю, откуда клиенты", "Не получается масштабировать то, что работает"]], "d_h": "Выберите время.", "d_p": "Разберём, сколько ваш бизнес реально может добрать, и покажем настоящий недельный отчёт, где каждая запись привязана к источнику.", "langtag": "RU"}; var EN_OPTS=[["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $200", "$200 to $500", "$500 to $1,000", "$1,000 to $5,000", "$5,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["A lot more, we have plenty of room", "Quite a few more", "A handful, we are close to the limit", "None, we are at capacity"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them myself in Ads Manager"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]];
+var IC={
+ scissors:'<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/>',
+ drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
+ dumbbell:'<path d="M6 7v10M18 7v10M3 9v6M21 9v6M6 12h12"/>',
+ fork:'<path d="M4 3v7a3 3 0 0 0 6 0V3M7 3v18M17 3c-2 0-3 3-3 6 0 2 1 3 3 3v9"/>',
+ home:'<path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+ case:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 12h18"/>',
+ monitor:'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+ grid:'<circle cx="7" cy="7" r="1.6"/><circle cx="12" cy="7" r="1.6"/><circle cx="17" cy="7" r="1.6"/><circle cx="7" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="17" cy="12" r="1.6"/><circle cx="7" cy="17" r="1.6"/><circle cx="12" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/>',
+ user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+ users:'<circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 20a7 7 0 0 0-5-6.7"/>',
+ users3:'<circle cx="7" cy="9" r="2.5"/><circle cx="17" cy="9" r="2.5"/><circle cx="12" cy="6" r="2.5"/><path d="M2 20a5 5 0 0 1 10 0M12 20a5 5 0 0 1 10 0M7 19a5 5 0 0 1 10 0"/>',
+ building:'<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2M10 21v-3h4v3"/>',
+ off:'<circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/>',
+ thumb:'<path d="M7 11v9H3v-9h4zM7 11l4-8a2.5 2.5 0 0 1 2.5 2.5V9H19a2 2 0 0 1 2 2.3l-1.2 7A2 2 0 0 1 17.8 20H7"/>',
+ mega:'<path d="M3 10v4h3l8 5V5L6 10H3z"/><path d="M17 9a4 4 0 0 1 0 6"/>',
+ sliders:'<path d="M4 6h10M18 6h2M4 12h2M10 12h10M4 18h8M16 18h4"/><circle cx="16" cy="6" r="2"/><circle cx="8" cy="12" r="2"/><circle cx="14" cy="18" r="2"/>',
+ userx:'<circle cx="10" cy="8" r="4"/><path d="M2 21a8 8 0 0 1 13-6.2M17 15l5 5M22 15l-5 5"/>',
+ rotate:'<path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/>',
+ calx:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M10 14l4 4M14 14l-4 4"/>',
+ help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/>',
+ trend:'<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+ tag:'<path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.5" cy="8.5" r="1.5"/>',
+ room:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16"/>',
+ gauge:'<path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l4-5"/>',
+ full:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16M13 4v16"/>',
+ lock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'
+};
+var STEP_ICONS=[
+ ['scissors','drop','dumbbell','fork','home','case','monitor','grid'],
+ ['tag','tag','tag','tag','tag'],
+ ['user','users','users3','building'],
+ ['room','gauge','full','lock'],
+ ['off','thumb','case','sliders'],
+ ['userx','rotate','calx','help','trend']
+];
+function ico(n){var s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('viewBox','0 0 24 24');s.setAttribute('class','f-ic');s.innerHTML=IC[n];return s;}
+
 var KEYS=['Niche','Average ticket','Capacity','Utilization','Who runs ads','Bottleneck'];
 var LANG='RU';
 var qs=new URLSearchParams(location.search);
@@ -684,7 +726,7 @@ function renderQ(){
   var box=el('div','f-opts'); var eo=EN_OPTS[step];
   T.opts[step].forEach(function(label,i){
     var b=el('button','f-opt'+(ans[KEYS[step]]===eo[i]?' on':'')); b.type='button';
-    b.appendChild(el('span','d')); b.appendChild(el('span',null,label));
+    var ic=STEP_ICONS[step]&&STEP_ICONS[step][i]; if(ic&&step!==1){var w=el('span','di');w.appendChild(ico(ic));b.appendChild(w);}else{b.appendChild(el('span','d'));} b.appendChild(el('span',null,label));
     b.addEventListener('click',function(){
       ans[KEYS[step]]=eo[i];
       box.querySelectorAll('.f-opt').forEach(function(o){o.classList.remove('on');});
