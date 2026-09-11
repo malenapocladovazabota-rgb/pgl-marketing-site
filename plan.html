@@ -466,6 +466,20 @@ a{color:inherit;text-decoration:none}
 .f-time{padding:11px 0;border-radius:12px;background:#2A2226;border:1.5px solid #3F343A;color:#F4EFE8;font:inherit;font-size:15px;font-weight:500;cursor:pointer;text-align:center}
 .f-time:hover{border-color:var(--ember)}.f-time.on{border-color:var(--ember);background:var(--ember);color:#181316;font-weight:700}
 .f-tz{font-size:12.5px;color:#9A8F86;margin-top:8px}
+.f-lead2{color:#B9AEA2;font-size:15.5px;line-height:1.5;margin:8px 0 6px}
+.f-month{background:#2A2226;border:1.5px solid #3F343A;border-radius:16px;padding:12px 12px 10px}
+.f-mh{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.f-mt{font-family:var(--disp);font-weight:700;font-size:16px;color:#F4EFE8;text-transform:capitalize}
+.f-mn{width:32px;height:32px;border-radius:10px;border:1.5px solid #3F343A;background:none;color:#F4EFE8;font:inherit;font-size:20px;line-height:1;cursor:pointer}
+.f-mn:disabled{opacity:.25;cursor:default}
+.f-mg{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.f-wd{text-align:center;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#7C7068;font-weight:700;padding:4px 0 6px}
+.f-md{aspect-ratio:1;border-radius:10px;border:1.5px solid transparent;background:none;color:#5A4C52;font:inherit;font-size:15px;font-weight:500;cursor:default;display:grid;place-items:center}
+.f-md.has{color:#F4EFE8;background:#33291B;border-color:#4A3B22;cursor:pointer;font-weight:600}
+.f-md.has:hover{border-color:var(--ember)}
+.f-md.on{background:var(--ember);color:#181316;border-color:var(--ember);font-weight:700}
+.f-md.today:not(.on){box-shadow:inset 0 0 0 1.5px #6A5A3A}
+.f-md-e{visibility:hidden}
 .f-fld{margin-top:10px}.f-fld input{width:100%;box-sizing:border-box;font:inherit;font-size:16px;padding:14px 16px;border-radius:14px;background:#2A2226;border:1.5px solid #3F343A;color:#F4EFE8;outline:none}
 .f-fld input:focus{border-color:var(--ember)}.f-fld input::placeholder{color:#7C7068}
 .f-go{margin-top:14px;width:100%;font:inherit;font-size:17px;font-weight:700;padding:16px;border-radius:14px;border:0;background:var(--ember);color:#181316;cursor:pointer}
@@ -684,7 +698,7 @@ a{color:inherit;text-decoration:none}
 <script>
 var API='https://ifrufkgqwrkexuzffzaw.supabase.co/functions/v1/';
 var SLUG='strategy';
-var T={"lang": "en", "title": "Free strategy call · PGL Marketing", "loc": "California, USA", "eyebrow": "PGL Marketing · Lev and Malena", "s_h": "Let's count how many clients you can add.", "s_lead": "Answer a few questions about your business and on the call we will work out the number for you: your ticket, your team, your city.", "step": "Question %s of 6", "back": "Back", "q": ["What kind of business is it?", "What is your average ticket or order value?", "How big is the team that serves clients?", "How many more clients could you take on right now?", "Are you running paid ads today?", "What is holding you back the most right now?"], "opts": [["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $200", "$200 to $500", "$500 to $1,000", "$1,000 to $5,000", "$5,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["A lot more, we have plenty of room", "Quite a few more", "A handful, we are close to the limit", "None, we are at capacity"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them myself in Ads Manager"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]], "d_h": "Pick a time.", "d_p": "We will walk you through what your business can realistically add and show a real weekly report, every booking traced to its source.", "langtag": "EN", "c_day": "Pick a day", "c_time": "Pick a time", "c_name": "Your name", "c_email": "Email", "c_phone": "Phone", "c_btn": "Book the call", "c_ok_h": "You are booked.", "c_ok_p": "The confirmation with the Zoom link is on its way to your email.", "c_link": "Open Zoom link", "c_err": "That time was just taken, pick another.", "c_busy": "Booking...", "c_tz": "Times shown in your time zone", "c_none": "No open slots in the next three weeks, write to us at hello@pgl.marketing", "c_dur": "30 minutes", "c_morn": "Morning", "c_aft": "Afternoon", "c_eve": "Evening", "c_as": "Booking as", "c_edit": "change", "c_links": "Instagram or website"}; var EN_OPTS=[["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $200", "$200 to $500", "$500 to $1,000", "$1,000 to $5,000", "$5,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["A lot more, we have plenty of room", "Quite a few more", "A handful, we are close to the limit", "None, we are at capacity"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them myself in Ads Manager"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]];
+var T={"lang": "en", "title": "Free strategy call · PGL Marketing", "loc": "California, USA", "eyebrow": "PGL Marketing · Lev and Malena", "s_h": "Let's count how many clients you can add.", "s_lead": "Answer a few questions about your business and on the call we will work out the number for you: your ticket, your team, your city.", "step": "Step %s of 7", "back": "Back", "q": ["What kind of business is it?", "What is your average ticket or order value?", "How big is the team that serves clients?", "How many more clients could you take on right now?", "Are you running paid ads today?", "What is holding you back the most right now?"], "opts": [["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $200", "$200 to $500", "$500 to $1,000", "$1,000 to $5,000", "$5,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["A lot more, we have plenty of room", "Quite a few more", "A handful, we are close to the limit", "None, we are at capacity"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them myself in Ads Manager"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]], "d_h": "Pick a time.", "d_p": "We will walk you through what your business can realistically add and show a real weekly report, every booking traced to its source.", "langtag": "EN", "c_day": "Pick a day", "c_time": "Pick a time", "c_name": "Your name", "c_email": "Email", "c_phone": "Phone", "c_btn": "Book the call", "c_ok_h": "You are booked.", "c_ok_p": "The confirmation with the Zoom link is on its way to your email.", "c_link": "Open Zoom link", "c_err": "That time was just taken, pick another.", "c_busy": "Booking...", "c_tz": "Times shown in your time zone", "c_none": "No open slots in the next three weeks, write to us at hello@pgl.marketing", "c_dur": "30 minutes", "c_morn": "Morning", "c_aft": "Afternoon", "c_eve": "Evening", "c_as": "Booking as", "c_edit": "change", "c_links": "Instagram or website", "k_h": "Where do we send the plan?", "k_p": "Leave your contacts and your Instagram or website. We look at your business before the call, so the call is about you, not about us.", "k_btn": "Continue to pick a time", "k_err": "Name and a valid email, please"}; var EN_OPTS=[["Beauty or wellness studio", "Med-spa or aesthetics", "Fitness, yoga or pilates", "Restaurant, cafe or catering", "Home services", "Clinic, legal or professional services", "Online education or coaching", "Something else"], ["Under $200", "$200 to $500", "$500 to $1,000", "$1,000 to $5,000", "$5,000 and up"], ["Just me", "2 to 4", "5 to 9", "10 or more"], ["A lot more, we have plenty of room", "Quite a few more", "A handful, we are close to the limit", "None, we are at capacity"], ["Not running ads", "Boosting posts myself", "An agency runs them", "I run them myself in Ads Manager"], ["Not enough new clients", "Clients do not come back", "No-shows and cancellations", "No idea where clients come from", "Cannot scale what works"]];
 var IC={
  scissors:'<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/>',
  drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
@@ -734,7 +748,7 @@ try{ if(!SID){ SID=localStorage.getItem('pgl_sid')||''; if(!SID){SID='anon-'+Mat
 var UTM={}; ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','ad_id','adset_id','campaign_id','form_id'].forEach(function(k){var v=qs.get(k);if(v)UTM[k]=v;});
 var step=0, ans={}, BOOK=null;
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
-function prog(){document.getElementById('prog').style.width=Math.round((step/7)*100)+'%';}
+function prog(){document.getElementById('prog').style.width=Math.round((step/8)*100)+'%';}
 function push(status,extra){
   var p={session_id:SID,contact_id:CID,email:EMAIL,phone:PHONE,name:NAME,status:status,step:Object.keys(ans).length,answers:ans,utm:UTM,language:LANG,ua:navigator.userAgent};
   if(extra) Object.keys(extra).forEach(function(k){p[k]=extra[k];});
@@ -771,17 +785,44 @@ function fmtTime(iso){return new Intl.DateTimeFormat(LOC,{hour:'numeric',minute:
 function fmtWhen(iso){return new Intl.DateTimeFormat(LOC,{weekday:'long',day:'numeric',month:'long',hour:'numeric',minute:'2-digit',timeZone:TZ,hour12:LANG!=='RU'}).format(new Date(iso));}
 function renderCal(days){
   var cal=document.getElementById('cal'); cal.textContent='';
-  // regroup slots by the visitor's local day
   var byDay={}, order=[];
   days.forEach(function(d){d.slots.forEach(function(s){var k=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(s));if(!byDay[k]){byDay[k]=[];order.push(k);}byDay[k].push(s);});});
   order.sort();
   if(!order.length){cal.appendChild(el('p','f-err',T.c_none));return;}
-  cal.appendChild(el('div','f-lbl',T.c_day));
-  var dl=el('div','f-days'); var tl=el('div','f-times'); var sel=null, selDay=order[0];
-  var form=el('div'); form.style.display='none';
+  var sel=null, selDay=order[0];
+  var tl=el('div','f-times'); var form=el('div'); form.style.display='none';
+  var todayK=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  var view=order[0].slice(0,7), lastMonth=order[order.length-1].slice(0,7);
+  var mwrap=el('div','f-month');
+  function drawMonth(){
+    mwrap.textContent='';
+    var y=+view.slice(0,4), m=+view.slice(5,7);
+    var head=el('div','f-mh');
+    var prev=el('button','f-mn','‹'); prev.type='button'; prev.disabled=(view<=order[0].slice(0,7));
+    var next=el('button','f-mn','›'); next.type='button'; next.disabled=(view>=lastMonth);
+    var title=el('div','f-mt',new Intl.DateTimeFormat(LOC,{month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(Date.UTC(y,m-1,1))));
+    prev.addEventListener('click',function(){var d=new Date(Date.UTC(y,m-2,1));view=d.toISOString().slice(0,7);drawMonth();});
+    next.addEventListener('click',function(){var d=new Date(Date.UTC(y,m,1));view=d.toISOString().slice(0,7);drawMonth();});
+    head.appendChild(prev); head.appendChild(title); head.appendChild(next); mwrap.appendChild(head);
+    var grid=el('div','f-mg');
+    for(var i=0;i<7;i++){var wd=new Date(Date.UTC(2024,0,1+i));grid.appendChild(el('div','f-wd',new Intl.DateTimeFormat(LOC,{weekday:'short',timeZone:'UTC'}).format(wd).replace('.','')));}
+    var first=new Date(Date.UTC(y,m-1,1)); var off=(first.getUTCDay()+6)%7;
+    for(var j=0;j<off;j++) grid.appendChild(el('div','f-md f-md-e'));
+    var dim=new Date(Date.UTC(y,m,0)).getUTCDate();
+    for(var d=1;d<=dim;d++){
+      var k=view+'-'+String(d).padStart(2,'0');
+      var has=!!byDay[k];
+      var c=el('button','f-md'+(has?' has':'')+(k===selDay?' on':'')+(k===todayK?' today':''),String(d)); c.type='button'; c.disabled=!has;
+      if(has) c.addEventListener('click',(function(k){return function(){selDay=k;sel=null;drawMonth();drawTimes();form.style.display='none';};})(k));
+      grid.appendChild(c);
+    }
+    mwrap.appendChild(grid);
+  }
   function hourOf(s){return +new Intl.DateTimeFormat('en-US',{hour:'numeric',hour12:false,timeZone:TZ}).format(new Date(s)).replace(/^24$/,'0');}
+  var tlbl=el('div','f-lbl','');
   function drawTimes(){
     tl.textContent='';
+    var f=fmtDay(byDay[selDay][0]); tlbl.textContent=T.c_time+' · '+f.w+' '+f.d+' '+f.m;
     var groups=[[T.c_morn,[]],[T.c_aft,[]],[T.c_eve,[]]];
     byDay[selDay].forEach(function(s){var h=hourOf(s);groups[h<12?0:(h<17?1:2)][1].push(s);});
     groups.forEach(function(g){
@@ -794,35 +835,21 @@ function renderCal(days){
       tl.appendChild(grid);
     });
   }
-  order.forEach(function(k){
-    var f=fmtDay(byDay[k][0]); var b=el('button','f-day'+(k===selDay?' on':'')); b.type='button';
-    b.appendChild(el('small',null,f.w)); b.appendChild(el('b',null,f.d)); b.appendChild(el('small',null,f.m));
-    b.addEventListener('click',function(){selDay=k;sel=null;dl.querySelectorAll('.f-day').forEach(function(o){o.classList.remove('on');});b.classList.add('on');drawTimes();});
-    dl.appendChild(b);
-  });
-  cal.appendChild(dl);
-  cal.appendChild(el('div','f-lbl',T.c_time)); cal.appendChild(tl); drawTimes();
+  cal.appendChild(el('div','f-lbl',T.c_day)); cal.appendChild(mwrap); drawMonth();
+  cal.appendChild(tlbl); cal.appendChild(tl); drawTimes();
   cal.appendChild(el('div','f-tz',T.c_tz+' · '+TZ.replace(/_/g,' ')+' · '+T.c_dur));
-  function fld(ph,type,val){var w=el('div','f-fld');var i=el('input');i.type=type;i.placeholder=ph;i.value=val||'';w.appendChild(i);form.appendChild(w);return i;}
-  var iN=fld(T.c_name,'text',NAME), iE=fld(T.c_email,'email',EMAIL), iP=fld(T.c_phone,'tel',PHONE);
-  var iL=fld(T.c_links,'text',''); iL.parentNode.classList.add('f-keep');
-  if(NAME&&EMAIL){
-    var flds=form.querySelectorAll('.f-fld:not(.f-keep)'); flds.forEach(function(w){w.style.display='none';});
-    var as=el('div','f-as'); var tx=el('div'); tx.appendChild(el('span',null,T.c_as)); tx.appendChild(el('b',null,NAME+' · '+EMAIL+(PHONE?' · '+PHONE:''))); as.appendChild(tx);
-    var ed=el('button',null,T.c_edit); ed.type='button'; ed.addEventListener('click',function(){as.style.display='none';flds.forEach(function(w){w.style.display='';});}); as.appendChild(ed);
-    form.insertBefore(as,form.firstChild);
-  }
+  var as=el('div','f-as'); var tx=el('div'); tx.appendChild(el('span',null,T.c_as)); tx.appendChild(el('b',null,NAME+' · '+EMAIL+(PHONE?' · '+PHONE:''))); as.appendChild(tx); form.appendChild(as);
   var go=el('button','f-go',T.c_btn); go.type='button'; var err=el('div','f-err',''); form.appendChild(go); form.appendChild(err); cal.appendChild(form);
   go.addEventListener('click',function(){
-    err.textContent=''; var n=iN.value.trim(), e=iE.value.trim(), p=iP.value.trim(), lk=iL.value.trim(); if(lk) ans['Links']=lk;
-    if(!n||!e||!sel){err.textContent=T.c_name+', '+T.c_email;return;}
+    err.textContent=''; if(!sel) return;
     go.disabled=true; go.textContent=T.c_busy;
+    var lk=ans['Links']||'';
     var summary=Object.keys(ans).map(function(k){return k+': '+ans[k];}).join('; ');
-    fetch(API+'book',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({slug:SLUG,start:sel,dur:30,tz:TZ,answers:{name:n,email:e,phone:p,links:lk,note:(lk?'Соцсети/сайт: '+lk+'. ':'')+(CID?'GHL: '+CID+'. ':'')+summary+(UTM.utm_campaign?' · '+UTM.utm_campaign:'')}})})
+    fetch(API+'book',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({slug:SLUG,start:sel,dur:30,tz:TZ,answers:{name:NAME,email:EMAIL,phone:PHONE,links:lk,note:(lk?'Соцсети/сайт: '+lk+'. ':'')+(CID?'GHL: '+CID+'. ':'')+summary+(UTM.utm_campaign?' · '+UTM.utm_campaign:'')}})})
     .then(function(r){return r.json();}).then(function(r){
       if(!r.ok){err.textContent=r.error||T.c_err;go.disabled=false;go.textContent=T.c_btn;if(/taken/i.test(r.error||''))loadCal();return;}
-      NAME=n; EMAIL=e; PHONE=p; BOOK=r;
-      push('booked',{booking_id:r.id,name:n,email:e,phone:p});
+      BOOK=r;
+      push('booked',{booking_id:r.id});
       try{ if(window.fbq) fbq('track','Schedule'); }catch(x){}
       var ok=el('div','f-ok'); ok.appendChild(el('h3',null,T.c_ok_h)); ok.appendChild(el('div','when',fmtWhen(r.starts_at))); ok.appendChild(el('p',null,T.c_ok_p));
       cal.textContent=''; cal.appendChild(ok); document.getElementById('done').querySelector('.f-lead').style.display='none';
@@ -833,14 +860,35 @@ function loadCal(){
   var cal=document.getElementById('cal'); cal.textContent='…';
   fetch(API+'book?u='+SLUG+'&dur=30').then(function(r){return r.json();}).then(function(r){ renderCal(r.ok?r.days:[]); }).catch(function(){cal.textContent='';cal.appendChild(el('p','f-err',T.c_none));});
 }
+/* step 7: contacts before the calendar */
+function renderContacts(){
+  push('partial');
+  stage.textContent='';
+  stage.appendChild(el('div','f-step',T.step.replace('%s','7')));
+  stage.appendChild(el('div','f-q',T.k_h));
+  stage.appendChild(el('p','f-lead2',T.k_p));
+  var form=el('div');
+  function fld(ph,type,val){var w=el('div','f-fld');var i=el('input');i.type=type;i.placeholder=ph;i.value=val||'';w.appendChild(i);form.appendChild(w);return i;}
+  var iN=fld(T.c_name,'text',NAME), iE=fld(T.c_email,'email',EMAIL), iP=fld(T.c_phone,'tel',PHONE), iL=fld(T.c_links,'text',ans['Links']||'');
+  var go=el('button','f-go',T.k_btn); go.type='button'; var err=el('div','f-err',''); form.appendChild(go); form.appendChild(err); stage.appendChild(form);
+  var bk=el('button','f-back','← '+T.back);bk.type='button';bk.addEventListener('click',function(){step--;render();});stage.appendChild(bk);
+  go.addEventListener('click',function(){
+    err.textContent=''; var n=iN.value.trim(), e=iE.value.trim(), p=iP.value.trim(), lk=iL.value.trim();
+    if(!n||!e||!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(e)){err.textContent=T.k_err;return;}
+    NAME=n; EMAIL=e; PHONE=p; if(lk) ans['Links']=lk;
+    push('complete',{name:n,email:e,phone:p});
+    try{ if(window.fbq) fbq('track','Lead'); }catch(x){}
+    step++; render();
+  });
+  document.getElementById('prog').style.width='88%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 function renderDone(){
-  push('complete');
   stage.classList.add('f-hidden'); document.getElementById('done').classList.remove('f-hidden');
   document.getElementById('prog').style.width='100%';
-  try{ if(window.fbq) fbq('track','Lead'); }catch(e){}
   loadCal();
 }
-function render(){ if(step<6) return renderQ(); return renderDone(); }
+function render(){ if(step<6) return renderQ(); if(step===6) return renderContacts(); return renderDone(); }
 window.addEventListener('pagehide',function(){ if(!BOOK&&Object.keys(ans).length>0) push('abandoned'); });
 document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='hidden'&&!BOOK&&Object.keys(ans).length>0) push('abandoned'); });
 render();
