@@ -143,9 +143,11 @@ a{color:inherit;text-decoration:none}
 .js .how.in .phase:nth-child(1) .phase-dot{border-color:var(--ember);background:var(--ember);color:var(--ink);box-shadow:0 0 0 5px rgba(201,168,76,.16);transition-delay:.5s}
 .js .how.in .phase:nth-child(2) .phase-dot{border-color:var(--ember);background:var(--ember);color:var(--ink);box-shadow:0 0 0 5px rgba(201,168,76,.16);transition-delay:.85s}
 .js .how.in .phase:nth-child(3) .phase-dot{border-color:var(--ember);background:var(--ember);color:var(--ink);box-shadow:0 0 0 5px rgba(201,168,76,.16);transition-delay:1.2s}
+.js .how.in .phase:nth-child(4) .phase-dot{border-color:var(--ember);background:var(--ember);color:var(--ink);box-shadow:0 0 0 5px rgba(201,168,76,.16);transition-delay:1.55s}
 .js .how.in .phase:nth-child(1) .phase-body{opacity:1;transform:none;transition-delay:.45s}
 .js .how.in .phase:nth-child(2) .phase-body{opacity:1;transform:none;transition-delay:.8s}
 .js .how.in .phase:nth-child(3) .phase-body{opacity:1;transform:none;transition-delay:1.15s}
+.js .how.in .phase:nth-child(4) .phase-body{opacity:1;transform:none;transition-delay:1.5s}
 
 /* abbreviation tooltips (ROAS / KPI / LTV) */
 .gloss{border-bottom:1px dotted currentColor;cursor:help;position:relative;outline:none}
@@ -324,6 +326,7 @@ a{color:inherit;text-decoration:none}
 .js .pkg-grid .rv:nth-child(3){transition-delay:.12s}
 .js .how-grid .phase:nth-child(2){transition-delay:.05s}
 .js .how-grid .phase:nth-child(3){transition-delay:.1s}
+.js .how-grid .phase:nth-child(4){transition-delay:.15s}
 
 @media (prefers-reduced-motion:reduce){
   .marquee-track{animation:none}
@@ -471,7 +474,7 @@ a{color:inherit;text-decoration:none}
         <div class="stat-t">Wellness</div>
       </div>
       <div class="stat rv">
-        <div class="stat-n"><em>&times;</em>8</div>
+        <div class="stat-n"><em>&times;</em>10</div>
         <div class="stat-l"><span class="gloss" tabindex="0" data-def="ROAS: окупаемость рекламы, сколько выручки приносит каждый вложенный в рекламу доллар.">ROAS</span> с первого касания</div>
         <div class="stat-t">Wellness studio</div>
       </div>
@@ -512,6 +515,14 @@ a{color:inherit;text-decoration:none}
               <p class="phase-p">Используя наш опыт, сразу запускаем рекламу, которая работает в вашей нише, и масштабируем то, что заходит.</p>
             </div>
           </article>
+          <article class="phase">
+            <span class="phase-dot">04</span>
+            <div class="phase-body">
+              <div class="phase-top"><span class="phase-week">Постоянно</span><span class="phase-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 15v-4M12 15V8M17 15v-2"/></svg></span></div>
+              <h3 class="phase-h">Система</h3>
+              <p class="phase-p">Каждая запись привязана к источнику. В одном дашборде видно, откуда пришёл клиент, сколько стоил и сколько принёс.</p>
+            </div>
+          </article>
         </div>
       </div>
     </div>
@@ -534,7 +545,7 @@ a{color:inherit;text-decoration:none}
           <span class="ccard-badge">Wellness · Сан-Диего</span>
           <div class="ccard-over"><div class="ccard-stat">30 дней<span>до полной записи</span></div></div>
         </div>
-        <div class="ccard-foot"><span class="ccard-tag">Wellness studio</span><p>Новая студия, полная запись за 30 дней и &times;8 <span class="gloss" tabindex="0" data-def="ROAS: окупаемость рекламы, сколько выручки приносит каждый вложенный в рекламу доллар.">ROAS</span> с первого касания.</p></div>
+        <div class="ccard-foot"><span class="ccard-tag">Wellness studio</span><p>Новая студия, полная запись за 30 дней и &times;10 <span class="gloss" tabindex="0" data-def="ROAS: окупаемость рекламы, сколько выручки приносит каждый вложенный в рекламу доллар.">ROAS</span> с первого касания.</p></div>
       </article>
 
       <article class="ccard rv">
