@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="robots" content="noindex"/>
 <title>PGL Marketing · Запуск за 60 дней</title>
-<meta name="description" content="Launch in 60 days: booking system, 30 Reels, ads with the first $1,000 budget on us."/>
+<meta name="description" content="Launch in 60 days: a system that brings in clients. Strategy, content, ads and online booking."/>
 <meta property="og:title" content="PGL Marketing · Launch in 60 days"/>
-<meta property="og:description" content="Booking system, 30 Reels and ads with the first $1,000 budget on us. $6,000 for 2 months."/>
+<meta property="og:description" content="A system that brings in clients: strategy, content, ads and online booking."/>
 <meta property="og:image" content="https://pgl.marketing/photos/og-image.jpg"/>
 <meta name="theme-color" content="#181316"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
@@ -149,6 +149,23 @@ h2{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.0
 .slide>.ghost{position:absolute;z-index:0}
 .hint{transition:opacity .4s}
 body.scrolled .hint{opacity:0;pointer-events:none}
+.flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:10px;max-width:1240px}
+.fstep{position:relative;background:#221B1F;border:1px solid #3A2F35;border-radius:18px;padding:20px 16px}
+.fstep:not(:last-child)::after{content:"";position:absolute;right:-11px;top:50%;width:10px;height:10px;border-top:2px solid var(--ember);border-right:2px solid var(--ember);transform:translateY(-50%) rotate(45deg);z-index:2}
+.fstep .fn{display:block;font-size:12px;font-weight:800;color:var(--ember);letter-spacing:.08em;margin-bottom:10px}
+.fstep b{display:block;font-size:18px;color:var(--paper);margin-bottom:6px}
+.fstep p{font-size:13.5px;color:#B9AEA2;line-height:1.45}
+.vol{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 26px;max-width:1100px}
+.vol .num{font-size:clamp(40px,5vw,64px)}
+.tl7 .tstep{padding:7px 0}
+.tl7 .tnode{min-width:44px;height:44px;font-size:15px}
+.tl7 .stepline{left:21px}
+.tl7 .t{font-size:18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.tl7 .when{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ember)}
+.tl7 .d{font-size:14.5px;max-width:820px}
+@media(max-width:1100px){.flow{grid-template-columns:repeat(3,minmax(0,1fr))}.fstep:nth-child(3)::after{display:none}}
+@media(max-width:820px){.flow{grid-template-columns:1fr}.fstep:not(:last-child)::after{right:auto;left:28px;top:auto;bottom:-11px;transform:rotate(135deg)}.fstep:nth-child(3)::after{display:block}.vol{grid-template-columns:1fr 1fr}.g4{grid-template-columns:1fr 1fr}}
+
 .js .reveal{opacity:0;transform:translateY(26px)}
 .js .reveal.in{opacity:1;transform:none}
 .reveal{opacity:1;transform:none}
@@ -213,15 +230,90 @@ body.scrolled .hint{opacity:0;pointer-events:none}
 <section class="slide dark">
   <div class="eyebrow reveal">PGL Marketing · <span lang="ru">Сан-Диего</span><span lang="en">San Diego</span></div>
   <h1 class="cover-h1 reveal"><span lang="ru">Запуск<br>за <span class="uline">60 дней</span></span><span lang="en">Launch<br>in <span class="uline">60 days</span></span></h1>
-  <p class="lead reveal" style="color:#CFC5B8"><span lang="ru">Система записи, 30 Reels и реклама, первый бюджет на которую оплачиваем мы. Всё, чтобы внимание превращалось в записи.</span><span lang="en">A booking system, 30 Reels and ads, with the first ad budget on us. Everything that turns attention into bookings.</span></p>
+  <p class="lead reveal" style="color:#CFC5B8"><span lang="ru">Строим систему, которая стабильно приводит клиентов: стратегия, контент, реклама и онлайн-запись работают как одно целое.</span><span lang="en">We build a system that brings in clients month after month: strategy, content, ads and online booking working as one.</span></p>
   <div class="rule reveal"></div>
-  <p class="reveal" style="font-size:18px;font-weight:700;color:var(--paper)">$6,000 · <span lang="ru">2 месяца</span><span lang="en">2 months</span></p>
+  <p class="reveal" style="font-size:16px;font-weight:600;color:#B9AEA2"><span lang="ru">Подготовлено для вашего бизнеса</span><span lang="en">Prepared for your business</span></p>
   <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>pgl.marketing</span></div>
 </section>
 
-<!-- 2. WHAT'S INSIDE -->
+<!-- 2. AUDIT -->
 <section class="slide">
   <span class="ghost">02</span>
+  <div class="eyebrow reveal"><span lang="ru">Где вы сейчас</span><span lang="en">Where you are now</span></div>
+  <h2 class="reveal"><span lang="ru">Старт с нуля.<br>И это преимущество</span><span lang="en">Starting from zero.<br>That's an advantage</span></h2>
+  <div class="grid g2" style="margin-top:8px">
+    <div class="card reveal">
+      <h3 class="gold"><span lang="ru">Что это даёт</span><span lang="en">What it gives you</span></h3>
+      <ul class="list">
+        <li><span lang="ru">Всё строим сразу правильно, без переделки старых ошибок</span><span lang="en">We build everything right from day one, no old mistakes to undo</span></li>
+        <li><span lang="ru">Профиль, реклама и запись с первого дня работают в одной связке</span><span lang="en">Profile, ads and booking work together from the first day</span></li>
+        <li><span lang="ru">С первой заявки видно, откуда пришёл каждый клиент</span><span lang="en">From the first lead, you see where every client came from</span></li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <h3><span lang="ru">Что нужно создать</span><span lang="en">What we need to build</span></h3>
+      <ul class="list soft">
+        <li><span lang="ru">Стратегию: кому и что предлагаем, чем вы отличаетесь</span><span lang="en">Strategy: who we sell to, what we offer, what sets you apart</span></li>
+        <li><span lang="ru">Профиль и контент, которые продают услугу</span><span lang="en">A profile and content that sell the service</span></li>
+        <li><span lang="ru">Рекламу, которая приводит новых клиентов</span><span lang="en">Ads that bring in new clients</span></li>
+        <li><span lang="ru">Онлайн-запись, оплаты, напоминания и ответы на заявки</span><span lang="en">Online booking, payments, reminders and instant replies</span></li>
+        <li><span lang="ru">Учёт: откуда пришёл клиент и сколько он принёс</span><span lang="en">Tracking: where each client came from and what they're worth</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>02</span></div>
+</section>
+
+<!-- 3. GOALS -->
+<section class="slide dark">
+  <span class="ghost">03</span>
+  <div class="eyebrow reveal"><span lang="ru">Цели</span><span lang="en">Goals</span></div>
+  <h2 class="reveal"><span lang="ru">Куда мы вас ведём</span><span lang="en">Where we're taking you</span></h2>
+  <ul class="list reveal" style="max-width:900px;margin-top:10px">
+    <li><span lang="ru">Стабильный и предсказуемый поток записей каждый месяц</span><span lang="en">A steady, predictable flow of bookings every month</span></li>
+    <li><span lang="ru">Профиль, который продаёт вас, пока вы работаете с клиентами</span><span lang="en">A profile that sells for you while you're busy with clients</span></li>
+    <li><span lang="ru">Реклама, где виден каждый доллар и что он принёс</span><span lang="en">Ads where you see every dollar and what it brought back</span></li>
+    <li><span lang="ru">Клиенты, которые возвращаются и приводят своих</span><span lang="en">Clients who come back and bring their friends</span></li>
+    <li><span lang="ru">Бизнес, готовый к росту и загрузке под полную мощность</span><span lang="en">A business ready to grow and run at full capacity</span></li>
+  </ul>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>03</span></div>
+</section>
+
+<!-- 4. APPROACH -->
+<section class="slide">
+  <span class="ghost">04</span>
+  <div class="eyebrow reveal"><span lang="ru">Наш подход</span><span lang="en">Our approach</span></div>
+  <h2 class="reveal"><span lang="ru">Не просто посты и реклама,<br>а система</span><span lang="en">Not just posts and ads,<br>a system</span></h2>
+  <p class="lead reveal"><span lang="ru">Большинство подрядчиков делают что-то одно: снимают, ведут профиль или настраивают рекламу. Клиенты теряются на стыках. Мы строим всю цепочку сами, от первого просмотра до повторной записи.</span><span lang="en">Most vendors do one thing: they shoot, run the profile or set up ads. Clients get lost in between. We build the whole chain ourselves, from the first view to the repeat booking.</span></p>
+  <div class="grid g2" style="margin-top:26px">
+    <div class="card svc reveal"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg></div><h3><span lang="ru">Находим вашу уникальность</span><span lang="en">We find what makes you unique</span></h3><p><span lang="ru">Смыслы, визуал и подача, по которым вас запоминают и выбирают не по цене.</span><span lang="en">The message, look and delivery that make people remember you and choose you on value, not price.</span></p></div>
+    <div class="card svc reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg></div><h3><span lang="ru">Контент и реклама из одних рук</span><span lang="en">Content and ads from one team</span></h3><p><span lang="ru">Снимаем ролики сразу под рекламу и органику, поэтому креативы бьют в цель.</span><span lang="en">We shoot videos for ads and organic from the start, so the creatives land.</span></p></div>
+    <div class="card svc reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 16v-4M12 16V8M16 16v-6"/></svg></div><h3><span lang="ru">Каждый клиент на виду</span><span lang="en">Every client is visible</span></h3><p><span lang="ru">Видно, какое объявление привело запись и сколько она принесла. Решения по цифрам, а не на ощущениях.</span><span lang="en">You see which ad brought each booking and what it earned. Decisions on numbers, not gut feel.</span></p></div>
+    <div class="card svc reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.5-6.6L21 4"/><path d="M21 4v5h-5"/></svg></div><h3><span lang="ru">Клиенты возвращаются</span><span lang="en">Clients come back</span></h3><p><span lang="ru">Напоминания, подарки и цепочки возврата превращают разовый визит в постоянного клиента.</span><span lang="en">Reminders, gifts and win-back flows turn a one-time visit into a regular.</span></p></div>
+  </div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>04</span></div>
+</section>
+
+<!-- 5. HOW THE SYSTEM WORKS -->
+<section class="slide dark">
+  <span class="ghost">05</span>
+  <div class="eyebrow reveal"><span lang="ru">Как работает система</span><span lang="en">How the system works</span></div>
+  <h2 class="reveal"><span lang="ru">Один путь клиента,<br>где ничего не теряется</span><span lang="en">One client journey<br>where nothing slips through</span></h2>
+  <div class="flow reveal">
+    <div class="fstep"><span class="fn">01</span><b><span lang="ru">Внимание</span><span lang="en">Attention</span></b><p><span lang="ru">Reels и реклама показывают вас тем, кому нужна ваша услуга</span><span lang="en">Reels and ads put you in front of people who need your service</span></p></div>
+    <div class="fstep"><span class="fn">02</span><b><span lang="ru">Заявка</span><span lang="en">Inquiry</span></b><p><span lang="ru">Бот отвечает в директ и WhatsApp за секунды, днём и ночью</span><span lang="en">The bot replies in DMs and WhatsApp within seconds, day and night</span></p></div>
+    <div class="fstep"><span class="fn">03</span><b><span lang="ru">Запись</span><span lang="en">Booking</span></b><p><span lang="ru">Клиент сам выбирает время и оплачивает онлайн</span><span lang="en">The client picks a time and pays online</span></p></div>
+    <div class="fstep"><span class="fn">04</span><b><span lang="ru">Визит</span><span lang="en">Visit</span></b><p><span lang="ru">Напоминания снижают неявки, вы работаете с полным графиком</span><span lang="en">Reminders cut no-shows, you work with a full schedule</span></p></div>
+    <div class="fstep"><span class="fn">05</span><b><span lang="ru">Возврат</span><span lang="en">Return</span></b><p><span lang="ru">Подарки и цепочки возвращают клиента на следующий визит</span><span lang="en">Gifts and follow-ups bring the client back for the next visit</span></p></div>
+    <div class="fstep"><span class="fn">06</span><b><span lang="ru">Цифры</span><span lang="en">Numbers</span></b><p><span lang="ru">Видим источник каждой записи и усиливаем то, что работает</span><span lang="en">We see the source of every booking and double down on what works</span></p></div>
+  </div>
+  <p class="note reveal" style="color:#B9AEA2"><span lang="ru">Каждое звено настраиваем и связываем между собой. Поэтому система продолжает приводить клиентов каждый месяц, а не только пока идёт реклама.</span><span lang="en">We set up and connect every link, so the system keeps bringing clients month after month, not only while an ad is running.</span></p>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>05</span></div>
+</section>
+
+<!-- 6. WHAT'S INSIDE -->
+<section class="slide">
+  <span class="ghost">06</span>
   <div class="eyebrow reveal"><span lang="ru">Что входит</span><span lang="en">What's included</span></div>
   <h2 class="reveal"><span lang="ru">Четыре части одной системы</span><span lang="en">Four parts of one system</span></h2>
   <div class="grid g2">
@@ -255,34 +347,58 @@ body.scrolled .hint{opacity:0;pointer-events:none}
     <div class="card blk reveal">
       <h3><span class="n">04</span><span lang="ru">Реклама</span><span lang="en">Paid ads</span></h3>
       <ul>
-        <li lang="ru">Запуск и ведение кампаний</li><li lang="en">Launching and running campaigns</li>
-        <li lang="ru">Замена креативов и отчёты</li><li lang="en">Creative refreshes and reports</li>
-        <li lang="ru"><b>Первые $1,000 рекламного бюджета оплачиваем мы</b></li><li lang="en"><b>The first $1,000 of ad budget is on us</b></li>
+        <li lang="ru">Запуск и ведение кампаний 2 месяца</li><li lang="en">Launching and running campaigns for 2 months</li>
+        <li lang="ru">Замена креативов, когда они выгорают</li><li lang="en">Fresh creatives when the old ones wear out</li>
+        <li lang="ru">Отчёты: сколько записей и откуда</li><li lang="en">Reports: how many bookings and where from</li>
       </ul>
     </div>
   </div>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>02</span></div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>06</span></div>
 </section>
 
-<!-- 3. 60 DAYS -->
-<section class="slide dark">
-  <span class="ghost">03</span>
-  <div class="eyebrow reveal"><span lang="ru">Как идут 60 дней</span><span lang="en">How the 60 days go</span></div>
-  <h2 class="reveal"><span lang="ru">Понятный план,<br>шаг за шагом</span><span lang="en">A clear plan,<br>step by step</span></h2>
-  <div class="timeline reveal">
-    <span class="stepline"></span>
-    <div class="tstep"><div class="tnode">01</div><div><div class="t"><span lang="ru">С 1 по 10 день</span><span lang="en">Days 1 to 10</span></div><div class="d"><span lang="ru">Стратегия, упаковка профиля, система записи и бот, первый съёмочный день.</span><span lang="en">Strategy, profile makeover, booking system and bot, first shoot day.</span></div></div></div>
-    <div class="tstep"><div class="tnode">02</div><div><div class="t"><span lang="ru">С 11 по 30 день</span><span lang="en">Days 11 to 30</span></div><div class="d"><span lang="ru">Запуск рекламы, первые 15 Reels выходят в профиль.</span><span lang="en">Ads go live, the first 15 Reels go out on your profile.</span></div></div></div>
-    <div class="tstep"><div class="tnode">03</div><div><div class="t"><span lang="ru">С 31 по 45 день</span><span lang="en">Days 31 to 45</span></div><div class="d"><span lang="ru">Второй съёмочный день, новые креативы в рекламу, доработка стратегии.</span><span lang="en">Second shoot day, fresh ad creatives, strategy refined.</span></div></div></div>
-    <div class="tstep"><div class="tnode">04</div><div><div class="t"><span lang="ru">45 день</span><span lang="en">Day 45</span></div><div class="d"><span lang="ru">Отчёт: сколько записей и откуда. Решаем вместе, как продолжать.</span><span lang="en">Report: how many bookings and where they came from. We decide together how to continue.</span></div></div></div>
-    <div class="tstep"><div class="tnode">05</div><div><div class="t"><span lang="ru">60 день</span><span lang="en">Day 60</span></div><div class="d"><span lang="ru">Итоги и все исходники у вас.</span><span lang="en">Wrap-up, and all source files are yours.</span></div></div></div>
-  </div>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>03</span></div>
-</section>
-
-<!-- 4. CASE -->
+<!-- 7. VOLUME OF WORK -->
 <section class="slide">
-  <span class="ghost">04</span>
+  <span class="ghost">07</span>
+  <div class="eyebrow reveal"><span lang="ru">Объём работы</span><span lang="en">The work behind it</span></div>
+  <h2 class="reveal"><span lang="ru">За 60 дней над вашим<br>бизнесом работает команда</span><span lang="en">For 60 days, a whole team<br>works on your business</span></h2>
+  <div class="grid g4 vol reveal">
+    <div class="num">30<small><span lang="ru">Reels со сценарием, съёмкой и монтажом</span><span lang="en">Reels, scripted, shot and edited</span></small></div>
+    <div class="num">30<small><span lang="ru">обработанных фото</span><span lang="en">retouched photos</span></small></div>
+    <div class="num">2<small><span lang="ru">съёмочных дня</span><span lang="en">shoot days</span></small></div>
+    <div class="num">60<small><span lang="ru">дней ведения рекламы и доработки стратегии</span><span lang="en">days of ad management and strategy work</span></small></div>
+  </div>
+  <div class="grid g3" style="margin-top:26px">
+    <div class="card reveal"><h3><span lang="ru">Стратег</span><span lang="en">Strategist</span></h3><p><span lang="ru">Стратегия, оффер, контент-план, разбор цифр каждый месяц</span><span lang="en">Strategy, offer, content plan, a monthly look at the numbers</span></p></div>
+    <div class="card reveal"><h3><span lang="ru">Продакшн</span><span lang="en">Production</span></h3><p><span lang="ru">Сценарии, съёмка, монтаж, обработка фото, упаковка профиля</span><span lang="en">Scripts, shooting, editing, photo retouching, profile design</span></p></div>
+    <div class="card reveal"><h3><span lang="ru">Таргетолог</span><span lang="en">Ads specialist</span></h3><p><span lang="ru">Запуск и ведение кампаний, замена креативов, отчёты</span><span lang="en">Launching and running campaigns, creative refreshes, reports</span></p></div>
+    <div class="card reveal"><h3><span lang="ru">Специалист по системам</span><span lang="en">Systems specialist</span></h3><p><span lang="ru">Сайт, запись, оплаты, напоминания, бот и трекинг источников</span><span lang="en">Site, booking, payments, reminders, bot and source tracking</span></p></div>
+    <div class="card reveal"><h3><span lang="ru">Менеджер проекта</span><span lang="en">Project manager</span></h3><p><span lang="ru">Сроки, связь с вами, контроль качества на каждом этапе</span><span lang="en">Timelines, staying in touch, quality control at every step</span></p></div>
+    <div class="card reveal" style="background:var(--ink);border-color:var(--ink)"><h3 style="color:var(--paper)"><span lang="ru">Итог</span><span lang="en">The result</span></h3><p style="color:#CFC5B8"><span lang="ru">Не набор услуг, а работающая система, которая стабильно приводит клиентов</span><span lang="en">Not a bundle of services, but a working system that keeps bringing in clients</span></p></div>
+  </div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>07</span></div>
+</section>
+
+<!-- 8. 60 DAYS -->
+<section class="slide dark">
+  <span class="ghost">08</span>
+  <div class="eyebrow reveal"><span lang="ru">Как идут 60 дней</span><span lang="en">How the 60 days go</span></div>
+  <h2 class="reveal"><span lang="ru">Понятный процесс,<br>шаг за шагом</span><span lang="en">A clear process,<br>step by step</span></h2>
+  <div class="timeline tl7 reveal">
+    <span class="stepline"></span>
+    <div class="tstep"><div class="tnode">01</div><div><div class="t"><span lang="ru">Погружение и стратегия</span><span lang="en">Deep dive and strategy</span><span class="when"><span lang="ru">с 1 по 5 день</span><span lang="en">days 1 to 5</span></span></div><div class="d"><span lang="ru">Разбираем ваш продукт, услуги, цены, аудиторию и конкурентов. Находим вашу уникальность, собираем стратегию и контент-план.</span><span lang="en">We dig into your product, services, prices, audience and competitors, find what makes you unique, and build the strategy and content plan.</span></div></div></div>
+    <div class="tstep"><div class="tnode">02</div><div><div class="t"><span lang="ru">Упаковка и система записи</span><span lang="en">Profile and booking system</span><span class="when"><span lang="ru">до 10 дня</span><span lang="en">by day 10</span></span></div><div class="d"><span lang="ru">Оформляем профиль, собираем сайт или страницу записи, оплаты, напоминания, бота и учёт источников.</span><span lang="en">We redesign your profile and set up the site or booking page, payments, reminders, the bot and source tracking.</span></div></div></div>
+    <div class="tstep"><div class="tnode">03</div><div><div class="t"><span lang="ru">Первый съёмочный день</span><span lang="en">First shoot day</span><span class="when"><span lang="ru">до 10 дня</span><span lang="en">by day 10</span></span></div><div class="d"><span lang="ru">Снимаем 15 Reels и 15 фото под вашу подачу, монтируем и обрабатываем.</span><span lang="en">We shoot 15 Reels and 15 photos in your style, then edit and retouch them.</span></div></div></div>
+    <div class="tstep"><div class="tnode">04</div><div><div class="t"><span lang="ru">Запуск</span><span lang="en">Launch</span><span class="when"><span lang="ru">с 11 по 30 день</span><span lang="en">days 11 to 30</span></span></div><div class="d"><span lang="ru">Запускаем рекламу, публикуем Reels. Каждая заявка сразу попадает в систему и получает ответ.</span><span lang="en">Ads go live and Reels go out. Every inquiry lands in the system and gets an instant reply.</span></div></div></div>
+    <div class="tstep"><div class="tnode">05</div><div><div class="t"><span lang="ru">Второй съёмочный день и усиление</span><span lang="en">Second shoot and scaling up</span><span class="when"><span lang="ru">с 31 по 45 день</span><span lang="en">days 31 to 45</span></span></div><div class="d"><span lang="ru">Снимаем ещё 15 Reels, обновляем креативы и вкладываем больше в то, что приносит записи.</span><span lang="en">We shoot 15 more Reels, refresh the creatives and put more behind what brings bookings.</span></div></div></div>
+    <div class="tstep"><div class="tnode">06</div><div><div class="t"><span lang="ru">Отчёт</span><span lang="en">Report</span><span class="when"><span lang="ru">45 день</span><span lang="en">day 45</span></span></div><div class="d"><span lang="ru">Показываем, сколько записей пришло и откуда. Вместе решаем, как расти дальше.</span><span lang="en">We show how many bookings came in and from where, and decide together how to grow from here.</span></div></div></div>
+    <div class="tstep"><div class="tnode">07</div><div><div class="t"><span lang="ru">Система работает на вас</span><span lang="en">The system works for you</span><span class="when"><span lang="ru">60 день</span><span lang="en">day 60</span></span></div><div class="d"><span lang="ru">Подводим итоги двух месяцев. Система записи, реклама и весь снятый контент продолжают приводить клиентов.</span><span lang="en">We sum up the two months. Your booking system, ads and all the content keep bringing in clients.</span></div></div></div>
+  </div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>08</span></div>
+</section>
+
+<!-- 9. CASE -->
+<section class="slide">
+  <span class="ghost">09</span>
   <div class="eyebrow reveal"><span lang="ru">Пример · wellness-студия в Сан-Диего</span><span lang="en">Example · wellness studio in San Diego</span></div>
   <h2 class="reveal"><span lang="ru">Новая локация,<br>полная запись за 30 дней</span><span lang="en">A new location,<br>fully booked in 30 days</span></h2>
   <div class="grid g2" style="grid-template-columns:1.05fr .95fr;align-items:center;gap:48px">
@@ -297,12 +413,12 @@ body.scrolled .hint{opacity:0;pointer-events:none}
     </div>
   </div>
   <p class="disclaim reveal"><span lang="ru">Запись стоит около $20, средний чек услуги $200. Отсюда и возврат. Каждая запись в отчёте привязана к объявлению, которое её принесло.</span><span lang="en">A booking costs about $20 and the average service is $200, hence the return. Every booking in the report is tied to the ad that brought it.</span></p>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>04</span></div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>09</span></div>
 </section>
 
-<!-- 5. OTHER NICHES -->
+<!-- 10. OTHER NICHES -->
 <section class="slide dark">
-  <span class="ghost">05</span>
+  <span class="ghost">10</span>
   <div class="eyebrow reveal"><span lang="ru">Результаты в разных нишах</span><span lang="en">Results across niches</span></div>
   <h2 class="reveal"><span lang="ru">Работает не только<br>для студий</span><span lang="en">Not just<br>for studios</span></h2>
   <div class="grid g3" style="margin-top:8px">
@@ -322,12 +438,12 @@ body.scrolled .hint{opacity:0;pointer-events:none}
       <p><span lang="ru">От профиля без охватов к 1.7M просмотров и медийности.</span><span lang="en">From a profile with no reach to 1.7M views.</span></p>
     </div>
   </div>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>05</span></div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>10</span></div>
 </section>
 
-<!-- 6. PRICES -->
+<!-- 11. PRICES -->
 <section class="slide">
-  <span class="ghost">06</span>
+  <span class="ghost">11</span>
   <div class="eyebrow reveal"><span lang="ru">Услуги по отдельности</span><span lang="en">Services on their own</span></div>
   <h2 class="reveal"><span lang="ru">Каждую часть можно<br>взять отдельно</span><span lang="en">Each part is available<br>on its own</span></h2>
   <table class="price-tbl reveal">
@@ -339,39 +455,39 @@ body.scrolled .hint{opacity:0;pointer-events:none}
       <tr><td class="svcname"><span lang="ru">Съёмочный день</span><span lang="en">Shoot day</span><small><span lang="ru">15 Reels и 15 фото с монтажом и обработкой</span><span lang="en">15 Reels and 15 photos, edited and retouched</span></small></td><td class="what"><span lang="ru">15 Reels и 15 фото, монтаж и обработка включены</span><span lang="en">15 Reels and 15 photos, editing and retouching included</span></td><td class="p">$1,000<small><span lang="ru">за день</span><span lang="en">per day</span></small></td></tr>
     </tbody>
   </table>
-  <p class="note reveal"><span lang="ru">Рекламный бюджет оплачивается площадкам напрямую, он не входит в стоимость услуг.</span><span lang="en">Ad budget is paid to the platforms directly and isn't part of the service fees.</span></p>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>06</span></div>
+  <p class="note reveal"><span lang="ru">Рекламный бюджет оплачивается площадкам отдельно и не входит в стоимость услуг.</span><span lang="en">Ad budget is paid to the platforms separately and isn't part of the service fees.</span></p>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>11</span></div>
 </section>
 
-<!-- 7. COMPARE -->
+<!-- 12. COMPARE -->
 <section class="slide dark">
-  <span class="ghost">07</span>
+  <span class="ghost">12</span>
   <div class="eyebrow reveal"><span lang="ru">Пакет «Запуск за 60 дней»</span><span lang="en">The Launch in 60 days package</span></div>
-  <h2 class="reveal"><span lang="ru">То же самое,<br>на $2,000 выгоднее</span><span lang="en">The same work,<br>$2,000 less</span></h2>
+  <h2 class="reveal"><span lang="ru">Всё вместе выгоднее,<br>чем по отдельности</span><span lang="en">Everything together<br>costs less than separately</span></h2>
   <div class="cmp">
     <div class="card reveal">
       <h3><span lang="ru">По отдельности за 2 месяца</span><span lang="en">Separately, over 2 months</span></h3>
       <div class="row"><span lang="ru">Система записи и бот</span><span lang="en">Booking system and bot</span><b>$2,000</b></div>
       <div class="row"><span lang="ru">Стратегия и контент-план × 2 мес.</span><span lang="en">Strategy and content plan × 2 mo</span><b>$1,000</b></div>
       <div class="row"><span lang="ru">Ведение рекламы × 2 мес.</span><span lang="en">Ads management × 2 mo</span><b>$2,000</b></div>
-      <div class="row"><span lang="ru">2 съёмочных дня, 30 Reels</span><span lang="en">2 shoot days, 30 Reels</span><b>$2,000</b></div>
-      <div class="row"><span lang="ru">Рекламный бюджет</span><span lang="en">Ad budget</span><b>$1,000</b></div>
-      <div class="big strike" style="margin-top:14px">$8,000</div>
+      <div class="row"><span lang="ru">2 съёмочных дня, 30 Reels и 30 фото</span><span lang="en">2 shoot days, 30 Reels and 30 photos</span><b>$2,000</b></div>
+      <div class="big strike" style="margin-top:14px">$7,000</div>
     </div>
     <div class="card pkg reveal">
       <h3><span lang="ru">Пакетом</span><span lang="en">As a package</span></h3>
-      <p style="margin-top:6px"><span lang="ru">Всё то же самое, и первые $1,000 рекламы оплачиваем мы.</span><span lang="en">Everything on the left, and the first $1,000 of ads is on us.</span></p>
+      <p style="margin-top:6px"><span lang="ru">Всё то же самое, одной командой и по одному плану.</span><span lang="en">The same work, one team, one plan.</span></p>
       <div class="big" style="margin-top:18px;color:var(--paper)">$6,000</div>
       <p style="margin-top:8px"><span lang="ru">за 2 месяца</span><span lang="en">for 2 months</span></p>
-      <div class="save"><span lang="ru">Экономия $2,000</span><span lang="en">You save $2,000</span></div>
+      <div class="save"><span lang="ru">Экономия $1,000</span><span lang="en">You save $1,000</span></div>
     </div>
   </div>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>07</span></div>
+  <p class="note reveal" style="color:#8A7F76"><span lang="ru">Рекламный бюджет оплачивается площадкам отдельно.</span><span lang="en">Ad budget is paid to the platforms separately.</span></p>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>12</span></div>
 </section>
 
-<!-- 8. AFTER -->
+<!-- 13. AFTER -->
 <section class="slide">
-  <span class="ghost">08</span>
+  <span class="ghost">13</span>
   <div class="eyebrow reveal"><span lang="ru">После 60 дней</span><span lang="en">After day 60</span></div>
   <h2 class="reveal"><span lang="ru">Продолжаем<br>в удобном формате</span><span lang="en">Keep going<br>the way that fits</span></h2>
   <div class="grid g3" style="margin-top:8px">
@@ -379,11 +495,10 @@ body.scrolled .hint{opacity:0;pointer-events:none}
     <div class="card reveal"><h3><span lang="ru">Отдельные услуги</span><span lang="en">Single services</span></h3><p><span lang="ru">Только реклама, только съёмки или только стратегия, по ценам из прайса.</span><span lang="en">Just ads, just shoots or just strategy, at the listed prices.</span></p></div>
     <div class="card reveal"><h3><span lang="ru">Всё ваше</span><span lang="en">Everything stays yours</span></h3><p><span lang="ru">Рекламный кабинет, система записи и контент остаются у вас, что бы вы ни выбрали.</span><span lang="en">Your ad account, booking system and content stay with you, whatever you choose.</span></p></div>
   </div>
-  <p class="note reveal"><span lang="ru">После первых $1,000 рекламный бюджет вы оплачиваете площадкам напрямую.</span><span lang="en">After the first $1,000, you pay the ad platforms directly.</span></p>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>08</span></div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>13</span></div>
 </section>
 
-<!-- 9. NEXT STEP -->
+<!-- 14. NEXT STEP -->
 <section class="slide dark">
   <div class="eyebrow reveal"><span lang="ru">Следующий шаг</span><span lang="en">Next step</span></div>
   <h2 class="reveal" style="font-size:clamp(34px,5.4vw,70px)"><span lang="ru">Запустим ваш бизнес<br>за <span class="uline">60 дней</span></span><span lang="en">Let's launch your business<br>in <span class="uline">60 days</span></span></h2>
