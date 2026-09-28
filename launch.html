@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <meta name="robots" content="noindex"/>
 <title>PGL Marketing · Запуск за 60 дней</title>
-<meta name="description" content="Launch in 60 days: a system that brings in clients. Strategy, content, ads and online booking."/>
+<meta name="description" content="Launch in 60 days: booking system, 30 Reels, ads with the first $1,000 budget on us."/>
 <meta property="og:title" content="PGL Marketing · Launch in 60 days"/>
-<meta property="og:description" content="A system that brings in clients: strategy, content, ads and online booking."/>
+<meta property="og:description" content="Booking system, 30 Reels and ads with the first $1,000 budget on us. $6,000 for 2 months."/>
 <meta property="og:image" content="https://pgl.marketing/photos/og-image.jpg"/>
 <meta name="theme-color" content="#181316"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__deckOK)document.documentElement.classList.remove('js')},3000)</script>
+<script>document.documentElement.classList.add('js')</script>
 <style>
 
 :root{
@@ -145,27 +145,79 @@ h2{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1.0
 @media(max-width:820px){.g3,.g2,.g4,.stat-grid{grid-template-columns:1fr}.foot,.dots{display:none}.ghost{display:none}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.dark::before{animation:none}}
 
-/* launch deck additions */
-.slide>.ghost{position:absolute;z-index:0}
-.hint{transition:opacity .4s}
-body.scrolled .hint{opacity:0;pointer-events:none}
-.flow{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:10px;max-width:1240px}
-.fstep{position:relative;background:#221B1F;border:1px solid #3A2F35;border-radius:18px;padding:20px 16px}
-.fstep:not(:last-child)::after{content:"";position:absolute;right:-11px;top:50%;width:10px;height:10px;border-top:2px solid var(--ember);border-right:2px solid var(--ember);transform:translateY(-50%) rotate(45deg);z-index:2}
-.fstep .fn{display:block;font-size:12px;font-weight:800;color:var(--ember);letter-spacing:.08em;margin-bottom:10px}
-.fstep b{display:block;font-size:18px;color:var(--paper);margin-bottom:6px}
-.fstep p{font-size:13.5px;color:#B9AEA2;line-height:1.45}
-.vol{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 26px;max-width:1100px}
-.vol .num{font-size:clamp(40px,5vw,64px)}
-.tl7 .tstep{padding:7px 0}
-.tl7 .tnode{min-width:44px;height:44px;font-size:15px}
-.tl7 .stepline{left:21px}
-.tl7 .t{font-size:18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
-.tl7 .when{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ember)}
-.tl7 .d{font-size:14.5px;max-width:820px}
-@media(max-width:1100px){.flow{grid-template-columns:repeat(3,minmax(0,1fr))}.fstep:nth-child(3)::after{display:none}}
-@media(max-width:820px){.flow{grid-template-columns:1fr}.fstep:not(:last-child)::after{right:auto;left:28px;top:auto;bottom:-11px;transform:rotate(135deg)}.fstep:nth-child(3)::after{display:block}.vol{grid-template-columns:1fr 1fr}.g4{grid-template-columns:1fr 1fr}}
+/* ===== case deep dive ===== */
+.dv-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:34px;max-width:1100px}
+.dv-stats .num{font-size:clamp(40px,5vw,66px)}
+.dv-src{font-size:13px;color:#8A7F76;margin-top:26px}
+.dv-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:center;max-width:1180px}
+.dv-two.rev{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.dv-pts{list-style:none;margin-top:18px;display:grid;gap:14px}
+.dv-pts li{display:grid;grid-template-columns:34px 1fr;gap:12px;font-size:16px;line-height:1.5}
+.dv-pts li b{display:block;font-family:var(--disp);font-size:18px;margin-bottom:2px}
+.dv-pts .k{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ember);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:var(--ember-deep)}
+.dark .dv-pts .k{color:var(--ember)}
+.dark .dv-pts li{color:#D9D0C5}
+.dv-step{align-self:flex-start;width:fit-content;display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--ember);color:var(--ink);padding:7px 12px;border-radius:999px;margin-bottom:18px}
+/* chart */
+.dv-chart{background:#fff;border:1px solid var(--sand);border-radius:20px;padding:22px 18px 10px;box-shadow:0 24px 50px -40px rgba(24,19,22,.45)}
+.dv-chart svg{display:block;width:100%;height:auto}
+.dv-chart .bar{transform-box:fill-box;transform-origin:bottom;transform:scaleY(1)}
+.js .play .dv-chart .bar{animation:dvGrow .9s cubic-bezier(.23,1,.32,1) both}
+@keyframes dvGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.dv-legend{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--warm);margin-top:8px}
+.dv-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+/* phone + video */
+.dv-phone{width:min(250px,64vw);aspect-ratio:9/16;border-radius:34px;border:10px solid #0E0B0D;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);margin:0 auto;background:#000}
+.dv-phone video,.dv-phone img{width:100%;height:100%;object-fit:cover;display:block}
+.dv-shot{border-radius:16px;overflow:hidden;border:1px solid #3A2F35;box-shadow:0 30px 70px -40px rgba(0,0,0,.8)}
+.dv-shot img{display:block;width:100%;height:auto}
+.dv-cap{font-size:13px;color:var(--warm);margin-top:10px}
+.dark .dv-cap{color:#8A7F76}
+/* chat */
+.dv-chat{background:#fff;border:1px solid var(--sand);border-radius:24px;padding:20px 18px;display:flex;flex-direction:column;gap:10px;max-width:420px;box-shadow:0 24px 50px -40px rgba(24,19,22,.45)}
+.dv-chat .hd{display:flex;justify-content:space-between;font-size:12px;color:var(--warm);font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--sand)}
+.dv-b{max-width:82%;padding:10px 14px;border-radius:18px;font-size:14.5px;line-height:1.4}
+.dv-b.them{background:var(--cream);align-self:flex-start;border-bottom-left-radius:6px}
+.dv-b.us{background:var(--ink);color:var(--paper);align-self:flex-end;border-bottom-right-radius:6px}
+.dv-b small{display:block;font-size:11px;opacity:.6;margin-top:4px}
+.dv-b.ok{background:#E7F3EC;color:#1F5B3A;align-self:center;font-weight:700;font-size:13px;border-radius:999px}
+.js .dv-chat .dv-b{opacity:0;transform:translateY(10px)}
+.js .play .dv-chat .dv-b{animation:dvIn .45s cubic-bezier(.23,1,.32,1) forwards}
+.js .play .dv-chat .dv-b:nth-of-type(1){animation-delay:.3s}
+.js .play .dv-chat .dv-b:nth-of-type(2){animation-delay:1.2s}
+.js .play .dv-chat .dv-b:nth-of-type(3){animation-delay:2.3s}
+.js .play .dv-chat .dv-b:nth-of-type(4){animation-delay:3.3s}
+.js .play .dv-chat .dv-b:nth-of-type(5){animation-delay:4.3s}
+@keyframes dvIn{to{opacity:1;transform:none}}
+.dv-rem{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.dv-rem span{border:1px solid var(--sand);background:#fff;border-radius:999px;padding:8px 14px;font-weight:700;font-size:14px}
+.dv-rem span b{color:var(--ember-deep)}
+/* highlights on screenshot */
+.dv-hl{position:relative}
+.dv-hl .ring{position:absolute;border:2px solid var(--ember);border-radius:10px;pointer-events:none;opacity:0}
+.js .play .dv-hl .ring{animation:dvRing 2.6s ease-out .8s infinite}
+@keyframes dvRing{0%{opacity:0;transform:scale(1.08)}25%{opacity:1;transform:scale(1)}80%{opacity:1}100%{opacity:0}}
+/* callouts */
+.dv-calls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.dv-calls .card{padding:18px}
+.dv-calls .num{font-size:clamp(34px,3.6vw,46px)}
+/* result table */
+.dv-tbl{width:100%;max-width:980px;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.dv-tbl td{padding:13px 4px;border-bottom:1px solid #3A2F35;font-size:16px}
+.dv-tbl td.v{text-align:right;font-weight:800;font-family:var(--disp);font-size:20px;white-space:nowrap}
+.dv-tbl td.d{text-align:right;color:#86CDA5;font-weight:700;width:90px;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.js .play .dv-chat .dv-b,.js .dv-chat .dv-b{animation:none;opacity:1;transform:none}.js .play .dv-chart .bar{animation:none}.js .play .dv-hl .ring{animation:none}}
+@media(max-width:820px){
+  .dv-stats{grid-template-columns:1fr 1fr}
+  .dv-two,.dv-two.rev{grid-template-columns:1fr;gap:28px}
+  .dv-calls{grid-template-columns:1fr}
+  .dv-tbl td{font-size:14px}.dv-tbl td.v{font-size:16px}
+}
 
+.dv-dash{max-width:980px}
+.dv-two.wide{grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr)}
+
+/* launch deck additions */
 .js .reveal{opacity:0;transform:translateY(26px)}
 .js .reveal.in{opacity:1;transform:none}
 .reveal{opacity:1;transform:none}
@@ -208,9 +260,6 @@ body.scrolled .hint{opacity:0;pointer-events:none}
   .price-tbl td.svcname{width:auto;font-size:15.5px}
   .price-tbl td.svcname small{display:block;font-weight:500;font-size:13px;color:var(--warm);margin-top:4px;line-height:1.4}
   .hint{display:none}
-  .slide .grid.g2{grid-template-columns:1fr!important;gap:22px!important}
-  .stat-grid{grid-template-columns:1fr 1fr!important;gap:18px 20px}
-  .shot{max-width:320px;margin-top:6px}
   .tnode{min-width:44px;height:44px;font-size:15px}
   .stepline{left:21px}
 }
@@ -385,7 +434,7 @@ body.scrolled .hint{opacity:0;pointer-events:none}
   <h2 class="reveal"><span lang="ru">Понятный процесс,<br>шаг за шагом</span><span lang="en">A clear process,<br>step by step</span></h2>
   <div class="timeline tl7 reveal">
     <span class="stepline"></span>
-    <div class="tstep"><div class="tnode">01</div><div><div class="t"><span lang="ru">Погружение и стратегия</span><span lang="en">Deep dive and strategy</span><span class="when"><span lang="ru">с 1 по 5 день</span><span lang="en">days 1 to 5</span></span></div><div class="d"><span lang="ru">Разбираем ваш продукт, услуги, цены, аудиторию и конкурентов. Находим вашу уникальность, собираем стратегию и контент-план.</span><span lang="en">We dig into your product, services, prices, audience and competitors, find what makes you unique, and build the strategy and content plan.</span></div></div></div>
+    <div class="tstep"><div class="tnode">01</div><div><div class="t"><span lang="ru">Погружение и стратегия</span><span lang="en">Deep dive and strategy</span><span class="when"><span lang="ru">дни 1 и 5</span><span lang="en">days 1 to 5</span></span></div><div class="d"><span lang="ru">Разбираем ваш продукт, услуги, цены, аудиторию и конкурентов. Находим вашу уникальность, собираем стратегию и контент-план.</span><span lang="en">We dig into your product, services, prices, audience and competitors, find what makes you unique, and build the strategy and content plan.</span></div></div></div>
     <div class="tstep"><div class="tnode">02</div><div><div class="t"><span lang="ru">Упаковка и система записи</span><span lang="en">Profile and booking system</span><span class="when"><span lang="ru">до 10 дня</span><span lang="en">by day 10</span></span></div><div class="d"><span lang="ru">Оформляем профиль, собираем сайт или страницу записи, оплаты, напоминания, бота и учёт источников.</span><span lang="en">We redesign your profile and set up the site or booking page, payments, reminders, the bot and source tracking.</span></div></div></div>
     <div class="tstep"><div class="tnode">03</div><div><div class="t"><span lang="ru">Первый съёмочный день</span><span lang="en">First shoot day</span><span class="when"><span lang="ru">до 10 дня</span><span lang="en">by day 10</span></span></div><div class="d"><span lang="ru">Снимаем 15 Reels и 15 фото под вашу подачу, монтируем и обрабатываем.</span><span lang="en">We shoot 15 Reels and 15 photos in your style, then edit and retouch them.</span></div></div></div>
     <div class="tstep"><div class="tnode">04</div><div><div class="t"><span lang="ru">Запуск</span><span lang="en">Launch</span><span class="when"><span lang="ru">с 11 по 30 день</span><span lang="en">days 11 to 30</span></span></div><div class="d"><span lang="ru">Запускаем рекламу, публикуем Reels. Каждая заявка сразу попадает в систему и получает ответ.</span><span lang="en">Ads go live and Reels go out. Every inquiry lands in the system and gets an instant reply.</span></div></div></div>
@@ -396,29 +445,137 @@ body.scrolled .hint{opacity:0;pointer-events:none}
   <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>08</span></div>
 </section>
 
-<!-- 9. CASE -->
-<section class="slide">
+<!-- 9. CASE DEEP DIVE: COVER -->
+<section class="slide dark">
   <span class="ghost">09</span>
-  <div class="eyebrow reveal"><span lang="ru">Пример · wellness-студия в Сан-Диего</span><span lang="en">Example · wellness studio in San Diego</span></div>
-  <h2 class="reveal"><span lang="ru">Новая локация,<br>полная запись за 30 дней</span><span lang="en">A new location,<br>fully booked in 30 days</span></h2>
-  <div class="grid g2" style="grid-template-columns:1.05fr .95fr;align-items:center;gap:48px">
-    <div class="stat-grid reveal">
-      <div class="num">30<small><span lang="ru">дней от открытия до полной записи</span><span lang="en">days from opening to fully booked</span></small></div>
-      <div class="num">×10<small><span lang="ru">возврат на рекламу с первого визита сейчас</span><span lang="en">return on ad spend from the first visit, today</span></small></div>
-      <div class="num">70+<small><span lang="ru">записей в неделю сегодня</span><span lang="en">bookings a week today</span></small></div>
-      <div class="num">20K<small><span lang="ru">подписчиков органикой за ~5 месяцев</span><span lang="en">followers grown organically in ~5 months</span></small></div>
-    </div>
-    <div class="shotwrap reveal">
-      <img class="shot" src="photos/wellness-report-jul.jpg" alt="Weekly ad report, wellness studio" loading="lazy"/>
-    </div>
+  <div class="eyebrow reveal"><span lang="ru">Разбор кейса · wellness-студия, Сан-Диего</span><span lang="en">Case deep dive · wellness studio, San Diego</span></div>
+  <h2 class="reveal"><span lang="ru">148 записей за две недели.<br>Покажем, как это устроено</span><span lang="en">148 bookings in two weeks.<br>Here is how it works</span></h2>
+  <div class="dv-stats reveal">
+    <div class="num">148<small><span lang="ru">записей за 7-20 сентября</span><span lang="en">bookings, Sep 7 to 20</span></small></div>
+    <div class="num">$20.50<small><span lang="ru">за запись при цели клиента $25</span><span lang="en">per booking, target was $25</span></small></div>
+    <div class="num">100<small><span lang="ru">новых клиентов, впервые у студии</span><span lang="en">first-time clients</span></small></div>
+    <div class="num">×10<small><span lang="ru">стоимость записей к рекламному бюджету</span><span lang="en">booked value to ad spend</span></small></div>
   </div>
-  <p class="disclaim reveal"><span lang="ru">Запись стоит около $20, средний чек услуги $200. Отсюда и возврат. Каждая запись в отчёте привязана к объявлению, которое её принесло.</span><span lang="en">A booking costs about $20 and the average service is $200, hence the return. Every booking in the report is tied to the ad that brought it.</span></p>
+  <p class="dv-src reveal"><span lang="ru">Все цифры из кабинета, который клиент видит каждый день. Дальше по шагам: с чего начинали, что сделали, что получилось.</span><span lang="en">Every number comes from the dashboard the client sees daily. Next, step by step: where we started, what we did, what happened.</span></p>
   <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>09</span></div>
 </section>
 
-<!-- 10. OTHER NICHES -->
-<section class="slide dark">
+<!-- 10. DIVE: STARTING POINT -->
+<section class="slide">
   <span class="ghost">10</span>
+  <div class="eyebrow reveal"><span lang="ru">С чего начинали</span><span lang="en">Where we started</span></div>
+  <div class="dv-two">
+    <div>
+      <h2 class="reveal"><span lang="ru">Масштабировать то, что уже работает</span><span lang="en">Scale what already works</span></h2>
+      <p class="lead reveal"><span lang="ru">В середине августа реклама приносила 45-50 записей в неделю при бюджете около $630. Задача: поднять поток, не потеряв окупаемость.</span><span lang="en">In mid-August, ads brought 45 to 50 bookings a week on about $630. The goal: more bookings without losing the return.</span></p>
+      <p class="lead reveal" style="font-size:17px"><span lang="ru">Бюджет подняли до ~$1,400 в неделю. Записи выросли до 62 и 86 в неделю, цена записи осталась ниже цели клиента.</span><span lang="en">We raised spend to about $1,400 a week. Bookings grew to 62 and 86 a week, and the cost per booking stayed under the client's target.</span></p>
+    </div>
+    <div class="dv-chart reveal"><svg viewBox="0 0 620 250" role="img" aria-label="Bookings per week, Aug 10 to Sep 27"><line x1="8" x2="612" y1="190" y2="190" stroke="#E6DCCB"/><rect class="bar" style="animation-delay:0.00s" x="16.0" y="108.0" width="62" height="82.0" rx="7" fill="#CFC5B8"/><text x="47.0" y="100.0" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="800" fill="#181316">47</text><text x="47.0" y="210" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="600" fill="#6B6358">10-16.08</text><text x="47.0" y="228" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="700" fill="#6B6358">$638</text><rect class="bar" style="animation-delay:0.12s" x="103.7" y="102.8" width="62" height="87.2" rx="7" fill="#CFC5B8"/><text x="134.7" y="94.8" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="800" fill="#181316">50</text><text x="134.7" y="210" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="600" fill="#6B6358">17-23.08</text><text x="134.7" y="228" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="700" fill="#6B6358">$628</text><rect class="bar" style="animation-delay:0.24s" x="191.3" y="146.4" width="62" height="43.6" rx="7" fill="#CFC5B8"/><text x="222.3" y="138.4" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="800" fill="#181316">25</text><text x="222.3" y="210" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="600" fill="#6B6358">24-30.08</text><text x="222.3" y="228" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="700" fill="#6B6358">$592</text><rect class="bar" style="animation-delay:0.36s" x="279.0" y="92.3" width="62" height="97.7" rx="7" fill="#CFC5B8"/><text x="310.0" y="84.3" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="800" fill="#181316">56</text><text x="310.0" y="210" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="600" fill="#6B6358">31.08-6.09</text><text x="310.0" y="228" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="700" fill="#6B6358">$1,194</text><rect class="bar" style="animation-delay:0.48s" x="366.7" y="81.9" width="62" height="108.1" rx="7" fill="#D4B68C"/><text x="397.7" y="73.9" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="800" fill="#9B7E2E">62</text><text x="397.7" y="210" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="600" fill="#6B6358">7-13.09</text><text x="397.7" y="228" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="700" fill="#6B6358">$1,327</text><rect class="bar" style="animation-delay:0.60s" x="454.3" y="40.0" width="62" height="150.0" rx="7" fill="#D4B68C"/><text x="485.3" y="32.0" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="800" fill="#9B7E2E">86</text><text x="485.3" y="210" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="600" fill="#6B6358">14-20.09</text><text x="485.3" y="228" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="700" fill="#6B6358">$1,468</text><rect class="bar" style="animation-delay:0.72s" x="542.0" y="71.4" width="62" height="118.6" rx="7" fill="#CFC5B8"/><text x="573.0" y="63.4" text-anchor="middle" font-family="Manrope,sans-serif" font-size="17" font-weight="800" fill="#181316">68</text><text x="573.0" y="210" text-anchor="middle" font-family="Manrope,sans-serif" font-size="11.5" font-weight="600" fill="#6B6358">21-27.09</text><text x="573.0" y="228" text-anchor="middle" font-family="Manrope,sans-serif" font-size="12" font-weight="700" fill="#6B6358">$1,335</text></svg>
+      <div class="dv-legend"><span><i style="background:#D4B68C"></i><span lang="ru">недели кейса</span><span lang="en">case weeks</span></span><span><i style="background:#CFC5B8"></i><span lang="ru">остальные недели</span><span lang="en">other weeks</span></span><span><span lang="ru">под столбцом бюджет недели</span><span lang="en">weekly ad spend under each bar</span></span></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>10</span></div>
+</section>
+
+<!-- 11. DIVE: CONTENT + ADS -->
+<section class="slide dark">
+  <span class="ghost">11</span>
+  <div class="dv-two">
+    <div class="reveal"><div class="dv-phone"><video src="photos/case-wellness-vid.mp4" poster="photos/case-wellness-vid-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div></div>
+    <div>
+      <span class="dv-step reveal"><span lang="ru">Шаг 1</span><span lang="en">Step 1</span></span>
+      <h2 class="reveal"><span lang="ru">Контент и реклама вокруг одной процедуры</span><span lang="en">Content and ads built around one treatment</span></h2>
+      <ul class="dv-pts reveal">
+        <li><span class="k">01</span><div><b><span lang="ru">Reels с владелицей</span><span lang="en">Reels with the owner</span></b><span lang="ru">Про двухчасовую процедуру для лица и тела, её главный продукт.</span><span lang="en">About her two-hour face and body treatment, the studio's main product.</span></div></li>
+        <li><span class="k">02</span><div><b><span lang="ru">Отдельно по районам</span><span lang="en">Cut by area</span></b><span lang="ru">Одна версия для Сан-Диего, другая для Оушенсайда и Карлсбада.</span><span lang="en">One cut for San Diego, another for Oceanside and Carlsbad.</span></div></li>
+        <li><span class="k">03</span><div><b><span lang="ru">Видно, какое объявление записывает</span><span lang="en">You see which ad books</span></b><span lang="ru">Бюджет уходит в то, что приносит записи, а не лайки.</span><span lang="en">Budget goes to what brings bookings, not likes.</span></div></li>
+      </ul>
+      <div class="dv-shot reveal" style="margin-top:22px"><img src="photos/case-ads.jpg" alt="Bookings by ad name" loading="lazy"></div>
+      <div class="dv-cap reveal"><span lang="ru">Записи по объявлениям за 7-20 сентября, из кабинета клиента.</span><span lang="en">Bookings by ad, Sep 7 to 20, from the client dashboard.</span></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>11</span></div>
+</section>
+
+<!-- 12. DIVE: FIRST MINUTE -->
+<section class="slide">
+  <span class="ghost">12</span>
+  <div class="dv-two rev">
+    <div>
+      <span class="dv-step reveal"><span lang="ru">Шаг 2</span><span lang="en">Step 2</span></span>
+      <h2 class="reveal"><span lang="ru">Ответ в первую минуту и напоминания до визита</span><span lang="en">A reply in the first minute, reminders until the visit</span></h2>
+      <p class="lead reveal"><span lang="ru">Заявка из рекламы сразу получает ответ и ссылку на запись. После записи система сама напоминает о визите, а после визита просит отзыв и зовёт снова.</span><span lang="en">Every inquiry from an ad gets an instant reply and a booking link. After booking, the system sends reminders, and after the visit it asks for a review and invites the client back.</span></p>
+      <div class="dv-rem reveal"><span><b>2</b> <span lang="ru">дня</span><span lang="en">days</span></span><span><b>1</b> <span lang="ru">день</span><span lang="en">day</span></span><span><b>3</b> <span lang="ru">часа</span><span lang="en">hours</span></span><span><b>1</b> <span lang="ru">час до визита</span><span lang="en">hour before</span></span></div>
+    </div>
+    <div class="reveal">
+      <div class="dv-chat" aria-label="Example conversation">
+        <div class="hd"><span>Instagram · DM</span><span lang="ru">пример</span><span lang="en">example</span></div>
+        <div class="dv-b them"><span lang="ru">Здравствуйте! Хочу на двухчасовую процедуру, есть что-то на этой неделе?</span><span lang="en">Hi! I'd love to try the two-hour treatment. Anything this week?</span><small>20:41</small></div>
+        <div class="dv-b us"><span lang="ru">Здравствуйте! Да, есть окна в четверг и субботу. Вот ссылка, выберите удобное время</span><span lang="en">Hi! Yes, we have openings Thursday and Saturday. Here's the link to pick a time</span><small>20:41</small></div>
+        <div class="dv-b them"><span lang="ru">Записалась на субботу 11:00</span><span lang="en">Booked Saturday at 11:00</span><small>20:44</small></div>
+        <div class="dv-b ok"><span lang="ru">Запись подтверждена · источник: реклама Сан-Диего</span><span lang="en">Booking confirmed · source: San Diego ad</span></div>
+        <div class="dv-b us"><span lang="ru">Спасибо! Напомним за день и за час до визита</span><span lang="en">Thank you! We'll remind you a day and an hour before</span><small>20:44</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>12</span></div>
+</section>
+
+<!-- 13. DIVE: DASHBOARD -->
+<section class="slide dark">
+  <span class="ghost">13</span>
+  <span class="dv-step reveal"><span lang="ru">Шаг 3</span><span lang="en">Step 3</span></span>
+  <h2 class="reveal"><span lang="ru">Клиент видит то же, что и мы</span><span lang="en">The client sees what we see</span></h2>
+  <p class="lead reveal" style="margin:14px 0 22px"><span lang="ru">Записи, новые клиенты, бюджет, цена записи и оплаты обновляются каждый день. Отчёт не нужно ждать до конца месяца.</span><span lang="en">Bookings, new clients, spend, cost per booking and payments update every day. No waiting for a month-end report.</span></p>
+  <div class="dv-hl dv-shot dv-dash reveal">
+    <img src="photos/case-home.jpg" alt="Client dashboard, Sep 7 to 20: 148 bookings, $20.50 per booking" loading="lazy">
+    <span class="ring" style="left:0.6%;top:12%;width:10.6%;height:29%"></span>
+    <span class="ring" style="left:44.6%;top:12%;width:10.6%;height:29%;animation-delay:1.4s"></span>
+    <span class="ring" style="left:66.6%;top:12%;width:10.6%;height:29%;animation-delay:2s"></span>
+  </div>
+  <div class="dv-cap reveal"><span lang="ru">Главный экран кабинета клиента за 7-20 сентября 2026.</span><span lang="en">Client dashboard home screen, Sep 7 to 20, 2026.</span></div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>13</span></div>
+</section>
+
+<!-- 14. DIVE: SOURCES -->
+<section class="slide">
+  <span class="ghost">14</span>
+  <span class="dv-step reveal"><span lang="ru">Шаг 4</span><span lang="en">Step 4</span></span>
+  <h2 class="reveal"><span lang="ru">Откуда на самом деле приходят клиенты</span><span lang="en">Where clients really come from</span></h2>
+  <div class="dv-two wide" style="margin-top:10px">
+    <div class="dv-shot reveal"><img src="photos/case-sources.jpg" alt="Bookings by channel and self-reported source" loading="lazy"></div>
+    <div>
+      <p class="lead reveal" style="margin-top:0"><span lang="ru">В форму записи мы добавили вопрос «Как вы о нас узнали?». Он показывает то, чего не видит отчёт рекламы.</span><span lang="en">We added one question to the booking form: "How did you hear about us?" It shows what the ad report can't.</span></p>
+      <div class="dv-calls reveal">
+        <div class="card"><div class="num">52%</div><p>Instagram</p></div>
+        <div class="card"><div class="num">14%</div><p><span lang="ru">TikTok, в отчёте Meta его не видно</span><span lang="en">TikTok, invisible in the Meta report</span></p></div>
+        <div class="card"><div class="num">6%</div><p><span lang="ru">рекомендации</span><span lang="en">referrals</span></p></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>14</span></div>
+</section>
+
+<!-- 15. DIVE: RESULT -->
+<section class="slide dark">
+  <span class="ghost">15</span>
+  <div class="eyebrow reveal"><span lang="ru">Итог двух недель</span><span lang="en">Two weeks, in numbers</span></div>
+  <h2 class="reveal"><span lang="ru">Больше бюджета, больше записей,<br>цена в пределах цели</span><span lang="en">More budget, more bookings,<br>cost within target</span></h2>
+  <table class="dv-tbl reveal">
+    <tr><td><span lang="ru">Записи</span><span lang="en">Bookings</span></td><td class="v">148</td><td class="d">+97%</td></tr>
+    <tr><td><span lang="ru">Новые клиенты</span><span lang="en">New clients</span></td><td class="v">100</td><td class="d">+163%</td></tr>
+    <tr><td><span lang="ru">Рекламный бюджет (Meta и TikTok)</span><span lang="en">Ad spend (Meta and TikTok)</span></td><td class="v">$3,034</td><td class="d">+70%</td></tr>
+    <tr><td><span lang="ru">Цена нового клиента</span><span lang="en">Cost per new client</span></td><td class="v">$30.34</td><td class="d">−35%</td></tr>
+    <tr><td><span lang="ru">Стоимость записей по прайсу</span><span lang="en">Booked value at list price</span></td><td class="v">$30,375</td><td class="d">+92%</td></tr>
+    <tr><td><span lang="ru">Оплачено за эти две недели</span><span lang="en">Paid in those two weeks</span></td><td class="v">$16,054</td><td class="d">+38%</td></tr>
+  </table>
+  <p class="disclaim reveal"><span lang="ru">Сравнение с двумя неделями до. ×10 считаем по стоимости записей, по фактическим оплатам за тот же период ×5.3: многие клиенты платят при визите позже.</span><span lang="en">Compared with the two weeks before. ×10 is on booked value; on payments received in the same period it is ×5.3, since many clients pay at a later visit.</span></p>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>15</span></div>
+</section>
+
+<!-- 16. OTHER NICHES -->
+<section class="slide dark">
+  <span class="ghost">16</span>
   <div class="eyebrow reveal"><span lang="ru">Результаты в разных нишах</span><span lang="en">Results across niches</span></div>
   <h2 class="reveal"><span lang="ru">Работает не только<br>для студий</span><span lang="en">Not just<br>for studios</span></h2>
   <div class="grid g3" style="margin-top:8px">
@@ -438,12 +595,12 @@ body.scrolled .hint{opacity:0;pointer-events:none}
       <p><span lang="ru">От профиля без охватов к 1.7M просмотров и медийности.</span><span lang="en">From a profile with no reach to 1.7M views.</span></p>
     </div>
   </div>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>10</span></div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>16</span></div>
 </section>
 
-<!-- 11. PRICES -->
+<!-- 17. PRICES -->
 <section class="slide">
-  <span class="ghost">11</span>
+  <span class="ghost">17</span>
   <div class="eyebrow reveal"><span lang="ru">Услуги по отдельности</span><span lang="en">Services on their own</span></div>
   <h2 class="reveal"><span lang="ru">Каждую часть можно<br>взять отдельно</span><span lang="en">Each part is available<br>on its own</span></h2>
   <table class="price-tbl reveal">
@@ -456,12 +613,12 @@ body.scrolled .hint{opacity:0;pointer-events:none}
     </tbody>
   </table>
   <p class="note reveal"><span lang="ru">Рекламный бюджет оплачивается площадкам отдельно и не входит в стоимость услуг.</span><span lang="en">Ad budget is paid to the platforms separately and isn't part of the service fees.</span></p>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>11</span></div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>17</span></div>
 </section>
 
-<!-- 12. COMPARE -->
+<!-- 18. COMPARE -->
 <section class="slide dark">
-  <span class="ghost">12</span>
+  <span class="ghost">18</span>
   <div class="eyebrow reveal"><span lang="ru">Пакет «Запуск за 60 дней»</span><span lang="en">The Launch in 60 days package</span></div>
   <h2 class="reveal"><span lang="ru">Всё вместе выгоднее,<br>чем по отдельности</span><span lang="en">Everything together<br>costs less than separately</span></h2>
   <div class="cmp">
@@ -482,12 +639,12 @@ body.scrolled .hint{opacity:0;pointer-events:none}
     </div>
   </div>
   <p class="note reveal" style="color:#8A7F76"><span lang="ru">Рекламный бюджет оплачивается площадкам отдельно.</span><span lang="en">Ad budget is paid to the platforms separately.</span></p>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>12</span></div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>18</span></div>
 </section>
 
-<!-- 13. AFTER -->
+<!-- 19. AFTER -->
 <section class="slide">
-  <span class="ghost">13</span>
+  <span class="ghost">19</span>
   <div class="eyebrow reveal"><span lang="ru">После 60 дней</span><span lang="en">After day 60</span></div>
   <h2 class="reveal"><span lang="ru">Продолжаем<br>в удобном формате</span><span lang="en">Keep going<br>the way that fits</span></h2>
   <div class="grid g3" style="margin-top:8px">
@@ -495,10 +652,10 @@ body.scrolled .hint{opacity:0;pointer-events:none}
     <div class="card reveal"><h3><span lang="ru">Отдельные услуги</span><span lang="en">Single services</span></h3><p><span lang="ru">Только реклама, только съёмки или только стратегия, по ценам из прайса.</span><span lang="en">Just ads, just shoots or just strategy, at the listed prices.</span></p></div>
     <div class="card reveal"><h3><span lang="ru">Всё ваше</span><span lang="en">Everything stays yours</span></h3><p><span lang="ru">Рекламный кабинет, система записи и контент остаются у вас, что бы вы ни выбрали.</span><span lang="en">Your ad account, booking system and content stay with you, whatever you choose.</span></p></div>
   </div>
-  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>13</span></div>
+  <div class="foot"><span class="brand"><span>PGL</span> Marketing</span><span>19</span></div>
 </section>
 
-<!-- 14. NEXT STEP -->
+<!-- 20. NEXT STEP -->
 <section class="slide dark">
   <div class="eyebrow reveal"><span lang="ru">Следующий шаг</span><span lang="en">Next step</span></div>
   <h2 class="reveal" style="font-size:clamp(34px,5.4vw,70px)"><span lang="ru">Запустим ваш бизнес<br>за <span class="uline">60 дней</span></span><span lang="en">Let's launch your business<br>in <span class="uline">60 days</span></span></h2>
@@ -538,18 +695,17 @@ body.scrolled .hint{opacity:0;pointer-events:none}
   function curIdx(){var y=window.scrollY+window.innerHeight/2,c=0;slides.forEach(function(s,i){if(s.offsetTop<=y)c=i;});return c;}
   function onScroll(){var h=window.innerHeight,max=document.body.scrollHeight-h;barI.style.width=(max>0?(window.scrollY/max*100):0)+'%';var c=curIdx();dots.forEach(function(d,i){d.classList.toggle('on',i===c);});}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-  window.addEventListener('scroll',function(){if(window.scrollY>40)document.body.classList.add('scrolled');},{passive:true});
   document.addEventListener('keydown',function(e){var c=curIdx();
     if(e.key==='ArrowDown'||e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();if(slides[c+1])slides[c+1].scrollIntoView({behavior:'smooth'});}
     if(e.key==='ArrowUp'||e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();if(slides[c-1])slides[c-1].scrollIntoView({behavior:'smooth'});}
   });
-  function show(s){[].forEach.call(s.querySelectorAll('.reveal'),function(el,i){el.style.transitionDelay=(i*70)+'ms';el.classList.add('in');});[].forEach.call(s.querySelectorAll('.stepline'),function(l){setTimeout(function(){l.classList.add('draw');},200);});}
+  function show(s){s.classList.add('play');[].forEach.call(s.querySelectorAll('.reveal'),function(el,i){el.style.transitionDelay=(i*70)+'ms';el.classList.add('in');});[].forEach.call(s.querySelectorAll('.stepline'),function(l){setTimeout(function(){l.classList.add('draw');},200);});}
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target);}});},{threshold:0.15});
     slides.forEach(function(s){io.observe(s);});
   } else slides.forEach(show);
   show(slides[0]);
-  window.__deckOK=true;
+  setTimeout(function(){slides.forEach(show);},2500);
 })();
 </script>
 </body>
