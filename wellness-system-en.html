@@ -466,28 +466,6 @@ a{color:inherit;text-decoration:none}
 <script>(function(){
   var P=window.PGL; if(!P||P._glue) return; P._glue=1;
   function val(f,n){ var e=f.elements[n]; return e&&e.value?String(e.value).trim():''; }
-  /* clicks on links and main buttons */
-  var nc=0;
-  document.addEventListener('click',function(e){
-    if(nc>=40) return;
-    var a=e.target&&e.target.closest?e.target.closest('a,button.pill,button.f-continue,button.f-submit'):null; if(!a) return;
-    var st=document.getElementById('stage'); if(st&&st.contains(a)) return;
-    var t=(a.textContent||'').replace(/\s+/g,' ').trim().slice(0,60), h=(a.getAttribute('href')||'').slice(0,200);
-    if(!t&&!h) return; nc++; P.event('click',{text:t,href:h});
-  },true);
-  /* scroll depth */
-  var marks=[25,50,75,100], hit={};
-  addEventListener('scroll',function(){
-    var d=document.documentElement, max=d.scrollHeight-innerHeight; if(max<=0) return;
-    var pct=Math.round(scrollY/max*100);
-    marks.forEach(function(m){ if(pct>=m-2&&!hit[m]){ hit[m]=1; P.event('scroll_'+m,{pct:m}); } });
-  },{passive:true});
-  /* which sections were seen */
-  if('IntersectionObserver' in window){
-    var seen={}, ns=0;
-    var io=new IntersectionObserver(function(es){ es.forEach(function(x){ var id=x.target.id; if(x.isIntersecting&&!seen[id]&&ns<30){ seen[id]=1; ns++; P.event('section',{id:id}); io.unobserve(x.target); } }); },{threshold:.35});
-    document.querySelectorAll('section[id],header[id],footer[id]').forEach(function(s){ io.observe(s); });
-  }
   /* landing lead forms */
   ['leadForm','bLeadForm'].forEach(function(id){
     var f=document.getElementById(id); if(!f) return;
@@ -518,7 +496,7 @@ a{color:inherit;text-decoration:none}
         for(var i=0;i<7;i++){ var k=KEYS[i]; if(ans[k]!=null&&sentA[k]!==ans[k]){ sentA[k]=ans[k]; P.answer(QK[i],ans[k],T.q[i]); } }
         if(status==='complete'&&extra){ var a={}; KEYS.forEach(function(k,i){ if(ans[k]!=null) a[QK[i]]=ans[k]; }); if(ans.Links) a.links=ans.Links;
           P.submit({name:extra.name,email:extra.email,phone:extra.phone,step:'contact',answers:a}); }
-        if(status==='booked'){ P.step('booked','Записался'); P.event('booked',{id:extra&&extra.booking_id||null}); }
+        if(status==='booked'){ P.step('booked','Записался'); }
       }catch(e){}
       return p0.apply(this,arguments);
     };
