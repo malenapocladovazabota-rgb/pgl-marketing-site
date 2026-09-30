@@ -604,76 +604,12 @@ a{color:inherit;text-decoration:none}
       <h2 class="sec-h">Book your free strategy call</h2>
       <p class="cta-lead">See where you are leaking leads and the one fix that moves the needle most. If we are a fit, the call is the next step.</p>
 
-      <form class="form" id="leadForm" action="https://formsubmit.co/lev@pgl.marketing" method="POST" autocomplete="on">
-        <input type="hidden" name="_subject" value="New PGL lead (landing v5)"/>
-        <input type="hidden" name="_template" value="table"/>
-        <input type="hidden" name="_captcha" value="false"/>
-        <input type="hidden" name="_autoresponse" value="Thanks for reaching out. Lev from PGL Marketing will be in touch within one business day. Feel free to reply with your website or main social profile."/>
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="f-honey" aria-hidden="true"/>
-
-        <div class="f-grid f-step" id="ctaStep1">
-          <div class="f-row">
-            <label class="f-field"><span class="f-lbl">First name <em>*</em></span><input type="text" name="First name" required autocomplete="given-name"/></label>
-            <label class="f-field"><span class="f-lbl">Last name</span><input type="text" name="Last name" autocomplete="family-name"/></label>
-          </div>
-          <div class="f-row">
-            <label class="f-field"><span class="f-lbl">Email <em>*</em></span><input type="email" name="Email" required autocomplete="email" placeholder="you@yourbusiness.com"/></label>
-            <label class="f-field"><span class="f-lbl">Phone</span><input type="tel" name="Phone" autocomplete="tel" placeholder="(555) 123-4567"/></label>
-          </div>
-        </div>
-
-        <button type="button" class="pill pill--gold f-continue" id="ctaContinue">Continue
-          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
-        </button>
-
-        <div class="f-step2" id="ctaStep2" hidden>
-          <p class="f-step2-note">Great. A few quick questions so the analysis is actually useful to you.</p>
-          <div class="f-grid">
-            <label class="f-field"><span class="f-lbl">Business name or website <em>*</em></span><input type="text" name="Business" data-req placeholder="acme.com or @yourhandle"/></label>
-            <div class="f-row">
-              <label class="f-field"><span class="f-lbl">Your niche <em>*</em></span>
-                <select name="Niche" data-req>
-                  <option value="">Select one</option>
-                  <option>Law / Immigration</option>
-                  <option>Wellness / Beauty</option>
-                  <option>Hospitality / Food</option>
-                  <option>Online Education</option>
-                  <option>E-commerce</option>
-                  <option>Local Service</option>
-                  <option>Other</option>
-                </select>
-              </label>
-              <label class="f-field"><span class="f-lbl">Monthly ad spend <em>*</em></span>
-                <select name="Ad spend" data-req>
-                  <option value="">Select range</option>
-                  <option>Not running ads yet</option>
-                  <option>Under $1,000</option>
-                  <option>$1,000 to $5,000</option>
-                  <option>$5,000 to $15,000</option>
-                  <option>$15,000+</option>
-                </select>
-              </label>
-            </div>
-            <label class="f-field"><span class="f-lbl">Biggest marketing bottleneck right now</span><textarea name="Bottleneck" rows="2" placeholder="One sentence is fine. For example: leads come but never close."></textarea></label>
-          </div>
-          <label class="f-consent" style="display:flex;gap:10px;align-items:flex-start;margin:16px 0 0;font-size:13px;color:var(--warm);line-height:1.5;font-weight:500;cursor:pointer">
-            <input type="checkbox" name="Consent" value="I agree" data-req required style="width:18px;height:18px;margin-top:1px;flex:0 0 auto;accent-color:#8A6E28"/>
-            <span>I agree to the <a href="/privacy-en" target="_blank" rel="noopener" style="color:#8A6E28">Privacy Policy</a> and <a href="/terms-en" target="_blank" rel="noopener" style="color:#8A6E28">Terms</a>, and consent to PGL Marketing contacting me about my inquiry.</span>
-          </label>
-          <button type="submit" class="pill pill--dark f-submit"><span>Book my free strategy call</span>
-            <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
-          </button>
-        </div>
-        <p class="f-fine">We reply within one business day. No obligation.</p>
-      </form>
-
-      <div class="thanks" id="cta-thanks">
-        <div class="thanks-h">You're in.</div>
-        <p class="thanks-p">Grab a time now so we don't play phone tag. Otherwise Lev reaches out within one business day.</p>
-        <a class="pill pill--gold cta-thanks-book" href="https://api.leadconnectorhq.com/widget/bookings/pgl-strategy-call" target="_blank" rel="noopener">Book your strategy call
-          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
-        </a>
+      <div class="cta-quiz" style="margin-top:22px">
+        <ol style="list-style:none;padding:0;margin:0 0 6px"><li style="display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid rgba(0,0,0,.08);font-weight:600"><span style="flex:0 0 30px;height:30px;border-radius:50%;background:var(--ember);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-weight:800">1</span><span>Answer 7 quick questions about your business</span></li><li style="display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid rgba(0,0,0,.08);font-weight:600"><span style="flex:0 0 30px;height:30px;border-radius:50%;background:var(--ember);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-weight:800">2</span><span>Pick a time that works for you</span></li><li style="display:flex;gap:12px;align-items:center;padding:12px 0;border-top:1px solid rgba(0,0,0,.08);font-weight:600"><span style="flex:0 0 30px;height:30px;border-radius:50%;background:var(--ember);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-weight:800">3</span><span>On the call we run the numbers for your business</span></li></ol>
+        <a class="pill pill--gold cta-quiz-go" href="/plan" style="width:100%;max-width:460px;justify-content:center">Start, it takes about 2 minutes <svg viewBox="0 0 14 10" fill="none" style="width:14px"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        <p class="f-fine">Free, no obligation. 30 minutes on Zoom.</p>
       </div>
+      <script>(function(){var a=document.querySelector('.cta-quiz-go');if(a&&location.search)a.href=a.getAttribute('href')+location.search;})();</script>
     </div>
   </div>
 </section>
@@ -990,7 +926,7 @@ a{color:inherit;text-decoration:none}
   if(typeof window.renderQ==='function'&&typeof KEYS!=='undefined'&&typeof window.render==='function'&&typeof window.push==='function'){
     var QK=['niche','ticket','team','revenue','utilization','ads','bottleneck'], last=-1, sentA={}, lastQ='';
     function mark(){ if(step===last) return; last=step;
-      if(step<7) P.step(QK[step],T.q[step]); else if(step===7) P.step('contact','Контакты'); else P.step('calendar','Выбор времени'); }
+      if(step<7) P.step(QK[step],T.q[step]); else P.step('calendar','Выбор времени'); }
     var r0=window.render; window.render=function(){ var x=r0.apply(this,arguments); try{ mark(); }catch(e){} return x; };
     try{ mark(); }catch(e){}
     var p0=window.push; window.push=function(status,extra){
@@ -1002,9 +938,12 @@ a{color:inherit;text-decoration:none}
       }catch(e){}
       return p0.apply(this,arguments);
     };
+    var cst=false;
+    function inForm(t){ var c=document.getElementById('cal'), st=document.getElementById('stage'); return t&&t.tagName==='INPUT'&&((c&&c.contains(t))||(st&&st.contains(t))); }
+    document.addEventListener('focusin',function(e){ if(step>=7&&!cst&&inForm(e.target)){ cst=true; P.step('contact','Контакты'); } },true);
     document.addEventListener('focusout',function(e){
-      if(step!==7) return; var st=document.getElementById('stage'); if(!st||!st.contains(e.target)) return;
-      var ins=st.querySelectorAll('input'), c={name:(ins[0]&&ins[0].value||'').trim(),email:(ins[1]&&ins[1].value||'').trim(),phone:(ins[2]&&ins[2].value||'').trim()}, k=JSON.stringify(c);
+      if(step<7||!inForm(e.target)) return; var box=document.getElementById('cal');
+      var ins=box?box.querySelectorAll('input'):[], c={name:(ins[0]&&ins[0].value||'').trim(),email:(ins[1]&&ins[1].value||'').trim(),phone:(ins[2]&&ins[2].value||'').trim()}, k=JSON.stringify(c);
       if((c.email||c.phone)&&k!==lastQ){ lastQ=k; P.contact(c); }
     },true);
   }
