@@ -509,6 +509,15 @@ a{color:inherit;text-decoration:none}
 .bars--wk .bar--top i{background:linear-gradient(180deg,#E6C873,var(--ember))}
 .bars-note b{color:var(--cream)}
 @media (min-width:820px){.bars--wk{gap:10px}.bars--wk .bar-v{font-size:14px}.bars--wk .bar-m{font-size:12px}}
+.how-grid--5 .phase{min-width:0}
+.how-grid--5 .phase-body{min-width:0;overflow-wrap:break-word}
+@media (min-width:820px) and (max-width:1179px){
+  .how-grid--5{flex-direction:column;gap:16px}
+  .how-grid--5::before{left:19px;right:auto;top:16px;bottom:16px;width:2px;height:auto;background:linear-gradient(180deg,var(--ember),rgba(201,168,76,.12));transform:none!important;transition:none}
+  .how-grid--5 .phase{padding-left:56px;padding-top:0}
+  .how-grid--5 .phase-dot{left:8px;top:2px}
+}
+@media (min-width:1180px){.how-grid--5 .phase-body{padding:20px 18px}}
 </style>
 </head>
 <body>
