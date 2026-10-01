@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>PGL Marketing · Презентация</title>
+<meta name="robots" content="noindex"/>
+<meta name="description" content="Наш подход, кейсы в цифрах, формат работы и цена."/>
+<meta property="og:title" content="PGL Marketing · Клиенты, которые выбирают именно вас"/>
+<meta property="og:description" content="700 записей за пять месяцев. Подход, кейсы, формат работы и цена."/>
+<meta property="og:image" content="https://pgl.marketing/photos/og-image-ru.jpg"/>
+<link rel="icon" href="favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --paper:#F4EFE8;--cream:#FBF8F3;--sand:#E7DDCF;--rose:#E7D3CC;
+  --ink:#141012;--ink2:#1F191C;--line-d:rgba(246,241,234,.13);
+  --ember:#C9A84C;--ember-hi:#E2C677;--ember-deep:#8A6E28;--warm:#6E6259;--mute-d:#B4A99D;
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;--body:'Hanken Grotesk',system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity;overflow-x:hidden}
+body{background:var(--ink);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* slide shell */
+.slide{min-height:100vh;min-height:100svh;scroll-snap-align:start;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:center;padding:84px 22px 64px;background:var(--paper)}
+.slide.light2{background:var(--cream)}
+.slide.dark{background:var(--ink);color:var(--paper)}
+.slide.dark::before{content:"";position:absolute;width:70vmax;height:70vmax;right:-28vmax;top:-34vmax;pointer-events:none;
+  background:radial-gradient(circle,rgba(201,168,76,.16),transparent 60%)}
+.in-wrap{width:100%;max-width:1180px;margin:0 auto;position:relative;z-index:1}
+.num{position:absolute;top:26px;right:22px;font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--warm);z-index:2}
+.dark .num{color:var(--mute-d)}
+.brandmark{position:absolute;top:24px;left:22px;font-family:var(--disp);font-weight:800;font-size:15px;z-index:2}
+.brandmark span{color:var(--ember-deep)}.dark .brandmark span{color:var(--ember)}
+
+/* type */
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ember-deep);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::before{content:"";width:24px;height:2px;background:var(--ember)}
+.dark .eyebrow{color:var(--ember)}
+h1{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.98;font-size:clamp(40px,8.6vw,104px);max-width:14ch}
+h2{font-family:var(--disp);font-weight:800;letter-spacing:-.025em;line-height:1.02;font-size:clamp(30px,5.4vw,64px);max-width:18ch}
+h3{font-family:var(--disp);font-weight:700;letter-spacing:-.015em;line-height:1.15;font-size:clamp(19px,2vw,23px)}
+.lead{font-size:clamp(17px,1.75vw,22px);line-height:1.5;color:var(--warm);font-weight:500;max-width:46ch;margin-top:20px}
+.dark .lead{color:var(--mute-d)}
+.u{color:var(--ember-deep)}.dark .u{color:var(--ember)}
+.fine{font-size:12.5px;color:var(--warm);line-height:1.5;margin-top:18px;max-width:80ch}
+.dark .fine{color:#8F857B}
+
+/* cards */
+.grid{display:grid;gap:14px;margin-top:30px;grid-template-columns:minmax(0,1fr)}
+.card{background:#fff;border:1px solid var(--sand);border-radius:22px;padding:22px 20px;box-shadow:0 24px 50px -42px rgba(20,16,18,.5)}
+.dark .card{background:rgba(246,241,234,.045);border-color:var(--line-d);box-shadow:none}
+.card p{font-size:15.5px;line-height:1.55;color:var(--warm);margin-top:8px}
+.dark .card p{color:var(--mute-d)}
+.k{font-family:var(--disp);font-weight:800;font-size:13px;color:var(--ember-deep);letter-spacing:.04em}
+.dark .k{color:var(--ember)}
+.card .k{display:block;margin-bottom:10px}
+
+/* big numbers */
+.stat-n{font-family:var(--disp);font-weight:800;letter-spacing:-.035em;line-height:.92;font-size:clamp(44px,6.4vw,84px)}
+.stat-n em{font-style:normal;color:var(--ember-deep)}.dark .stat-n em{color:var(--ember)}
+.stat-l{font-size:14.5px;font-weight:600;margin-top:10px;line-height:1.35}
+.dark .stat-l{color:var(--paper)}
+
+/* cover */
+.cover h1{max-width:12ch}
+.cover .prep{margin-top:26px;font-size:14px;color:var(--mute-d)}
+.cover .prep b{color:var(--paper);font-weight:700}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:38px;max-width:760px}
+.strip div{border-top:1px solid var(--line-d);padding-top:14px}
+.strip b{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(24px,3.4vw,40px);color:var(--ember);letter-spacing:-.02em}
+.strip span{font-size:13px;color:var(--mute-d);line-height:1.35;display:block;margin-top:4px}
+
+/* versus */
+.vs{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:30px}
+.vs .card ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.vs li{font-size:15.5px;line-height:1.45;padding-left:24px;position:relative;color:var(--warm)}
+.vs li::before{content:"";position:absolute;left:2px;top:.55em;width:9px;height:9px;border-radius:99px;background:#CBBFB2}
+.vs .win{background:var(--ink);border-color:var(--ink)}
+.vs .win h3{color:var(--paper)}
+.vs .win li{color:var(--mute-d)}
+.vs .win li::before{background:var(--ember)}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;border-radius:99px;background:var(--sand);color:var(--warm);margin-bottom:12px}
+.win .tag{background:rgba(201,168,76,.18);color:var(--ember)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:30px;counter-reset:s}
+.step{position:relative;padding:22px 20px 22px 64px;border-radius:22px;background:#fff;border:1px solid var(--sand)}
+.dark .step{background:rgba(246,241,234,.045);border-color:var(--line-d)}
+.step .dot{position:absolute;left:18px;top:20px;width:32px;height:32px;border-radius:99px;background:var(--ember);color:var(--ink);font-family:var(--disp);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.step .when{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-deep);margin-bottom:6px}
+.dark .step .when{color:var(--ember)}
+.step p{font-size:15px;line-height:1.5;color:var(--warm);margin-top:6px}
+.dark .step p{color:var(--mute-d)}
+.quote-line{margin-top:22px;font-family:var(--disp);font-weight:700;font-size:clamp(20px,2.4vw,28px);letter-spacing:-.01em}
+
+/* kpi grid */
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:30px}
+.kpi{border:1px solid var(--line-d);border-radius:22px;padding:20px 18px;background:rgba(246,241,234,.04)}
+.kpi.hi{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.45)}
+
+/* chart */
+.chart{margin-top:30px;background:#fff;border:1px solid var(--sand);border-radius:24px;padding:22px 16px 16px}
+.bars{display:flex;align-items:flex-end;gap:5px;height:220px}
+.bar{flex:1;min-width:0;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px}
+.bar i{display:block;width:100%;height:var(--h);border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,#D9C9A8,#E9DFCB);transform-origin:bottom;transition:transform 1s var(--ease)}
+.bar.hot i{background:linear-gradient(180deg,var(--ember),#E2CF9A)}
+.bar.top i{background:linear-gradient(180deg,var(--ember-deep),var(--ember))}
+.js .chart:not(.on) .bar i{transform:scaleY(0)}
+.bar b{font-size:11px;font-weight:700;color:var(--warm)}
+.bar.top b{color:var(--ember-deep);font-size:14px}
+.bar s{text-decoration:none;font-size:10.5px;color:var(--warm);height:14px;white-space:nowrap}
+.chart-k{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px}
+.chip{display:inline-flex;gap:8px;align-items:center;font-size:14px;font-weight:600;background:var(--paper);border-radius:99px;padding:9px 14px}
+.chip b{font-family:var(--disp);color:var(--ember-deep)}
+
+/* case story */
+.story{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:30px;align-items:center}
+.story ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.story li{padding-left:22px;position:relative;font-size:16px;line-height:1.5;color:var(--mute-d)}
+.story li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:99px;background:var(--ember)}
+.story li b{color:var(--paper)}
+.before{border:1px dashed var(--line-d);border-radius:18px;padding:16px 18px;margin-bottom:18px;font-size:15px;color:var(--mute-d);line-height:1.5}
+.before b{color:var(--ember);font-size:11px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:6px}
+.phone{width:min(260px,70vw);margin:0 auto;border-radius:34px;padding:9px;background:#2a2326;box-shadow:0 40px 80px -40px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08) inset}
+.phone video,.phone img{border-radius:26px;aspect-ratio:9/16;object-fit:cover;width:100%;background:#000}
+
+/* specialist */
+.trio{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:30px}
+.trio .card .stat-n{font-size:clamp(38px,4.6vw,60px)}
+
+/* dashboard shot */
+.shot{margin-top:28px;border-radius:20px;overflow:hidden;border:1px solid var(--line-d);box-shadow:0 40px 90px -50px rgba(0,0,0,.9)}
+.shot img{width:100%;height:auto}
+
+/* niches */
+.niches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:30px}
+.niche{border-radius:22px;overflow:hidden;background:#fff;border:1px solid var(--sand);display:flex;flex-direction:column}
+.niche .ph{aspect-ratio:4/3;overflow:hidden;background:var(--sand)}
+.niche .ph img{width:100%;height:100%;object-fit:cover}
+.niche .bd{padding:16px 16px 18px}
+.niche .stat-n{font-size:clamp(30px,3.6vw,46px)}
+.niche .t{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ember-deep);margin-top:10px}
+.niche p{font-size:14px;color:var(--warm);line-height:1.45;margin-top:6px}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:30px;align-items:stretch}
+.plan{border-radius:26px;padding:26px 22px;background:#fff;border:1px solid var(--sand);display:flex;flex-direction:column;position:relative}
+.plan .nm{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ember-deep)}
+.plan .pr{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;font-size:clamp(38px,4.4vw,56px);line-height:1;margin-top:12px}
+.plan .pr small{font-size:.32em;font-weight:600;color:var(--warm);letter-spacing:0;margin-left:4px}
+.plan .for{font-size:15px;color:var(--warm);line-height:1.45;margin-top:10px;min-height:2.9em}
+.plan ul{list-style:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--sand);display:flex;flex-direction:column;gap:9px}
+.plan li{font-size:14.5px;line-height:1.45;padding-left:24px;position:relative}
+.plan li::before{content:"";position:absolute;left:3px;top:.35em;width:11px;height:6px;border-left:2px solid var(--ember);border-bottom:2px solid var(--ember);transform:rotate(-45deg)}
+.plan .pr-t{font-size:clamp(28px,2.6vw,36px);padding:8px 0 6px}
+.plan.main{background:var(--ink);color:var(--paper);border-color:var(--ink);box-shadow:0 40px 80px -40px rgba(20,16,18,.6)}
+.plan.main .nm{color:var(--ember)}
+.plan.main .for,.plan.main .pr small{color:var(--mute-d)}
+.plan.main ul{border-color:var(--line-d)}
+.plan .flag{position:absolute;top:-12px;left:22px;background:var(--ember);color:var(--ink);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:99px}
+.plan.alt{background:var(--rose);border-color:transparent}
+.plan.alt .for{color:#5A4A45}
+.plan.alt ul{border-color:rgba(20,16,18,.12)}
+.welcome{display:flex;gap:14px;align-items:center;margin-top:16px;padding:16px 18px;border-radius:18px;border:1px dashed var(--ember);background:rgba(201,168,76,.1);font-size:15px;line-height:1.45}
+.welcome svg{width:28px;height:28px;flex:none;color:var(--ember-deep)}
+.welcome b{color:var(--ember-deep)}
+
+/* why + founders */
+.why{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-top:30px;align-items:center}
+.why .grid{margin-top:0}
+.founders{border-radius:26px;overflow:hidden;position:relative;max-width:420px}
+.founders img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%}
+.founders figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(20,16,18,.85));color:var(--paper);font-size:14px;line-height:1.4}
+.founders figcaption b{font-family:var(--disp);font-size:18px;display:block}
+
+/* final */
+.final h2{max-width:16ch}
+.go{display:inline-flex;align-items:center;gap:12px;margin-top:30px;background:var(--ember);color:var(--ink);font-weight:700;font-size:16px;padding:18px 26px;border-radius:99px;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.go:hover{transform:translateY(-2px);box-shadow:0 16px 30px -14px rgba(201,168,76,.8)}
+.go svg{width:16px;height:12px}
+.contacts{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:15px;color:var(--mute-d)}
+.contacts a{border-bottom:1px solid var(--line-d)}
+
+/* chrome */
+.progress{position:fixed;left:0;top:0;height:3px;z-index:20;background:var(--ember);width:0;transition:width .15s linear}
+.dots{position:fixed;right:12px;top:50%;transform:translateY(-50%);z-index:20;display:none;flex-direction:column;gap:9px}
+.dots button{width:8px;height:8px;border-radius:99px;border:0;background:rgba(138,110,40,.35);cursor:pointer;padding:0;transition:transform .2s,background .2s}
+.dots button.on{background:var(--ember);transform:scale(1.5)}
+.hint{position:fixed;bottom:14px;display:none;left:50%;transform:translateX(-50%);z-index:20;font-size:12px;color:var(--mute-d);letter-spacing:.06em;background:rgba(20,16,18,.6);padding:7px 12px;border-radius:99px;backdrop-filter:blur(8px);transition:opacity .4s}
+.hint.off{opacity:0;pointer-events:none}
+
+/* reveal (progressive) */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .8s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.js .chart:not(.on) .bar i{transform:none}html{scroll-behavior:auto}}
+
+@media (min-width:760px){
+  .slide{padding:90px 6vw 70px}
+  .num{right:6vw}.brandmark{left:6vw}
+  .grid.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .grid.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps.s4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpis{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .kpi{padding:26px 24px}
+  .bars{gap:10px;height:280px}
+  .bar b{font-size:13px}.bar s{font-size:12px}
+  .story{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:48px}
+  .trio{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .niches{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .plans{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .why{grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:40px}
+  .dots{display:flex}
+  .hint{display:block}
+}
+@media (min-width:1100px){
+  .grid.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .steps.s5{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .steps.s5 .step{padding:64px 18px 22px}
+  .steps.s5 .step .dot{top:18px;left:18px}
+  .steps.s4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .steps.s4 .step{padding:64px 18px 22px}
+  .steps.s4 .step .dot{top:18px;left:18px}
+}
+</style>
+</head>
+<body>
+<div class="progress"></div>
+<nav class="dots" aria-label="Слайды"></nav>
+<div class="hint" id="hint">Листайте вниз или стрелками</div>
+
+<!-- 01 COVER -->
+<section class="slide dark cover" id="s1">
+  <a class="brandmark" href="/"><span>PGL</span> Marketing</a><span class="num">01</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">PGL Marketing · Сан-Диего</span>
+    <h1 class="rv">Клиенты, которые выбирают <span class="u">именно вас</span></h1>
+    <p class="lead rv">Строим ваш бренд в соцсетях, ведём рекламу и настраиваем запись, которая работает без вас. Внутри: наш подход, кейсы в цифрах, формат работы и цена.</p>
+    <p class="prep rv">Подготовлено для <b id="forName">вашего бизнеса</b></p>
+    <div class="strip rv">
+      <div><b>700</b><span>записей за пять месяцев у одной студии</span></div>
+      <div><b>~$20</b><span>стоимость записи с рекламы</span></div>
+      <div><b>50K+</b><span>подписчиков с нуля</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 SHIFT -->
+<section class="slide" id="s2">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">02</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Что изменилось</span>
+    <h2 class="rv">Сегодня клиент выбирает человека, а не услугу</h2>
+    <p class="lead rv">Перед записью человек открывает ваш Instagram. Если там фото работ и прайс, он сравнивает по цене. Если видит вас, ваш метод и результат, записывается к вам и готов ждать.</p>
+    <div class="vs">
+      <div class="card rv">
+        <span class="tag">Проигрывают</span>
+        <h3>Бизнесы, которые продвигаются площадками и скидками</h3>
+        <ul>
+          <li>Клиент помнит Yelp, Booksy или Google, а не ваше имя</li>
+          <li>Рядом в списке всегда кто-то дешевле</li>
+          <li>За того же клиента вы платите снова и снова</li>
+        </ul>
+      </div>
+      <div class="card win rv">
+        <span class="tag">Выигрывают</span>
+        <h3>Бизнесы с узнаваемым лицом и понятным методом</h3>
+        <ul>
+          <li>К ним записываются на недели вперёд</li>
+          <li>Платят полную цену, без скидок на первый визит</li>
+          <li>Клиенты возвращаются и приводят друзей</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 LEAKS -->
+<section class="slide dark" id="s3">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">03</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Где теряются деньги</span>
+    <h2 class="rv">Три места, где бизнес теряет клиентов</h2>
+    <div class="grid g3">
+      <div class="card rv"><span class="k">01</span><h3>Внимание без доверия</h3><p>Профиль красивый, но вы выглядите как все. Человек листает дальше или выбирает по цене.</p></div>
+      <div class="card rv"><span class="k">02</span><h3>Заявка без записи</h3><p>С рекламы пишут «сколько стоит?» и пропадают. Ответ через час уже никому не нужен.</p></div>
+      <div class="card rv"><span class="k">03</span><h3>Визит без возврата</h3><p>Клиенту понравилось, но никто не напомнил о себе. Реклама окупилась один раз вместо пяти.</p></div>
+    </div>
+    <p class="quote-line rv">Мы работаем со всеми тремя, а не только с рекламой.</p>
+  </div>
+</section>
+
+<!-- 04 APPROACH -->
+<section class="slide light2" id="s4">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">04</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Наш подход</span>
+    <h2 class="rv">Работа с нами начинается не с рекламы</h2>
+    <p class="lead rv">А с вопроса: почему клиент должен выбрать именно вас?</p>
+    <div class="steps s4">
+      <div class="step rv"><span class="dot">01</span><h3>Находим уникальность</h3><p>Ваш метод, подход, атмосферу. То, что знают постоянные клиенты, но не видят новые.</p></div>
+      <div class="step rv"><span class="dot">02</span><h3>Упаковываем в контент</h3><p>Ролики, где люди видят вас и ваш результат. Плюс отдельная реклама, которой даже нет в профиле.</p></div>
+      <div class="step rv"><span class="dot">03</span><h3>Превращаем внимание в записи</h3><p>Реклама ведёт сразу в запись. Подтверждения и напоминания приходят сами.</p></div>
+      <div class="step rv"><span class="dot">04</span><h3>Возвращаем клиентов</h3><p>Сообщение после визита, отзыв, приглашение вернуться. Клиенты ваши, а не площадки.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 CASE NUMBERS -->
+<section class="slide dark" id="s5">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">05</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Кейс · wellness-студия, Сан-Диего</span>
+    <h2 class="rv">Пять месяцев с нуля</h2>
+    <div class="kpis">
+      <div class="kpi hi rv"><div class="stat-n">700</div><div class="stat-l">записей за пять месяцев, от 463 клиентов</div></div>
+      <div class="kpi rv"><div class="stat-n">298</div><div class="stat-l">записей за один сентябрь</div></div>
+      <div class="kpi rv"><div class="stat-n">$145K</div><div class="stat-l">записей по прайсу</div></div>
+      <div class="kpi rv"><div class="stat-n">~$20</div><div class="stat-l">стоимость записи с рекламы</div></div>
+      <div class="kpi rv"><div class="stat-n"><em>&times;</em>10</div><div class="stat-l">записей на каждый доллар рекламы</div></div>
+      <div class="kpi rv"><div class="stat-n">50K+</div><div class="stat-l">подписчиков в Instagram, Facebook и TikTok</div></div>
+    </div>
+    <p class="fine rv">Май по сентябрь 2026. Записи и суммы из системы записи студии по прайсу, без чаевых. Расход на рекламу из Meta Ads Manager, $14,297 за весь период.</p>
+  </div>
+</section>
+
+<!-- 06 WEEKLY CHART -->
+<section class="slide" id="s6">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">06</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Новые записи по неделям</span>
+    <h2 class="rv">Сейчас ограничивает календарь, а не спрос</h2>
+    <div class="chart rv" id="chart">
+      <div class="bars" role="img" aria-label="Новые записи по неделям с конца июня по сентябрь: 28, 24, 31, 43, 26, 32, 42, 46, 22, 53, 62, 86, 77">
+        <div class="bar" style="--h:33%"><b>28</b><i></i><s></s></div>
+        <div class="bar" style="--h:28%"><b>24</b><i></i><s>июль</s></div>
+        <div class="bar" style="--h:36%"><b>31</b><i></i><s></s></div>
+        <div class="bar" style="--h:50%"><b>43</b><i></i><s></s></div>
+        <div class="bar" style="--h:30%"><b>26</b><i></i><s></s></div>
+        <div class="bar" style="--h:37%"><b>32</b><i></i><s>авг</s></div>
+        <div class="bar" style="--h:49%"><b>42</b><i></i><s></s></div>
+        <div class="bar" style="--h:53%"><b>46</b><i></i><s></s></div>
+        <div class="bar" style="--h:26%"><b>22</b><i></i><s></s></div>
+        <div class="bar hot" style="--h:62%"><b>53</b><i></i><s>сент</s></div>
+        <div class="bar hot" style="--h:72%"><b>62</b><i></i><s></s></div>
+        <div class="bar top" style="--h:100%"><b>86</b><i></i><s></s></div>
+        <div class="bar hot" style="--h:90%"><b>77</b><i></i><s></s></div>
+      </div>
+    </div>
+    <div class="chart-k rv">
+      <span class="chip">Лучшая неделя <b>86 записей</b></span>
+      <span class="chip">Ведущий специалист <b>на 2.5 месяца вперёд</b></span>
+      <span class="chip">Команда <b>на 3 недели вперёд</b></span>
+    </div>
+    <p class="fine rv">Считаем сделанные записи, то есть работу системы, а не только визиты, которые команда успела принять. Недельный учёт ведётся с конца июня.</p>
+  </div>
+</section>
+
+<!-- 07 WHAT WE DID -->
+<section class="slide dark" id="s7">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">07</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Что мы сделали</span>
+    <h2 class="rv">Из нового кабинета в студию с командой</h2>
+    <div class="story">
+      <div>
+        <div class="before rv"><b>Было</b>Новая студия с нуля: ни подписчиков, ни рекламы, ни системы записи. Всё держалось на владелице.</div>
+        <ul>
+          <li class="rv"><b>Бренд вокруг основательницы.</b> Контент о ней и её методе. Люди идут к ней, а не на «процедуру».</li>
+          <li class="rv"><b>Реклама сразу в запись.</b> Человек выбирает время, а не пишет в директ и пропадает.</li>
+          <li class="rv"><b>Специалист, упакованный как бренд.</b> Запись на месяцы вперёд по цене выше рынка.</li>
+          <li class="rv"><b>Запись, которая работает сама.</b> Подтверждение, четыре напоминания, сообщение и отзыв после визита, сигнал владелице при низкой оценке, приглашение вернуться.</li>
+          <li class="rv"><b>Кабинет с цифрами.</b> Каждая запись привязана к рекламе, которая её привела.</li>
+        </ul>
+      </div>
+      <div class="phone rv"><video src="photos/case-wellness-vid.mp4" poster="photos/case-wellness-vid-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 SPECIALIST -->
+<section class="slide light2" id="s8">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">08</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Личный бренд специалиста</span>
+    <h2 class="rv">К ней идут по имени</h2>
+    <p class="lead rv">Клиенты приходят уже зная её метод: видели в обычном контенте и в отдельной рекламе. Поэтому это не разовая акция, а отношения.</p>
+    <div class="trio">
+      <div class="card rv"><div class="stat-n">2.5 мес</div><div class="stat-l">столько ждут запись к ведущему специалисту, хотя цена выше рыночной</div></div>
+      <div class="card rv"><div class="stat-n">120</div><div class="stat-l">клиентов уже вернулись повторно, каждый окупает рекламу ещё раз</div></div>
+      <div class="card rv"><div class="stat-n">226</div><div class="stat-l">будущих записей примерно на $50,000 уже стоят в календаре</div></div>
+    </div>
+    <p class="fine rv">Без скидок на первый визит. Цифры из системы записи студии на 30 сентября 2026.</p>
+  </div>
+</section>
+
+<!-- 09 DASHBOARD -->
+<section class="slide dark" id="s9">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">09</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Прозрачность</span>
+    <h2 class="rv">Вы видите каждую запись и сколько она стоила</h2>
+    <p class="lead rv">Не отчёт с охватами и лайками, а список клиентов: кто, на какую услугу, с какой рекламы и на какую сумму.</p>
+    <figure class="shot rv"><img src="photos/case-home.jpg" alt="Кабинет клиента: записи, новые и повторные клиенты, расход, стоимость записи и сумма записей" loading="lazy" decoding="async"/></figure>
+    <p class="fine rv">Кабинет студии, 7 по 20 сентября: 148 записей, из них 100 новых клиентов, $20.50 за запись.</p>
+  </div>
+</section>
+
+<!-- 10 NICHES -->
+<section class="slide" id="s10">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">10</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Другие ниши</span>
+    <h2 class="rv">Подход работает не только для студий</h2>
+    <div class="niches">
+      <div class="niche rv"><div class="ph"><img src="photos/case-food-vid-poster.jpg" alt="" loading="lazy"/></div><div class="bd"><div class="stat-n">435+</div><div class="t">Фуд-сервис</div><p>заявок на банкеты за месяц, реклама окупилась в первый же месяц</p></div></div>
+      <div class="niche rv"><div class="ph"><img src="photos/case-education-vid-poster.jpg" alt="" loading="lazy"/></div><div class="bd"><div class="stat-n">200+</div><div class="t">Онлайн-образование</div><p>клиентов на премиум-продукт с рекламы, возврат около ×10</p></div></div>
+      <div class="niche rv"><div class="ph"><img src="photos/tatyana-profile.png" alt="" loading="lazy" style="object-fit:contain;background:#fff;padding:10px"/></div><div class="bd"><div class="stat-n">1.7M</div><div class="t">Иммиграционный юрист</div><p>органических просмотров за один месяц после смены подачи</p></div></div>
+      <div class="niche rv"><div class="ph"><img src="photos/case-tattoo-vid-poster.jpg" alt="" loading="lazy"/></div><div class="bd"><div class="stat-n">$2.90</div><div class="t">Тату-студия</div><p>за заявку, первые записи в первую неделю</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 PROCESS -->
+<section class="slide dark" id="s11">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">11</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Как запускаем</span>
+    <h2 class="rv">Первый месяц по неделям</h2>
+    <div class="steps s5">
+      <div class="step rv"><span class="dot">01</span><div class="when">Неделя 1</div><h3>Стратегия</h3><p>Разбираем бизнес, услуги, цены и цифры. Находим, чем вы отличаетесь.</p></div>
+      <div class="step rv"><span class="dot">02</span><div class="when">Недели 1 и 2</div><h3>Система</h3><p>Запись, CRM, напоминания, сообщения после визита, кабинет.</p></div>
+      <div class="step rv"><span class="dot">03</span><div class="when">Недели 2 и 3</div><h3>Контент</h3><p>Сценарии, съёмка и монтаж первых роликов.</p></div>
+      <div class="step rv"><span class="dot">04</span><div class="when">Недели 3 и 4</div><h3>Запуск</h3><p>Реклама работает, каждая запись видна в кабинете.</p></div>
+      <div class="step rv"><span class="dot">05</span><div class="when">Каждый месяц</div><h3>Масштаб</h3><p>Новые креативы, больше бюджета на то, что работает, разбор цифр с вами.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 PLANS -->
+<section class="slide light2" id="s12">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">12</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Форматы работы</span>
+    <h2 class="rv">Три формата под вашу задачу</h2>
+    <div class="plans">
+      <div class="plan rv">
+        <div class="nm">Запись</div>
+        <div class="pr">$2,000<small>/мес</small></div>
+        <p class="for">У вас уже есть контент. Нужен стабильный поток записей.</p>
+        <ul>
+          <li>Реклама в Meta и новые креативы каждый месяц</li>
+          <li>Онлайн-запись и CRM</li>
+          <li>Подтверждения и напоминания</li>
+          <li>Сообщение и отзыв после визита, приглашение вернуться</li>
+          <li>Кабинет: каждая запись, её источник и цена</li>
+        </ul>
+      </div>
+      <div class="plan main rv">
+        <span class="flag">Основной</span>
+        <div class="nm">Система</div>
+        <div class="pr">$3,500<small>/мес</small></div>
+        <p class="for">Всё, что мы сделали для студии из кейса.</p>
+        <ul>
+          <li>Всё из формата «Запись»</li>
+          <li>Стратегия и поиск вашей уникальности</li>
+          <li>Съёмочный день каждый месяц: 15 Reels и 15 фото</li>
+          <li>Отдельные рекламные ролики под запись</li>
+          <li>Личный бренд владельца и ключевых специалистов</li>
+          <li>Ежемесячный созвон по цифрам</li>
+        </ul>
+      </div>
+      <div class="plan alt rv">
+        <div class="nm">Масштаб</div>
+        <div class="pr pr-t">Индивидуально</div>
+        <p class="for">Несколько локаций, большая команда, цель масштабироваться агрессивно.</p>
+        <ul>
+          <li>Всё из формата «Система»</li>
+          <li>Пакет под ваши цели и объём</li>
+          <li>Модель, где часть оплаты зависит от выручки, которую мы приносим</li>
+          <li>Только после квалификации на созвоне</li>
+        </ul>
+      </div>
+    </div>
+    <div class="welcome rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M3 13h18M12 9v12M12 9c-2-4-6-4-6-1.5S9 9 12 9zm0 0c2-4 6-4 6-1.5S15 9 12 9z"/></svg><span><b>Welcome offer для новых клиентов.</b> Открываем на созвоне.</span></div>
+    <p class="fine rv">Рекламный бюджет оплачивается напрямую в Meta, отдельно от нашей работы. Рекомендуем от $1,000 в месяц. Рекламный кабинет, система записи и база клиентов оформлены на вас.</p>
+  </div>
+</section>
+
+<!-- 13 WHY US -->
+<section class="slide dark" id="s13">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">13</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Почему мы</span>
+    <h2 class="rv">Чем мы отличаемся</h2>
+    <div class="why">
+      <div class="grid g2">
+        <div class="card rv"><h3>Начинаем со смысла</h3><p>Сначала находим, почему выбирают именно вас. Реклама уже потом.</p></div>
+        <div class="card rv"><h3>Считаем записи, а не лайки</h3><p>Отвечаем за то, что происходит после клика: запись, визит, возврат.</p></div>
+        <div class="card rv"><h3>Бизнес работает без вас</h3><p>Запись, напоминания и возврат клиентов идут сами. Вы смотрите цифры, а не директ.</p></div>
+        <div class="card rv"><h3>С вами работают основатели</h3><p>Лев ведёт стратегию и рекламу, Малена контент и бренд. Проект не уходит стажёру.</p></div>
+      </div>
+      <figure class="founders rv"><img src="photos/founders-new-7.jpg" alt="Лев и Малена Покладовы, основатели PGL Marketing" loading="lazy"/><figcaption><b>Лев и Малена</b>основатели PGL Marketing, Сан-Диего</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 14 NEXT -->
+<section class="slide final" id="s14">
+  <span class="brandmark"><span>PGL</span> Marketing</span><span class="num">14</span>
+  <div class="in-wrap">
+    <span class="eyebrow rv">Следующий шаг</span>
+    <h2 class="rv">30 минут, ваши цифры и план на первый месяц</h2>
+    <div class="steps s3 grid g3" style="margin-top:30px">
+      <div class="step rv"><span class="dot">1</span><h3>Смотрим ваш бизнес</h3><p>Услуги, чек, команда, откуда сейчас клиенты.</p></div>
+      <div class="step rv"><span class="dot">2</span><h3>Считаем потенциал</h3><p>Сколько записей реально добавить и во сколько это обойдётся.</p></div>
+      <div class="step rv"><span class="dot">3</span><h3>Выбираем формат</h3><p>И открываем welcome offer для новых клиентов.</p></div>
+    </div>
+    <a class="go rv" href="/plan-ru?utm_source=deck&amp;utm_medium=presentation" id="goBtn">Записаться на созвон <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+    <div class="contacts rv" style="color:var(--warm)"><a href="mailto:lev@pgl.marketing">lev@pgl.marketing</a><a href="tel:+16193460678">(619) 346-0678</a><a href="/pricing">pgl.marketing</a></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  try{var q=new URLSearchParams(location.search);var f=q.get('for');if(f){document.getElementById('forName').textContent=f.slice(0,60);}
+    var g=document.getElementById('goBtn');if(g&&q.toString()){g.href='/plan-ru?'+q.toString()+(q.get('utm_source')?'':'&utm_source=deck');}}catch(e){}
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var bar=document.querySelector('.progress'),dw=document.querySelector('.dots'),hint=document.getElementById('hint');
+  slides.forEach(function(s){var b=document.createElement('button');b.setAttribute('aria-label','Слайд');b.addEventListener('click',function(){s.scrollIntoView({behavior:'smooth'});});dw.appendChild(b);});
+  var dots=[].slice.call(dw.children);
+  function cur(){var y=window.scrollY+window.innerHeight*.4,c=0;slides.forEach(function(s,i){if(s.offsetTop<=y)c=i;});return c;}
+  function onScroll(){var max=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(max>0?window.scrollY/max*100:0)+'%';var c=cur();dots.forEach(function(d,i){d.classList.toggle('on',i===c);});if(window.scrollY>80)hint.classList.add('off');
+    slides.forEach(function(s){s.classList.toggle('lightnav',!s.classList.contains('dark'));});}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  document.addEventListener('keydown',function(e){var c=cur();
+    if(['ArrowDown','ArrowRight','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();if(slides[c+1])slides[c+1].scrollIntoView({behavior:'smooth'});}
+    if(['ArrowUp','ArrowLeft','PageUp'].indexOf(e.key)>-1){e.preventDefault();if(slides[c-1])slides[c-1].scrollIntoView({behavior:'smooth'});}});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var r=e.target.querySelectorAll('.rv');[].forEach.call(r,function(el,i){el.style.transitionDelay=Math.min(i*70,560)+'ms';el.classList.add('in');});var ch=e.target.querySelector('.chart');if(ch)setTimeout(function(){ch.classList.add('on');},250);io.unobserve(e.target);}});},{threshold:.15});
+    slides.forEach(function(s){io.observe(s);});
+  }else{document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in');});document.querySelectorAll('.chart').forEach(function(c){c.classList.add('on');});}
+  document.querySelectorAll('#s1 .rv').forEach(function(el){el.classList.add('in');});
+})();
+</script>
+</body>
+</html>
