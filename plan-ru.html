@@ -901,7 +901,7 @@ function renderDone(){
   document.getElementById('prog').style.width='100%';
   loadCal();
 }
-function render(){ if(step<7) return renderQ(); return renderDone(); }
+function render(){ if(step<7) return renderQ(); if(step===7) return renderContacts(); return renderDone(); }
 window.addEventListener('pagehide',function(){ if(!BOOK&&Object.keys(ans).length>0) push('abandoned'); });
 document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='hidden'&&!BOOK&&Object.keys(ans).length>0) push('abandoned'); });
 render();
@@ -1027,7 +1027,7 @@ render();
   if(typeof window.renderQ==='function'&&typeof KEYS!=='undefined'&&typeof window.render==='function'&&typeof window.push==='function'){
     var QK=['niche','ticket','team','revenue','utilization','ads','bottleneck'], last=-1, sentA={}, lastQ='';
     function mark(){ if(step===last) return; last=step;
-      if(step<7) P.step(QK[step],T.q[step]); else P.step('calendar','Выбор времени'); }
+      if(step<7) P.step(QK[step],T.q[step]); else if(step===7) P.step('contact','Контакты'); else P.step('calendar','Выбор времени'); }
     var r0=window.render; window.render=function(){ var x=r0.apply(this,arguments); try{ mark(); }catch(e){} return x; };
     try{ mark(); }catch(e){}
     var p0=window.push; window.push=function(status,extra){
@@ -1043,7 +1043,7 @@ render();
     function inForm(t){ var c=document.getElementById('cal'), st=document.getElementById('stage'); return t&&t.tagName==='INPUT'&&((c&&c.contains(t))||(st&&st.contains(t))); }
     document.addEventListener('focusin',function(e){ if(step>=7&&!cst&&inForm(e.target)){ cst=true; P.step('contact','Контакты'); } },true);
     document.addEventListener('focusout',function(e){
-      if(step<7||!inForm(e.target)) return; var box=document.getElementById('cal');
+      if(step<7||!inForm(e.target)) return; var box=document.getElementById(step===7?'stage':'cal');
       var ins=box?box.querySelectorAll('input'):[], c={name:(ins[0]&&ins[0].value||'').trim(),email:(ins[1]&&ins[1].value||'').trim(),phone:(ins[2]&&ins[2].value||'').trim()}, k=JSON.stringify(c);
       if((c.email||c.phone)&&k!==lastQ){ lastQ=k; P.contact(c); }
     },true);
