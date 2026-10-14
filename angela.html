@@ -56,12 +56,23 @@ form{background:var(--cream);color:var(--ink);border-radius:24px;padding:24px}
 .fld select{background-image:linear-gradient(45deg,transparent 50%,#6E6259 50%),linear-gradient(135deg,#6E6259 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 15px) 50%;background-size:5px 5px;background-repeat:no-repeat}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 form .btn{width:100%;margin-top:6px}.ferr{color:#A33A2A;font-size:14px;min-height:18px;margin-top:8px}.small{font-size:13px;color:var(--warm);margin:8px 0 0;text-align:center}
-.ok{display:none;background:var(--cream);color:var(--ink);border-radius:24px;padding:28px}.ok h3{font-family:var(--disp);font-size:26px;margin:0 0 8px}.ok p{margin:0 0 18px;color:var(--ink2)}
+.ok{display:none;background:var(--cream);color:var(--ink);border-radius:24px;padding:24px}.ok h3{font-family:var(--disp);font-size:24px;line-height:1.15;margin:0 0 6px}.ok p{margin:0;color:var(--ink2);font-size:15.5px}
+.okh{display:flex;gap:14px;align-items:center;margin:0 0 18px}.okh img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;background:var(--sand)}
+.clbl{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--warm);margin:16px 0 8px}
+.days{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.day{flex:none;scroll-snap-align:start;min-width:64px;border:1px solid #D8CDBF;background:#fff;border-radius:14px;padding:9px 8px;text-align:center;cursor:pointer;font:600 14px var(--sans);color:var(--ink)}
+.day small{display:block;font-weight:500;font-size:12px;color:var(--warm);text-transform:capitalize}.day b{display:block;font-family:var(--disp);font-size:20px;line-height:1.1}
+.day.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}.day.on small{color:#D9CFC3}
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
+.tm{border:1px solid #D8CDBF;background:#fff;border-radius:12px;padding:11px 6px;font:600 15px var(--sans);cursor:pointer;color:var(--ink)}.tm.on{background:var(--gold);border-color:var(--gold)}
+.cfin{margin-top:16px}.cfin .btn{width:100%}.ctz{font-size:12.5px;color:var(--warm);margin-top:10px}
+.done{background:var(--ink);color:var(--cream);border-radius:18px;padding:20px}.done h4{font-family:var(--disp);font-size:22px;margin:0 0 4px}.done .when{color:var(--gold);font-weight:700;margin:0 0 8px}.done p{color:#D9CFC3}
+.alt{display:block;margin-top:16px;font-size:14px;color:var(--warm)}.alt a{color:var(--ink);font-weight:600}
 footer{padding:28px 0 90px;font-size:13px;color:var(--warm);text-align:center}
 .sticky{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:6;display:none}
 @media (max-width:860px){.hero{padding:22px 0 40px}.hero .wrap{grid-template-columns:minmax(0,1fr);gap:26px}.hero .txt{order:1}.hero .media{order:2}
 .vid{max-width:330px}.nums{grid-template-columns:repeat(2,minmax(0,1fr))}.formsec .wrap{grid-template-columns:minmax(0,1fr);gap:22px}
-section{padding:48px 0}.nav-r .lang{display:none}.sticky.on{display:block}.sticky .btn{width:100%;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}.row2{grid-template-columns:1fr}}
+section{padding:48px 0}.ok{padding:20px}.okh{align-items:flex-start}.okh img{width:44px;height:44px}.ok h3{font-size:21px}.nav-r .lang{display:none}.sticky.on{display:block}.sticky .btn{width:100%;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}.row2{grid-template-columns:1fr}}
 </style>
 <script>window.PGL_META_PIXEL_ID = "1598891935248269";
 (function(){ if(!window.PGL_META_PIXEL_ID) return;
@@ -97,9 +108,9 @@ section{padding:48px 0}.nav-r .lang{display:none}.sticky.on{display:block}.stick
   <div class="fld"><label for="f4">Instagram или сайт</label><input id="f4" name="links"></div></div>
   <div class="fld"><label for="f5">Мы с вами уже общались?</label><select id="f5" name="status"><option value="">Выберите</option><option>Оставлял(а) заявку</option><option>Был(а) на созвоне</option><option>Начинал(а) с вами работу</option><option>Нет, впервые здесь</option></select></div>
   <div class="fld"><label for="f6">Что сейчас мешает больше всего?</label><select id="f6" name="bottleneck"><option value="">Выберите</option><option>Мало новых клиентов</option><option>Клиенты не возвращаются</option><option>Неявки и отмены</option><option>Не могу масштабировать то, что работает</option><option>Всё держится на мне</option><option>Другое</option></select></div>
-  <button class="btn gold" id="go" type="submit">Хочу новый разбор</button><div class="ferr" id="err"></div><p class="small">Ответим в течение дня. Без спама и без навязчивых звонков.</p>
+  <button class="btn gold" id="go" type="submit">Дальше, к выбору времени</button><div class="ferr" id="err"></div><p class="small">Следующий шаг: выберите удобное время в календаре Льва.</p>
  </form>
- <div class="ok" id="ok"><h3>Спасибо, заявка у нас</h3><p>Лев или Малена напишут вам в течение дня. Если удобнее сразу выбрать время для звонка:</p><a class="btn" href="https://book.pgl.marketing/strategy-call?utm_source=angela&utm_medium=page&utm_campaign=rewarm_ru">Выбрать время</a></div>
+ <div class="ok" id="ok"><div class="okh"><img id="ava" alt="Lev" src="/photos/founders-new-5.jpg"><div><h3>Выберите время для звонка с Левом</h3><p>30 минут в Zoom. Подтверждение со ссылкой придёт на почту.</p></div></div><div id="cal"></div><p class="alt">Не нашли удобное время? <a id="altlink" href="https://book.pgl.marketing/strategy?utm_source=angela&utm_medium=page&utm_campaign=rewarm_ru">Открыть весь календарь</a></p></div>
  </div>
 </div></section>
 <footer>PGL Marketing · Сан-Диего, Калифорния</footer>
@@ -144,7 +155,7 @@ section{padding:48px 0}.nav-r .lang{display:none}.sticky.on{display:block}.stick
 })();</script>
 
 <script>(function(){
-var T={"busy": "Отправляем", "err": "Нужны имя и телефон", "btn": "Хочу новый разбор"};
+var T={"busy": "Отправляем", "err": "Нужны имя и телефон", "btn": "Дальше, к выбору времени", "cal": {"loc": "ru-RU", "h12": false, "day": "День", "time": "Время", "mail": "Email для подтверждения", "book": "Записаться на разбор", "busy": "Записываем", "taken": "Это время только что заняли, выберите другое", "none": "Свободных окон сейчас нет. Лев напишет вам сам в течение дня.", "mailerr": "Нужен email, чтобы прислать подтверждение", "tz": "Время в вашем часовом поясе", "done_h": "Вы записаны", "done_p": "Подтверждение и ссылка на Zoom уже летят на почту. До встречи!", "alt": "Не нашли удобное время?", "fail": "Не получилось загрузить календарь."}, "lang": "ru"};
 var P=window.PGL||{step:function(){},answer:function(){},contact:function(){},submit:function(){},event:function(){}};
 function fb(){try{if(window.fbq)fbq.apply(null,arguments);}catch(e){}}
 var v=document.getElementById('v'),pl=document.getElementById('play'),seen={};
@@ -162,8 +173,48 @@ f.addEventListener('submit',function(e){e.preventDefault();err.textContent='';
  var a={status:val('status'),bottleneck:val('bottleneck'),links:val('links'),page:location.pathname};Object.keys(a).forEach(function(k){if(!a[k])delete a[k];});
  P.submit({name:val('name'),email:val('email'),phone:val('phone'),step:'submit',answers:a});
  fb('track','Lead',{content_name:'angela_rewarm'});
- setTimeout(function(){f.style.display='none';var ok=document.getElementById('ok');ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'});},350);
+ C.name=val('name');C.email=val('email');C.phone=val('phone');C.note=Object.keys(a).map(function(k){return k+': '+a[k];}).join('; ');
+ setTimeout(function(){f.style.display='none';var ok=document.getElementById('ok');ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'start'});loadCal();},300);
 });
+/* inline booking into Lev's calendar (Agency Board booking API, page "strategy") */
+var API='https://ifrufkgqwrkexuzffzaw.supabase.co/functions/v1/book',SLUG='strategy',K=T.cal,C={},BOOKED=false;
+var TZ='America/Los_Angeles';try{TZ=Intl.DateTimeFormat().resolvedOptions().timeZone||TZ;}catch(e){}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+function fmt(iso,o){o.timeZone=TZ;return new Intl.DateTimeFormat(K.loc,o).format(new Date(iso));}
+function dkey(iso){return new Intl.DateTimeFormat('en-CA',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(iso));}
+var cal=document.getElementById('cal');
+function loadCal(){cal.textContent='…';
+ fetch(API+'?u='+SLUG+'&dur=30').then(function(r){return r.json();}).then(function(r){
+  if(r&&r.page&&r.page.avatar){document.getElementById('ava').src=r.page.avatar;}
+  draw(r&&r.ok?r.days:[]);}).catch(function(){cal.textContent='';cal.appendChild(el('p','ferr',K.fail));});}
+function draw(days){cal.textContent='';var by={},order=[];
+ days.forEach(function(d){(d.slots||[]).forEach(function(s){var k=dkey(s);if(!by[k]){by[k]=[];order.push(k);}by[k].push(s);});});order.sort();
+ if(!order.length){cal.appendChild(el('p',null,K.none));return;}
+ var cur=order[0],sel=null;
+ cal.appendChild(el('div','clbl',K.day));var dw=el('div','days');cal.appendChild(dw);
+ cal.appendChild(el('div','clbl',K.time));var tw=el('div','times');cal.appendChild(tw);
+ var fin=el('div','cfin');fin.style.display='none';var mail=null;
+ if(!C.email){var fl=el('div','fld');var lb=el('label',null,K.mail);mail=el('input');mail.type='email';mail.autocomplete='email';fl.appendChild(lb);fl.appendChild(mail);fin.appendChild(fl);}
+ var bb=el('button','btn gold',K.book);bb.type='button';var be=el('div','ferr','');fin.appendChild(bb);fin.appendChild(be);cal.appendChild(fin);
+ cal.appendChild(el('div','ctz',K.tz+' · '+TZ.replace(/_/g,' ')));
+ function days_(){dw.textContent='';order.forEach(function(k){var s=by[k][0];var b=el('button','day'+(k===cur?' on':''));b.type='button';
+   b.appendChild(el('small',null,fmt(s,{weekday:'short'}).replace('.','')));b.appendChild(el('b',null,fmt(s,{day:'numeric'})));b.appendChild(el('small',null,fmt(s,{month:'short'}).replace('.','')));
+   b.addEventListener('click',function(){cur=k;sel=null;fin.style.display='none';days_();times_();});dw.appendChild(b);});}
+ function times_(){tw.textContent='';by[cur].forEach(function(s){var b=el('button','tm'+(s===sel?' on':''),fmt(s,{hour:'numeric',minute:'2-digit',hour12:K.h12}));b.type='button';
+   b.addEventListener('click',function(){sel=s;times_();fin.style.display='';be.textContent='';P.event('slot_picked');fin.scrollIntoView({behavior:'smooth',block:'nearest'});});tw.appendChild(b);});}
+ days_();times_();
+ bb.addEventListener('click',function(){if(!sel||BOOKED)return;be.textContent='';
+  var em=mail?mail.value.trim():C.email;if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(em)){be.textContent=K.mailerr;return;}C.email=em;
+  bb.disabled=true;bb.textContent=K.busy;
+  fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({slug:SLUG,start:sel,dur:30,tz:TZ,answers:{name:C.name,email:C.email,phone:C.phone,note:'Страница отзыва Анжелы ('+location.pathname+'). '+C.note}})})
+  .then(function(r){return r.json();}).then(function(r){
+   if(!r||!r.ok){be.textContent=(r&&r.error&&!/taken/i.test(r.error))?r.error:K.taken;bb.disabled=false;bb.textContent=K.book;if(r&&/taken/i.test(r.error||''))loadCal();return;}
+   BOOKED=true;P.step('booked','Записался на звонок');fb('track','Schedule',{content_name:'angela_rewarm'});
+   cal.textContent='';var d=el('div','done');d.appendChild(el('h4',null,K.done_h));var wt=fmt(r.starts_at||sel,{weekday:'long',day:'numeric',month:'long',hour:'numeric',minute:'2-digit',hour12:K.h12});d.appendChild(el('div','when',wt.charAt(0).toUpperCase()+wt.slice(1)));d.appendChild(el('p',null,K.done_p));cal.appendChild(d);
+   var a=document.querySelector('#ok .alt');if(a)a.style.display='none';
+  }).catch(function(){be.textContent=K.fail;bb.disabled=false;bb.textContent=K.book;});
+ });
+}
 var st=document.getElementById('sticky'),fs=document.getElementById('form');
 if('IntersectionObserver' in window){var atF=false,y=0;new IntersectionObserver(function(es){atF=es[0].isIntersecting;tg();},{threshold:.05}).observe(fs);
  window.addEventListener('scroll',function(){y=window.scrollY;tg();},{passive:true});function tg(){st.classList.toggle('on',y>500&&!atF);}}

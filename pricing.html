@@ -522,6 +522,24 @@ a{color:inherit;text-decoration:none}
 .welcome:hover{background:rgba(201,168,76,.18)}
 .welcome svg{width:26px;height:26px;flex:none;color:var(--ember)}
 .welcome b{color:var(--ember)}
+
+.tst{display:flex;gap:16px;align-items:center;margin:22px 0 0;padding:14px;border-radius:26px;background:var(--ink);color:var(--cream);text-decoration:none;max-width:720px}
+.tst img{width:86px;height:122px;object-fit:cover;border-radius:16px;flex:none}
+.tst-q{font-family:var(--disp);font-weight:700;font-size:18px;line-height:1.3;margin:0 0 8px;letter-spacing:-.01em}
+.tst-by{margin:0;font-size:14px;color:rgba(246,241,234,.72);line-height:1.45}.tst-by u{color:var(--ember);text-underline-offset:3px}
+.tst:hover .tst-by u{color:var(--cream)}
+.partner{margin:16px 0 0;background:var(--cream);border:1.5px solid var(--ember);border-radius:34px;padding:30px 22px;display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+.partner .price-name{color:var(--ember-deep)}
+.partner-tag{display:inline-block;margin-left:8px;padding:3px 10px;border-radius:999px;background:var(--ink);color:var(--cream);font-size:10.5px;letter-spacing:.12em;vertical-align:2px}
+.partner-n{font-family:var(--disp);font-weight:800;font-size:clamp(34px,8vw,54px);letter-spacing:-.03em;line-height:1.02;margin:10px 0 0}
+.partner-sub{color:var(--warm);margin:10px 0 18px;max-width:44ch;line-height:1.55;font-weight:500}
+.partner ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.partner li{padding-left:24px;position:relative;line-height:1.45;color:var(--ink-soft);font-weight:500}
+.partner li::before{content:"";position:absolute;left:2px;top:.35em;width:12px;height:7px;border-left:2px solid var(--ember-deep);border-bottom:2px solid var(--ember-deep);transform:rotate(-45deg)}
+.partner .pill{align-self:start}
+.part-note{margin:14px 4px 0;color:var(--warm);font-weight:500}
+.nav-lang{font-size:14px;color:var(--warm);text-decoration:none;padding:6px 8px}
+@media (min-width:820px){.partner{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:44px;padding:44px;border-radius:44px;align-items:start}}
 </style>
 </head>
 <body>
@@ -530,6 +548,7 @@ a{color:inherit;text-decoration:none}
     <div class="nav-in">
       <a class="brand" href="/"><span>PGL</span> Marketing</a>
       <div style="display:flex;align-items:center;gap:8px">
+        <a class="nav-lang" href="/pricing-ru">RU</a>
         <a class="nav-link" href="#price">Pricing</a>
         <a class="pill pill--dark" href="#book">Book a call
           <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -550,7 +569,7 @@ a{color:inherit;text-decoration:none}
       </a>
       <a class="pill pill--ghost" href="#price">See the price</a>
     </div>
-    <p class="hero-note">One plan. One price. Everything included.</p>
+    <p class="hero-note">One clear price for the full system, and a partner option for bigger businesses.</p>
   </div>
 </header>
 
@@ -564,13 +583,14 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="kpis">
       <div class="kpi rv"><div class="kpi-n">700</div><div class="kpi-l">Bookings in five months, from 463 clients</div></div>
-      <div class="kpi rv"><div class="kpi-n">298</div><div class="kpi-l">Bookings made in September alone</div></div>
+      <div class="kpi rv"><div class="kpi-n">302</div><div class="kpi-l">Bookings made in September alone</div></div>
       <div class="kpi rv"><div class="kpi-n">$145K</div><div class="kpi-l">Booked at list price</div></div>
       <div class="kpi rv"><div class="kpi-n">~$20</div><div class="kpi-l">Ad cost per booking</div></div>
       <div class="kpi rv"><div class="kpi-n"><em>&times;</em>10</div><div class="kpi-l">Booked value for every ad dollar</div></div>
       <div class="kpi rv"><div class="kpi-n">50K+</div><div class="kpi-l">Followers across Instagram, Facebook and TikTok, from zero</div></div>
     </div>
     <p class="fine rv">May to September 2026. Bookings and values come from the studio's booking system at list price, tips not included. Ad spend comes from Meta Ads Manager ($14,297 total). Weekly chart: bookings made each week from July, when daily tracking started.</p>
+    <a class="tst rv" href="/angela-en"><img src="photos/angela-poster.jpg" alt="Angela, founder of Wellness Embassy" loading="lazy" decoding="async"/><div><p class="tst-q">“Clients just go and book their appointments without even me interfering.”</p><p class="tst-by">Angela, founder of Wellness Embassy, San Diego · <u>Watch her one-minute video</u></p></div></a>
   </div>
 </section>
 
@@ -659,8 +679,8 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">Pricing</span>
-      <h2 class="sec-h">One plan with everything in it</h2>
-      <p class="sec-lead">The same system we built for the studio above, set up for your business.</p>
+      <h2 class="sec-h">Two ways to work with us</h2>
+      <p class="sec-lead">The full system we built for the studio above, or a partnership for businesses ready to scale.</p>
     </div>
 
     <div class="price rv">
@@ -713,16 +733,24 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
 
-    <div class="alt">
-      <div class="alt-card rv">
-        <h3>Need something different?</h3>
-        <p>Bigger team, several locations or only part of the system? We'll put together a package around your goals on the call.</p>
+    <div class="partner rv" id="partner">
+      <div>
+        <div class="price-name">Growth Partner <span class="partner-tag">By qualification</span></div>
+        <div class="partner-n">Priced on the call</div>
+        <p class="partner-sub">For established businesses with a team, several locations or a bigger ad budget. We build the plan around your numbers, and part of our fee is tied to the revenue we bring in.</p>
+        <a class="pill pill--dark" href="#book">Discuss it on a call
+          <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
       </div>
-      <div class="alt-card alt-card--dark rv">
-        <h3>Ready to scale hard?</h3>
-        <p>For qualified businesses we also offer performance-based models, where part of our fee is tied to the revenue we bring in. We discuss these one on one, after the strategy call.</p>
-      </div>
+      <ul>
+        <li>Everything in the full system</li>
+        <li>Positioning and the whole client path rebuilt, from the ad to the payment</li>
+        <li>Lead handling for your sales team: every lead reaches a manager in minutes, nothing gets lost</li>
+        <li>Room for several locations, bigger budgets and more channels</li>
+        <li>Part of our fee tied to the revenue we bring in</li>
+      </ul>
     </div>
+    <p class="part-note rv">Only need part of the system? We'll scope it with you on the call.</p>
   </div>
 </section>
 
