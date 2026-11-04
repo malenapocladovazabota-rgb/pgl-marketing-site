@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>PGL Video Work</title>
+<meta name="description" content="Video examples and client results from PGL Marketing, San Diego.">
+<meta property="og:title" content="PGL Video Work">
+<meta property="og:description" content="Video examples and client results from PGL Marketing, San Diego.">
+<meta property="og:image" content="https://pgl.marketing/photos/og-image.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>*,*::before,*::after{box-sizing:border-box}html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,sans-serif}img,video{max-width:100%}[hidden]{display:none!important}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow column of intro, then a reel wall of vertical phones, then results and price. */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --ink:#14202b; --muted:#5b6876; --line:#dbe1e7;
+  --accent:#1f6fd6; --accent-ink:#ffffff; --chip:#e6eef9;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body:"Figtree", "Helvetica Neue", Arial, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f151b; --surface:#17202a; --ink:#e8eef4; --muted:#9aa8b6; --line:#263341;
+  --accent:#5b9dff; --accent-ink:#0c1520; --chip:#1c2a3a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f151b; --surface:#17202a; --ink:#e8eef4; --muted:#9aa8b6; --line:#263341;
+  --accent:#5b9dff; --accent-ink:#0c1520; --chip:#1c2a3a; color-scheme:dark}
+body{background:var(--bg); color:var(--ink); font:400 16px/1.55 var(--body);
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:1080px; margin:0 auto; padding-block:40px 64px; display:grid; gap:56px}
+header{display:grid; gap:14px; max-width:680px}
+.eyebrow{font:600 13px/1 var(--body); letter-spacing:.08em; text-transform:uppercase; color:var(--accent)}
+h1{font:700 clamp(32px,5vw,52px)/1.05 var(--display); letter-spacing:-.01em; margin:0; text-wrap:balance}
+h2{font:700 clamp(24px,3vw,30px)/1.15 var(--display); margin:0; text-wrap:balance}
+p{margin:0}
+.lede{font-size:18px; color:var(--muted); max-width:62ch}
+.group{display:grid; gap:22px}
+.reels{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:28px 22px}
+@media (max-width:860px){.reels{grid-template-columns:repeat(2, minmax(0,1fr))}}
+@media (max-width:520px){.reels{grid-template-columns:minmax(0,1fr)}}
+.reel{display:grid; gap:12px; align-content:start; min-width:0}
+.phone{position:relative; aspect-ratio:9/16; max-width:100%; border-radius:22px; overflow:hidden; background:#000;
+  box-shadow:0 1px 0 var(--line), 0 18px 40px -24px rgba(10,30,50,.45)}
+.phone video{width:100%; height:100%; object-fit:cover; display:block}
+.meta{display:grid; gap:4px}
+.tag{justify-self:start; font:600 12px/1 var(--body); padding:6px 10px; border-radius:999px; background:var(--chip); color:var(--accent)}
+.reel h3{font:600 18px/1.25 var(--body); margin:4px 0 0}
+.reel p{color:var(--muted); font-size:15px}
+.who{font-size:13px; color:var(--muted)}
+.ideas{display:grid; gap:20px; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:28px max(20px, 3vw)}
+.ideas ol{margin:0; padding:0; list-style:none; display:grid; gap:16px; counter-reset:i}
+.ideas li{display:grid; grid-template-columns:36px minmax(0,1fr); gap:12px; counter-increment:i}
+.ideas li::before{content:counter(i); font:700 18px/36px var(--display); text-align:center; width:36px; height:36px; border-radius:50%; background:var(--chip); color:var(--accent)}
+.ideas b{display:block; font-weight:600}
+.ideas span{color:var(--muted); font-size:15px}
+.price{display:flex; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:28px max(20px, 3vw); flex-wrap:wrap; gap:18px 40px; align-items:end; justify-content:space-between; border-top:1px solid var(--line); padding-top:28px}
+.amount{font:700 clamp(40px,6vw,60px)/1 var(--display); font-variant-numeric:tabular-nums}
+.amount small{font:500 18px/1 var(--body); color:var(--muted); margin-left:8px}
+.contact{display:grid; gap:6px; max-width:44ch}
+.contact a{color:var(--accent); font-weight:600}
+.results{display:grid; gap:20px}
+.results .lede{font-size:16px}
+.res-grid{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px}
+@media (max-width:640px){.res-grid{grid-template-columns:minmax(0,1fr)}}
+.res{display:grid; gap:8px; align-content:start; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px 22px 20px; min-width:0}
+.res .num{font:700 clamp(32px,4.4vw,44px)/1 var(--display); letter-spacing:-.01em; font-variant-numeric:tabular-nums; color:var(--ink)}
+.res .num em{font-style:normal; color:var(--accent)}
+.res b{font-weight:600}
+.res p{color:var(--muted); font-size:15px}
+.res .src{font-size:12.5px; color:var(--muted)}
+.note{font-size:13px; color:var(--muted); max-width:70ch}
+.contact-list{display:grid; gap:4px; font-variant-numeric:tabular-nums}
+.contact-list span{color:var(--ink); font-weight:600}
+.more{display:grid; gap:10px; max-width:68ch}
+.more p{color:var(--muted)}
+.more a{color:var(--accent); font-weight:600}
+footer{color:var(--muted); font-size:13px}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<main class="wrap">
+  <header>
+    <div class="eyebrow">PGL Marketing · San Diego</div>
+    <h1>Short videos for local service businesses</h1>
+    <p class="lede">We film on location, put the owner and the crew on camera, edit with captions and sound, and deliver vertical videos ready for Instagram, Facebook, TikTok and ads. Here are some of the videos we made for local businesses in San Diego.</p>
+  </header>
+
+  <section class="reels" aria-label="Video examples">
+    <article class="reel">
+      <div class="phone"><video controls playsinline preload="metadata" poster="/work/v/1_local-business-on-location_tribe-coffee.jpg" src="/work/v/1_local-business-on-location_tribe-coffee.mp4"></video></div>
+      <div class="meta"><span class="tag">On location</span>
+        <h3>A local business at work</h3>
+        <p>Filmed on site at an event, with the team and the setup in the frame.</p>
+        <span class="who">Tribe Coffee · mobile coffee, Encinitas · 29 sec</span></div>
+    </article>
+    <article class="reel">
+      <div class="phone"><video controls playsinline preload="metadata" poster="/work/v/h1_hvac-crew-at-work.jpg" src="/work/v/h1_hvac-crew-at-work.mp4"></video></div>
+      <div class="meta"><span class="tag">Crew at work</span>
+        <h3>The crew on a real job</h3>
+        <p>Inspection and install footage, the trucks, and the owner closing with the offer.</p>
+        <span class="who">HVAC company · San Diego · 31 sec</span></div>
+    </article>
+    <article class="reel">
+      <div class="phone"><video controls playsinline preload="metadata" poster="/work/v/2_owner-explains-the-service_wellness.jpg" src="/work/v/2_owner-explains-the-service_wellness.mp4"></video></div>
+      <div class="meta"><span class="tag">Owner explains</span>
+        <h3>The owner shows how the service works</h3>
+        <p>Talking to camera, cut with close-ups of the actual work.</p>
+        <span class="who">Wellness Embassy · face and body studio, San Diego · 41 sec</span></div>
+    </article>
+    <article class="reel">
+      <div class="phone"><video controls playsinline preload="metadata" poster="/work/v/h2_hvac-owner-offer.jpg" src="/work/v/h2_hvac-owner-offer.mp4"></video></div>
+      <div class="meta"><span class="tag">Ad video</span>
+        <h3>The owner pitches a free system check</h3>
+        <p>A 16-second ad: one offer, the team at work, a clear next step.</p>
+        <span class="who">HVAC company · San Diego · 16 sec</span></div>
+    </article>
+    <article class="reel">
+      <div class="phone"><video controls playsinline preload="metadata" poster="/work/v/3_customer-story_wellness.jpg" src="/work/v/3_customer-story_wellness.mp4"></video></div>
+      <div class="meta"><span class="tag">Customer story</span>
+        <h3>A real customer talks about the result</h3>
+        <p>Owner and client on camera together, in a natural conversation.</p>
+        <span class="who">Wellness Embassy · San Diego · 56 sec</span></div>
+    </article>
+    <article class="reel">
+      <div class="phone"><video controls playsinline preload="metadata" poster="/work/v/4_owner-intro_step2dance.jpg" src="/work/v/4_owner-intro_step2dance.mp4"></video></div>
+      <div class="meta"><span class="tag">Owner intro</span>
+        <h3>Who we are, in one minute</h3>
+        <p>The founder's story with footage from the studio and from events.</p>
+        <span class="who">Step 2 Dance · dance studio · 59 sec</span></div>
+    </article>
+    <article class="reel">
+      <div class="phone"><video controls playsinline preload="metadata" poster="/work/v/5_owner-on-camera_tattoo.jpg" src="/work/v/5_owner-on-camera_tattoo.mp4"></video></div>
+      <div class="meta"><span class="tag">Ad video</span>
+        <h3>A short ad with the owner on camera</h3>
+        <p>One clear message and one call to action, made to run as an ad.</p>
+        <span class="who">Nazar Tattoo · San Diego · 20 sec</span></div>
+    </article>
+    <article class="reel">
+      <div class="phone"><video controls playsinline preload="metadata" poster="/work/v/6_explainer-ad_onliva.jpg" src="/work/v/6_explainer-ad_onliva.mp4"></video></div>
+      <div class="meta"><span class="tag">Explainer</span>
+        <h3>An explainer with graphics</h3>
+        <p>When there is nothing to film yet: facts, numbers and motion graphics.</p>
+        <span class="who">Onliva · home goods · 38 sec</span></div>
+    </article>
+  </section>
+
+  <section class="results" aria-labelledby="res-h">
+    <h2 id="res-h">What the videos and ads brought our clients</h2>
+    <div class="res-grid">
+      <div class="res">
+        <div class="num">$61,404 <em>from $6,207</em></div>
+        <b>Wellness Embassy · face and body studio, San Diego</b>
+        <p>Bookings at list price in September 2026, from $6,207 in ad spend. That's about 10x. 298 bookings in the month, about $21 per booking.</p>
+        <span class="src">From the client's booking system and ad account, October 2026</span>
+      </div>
+      <div class="res">
+        <div class="num">30 days</div>
+        <b>Wellness Embassy · new location</b>
+        <p>A brand-new studio went from an empty calendar to fully booked in its first month. Launch week brought 28 paid bookings at about $22 each.</p>
+        <span class="src">Client's booking system</span>
+      </div>
+      <div class="res">
+        <div class="num">435+</div>
+        <b>Food service company · San Diego</b>
+        <p>Banquet inquiries in one month, and the full ad spend paid back in that first month.</p>
+        <span class="src">Client's inbox and ad account</span>
+      </div>
+      <div class="res">
+        <div class="num">$2.90</div>
+        <b>Nazar Tattoo · San Diego</b>
+        <p>Per conversation with a potential client: 148 conversations from $428.53 in ads, first bookings within about 6 days.</p>
+        <span class="src">Meta ad account</span>
+      </div>
+    </div>
+    <p class="note">We don't promise a number of leads or sales. These are real results from our clients' own systems, and every business is different.</p>
+  </section>
+
+  <section class="price" aria-label="Price">
+    <div><div class="amount">$200<small>per video</small></div></div>
+    <div class="contact">
+      <p>Happy to stop by one of your jobs or meet for 15 minutes to talk it through.</p>
+      <div class="contact-list">
+        <span>Lev Pocladov, PGL Marketing</span>
+        <div>Phone: <a href="tel:+18584000811">(858) 400-0811</a></div>
+        <div>Email: <a href="mailto:lev@pgl.marketing">lev@pgl.marketing</a></div>
+        <div>Website: <a href="https://pgl.marketing" target="_blank" rel="noopener">pgl.marketing</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="more" aria-labelledby="more-h">
+    <h2 id="more-h">Videos are one way to start</h2>
+    <p>We also run ads, build booking and follow-up systems, and track every booking back to the ad or video it came from. If you want more than videos, we're open to other ways of working together.</p>
+    <p>Learn more about us at <a href="https://pgl.marketing" target="_blank" rel="noopener">pgl.marketing</a>.</p>
+  </section>
+
+</main>
+
+</body>
+</html>
