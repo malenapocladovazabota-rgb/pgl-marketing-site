@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>Wellness Embassy · Case study · 302 bookings in one month · PGL Marketing</title>
-<meta name="description" content="How PGL Marketing took a new San Diego wellness studio to 302 bookings in one month: content, ads, booking, follow-ups, loyalty and a dashboard that tracks every booking to its source."/>
+<meta name="description" content="How PGL Marketing took a new San Diego wellness studio to 302 bookings in one month: content, ads, website, booking, payments, an AI assistant in the inbox, loyalty and tracking that ties every booking to its source."/>
 <link rel="canonical" href="https://pgl.marketing/wellness-system-en"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -199,6 +199,22 @@ a{color:inherit;text-decoration:none}
 @media (max-width:759px){.shot a{overflow-x:auto;-webkit-overflow-scrolling:touch}.shot img{width:780px;max-width:none}.shot-hint{display:inline}}
 .cap-l{font-family:var(--body);font-size:13px;color:var(--warm);font-weight:500;margin:12px 2px 0;line-height:1.5;max-width:70ch}
 @media (min-width:760px){.wk{padding:30px 30px}.wk-bars{gap:10px;height:220px}.wk-v{font-size:14px}.wk-m{font-size:12px}.wk-b.top .wk-v{font-size:17px}}
+.tst{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:center;margin:30px 0 0}
+.tvid{position:relative;width:min(290px,80%);margin:0 auto;border-radius:26px;overflow:hidden;border:7px solid var(--ink);background:#000;aspect-ratio:9/16;box-shadow:0 30px 60px -30px rgba(24,19,22,.5)}
+.tvid video{width:100%;height:100%;object-fit:cover;display:block;border-radius:19px}
+.tplay{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(246,241,234,.96);color:var(--ink);border:0;border-radius:999px;padding:13px 10px;font:700 15px var(--body);cursor:pointer}
+.tplay svg{width:18px;height:18px;flex:none}
+.tcc{text-align:center;font-size:13px;color:var(--warm);font-weight:500;margin:12px 0 0}
+.tq{display:grid;gap:12px;min-width:0}
+.tq blockquote{background:var(--cream);border:1px solid rgba(24,19,22,.07);border-radius:var(--r);padding:20px 22px;box-shadow:0 20px 50px -42px rgba(24,19,22,.5)}
+.tq blockquote p{font-family:var(--disp);font-weight:800;font-size:19px;line-height:1.3;letter-spacing:-.01em}
+.tq blockquote p::before{content:'\201C';color:var(--ember-deep)}
+.tq blockquote p::after{content:'\201D';color:var(--ember-deep)}
+.tq blockquote small{display:block;margin:8px 0 0;color:var(--warm);font-size:14.5px;font-weight:500}
+.tq cite{font-style:normal;font-size:14px;color:var(--warm);font-weight:600;margin:2px 4px 0}
+.tq cite b{color:var(--ink)}
+@media (min-width:760px){.tst{grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:52px}.tvid{width:100%}}
+@media (min-width:1000px){.sysgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -223,12 +239,12 @@ a{color:inherit;text-decoration:none}
     <div class="hero-tag">San Diego · 2026</div>
     <h1>Wellness <span>Embassy</span></h1>
     <p class="hero-sub">A new San Diego studio that booked 302 appointments in September</p>
-    <p class="hero-lead">We built the brand on social, run the ads, and set up booking and follow-ups that work without the owner. Here are the numbers and what's behind them.</p>
+    <p class="hero-lead">We built the brand on social, run the ads, and set up the whole tech side: website, booking, payments and an AI assistant in the inbox. It runs without the owner. Here are the numbers and what's behind them.</p>
     <div class="hero-cta">
       <a class="pill pill--gold" href="/#book">Book my free strategy call
         <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
       </a>
-      <a class="pill pill--ghost" href="/angela-en">Watch Angela's video</a>
+      <a class="pill pill--ghost" href="#review">Watch Angela's video</a>
       <a class="pill pill--ghost" href="cases-en.html">All case studies</a>
     </div>
   </div>
@@ -254,6 +270,27 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<section class="sec" id="review" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="sec-h">In Angela's words</h2>
+      <p class="sec-lead">One minute on what this system looks like from the owner's side.</p>
+    </div>
+    <div class="tst">
+      <div class="rv">
+        <div class="tvid"><video id="tv" playsinline preload="none" poster="/photos/angela-poster.jpg" src="/photos/angela-testimonial.mp4"></video>
+        <button class="tplay" id="tplay" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch with sound</button></div>
+      </div>
+      <div class="tq">
+        <blockquote class="rv"><p>Clients just go and book their appointments without even me interfering.</p></blockquote>
+        <blockquote class="rv"><p>I always know what's actually happening in my business.</p></blockquote>
+        <blockquote class="rv"><p>Now I actually have to expand my studio.</p></blockquote>
+        <cite class="rv"><b>Angela</b>, founder of Wellness Embassy, San Diego</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec">
   <div class="wrap">
     <div class="rv">
@@ -271,7 +308,7 @@ a{color:inherit;text-decoration:none}
     <div class="rv">
       <div class="sec-n">02</div>
       <h2 class="sec-h">What we built</h2>
-      <p class="sec-lead">Six parts that work as one: an ad becomes a booking, a booking becomes a returning client, and every step shows up in the numbers.</p>
+      <p class="sec-lead">Nine parts that work as one: an ad becomes a booking, a booking becomes a returning client, and every step shows up in the numbers. We set up the whole tech side ourselves.</p>
     </div>
     <div class="sysgrid">
       <article class="sys rv">
@@ -290,29 +327,50 @@ a{color:inherit;text-decoration:none}
       </article>
       <article class="sys rv">
         <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg></span>
+          <div><div class="sys-num">03 · Website</div><div class="sys-h">Website and booking page</div></div>
+        </div>
+        <p>We built the studio's website and an online booking page with services and prices. People coming from an ad pick a service and a time on their own.</p>
+      </article>
+      <article class="sys rv">
+        <div class="sys-top">
           <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></span>
-          <div><div class="sys-num">03 · Booking</div><div class="sys-h">Booking and reminders</div></div>
+          <div><div class="sys-num">04 · Booking</div><div class="sys-h">Booking and reminders</div></div>
         </div>
         <p>Online booking in one CRM, with automatic confirmations and reminders for every appointment.</p>
       </article>
       <article class="sys rv">
         <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></span>
+          <div><div class="sys-num">05 · AI assistant</div><div class="sys-h">AI assistant in the inbox</div></div>
+        </div>
+        <p>It drafts replies to messages on Instagram, Facebook, SMS and WhatsApp in Angela's voice: explains the services and offers open times. Her team approves each reply with one tap.</p>
+      </article>
+      <article class="sys rv">
+        <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6.5 15h4"/></svg></span>
+          <div><div class="sys-num">06 · Payments</div><div class="sys-h">Online payments</div></div>
+        </div>
+        <p>We set up card payments on the site. Every payment lands in the CRM on the client's record.</p>
+      </article>
+      <article class="sys rv">
+        <div class="sys-top">
           <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg></span>
-          <div><div class="sys-num">04 · Retention</div><div class="sys-h">Loyalty without discounts</div></div>
+          <div><div class="sys-num">07 · Retention</div><div class="sys-h">Loyalty without discounts</div></div>
         </div>
         <p>A 10-visit program with gifts at visits 1, 4, 7 and 10. No discounts, so the ticket and tips stay whole.</p>
       </article>
       <article class="sys rv">
         <div class="sys-top">
           <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2-6.3-4.6L5.7 21 8 13.8 2 9.4h7.6z"/></svg></span>
-          <div><div class="sys-num">05 · Experience</div><div class="sys-h">Feedback and client record</div></div>
+          <div><div class="sys-num">08 · Experience</div><div class="sys-h">Feedback and client record</div></div>
         </div>
         <p>A 1 to 10 score after every visit, with happy clients guided to public reviews, and a consultation record that makes each visit personal.</p>
       </article>
       <article class="sys rv">
         <div class="sys-top">
           <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-          <div><div class="sys-num">06 · Numbers</div><div class="sys-h">Tracking and dashboard</div></div>
+          <div><div class="sys-num">09 · Numbers</div><div class="sys-h">Tracking and dashboard</div></div>
         </div>
         <p>Every booking is tied to its source, with its cost and value. Angela sees it all in one dashboard.</p>
       </article>
@@ -324,10 +382,6 @@ a{color:inherit;text-decoration:none}
         <div class="m-cap">Content in Angela's expert voice</div>
       </div>
     </div>
-    <figure class="shot rv">
-      <a href="photos/case-home.jpg" target="_blank" rel="noopener"><img src="photos/case-home.jpg" width="1493" height="495" alt="Client dashboard for September 7 to 20: 148 bookings, 100 new clients, $20.50 per booking, ROAS x10" loading="lazy" decoding="async"/></a>
-      <figcaption>Angela's dashboard, September 7 to 20: <b>148 bookings</b>, 100 from first-time clients, <b>$20.50 per booking</b>, booked value at 10x the ad spend. <span class="shot-hint">Swipe sideways to see it all. </span>Tap to open full size.</figcaption>
-    </figure>
   </div>
 </section>
 
@@ -358,14 +412,6 @@ a{color:inherit;text-decoration:none}
       <p class="wk-note">Best week so far: <b>86 bookings</b>. The limit now is the calendar, not demand: Angela is booked about 2.5 months ahead and her team about 3 weeks ahead.</p>
     </div>
     <p class="cap-l rv">Bookings made each week, June 29 to October 4, from the studio's booking system.</p>
-
-    <div class="math rv">
-      <div class="row"><span>Bookings made in September</span><b>302</b></div>
-      <div class="row"><span>Ad spend, Meta and TikTok</span><b>$6,768</b></div>
-      <div class="row"><span>$6,768 &divide; 302 bookings</span><b>~$22 per booking</b></div>
-      <div class="row"><span>Return on ad spend</span><b>10x</b></div>
-    </div>
-    <p class="cap-l rv">September 2026, from the studio's booking system and dashboard.</p>
 
     <div class="res">
       <div class="rcard rv">
@@ -446,6 +492,8 @@ a{color:inherit;text-decoration:none}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
   setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in');});},2600);
+  var tv=document.getElementById('tv'),tp=document.getElementById('tplay');
+  if(tv&&tp){tp.addEventListener('click',function(){tv.muted=false;tv.controls=true;tp.style.display='none';var p=tv.play();if(p&&p.catch)p.catch(function(){});if(window.PGL&&PGL.event)PGL.event('testimonial_play');});}
   var v=document.querySelector('.m-reel video');
   if(v&&'IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=e.target.play();if(p&&p.catch)p.catch(function(){});}else{e.target.pause();}});},{threshold:.4}).observe(v);}
 })();

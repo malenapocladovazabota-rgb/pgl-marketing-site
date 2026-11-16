@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
 <title>Wellness Embassy · Кейс · 302 записи за месяц · PGL Marketing</title>
-<meta name="description" content="Как PGL Marketing довёл новую wellness-студию в Сан-Диего до 302 записей за месяц: контент, реклама, запись, напоминания, лояльность и дашборд, где у каждой записи есть источник."/>
+<meta name="description" content="Как PGL Marketing довёл новую wellness-студию в Сан-Диего до 302 записей за месяц: контент, реклама, сайт, запись, оплата, ИИ-ассистент в переписке, лояльность и учёт, где у каждой записи есть источник."/>
 <link rel="canonical" href="https://pgl.marketing/wellness-system-ru"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -199,6 +199,22 @@ a{color:inherit;text-decoration:none}
 @media (max-width:759px){.shot a{overflow-x:auto;-webkit-overflow-scrolling:touch}.shot img{width:780px;max-width:none}.shot-hint{display:inline}}
 .cap-l{font-family:var(--body);font-size:13px;color:var(--warm);font-weight:500;margin:12px 2px 0;line-height:1.5;max-width:70ch}
 @media (min-width:760px){.wk{padding:30px 30px}.wk-bars{gap:10px;height:220px}.wk-v{font-size:14px}.wk-m{font-size:12px}.wk-b.top .wk-v{font-size:17px}}
+.tst{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;align-items:center;margin:30px 0 0}
+.tvid{position:relative;width:min(290px,80%);margin:0 auto;border-radius:26px;overflow:hidden;border:7px solid var(--ink);background:#000;aspect-ratio:9/16;box-shadow:0 30px 60px -30px rgba(24,19,22,.5)}
+.tvid video{width:100%;height:100%;object-fit:cover;display:block;border-radius:19px}
+.tplay{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(246,241,234,.96);color:var(--ink);border:0;border-radius:999px;padding:13px 10px;font:700 15px var(--body);cursor:pointer}
+.tplay svg{width:18px;height:18px;flex:none}
+.tcc{text-align:center;font-size:13px;color:var(--warm);font-weight:500;margin:12px 0 0}
+.tq{display:grid;gap:12px;min-width:0}
+.tq blockquote{background:var(--cream);border:1px solid rgba(24,19,22,.07);border-radius:var(--r);padding:20px 22px;box-shadow:0 20px 50px -42px rgba(24,19,22,.5)}
+.tq blockquote p{font-family:var(--disp);font-weight:800;font-size:19px;line-height:1.3;letter-spacing:-.01em}
+.tq blockquote p::before{content:'\201C';color:var(--ember-deep)}
+.tq blockquote p::after{content:'\201D';color:var(--ember-deep)}
+.tq blockquote small{display:block;margin:8px 0 0;color:var(--warm);font-size:14.5px;font-weight:500}
+.tq cite{font-style:normal;font-size:14px;color:var(--warm);font-weight:600;margin:2px 4px 0}
+.tq cite b{color:var(--ink)}
+@media (min-width:760px){.tst{grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:52px}.tvid{width:100%}}
+@media (min-width:1000px){.sysgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -223,12 +239,12 @@ a{color:inherit;text-decoration:none}
     <div class="hero-tag">Сан-Диего · 2026</div>
     <h1>Wellness <span>Embassy</span></h1>
     <p class="hero-sub">Новая студия в Сан-Диего: 302 записи за сентябрь</p>
-    <p class="hero-lead">Мы построили бренд в соцсетях, ведём рекламу и настроили запись и напоминания так, что они работают без владелицы. Ниже цифры и то, что за ними стоит.</p>
+    <p class="hero-lead">Мы построили бренд в соцсетях, ведём рекламу и настроили всю техническую часть: сайт, запись, оплату и ИИ-ассистента в переписке. Система работает без владелицы. Ниже цифры и то, что за ними стоит.</p>
     <div class="hero-cta">
       <a class="pill pill--gold" href="/ru#book">Записаться на бесплатный разбор
         <svg viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
       </a>
-      <a class="pill pill--ghost" href="/angela">Смотреть отзыв Анжелы</a>
+      <a class="pill pill--ghost" href="#review">Смотреть отзыв Анджелы</a>
       <a class="pill pill--ghost" href="cases-ru.html">Все кейсы</a>
     </div>
   </div>
@@ -254,6 +270,28 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
+<section class="sec" id="review" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="sec-h">Словами Анджелы</h2>
+      <p class="sec-lead">Минута о том, как эта система выглядит со стороны владелицы.</p>
+    </div>
+    <div class="tst">
+      <div class="rv">
+        <div class="tvid"><video id="tv" playsinline preload="none" poster="/photos/angela-poster.jpg" src="/photos/angela-testimonial.mp4"></video>
+        <button class="tplay" id="tplay" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Смотреть со звуком</button></div>
+        <p class="tcc">Видео на английском, с субтитрами</p>
+      </div>
+      <div class="tq">
+        <blockquote class="rv"><p>Clients just go and book their appointments without even me interfering.</p><small>Клиенты просто сами записываются, без моего участия</small></blockquote>
+        <blockquote class="rv"><p>I always know what's actually happening in my business.</p><small>Я всегда знаю, что на самом деле происходит в моём бизнесе</small></blockquote>
+        <blockquote class="rv"><p>Now I actually have to expand my studio.</p><small>Теперь мне правда приходится расширять студию</small></blockquote>
+        <cite class="rv"><b>Анджела</b>, основательница Wellness Embassy, Сан-Диего</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec">
   <div class="wrap">
     <div class="rv">
@@ -271,7 +309,7 @@ a{color:inherit;text-decoration:none}
     <div class="rv">
       <div class="sec-n">02</div>
       <h2 class="sec-h">Что мы построили</h2>
-      <p class="sec-lead">Шесть частей, которые работают как одно целое: реклама становится записью, запись становится постоянным клиентом, и каждый шаг виден в цифрах.</p>
+      <p class="sec-lead">Девять частей, которые работают как одно целое: реклама становится записью, запись становится постоянным клиентом, и каждый шаг виден в цифрах. Всю техническую часть мы настроили сами.</p>
     </div>
     <div class="sysgrid">
       <article class="sys rv">
@@ -290,29 +328,50 @@ a{color:inherit;text-decoration:none}
       </article>
       <article class="sys rv">
         <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg></span>
+          <div><div class="sys-num">03 · Сайт</div><div class="sys-h">Сайт и страница записи</div></div>
+        </div>
+        <p>Собрали сайт студии и страницу онлайн-записи с услугами и ценами. Человек из рекламы сам выбирает услугу и время.</p>
+      </article>
+      <article class="sys rv">
+        <div class="sys-top">
           <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></span>
-          <div><div class="sys-num">03 · Запись</div><div class="sys-h">Запись и напоминания</div></div>
+          <div><div class="sys-num">04 · Запись</div><div class="sys-h">Запись и напоминания</div></div>
         </div>
         <p>Онлайн-запись в одной CRM, автоматические подтверждения и напоминания перед каждым визитом.</p>
       </article>
       <article class="sys rv">
         <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M18.5 15l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg></span>
+          <div><div class="sys-num">05 · ИИ-ассистент</div><div class="sys-h">ИИ-ассистент в переписке</div></div>
+        </div>
+        <p>Готовит ответы на сообщения в Instagram, Facebook, SMS и WhatsApp в стиле Анджелы: рассказывает об услугах и предлагает свободное время. Команда подтверждает ответ одним нажатием.</p>
+      </article>
+      <article class="sys rv">
+        <div class="sys-top">
+          <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6.5 15h4"/></svg></span>
+          <div><div class="sys-num">06 · Оплата</div><div class="sys-h">Приём оплаты онлайн</div></div>
+        </div>
+        <p>Настроили оплату картой на сайте. Платёж сразу попадает в CRM, в карточку клиента.</p>
+      </article>
+      <article class="sys rv">
+        <div class="sys-top">
           <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg></span>
-          <div><div class="sys-num">04 · Удержание</div><div class="sys-h">Лояльность без скидок</div></div>
+          <div><div class="sys-num">07 · Удержание</div><div class="sys-h">Лояльность без скидок</div></div>
         </div>
         <p>Программа на 10 визитов с подарками на 1, 4, 7 и 10 визите. Без скидок, поэтому чек и чаевые остаются целыми.</p>
       </article>
       <article class="sys rv">
         <div class="sys-top">
           <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2-6.3-4.6L5.7 21 8 13.8 2 9.4h7.6z"/></svg></span>
-          <div><div class="sys-num">05 · Сервис</div><div class="sys-h">Отзывы и карта клиента</div></div>
+          <div><div class="sys-num">08 · Сервис</div><div class="sys-h">Отзывы и карта клиента</div></div>
         </div>
         <p>Оценка от 1 до 10 после каждого визита, довольных клиентов ведём к публичному отзыву. Карта консультации делает каждый визит личным.</p>
       </article>
       <article class="sys rv">
         <div class="sys-top">
           <span class="sys-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-          <div><div class="sys-num">06 · Цифры</div><div class="sys-h">Учёт и дашборд</div></div>
+          <div><div class="sys-num">09 · Цифры</div><div class="sys-h">Учёт и дашборд</div></div>
         </div>
         <p>У каждой записи есть источник, цена и сумма. Анджела видит всё в одном дашборде.</p>
       </article>
@@ -324,10 +383,6 @@ a{color:inherit;text-decoration:none}
         <div class="m-cap">Контент голосом Анджелы</div>
       </div>
     </div>
-    <figure class="shot rv">
-      <a href="photos/case-home.jpg" target="_blank" rel="noopener"><img src="photos/case-home.jpg" width="1493" height="495" alt="Дашборд клиента с 7 по 20 сентября: 148 записей, 100 новых клиентов, $20.50 за запись, ROAS x10" loading="lazy" decoding="async"/></a>
-      <figcaption>Дашборд Анджелы, с 7 по 20 сентября: <b>148 записей</b>, 100 от новых клиентов, <b>$20.50 за запись</b>, сумма записей в 10 раз больше расхода на рекламу. <span class="shot-hint">Листайте вбок, чтобы увидеть всё. </span>Нажмите, чтобы открыть целиком.</figcaption>
-    </figure>
   </div>
 </section>
 
@@ -358,14 +413,6 @@ a{color:inherit;text-decoration:none}
       <p class="wk-note">Лучшая неделя: <b>86 записей</b>. Сейчас предел задаёт календарь, а не спрос: к Анджеле запись примерно на 2.5 месяца вперёд, к её команде примерно на 3 недели.</p>
     </div>
     <p class="cap-l rv">Записи, созданные за неделю, с 29 июня по 4 октября, из системы записи студии.</p>
-
-    <div class="math rv">
-      <div class="row"><span>Записей за сентябрь</span><b>302</b></div>
-      <div class="row"><span>Реклама, Meta и TikTok</span><b>$6,768</b></div>
-      <div class="row"><span>$6,768 &divide; 302 записи</span><b>~$22 за запись</b></div>
-      <div class="row"><span>Возврат на рекламу</span><b>x10</b></div>
-    </div>
-    <p class="cap-l rv">Сентябрь 2026, данные системы записи и дашборда студии.</p>
 
     <div class="res">
       <div class="rcard rv">
@@ -446,6 +493,8 @@ a{color:inherit;text-decoration:none}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
   setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in');});},2600);
+  var tv=document.getElementById('tv'),tp=document.getElementById('tplay');
+  if(tv&&tp){tp.addEventListener('click',function(){tv.muted=false;tv.controls=true;tp.style.display='none';var p=tv.play();if(p&&p.catch)p.catch(function(){});if(window.PGL&&PGL.event)PGL.event('testimonial_play');});}
   var v=document.querySelector('.m-reel video');
   if(v&&'IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=e.target.play();if(p&&p.catch)p.catch(function(){});}else{e.target.pause();}});},{threshold:.4}).observe(v);}
 })();
